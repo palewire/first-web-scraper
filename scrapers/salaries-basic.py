@@ -6,7 +6,7 @@ from BeautifulSoup import BeautifulSoup
 url = 'http://mapyourtaxes.mo.gov/MAP/Employees/Employee/SearchResults.aspx?last=%25&first=%25&year=2013&agency=931'
 html = urllib2.urlopen(url).read()
 
-########## STEP 2: Parse URL with BeautifulSoup ##########
+########## STEP 2: Parse HTML with BeautifulSoup ##########
 
 soup = BeautifulSoup(html)
 emptable = soup.find('table', id="grdEmployees")
