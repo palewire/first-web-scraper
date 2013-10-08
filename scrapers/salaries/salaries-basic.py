@@ -24,7 +24,7 @@ for tr in rows:
 
     output_rows.append(output_row)
 
-########## STEP 5: Write results to file ##########
+########## STEP 4: Write results to file ##########
 
 handle = open('out-basic.csv', 'a')
 outfile = csv.writer(handle)
