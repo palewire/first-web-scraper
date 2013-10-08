@@ -1,3 +1,4 @@
+import csv
 from mechanize import Browser
 from BeautifulSoup import BeautifulSoup
 
@@ -28,7 +29,20 @@ soup = BeautifulSoup(br.response())
 emptable = soup.find('table', id="grdEmployees")
 rows = emptable.findAll('tr')[1:]
 
-########## STEP 4: Iterate through the results and write to file ##########
+########## STEP 4: Iterate through the results and write to an output list ##########
 
-for row in rows:
-    print [c.text for c in row.findAll('td')]
+output_rows = []
+for tr in rows:
+
+    output_row = []
+    for td in tr.findAll('td'):
+        output_row.append(td.text)
+
+    output_rows.append(output_row)
+
+########## STEP 5: Write results to file ##########
+
+handle = open('out-mechanize.csv', 'a')
+outfile = csv.writer(handle)
+
+outfile.writerows(output_rows)
