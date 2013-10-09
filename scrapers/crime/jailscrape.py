@@ -28,7 +28,10 @@ for tr in only_table.findAll('tr'):
     output_rows.append(output_row)
 
 # Finally, we'll write our results to a file
-handle = open('out.csv', 'a')
-outfile = csv.writer(handle)
 
-outfile.writerows(output_rows)
+print output_rows
+
+# handle = open('out.csv', 'a')
+# outfile = csv.writer(handle)
+
+# outfile.writerows(output_rows)

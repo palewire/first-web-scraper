@@ -26,7 +26,9 @@ for tr in rows:
 
 ########## STEP 4: Write results to file ##########
 
-handle = open('out-basic.csv', 'a')
-outfile = csv.writer(handle)
+print output_rows
 
-outfile.writerows(output_rows)
+# handle = open('out-basic.csv', 'a')
+# outfile = csv.writer(handle)
+
+# outfile.writerows(output_rows)

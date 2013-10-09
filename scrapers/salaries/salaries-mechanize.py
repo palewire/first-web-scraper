@@ -4,7 +4,7 @@ from BeautifulSoup import BeautifulSoup
 
 ########## STEP 1: Open and read the URL ##########
 
-url = 'http://mapyourtaxes.mo.gov/MAP/Employees/Employee/SearchResults.aspx?last=%25&first=%25&year=2013&agency=931'
+url = 'http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx'
 
 # Create a new browser object and open the URL
 br = Browser()
@@ -42,7 +42,9 @@ for tr in rows:
 
 ########## STEP 5: Write results to file ##########
 
-handle = open('out-mechanize.csv', 'a')
-outfile = csv.writer(handle)
+print output_rows
 
-outfile.writerows(output_rows)
+# handle = open('out-mechanize.csv', 'a')
+# outfile = csv.writer(handle)
+
+# outfile.writerows(output_rows)
