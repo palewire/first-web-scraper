@@ -1,4 +1,4 @@
-# Exercises 2-4: Scraping Missouri government salaries
+# Exercises 2-4: Scraping MO government salaries
 
 The next three exercises will use several different methods to scrape the [salaries](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx) of Missouri state government employees. These exercises are designed to build upon one another, using progressively more sophisticated techniques to retrieve the data and save it to CSV files.
 
