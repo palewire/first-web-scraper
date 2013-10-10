@@ -31,6 +31,6 @@ No worries if you don't have this software already installed. We'll help you set
 
 This course will be taught primarily by Chase Davis, of The New York Times; Presidential Innovation Fellow Jackie Kazil, formerly of The Washington Post; and Matt Wynn, of the Omaha World-Herald. If you have any questions, you can reach us here:
 
-Chase: chase.davis@gmail.com
-Jackie: jackiekazil@gmail.com
-Matt: matt.wynn@gmail.com
+- Chase: chase.davis@gmail.com
+- Jackie: jackiekazil@gmail.com
+- Matt: matt.wynn@gmail.com
