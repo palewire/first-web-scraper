@@ -114,7 +114,7 @@ For our purposes, there are two control structures you will use most often: **if
 
 If/else statements are pretty much exactly what they sounds like. *If* a certain condition is met, your program should do one thing; or *else* it should do something else.
 
-The syntax is pretty intuitive -- except for one **extremely important thing**: In Python, whitespace matters. A lot. It's easiest to demonstrate this with an example: 
+The syntax is pretty intuitive -- except for one **extremely important thing**: In Python, whitespace matters. A lot. It's easiest to demonstrate this with an example:
 
 ```
 number = 10
@@ -126,7 +126,7 @@ There's a lot to unpack here, but first take note of the indentation. It helps s
 
 If you look closely, there's a small detail that can help you remember when a program moves from one level to another: namely, the presence of a colon. When we declare an if statement, we **always end that line with a colon**. The colon is our way of telling Python that it should start another level in the program, and everything on that level must be indented accordingly.
 
-If we wanted to continue our program, we could do something like this: 
+If we wanted to continue our program, we could do something like this:
 
 ```
 number = 10
@@ -182,7 +182,7 @@ First you'll notice from looking at the print statement that our indentation rul
 
 Second, turn your attention to the syntax of declaring the loop itself: ```for letter in list_of_letters:```
 
-All of our for loops start, unsurprisingly, with the word ```for``` and follow the pattern ```for variable_name in list:```. The variable_name can be anything you want -- it's essentially just a new variable you're creating to refer to each item within your list as the for loop iterates over it. You can call this whatever you want. In this case it's ```letter```, but you could just as easily call it ```donkey```, like so:  
+All of our for loops start, unsurprisingly, with the word ```for``` and follow the pattern ```for variable_name in list:```. The variable_name can be anything you want -- it's essentially just a new variable you're creating to refer to each item within your list as the for loop iterates over it. You can call this whatever you want. In this case it's ```letter```, but you could just as easily call it ```donkey```, like so:
 
 ```
 list_of_letters = ['a', 'b', 'c']
@@ -230,7 +230,7 @@ def say_hello():
 
 But the idea of arguments and return values are still fundamental in understanding functions, and they will come up more often than not.
 
-## Classes and object-oriented programming
+## Object-oriented programming
 
 The next and final concept we'll introduce is the idea of object-oriented programming. OOP, as it's known for short, is a complex subject that can easily take up a semester in an introductory computer science program. We're only going to scratch the surface here, but it should be enough to get you started.
 
@@ -264,6 +264,6 @@ You can see how this might be useful. Tools like this allow us to perform variou
 
 1. Python uses what's known as dot notation to call attributes and methods. That means you will insert a period between the object you're working with and whatever method you want it to perform. For example ```my_string.upper()``` says "perform the upper() method on the object my_string". **The dot between the two is very important.**
 
-2. As a general rule in Python, **methods are called with parentheses and attributes aren't**. The ```upper()``` method of ```mystring.upper()``` is a method, so it requires a set of open and closed parentheses -- not unlike a function. Methods are actually close cousins of functions (they can also accept arguments). A string attribute, such as 
+2. As a general rule in Python, **methods are called with parentheses and attributes aren't**. The ```upper()``` method of ```mystring.upper()``` is a method, so it requires a set of open and closed parentheses -- not unlike a function. Methods are actually close cousins of functions (they can also accept arguments). A string attribute, such as
 
 Also, one final Pro Tip. Python has a built-in function, known as ```dir()```, which will reveal to you a menu of all the attributes and methods a given object has. Try doing this and you'll see what I mean ```dir(my_string)```.
