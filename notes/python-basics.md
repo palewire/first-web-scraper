@@ -1,12 +1,12 @@
 # Getting started with Python
 
-Python is a rich and fully featured language that can be used for almost any application you can imagine, from building websites to running robots. A thorough overview of the language would take weeks or months, so our class is going to concentrate on the absolute basics -- basic programming principles and syntax quirks that you're likely to encounter as you start to program in Django. This isn't intended to be a comprehensive Python tutorial. It's only meant to give you the basic skills you'll need to succeed in this course. That said, I would highly encourage you to explore the language further and will provide materials to do so at the end of this guide.
+Python is a rich and fully featured language that can be used for almost any application you can imagine, from building websites to running robots. A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics -- basic programming principles and syntax quirks that you're likely to encounter as you start learning how to program. This isn't intended to be a comprehensive Python tutorial. It's only meant to give you the basic skills you'll need to succeed in this course. That said, I would highly encourage you to explore the language further and will provide materials to do so at the end of this guide.
 
 ## How to run a Python program
 
-Most Python code is run directly from the command line, which explains why it is so important that you master some command line basics. Recall from the [command line tutorial](https://github.com/cjdd3b/j4462/blob/master/python-basics/command-line-basics.md) that Python files have the file extension ".py". Any time you see a ".py" file, you can run it from the command line simply by typing ```python filename.py```, where filename is the name of whatever the file is. That's it. And it works for both OSX and Windows.
+Most Python code is run directly from the command line, which explains why it is so important that you master some command line basics. Recall from the [command line tutorial](https://github.com/ireapps/scraping-class/blob/master/notes/command-line-basics.md) that Python files have the file extension ".py". Any time you see a ".py" file, you can run it from the command line simply by typing ```python filename.py```, where filename is the name of whatever the file is. That's it. And it works for both OSX and Windows.
 
-Python also comes with a very neat feature called an **interactive interpreter**, which essentially allows you to execute Python code one line at a time, sort of like working from the command line. We'll be using this a lot in the beginning to demonstrate concepts, but in the real world it's often useful for testing and debugging. To open the interpreter, simply type ```python``` from your command line, and you should see a screen that looks like this:
+Python also comes with a very neat feature called an **interactive interpreter**, which allows you to execute Python code one line at a time, sort of like working from the command line. We'll be using this a lot in the beginning to demonstrate concepts, but in the real world it's often useful for testing and debugging. To open the interpreter, simply type ```python``` from your command line, and you should see a screen that looks like this:
 
 ![Python interactive interpreter](https://f.cloud.github.com/assets/947791/120133/9dc93b9e-6cc8-11e2-8232-4549e69c291b.png)
 
@@ -67,13 +67,14 @@ list_of_both = [1, 'a', 2, 'b']
 list of lists = [[1, 2, 3], [4, 5, 6], ['a', 'b', 'c']]
 ```
 
-Lists also have another neat feature: The ability to retrieve individual items, which is known as indexing. In order to get a specific item out of a list, you first need to know its position in that list. All lists in Python are **zero-indexed**, which means the first item in them sits at position 0. For example, in the list ```['a', 'b', 'c', 'd']```, the letter "a" is at position 0, "b" is at position 1, etc.
+Lists also have another neat feature: The ability to retrieve individual items. In order to get a specific item out of a list, you first need to know its position in that list. All lists in Python are **zero-indexed**, which means the first item in them sits at position 0. For example, in the list ```['a', 'b', 'c', 'd']```, the letter "a" is at position 0, "b" is at position 1, etc.
 
 The syntax for extracting a single item from the list using those indexes also uses brackets and looks like this:
 
 ```
 list_of_strings = ['a', 'b', 'c', 'd']
 the_letter_a = list_of_strings[0]
+the_letter_c = list_of_strings[2]
 ```
 
 You can also extract a range of values by specifiying the first and last positions you want to retrieve with a colon in between them, like this:
@@ -83,7 +84,7 @@ list_of_strings = ['a', 'b', 'c', 'd']
 the_letters_a_b_c = list_of_strings[0:2]
 ```
 
-**Tuples**: Tuples are a special type of list that cannot be changed once it is created. That's not especially important right now. All you need to know is that **they are declared with parentheses ()**. For now, just think of them as lists.
+**Tuples**: Tuples are a special type of list that cannot be changed once they are created. That's not especially important right now. All you need to know is that **they are declared with parentheses ()**. For now, just think of them as lists.
 
 ```
 tuple_of_numbers = (1, 2, 3, 4, 5)
@@ -210,7 +211,7 @@ print divide_by_two(10)
 
 In which case it would return the number 5.
 
-The black box analogy is the key thing to understand about functions. Once you write one (assuming you do so correctly), you don't need to know how it works. You can just feed it an input and expect an output in return. This is going to be a major part of Django programming, so try to commit that concept to memory.
+The black box analogy is the key thing to understand about functions. Once you write one (assuming you do so correctly), you don't need to know how it works. You can just feed it an input and expect an output in return.
 
 As for how functions are declared, you'll notice a couple new details as well as some similarities to loops. First, every function must be declared by the word ```def```, which stands for "define". That is followed by the name of the function (you can call it anything you want, but as always, it should ideally make some kind of logical sense), and then a set of parentheses in which you can define the arguments a function should expect.
 
@@ -235,7 +236,7 @@ The next and final concept we'll introduce is the idea of object-oriented progra
 
 ### Python as a toolbox
 
-The first thing you should know is that Python is basically a collection of tools. In fact, Python has tools for pretty much everything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building web sites. Some of these are built into a toolbox that comes with the language, known as the **standard library**. Others (Django is an example of this) have been built by members of the developer community and can be downloaded and installed from the web. There are two ways to import these tools into your scripts, which we'll demonstrate here:
+The first thing you should know is that Python is basically a collection of tools. In fact, Python has tools for pretty much everything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building web sites. Some of these are built into a toolbox that comes with the language, known as the **standard library**. Others have been built by members of the developer community and can be downloaded and installed from the web. There are two ways to import these tools into your scripts, which we'll demonstrate here:
 
 To pull in an entire toolkit, use the ```import``` command. In this case, we'll get the ```urllib2``` package, which allows us to visit websites with Python:
 
@@ -263,6 +264,6 @@ You can see how this might be useful. Tools like this allow us to perform variou
 
 1. Python uses what's known as dot notation to call attributes and methods. That means you will insert a period between the object you're working with and whatever method you want it to perform. For example ```my_string.upper()``` says "perform the upper() method on the object my_string". **The dot between the two is very important.**
 
-2. As a general rule, **methods are called with parentheses and attributes aren't**. The ```upper()``` method of ```mystring.upper()``` is a method, so it requires a set of open and closed parentheses -- not unlike a function. Methods are actually close cousins of functions (they can also accept arguments). A string attribute, such as 
+2. As a general rule in Python, **methods are called with parentheses and attributes aren't**. The ```upper()``` method of ```mystring.upper()``` is a method, so it requires a set of open and closed parentheses -- not unlike a function. Methods are actually close cousins of functions (they can also accept arguments). A string attribute, such as 
 
 Also, one final Pro Tip. Python has a built-in function, known as ```dir()```, which will reveal to you a menu of all the attributes and methods a given object has. Try doing this and you'll see what I mean ```dir(my_string)```.

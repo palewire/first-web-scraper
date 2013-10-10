@@ -1,6 +1,6 @@
 # Navigating the command line
 
-Working with Python, Django and pretty much any other programming language means becoming comfortable with your computer's command line environment. If you haven't seen it before,
+Working with Python (and pretty much any other programming language) means becoming comfortable with your computer's command line environment. If you haven't seen it before,
 it looks something like this:
 
 ![OSX terminal window](https://f.cloud.github.com/assets/947791/119759/801b7d6a-6cb3-11e2-8eab-d3c9f2dcac15.png)
@@ -13,7 +13,7 @@ run software that simply doesn't work in a graphical environment. The downside i
 
 Both Windows and OSX have built-in tools for accessing the command line.
 
-On OSX, click on the **Spotlight** icon at the upper-right hand corner of your screen and type **Terminal**. You should see a program with the same name appear. Click on it to open your command prompt. However, to take that one step further, I recommend using a piece of software called iTerm2, which can be downloaded and installed [here](http://www.iterm2.com/#/section/home).
+On OSX, click on the **Spotlight** icon at the upper-right hand corner of your screen and type **Terminal**. You should see a program with the same name appear. Click on it to open your command prompt. However, to take that one step further, we recommend using a piece of software called iTerm2, which can be downloaded and installed [here](http://www.iterm2.com/#/section/home).
 
 On Windows, navigate to the **Start Menu** and find the box called **Run**. Click on it. In the box that appears, type the letters **cmd**. This should open up your command prompt.
 
