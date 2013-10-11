@@ -32,4 +32,7 @@ As we build out our scraper, we come across issues. The easiest way to troublesh
 
 * [NICAR listserv](http://www.ire.org/resource-center/listservs/subscribe-nicar-l/) -- of course
 * [PythonJournos listserv](https://groups.google.com/forum/#!forum/pythonjournos)
+* Your local Hacks/Hackers. Example: [Hacks/Hackers in Columbia](http://www.meetup.com/hackshackersIRE/)
+* [PyLadies](http://www.pyladies.com/)
 * Your local Python community group. Example: [PyComo](http://www.meetup.com/pyCOMO/)
+
