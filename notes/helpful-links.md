@@ -16,3 +16,6 @@ Feel freel to add or edit to this. This is a work in progress.
 * [Setting up python on Windows](http://docs.python-guide.org/en/latest/starting/install/win/)
 * [Commandline crash course](http://cli.learncodethehardway.org/book/)
 
+### Intro to Python
+* [Floating Point Arithmetic: Issues and Limitations](http://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues)
+* [How do I round to 2 decimals?](https://gist.github.com/jackiekazil/6201722)
