@@ -16,7 +16,7 @@ Feel freel to add or edit to this. This is a work in progress.
 * [Setting up python on Windows](http://docs.python-guide.org/en/latest/starting/install/win/)
 * [Commandline crash course](http://cli.learncodethehardway.org/book/)
 
-### Intro to Python
+### Intro to Python -- Discussion about Math
 * [Floating Point Arithmetic: Issues and Limitations](http://docs.python.org/2/tutorial/floatingpoint.html#tut-fp-issues)
 * [How do I round to 2 decimals?](https://gist.github.com/jackiekazil/6201722)
 
@@ -24,4 +24,12 @@ Feel freel to add or edit to this. This is a work in progress.
 Libraries
 * [Python Standard Libraries](http://docs.python.org/2/library/)
 * [urllib2](http://docs.python.org/2/library/urllib2.html)
-*
+
+As we build out our scraper, we come across issues. The easiest way to troubleshoot the problem is to google for the error. Another place to go is to the python docs.
+* [Python Docs: Errors and Exceptions](http://docs.python.org/2/tutorial/errors.html)
+
+### Community groups to check out
+
+* [NICAR listserv](http://www.ire.org/resource-center/listservs/subscribe-nicar-l/) -- of course
+* [PythonJournos listserv](https://groups.google.com/forum/#!forum/pythonjournos)
+* Your local Python community group. Example: [PyComo](http://www.meetup.com/pyCOMO/)
