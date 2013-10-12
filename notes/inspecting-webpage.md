@@ -8,7 +8,7 @@ A webpage is made of three major components:
 
 For our use cases, the most important part is the HTML.
 
-### HTML
+### General HTML
 
 In order to scrape a website, we need to understand what each of these pieces do. HTML is the frame work contains the content of a page. Without HTML, you do not have a webpage.
 
@@ -42,6 +42,32 @@ There are many ways to grab content from HTML. In our case, we extract content b
 In our crime example, there is only table. That table is identified by a class.
 ```<table class="resultsTable" style="margin: 0 auto; width: 90%; font-size: small;">```
 While this example only has one instance of the class, it should be noted that it is possible that there maybe multiple instances of ```class="resultsTable"``` on the page.
+
+### Inspecting a form
+
+In our [second example script](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx), we are trying to scrape data that we get back from a form. In the simple script, we start with a default url, but in [salaries-full.py](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py) and [salaries-mechanize](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py), we set the values to search by. To do this, we need to identify the 'id' of the form field.
+
+On [this page](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx), we will want to start by right clicking and 'inspect element'. Do this on the form, until you identify the 'id' of the form value. To know that you have the right element to match to the code you are looking at, you will see it highlighted in your browser.
+
+![Highlighted element](https://f.cloud.github.com/assets/166734/1320458/b5bae160-335d-11e3-9b06-f55cab13161f.png)
+
+For the calendar element, we can see that the id is "SearchEmployees1$CalendarYear1$ddlCalendarYear". If you look at [salaries-full.py](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py) and [salaries-mechanize](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py), you will see the form fields that we id by using this technique. In our script, we set those ids to specific values.
+
+```
+# Each control can be set. Dropdown lists are handled as lists, text fields take text
+br.form['SearchEmployees1$CalendarYear1$ddlCalendarYear'] = ['2013']
+br.form['SearchEmployees1$ddlAgencies'] = ['931']
+br.form['SearchEmployees1$txtLastName'] = '%'
+```
+
+In our program, then we use these and submit the values in the form. This brings us to the idea of requests.
+
+### Requests -- what are they and why should I care?
+
+
+
+
+
 
 
 
