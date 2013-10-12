@@ -24,6 +24,7 @@ Feel freel to add or edit to this. This is a work in progress.
 Libraries
 * [Python Standard Libraries](http://docs.python.org/2/library/)
 * [urllib2](http://docs.python.org/2/library/urllib2.html)
+* [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/)
 
 As we build out our scraper, we come across issues. The easiest way to troubleshoot the problem is to google for the error. Another place to go is to the python docs.
 * [Python Docs: Errors and Exceptions](http://docs.python.org/2/tutorial/errors.html)
@@ -36,6 +37,6 @@ As we build out our scraper, we come across issues. The easiest way to troublesh
 * [PyLadies](http://www.pyladies.com/)
 * Your local Python community group. Example: [PyComo](http://www.meetup.com/pyCOMO/)
 
-### A random thing I just found
+### Examples, fun projects, and readings
 * Just came across this neat little application of scraping to solve a real world dirty data problem. Not entirely relevant, but [neat](http://www.p-value.info/2013/09/matching-misspelled-brand-names-easy-way.html)
 
