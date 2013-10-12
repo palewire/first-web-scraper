@@ -29,6 +29,8 @@ Libraries
 As we build out our scraper, we come across issues. The easiest way to troubleshoot the problem is to google for the error. Another place to go is to the python docs.
 * [Python Docs: Errors and Exceptions](http://docs.python.org/2/tutorial/errors.html)
 
+* [HTTP Status Codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+
 ### Community groups to check out
 
 * [NICAR listserv](http://www.ire.org/resource-center/listservs/subscribe-nicar-l/) -- of course
