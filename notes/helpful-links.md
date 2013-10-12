@@ -36,3 +36,6 @@ As we build out our scraper, we come across issues. The easiest way to troublesh
 * [PyLadies](http://www.pyladies.com/)
 * Your local Python community group. Example: [PyComo](http://www.meetup.com/pyCOMO/)
 
+### A random thing I just found
+* Just came across this neat little application of scraping to solve a real world dirty data problem. Not entirely relevant, but [neat](http://www.p-value.info/2013/09/matching-misspelled-brand-names-easy-way.html)
+
