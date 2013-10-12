@@ -45,25 +45,54 @@ While this example only has one instance of the class, it should be noted that i
 
 ### Inspecting a form
 
-In our [second example script](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx), we are trying to scrape data that we get back from a form. In the simple script, we start with a default url, but in [salaries-full.py](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py) and [salaries-mechanize](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py), we set the values to search by. To do this, we need to identify the 'id' of the form field.
+In our [second example script](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx), we are trying to scrape data that we get back from a form. In the simple script, we start with a default url, but in [salaries-full.py](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py) and [salaries-mechanize](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py), we identify the form and set the search in python.
 
-On [this page](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx), we will want to start by right clicking and 'inspect element'. Do this on the form, until you identify the 'id' of the form value. To know that you have the right element to match to the code you are looking at, you will see it highlighted in your browser.
+Looking at our example, search and find the form tag that is wrapped about the fields that are you interested in. Most of the time, this is tightly wrapped around the fields, however in this case, the ```<form></form>``` is wrapped around the whole page. This is not the best designed HTML page, but it works, so that's all we care about.
+
+```
+<form name="ctl01" method="post" action="searchemployees.aspx" id="ctl01">
+```
+
+The form tag have a couple of pieces of information that we need to know.
+
+* name -- identifies the form. This must be unique.
+* method -- the action of the data that is being transfered (See requests section for more information on what 'post' means.)
+* id -- this is what we discussed earlier. In this case our form's name is ctl01.
+
+We will need these for our code. You will use the name to select the form in your code.
+
+```
+br.select_form("ctl01")
+```
+
+Now, we need to identify the fields in form. On [this page](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx), we will want to start by right clicking and 'inspect element'. Do this on the form, until you identify the 'id' of the form value. To know that you have the right element to match to the code you are looking at, you will see it highlighted in your browser.
 
 ![Highlighted element](https://f.cloud.github.com/assets/166734/1320458/b5bae160-335d-11e3-9b06-f55cab13161f.png)
 
 For the calendar element, we can see that the id is "SearchEmployees1$CalendarYear1$ddlCalendarYear". If you look at [salaries-full.py](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py) and [salaries-mechanize](https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py), you will see the form fields that we id by using this technique. In our script, we set those ids to specific values.
 
-```
+```python
 # Each control can be set. Dropdown lists are handled as lists, text fields take text
 br.form['SearchEmployees1$CalendarYear1$ddlCalendarYear'] = ['2013']
 br.form['SearchEmployees1$ddlAgencies'] = ['931']
 br.form['SearchEmployees1$txtLastName'] = '%'
 ```
+** SPECIAL NOTE: ** *Notice the last name field is set to a ```%```. The ```%``` is a wildcard character. This tells the database that you want to grab everything. The other wildcard to try is ```*```. If a web form was going to accept a wildcard, it will be one of these two. Often websites, don't allow wildcards.*
 
-In our program, then we use these and submit the values in the form. This brings us to the idea of requests.
+In our program, then we use these and submit the values in the form. This brings us to the idea of requests. The next section is not required understanding, but it will help in understanding how a form works.
 
-### Requests -- what are they and why should I care?
+### Requests and Headers
 
+Understanding a little about requests is helpful when troubleshooting what is hapening on website. submitting forms. There are two types of request methods that you should understand.
+
+* GET
+* POST
+
+A GET request method is basically the retrival of the content of a web page. A POST request method is what happens when you submit information via a web form.
+
+This information is available in what is called the Headers. When you have the Inspector open, try clicking on the 'Network' tab.
+
+TODO -- add image
 
 
 
