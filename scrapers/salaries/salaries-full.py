@@ -17,7 +17,7 @@ br.select_form("ctl01")
 
 # Each control can be set. Dropdown lists are handled as lists, text fields take text
 br.form['SearchEmployees1$CalendarYear1$ddlCalendarYear'] = ['2013']
-br.form['SearchEmployees1$ddlAgencies'] = ['931']
+br.form['SearchEmployees1$ddlAgencies'] = ['200']
 br.form['SearchEmployees1$txtLastName'] = '%'
 
 # Submit the form
@@ -26,37 +26,47 @@ br.submit()
 ########## STEP 3: Loop through each page in the result set ##########
 
 # How many pages do you want to retrieve?
-number_of_pages = 3
+number_of_pages = 4
 
-output_rows = []
-for i in range(number_of_pages + 1):
+output_trs = []
+for i in range(number_of_pages):
+
+    ########## GO TO THE PROPER PAGE ##########
+
+    # First we need to be sure we're on the correct page, which corresponds to
+    # the i in our for loop.
+
+    # We'll select the appropriate form, just like we did before.
+    br.select_form("ctl01")
+
+    # Now we just need to nagivate to the page corresponding to i and repeat the process
+    br.form['MozillaPager1$ddlPageNumber'] = [str(i)]
+    br.submit()
+
+    ########## GRAB AND PARSE THE HTML #########
 
     # We'll grab and parse the HTML to get the appropriate table rows, just like we did before.
     soup = BeautifulSoup(br.response())
-    emptable = soup.find('table', id="grdEmployees")
-    rows = emptable.findAll('tr')[1:]
+    employees = soup.find('table', id="grdEmployees")
+    rows = employees.findAll('tr')[1:]
+
+    ########## LOOP OVER ROWS AND CELLS ##########
 
     # This is the same as the equivalent chunk in salaries-mechanize, only we're doing
     # it for multiple pages, rather than just one.
     for tr in rows:
-        output_row = []
+        
+        output_tds = []
         for td in tr.findAll('td'):
-            output_row.append(td.text)
-        output_rows.append(output_row)
-
-    # Now that we've retrieved and saved the results, we need to advance the page.
-    # First, we'll select the appropriate form, just like we did before.
-    br.select_form("ctl01")
-
-    # Now we just need to change the page and repeat the process
-    br.form['MozillaPager1$ddlPageNumber'] = [str(i)]
-    br.submit()
+            output_tds.append(td.text)
+        
+        output_trs.append(output_tds)
 
 ########## STEP 4: Write results to file ##########
 
-print output_rows
+print output_trs
 
-# handle = open('out-mechanize.csv', 'a')
-# outfile = csv.writer(handle)
+handle = open('out-mechanize.csv', 'a')
+outfile = csv.writer(handle)
 
-# outfile.writerows(output_rows)
+outfile.writerows(output_trs)
