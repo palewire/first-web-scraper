@@ -30,6 +30,7 @@ As we build out our scraper, we come across issues. The easiest way to troublesh
 * [Python Docs: Errors and Exceptions](http://docs.python.org/2/tutorial/errors.html)
 
 * [HTTP Status Codes](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes)
+* [Cronjobs](http://www.cyberciti.biz/faq/how-do-i-add-jobs-to-cron-under-linux-or-unix-oses/) are used to set up scheduling for your script. The link is a simple script to get you started. The one thing to note is that a cronjob should be set up on a computer that is constantly connected to the internet -- such as ones that serve websites, because if you computer is not, then it won't be able to run. You can set this up on a computer/server from Amazon's EC2. There can be an associated cost, but these are low, unless you are trying to process all the Twitters.
 
 ### Community groups to check out
 
