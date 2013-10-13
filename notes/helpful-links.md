@@ -61,9 +61,9 @@ Per a request from class, here are links to some useful libraries for common dat
 
 ***Data analysis***
 
-*[numpy](http://www.numpy.org): A library for linear algebra and other more advanced mathematical operations.
-*[scipy](http://www.scipy.org): An extension of numpy for scientific computing. Useful for tasks like computing similarity martices, among many, many other things.
-*[pandas](http://pandas.pydata.org): Sort of like R, but in Python.
+* [numpy](http://www.numpy.org): A library for linear algebra and other more advanced mathematical operations.
+* [scipy](http://www.scipy.org): An extension of numpy for scientific computing. Useful for tasks like computing similarity martices, among many, many other things.
+* [pandas](http://pandas.pydata.org): Sort of like R, but in Python.
 * [scikit-learn](http://www.scikit-learn.org): Great, easy-to-use library for simple machine learning.
 * [nltk](http://www.nltk.org): The standard for natural language processing in Python.
 * [networkx](http://networkx.github.io/‎): Standard tool for creating and analyzing network graphs.
@@ -73,5 +73,5 @@ Per a request from class, here are links to some useful libraries for common dat
 
 * re: Lets you parse strings with regular expressions. Part of the standard library.
 * csv: Lets you read and write csvs. Part of the standard library.
-* * [nameparser](http://code.google.com/p/python-nameparser): Parses name strings into first, last, middle, etc.
+* [nameparser](http://code.google.com/p/python-nameparser): Parses name strings into first, last, middle, etc.
 
