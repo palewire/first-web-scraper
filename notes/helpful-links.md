@@ -43,3 +43,35 @@ As we build out our scraper, we come across issues. The easiest way to troublesh
 ### Examples, fun projects, and readings
 * Just came across this neat little application of scraping to solve a real world dirty data problem. Not entirely relevant, but [neat](http://www.p-value.info/2013/09/matching-misspelled-brand-names-easy-way.html)
 
+### Useful libraries
+
+Per a request from class, here are links to some useful libraries for common data journalism tasks:
+
+***Scraping***
+
+* [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/): Extracts things from HTML.
+* [Mechanize](http://wwwsearch.sourceforge.net/mechanize/): Emulates a browser.
+* urllib2: Opens URLs. Part of the standard library.
+
+***Connecting to databases***
+
+* [MySQL-python](https://pypi.python.org/pypi/MySQL-python): Tool for Python to connect with MySQL. 
+* [pyscopg2](http://initd.org/psycopg/docs/): Allows Python to connect with PostgreSQL
+* [pymssql](http://pymssql.sourceforge.net/): Allows Python to connect with SQL Server.
+
+***Data analysis***
+
+*[numpy](http://www.numpy.org): A library for linear algebra and other more advanced mathematical operations.
+*[scipy](http://www.scipy.org): An extension of numpy for scientific computing. Useful for tasks like computing similarity martices, among many, many other things.
+*[pandas](http://pandas.pydata.org): Sort of like R, but in Python.
+* [scikit-learn](http://www.scikit-learn.org): Great, easy-to-use library for simple machine learning.
+* [nltk](http://www.nltk.org): The standard for natural language processing in Python.
+* [networkx](http://networkx.github.io/‎): Standard tool for creating and analyzing network graphs.
+* [matplotlib](http://www.matplotlib.org): Makes graphs and other simple data visualizations.
+
+***Data cleaning***
+
+* re: Lets you parse strings with regular expressions. Part of the standard library.
+* csv: Lets you read and write csvs. Part of the standard library.
+* * [nameparser](http://code.google.com/p/python-nameparser): Parses name strings into first, last, middle, etc.
+
