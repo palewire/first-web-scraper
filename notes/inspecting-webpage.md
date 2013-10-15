@@ -81,8 +81,9 @@ br.form['SearchEmployees1$txtLastName'] = '%'
 
 In our program, then we use these and submit the values in the form. This brings us to the idea of requests. The next section is not required understanding, but it will help in understanding how a form works.
 
-### Requests and Headers
+### Requests -- Methods and Statuses
 
+##### Request methods
 Understanding a little about requests is helpful when troubleshooting what is happening on website. A request is how you communicate with the server that hosts the website that you are interacting with. For example, when you type 'google.com' in your browser's address bar and press enter, you are sending a request to *GET* that content. There are two types of request methods that you should understand.
 
 * GET
@@ -90,18 +91,54 @@ Understanding a little about requests is helpful when troubleshooting what is ha
 
 A GET request method is basically the retrival of the content of a web page. A POST request method is what happens when you submit information via a web form.
 
-This is available in what is called the Headers. When you have the Inspector open, try clicking on the 'Network' tab.
+This is available in the *Header* information of a web page, which can be found in the Inspector also. When you have the Inspector open, try clicking on the 'Network' tab. (The default tab is Elements. The Network tab should be two over.)
 
-When you load a webpage with the Inspector open, it will ca
+![Network Tab](https://f.cloud.github.com/assets/166734/1330753/2b68b952-3537-11e3-90d7-aaee3bc00036.png)
 
-TODO -- add image
+Now refresh the page. You will see the Network activity populate as the page loads. A web page is made of many requests. We are looking for the main one, which is the first one in this case.
+
+![Jail get method](https://f.cloud.github.com/assets/166734/1331278/afeaa778-354e-11e3-8d3b-e5ccf2f13a3b.png)
+
+Look at the line that says:
+```
+JailResidents.asp
+/sheriff/JailResidents
+```
+
+You will see that the method is "GET".
+
+Now let's try this while submitting a form for Missouri [state employee salaries](http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx). Load the page. Open up the inspector. Click on the "Network" tab. Fill out the form on the web page and hit submit.
+
+At the top of the Network tab, you will see a request that occurred when you submitted the form -- the method is "POST" instead of "GET".
+
+![Salary posts](https://f.cloud.github.com/assets/166734/1331302/f6a41cb6-354f-11e3-87d6-7ddadc0fb10a.png)
+
+#### Request statuses
+The Network tab is full of useful information. Another bit to take notice of are the values under status. These are HTTP status codes. In both of our examples, we had a 200, which is okay. The 200 is a common return value. Other return values which you may see often are the 404, which means that the content was not found and another is 301 or 302, which means that the request was redirected. Understanding these codes can help you in the troubleshooting process if the site that you requesting doesn't seem to be behaving in the way that you expect. Wikipedia's [List of HTTP Statuses](http://en.wikipedia.org/wiki/List_of_HTTP_status_codes) is a great reference to learn more about what these codes mean.
+
+#### Header information
+Lastly, you should take note of header information. This is also found in the Network tab. After you go through the process of loading a request, click on the name and path column on the left. You will load more detailed information for that name and path on the right. The default tab is the Headers tab.
+
+![Headers sample info](https://f.cloud.github.com/assets/166734/1331412/6f3501c2-3555-11e3-91ff-32f65b8afead.png)
+
+The Headers tab includes information like the request method and the status, but a lot more also.
+
+	Request URL:http://mapyourtaxes.mo.gov/MAP/Employees/Employee/SearchEmployees.aspx
+	Request Method:POST
+	Status Code:200 OK
+	..... more
+
+Notice near the bottom of the content we have our form variables that are being submitted as part of the request made.
+
+	SearchEmployees1$CalendarYear1$ddlCalendarYear:2013
+	SearchEmployees1$ddlAgencies:931
+	SearchEmployees1$txtLastName:
+	SearchEmployees1$txtFirstName:
+	SearchEmployees1$btnSearch:GO
+	..... more
 
 
-
-
-
-
-
+*If you have any questions regarding this content, please submit it as an issue and someone will add more clafication or details.*
 
 
 
