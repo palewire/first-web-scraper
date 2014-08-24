@@ -1,11 +1,12 @@
-import urllib2
+import requests
 import csv
 from BeautifulSoup import BeautifulSoup
 
 ########## STEP 1: Open and read the URL ##########
 
 url = 'http://mapyourtaxes.mo.gov/MAP/Employees/Employee/SearchResults.aspx?last=%25&first=%25&year=2013&agency=931'
-html = urllib2.urlopen(url).read()
+response = requests.get(url)
+html = response.content
 
 ########## STEP 2: Parse HTML with BeautifulSoup ##########
 
