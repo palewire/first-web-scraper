@@ -1,11 +1,12 @@
-import urllib2
+import requests
 import csv
 from BeautifulSoup import BeautifulSoup
 
 url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
 
 # Open the HTML file and turn it into a BeautifulSoup object for parsing
-html = urllib2.urlopen(url).read()
+response = requests.get(url)
+html = response.content
 soup = BeautifulSoup(html)
 
 # The scrape actually starts here.
@@ -33,7 +34,7 @@ for tr in only_table.findAll('tr'):
 
 print output_trs
 
-handle = open('out.csv', 'a')
+handle = open('out-using-requests.csv', 'a')
 outfile = csv.writer(handle)
 
 outfile.writerows(output_trs)
