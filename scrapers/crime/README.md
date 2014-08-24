@@ -4,7 +4,7 @@ For this exercise, we'll be scraping the roster of inmates at the [Boone County 
 
 In addition to BeautifulSoup, we'll also use a few tools from Python's standard library -- namely the urllib2 and csv modules -- to open the URL, download the HTML and ultimately save the results to a CSV file.
 
-Then we will learn how there are multiple solutions to the same end. We will expore replacing Python's standard library with the [Requests Library](http://docs.python-requests.org/en/latest/) library and why and when should you use one library of over another.
+Then we will learn how there are multiple solutions to the same end. We will expore replacing Python's standard urllib2 library with the [Requests Library](http://docs.python-requests.org/en/latest/) library and why and when should you use one library of over another.
 
 
 This exercise will build on your understanding of Python data structures like lists and strings, as well as control structures like loops. If you need to brush up on those concepts, feel free to review the [Python Basics](https://github.com/ireapps/scraping-class/blob/master/python-basics/python-basics.md) guide included in this repository.
