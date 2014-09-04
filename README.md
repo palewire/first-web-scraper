@@ -7,7 +7,7 @@ Although the stated goal of this course is to introduce the concepts of web scra
 
 ## Course logistics
 
-The course will begin Thursday, Oct. 10, and end on Sunday, Oct. 13. It will be held in the Lambert Room, which is room 200 in the Reynolds Journalism Institute building on 9th Street.
+The course will begin Thursday, Sept. 4, and end on Sunday, Sept. 7. It will be held in the Lambert Room, which is room 200 in the Reynolds Journalism Institute building on 9th Street.
 
 The format of the course is subject to change, but the rough schedule looks like this:
 
