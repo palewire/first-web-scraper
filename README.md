@@ -1,7 +1,7 @@
 Building a web scraper
 ==============
 
-Welcome to the Mizzou/IRE course on building a web scraper, being held in Columbia from Sept. 4-5, 2014.
+Welcome to the Mizzou/IRE course on building a web scraper, being held in Columbia from Sept. 4-7, 2014.
 
 Although the stated goal of this course is to introduce the concepts of web scraping, we will also spend time covering programming fundamentals that can be applied to other problems, from data analysis to web development.
 
