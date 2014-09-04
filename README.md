@@ -11,7 +11,7 @@ The course will begin Thursday, Oct. 10, and end on Sunday, Oct. 13. It will be 
 
 The format of the course is subject to change, but the rough schedule looks like this:
 
-*Thursday, Sept. 4*, 5 - 8 p.m.: Introductions, computer setup and covering the basics of command line navigation.
+*Thursday, Sept. 4*, 6 - 8 p.m.: Introductions, computer setup and covering the basics of command line navigation.
 
 *Friday, Sept. 5*, 9 a.m. - 5 p.m.: More command line basics; Python programming basics; a review of HTML/CSS and Javascript in the context of web scraping; and building our first web scraper.
 
