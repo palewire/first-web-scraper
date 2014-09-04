@@ -258,12 +258,12 @@ It's one thing to pull a hammer from the toolbox, but it's quite another to use 
 
 Pretty much everything you every work with in Python -- external libraries, variables, you name it -- is considered an **object**. Objects, in the OOP world, have a couple of properties: they have characteristics that describe them, known as **attributes*, and actions they can perform, known as **methods**. In our hammer example, our hammer might have an attribute of "color" or "weight" and a method called "pound". Let's see how this applies to one of the first things we learned: Python strings.
 
-Say you've created a string variable ```my_string = 'Hello!'```. Just like the hammer, the string has certain attributes that can describe it and certain methods it can perform. For example, calling ```print string.upper()``` will return ```HELLO!```. That is because all Python strings come with a method called upper(), which returns an all-uppercase representation of that string.
+Say you've created a string variable ```my_string = 'Hello!'```. Just like the hammer, the string has certain attributes that can describe it and certain methods it can perform. For example, calling ```print my_string.upper()``` will return ```HELLO!```. That is because all Python strings come with a method called upper(), which returns an all-uppercase representation of that string.
 
 You can see how this might be useful. Tools like this allow us to perform various tasks in Python without having to hard-code the operations ourselves. Lists, for example, can sort themselves with the ```sort()``` method. In general, there are a couple rules you should remember when it comes to invoking these attributes and methods:
 
 1. Python uses what's known as dot notation to call attributes and methods. That means you will insert a period between the object you're working with and whatever method you want it to perform. For example ```my_string.upper()``` says "perform the upper() method on the object my_string". **The dot between the two is very important.**
 
-2. As a general rule in Python, **methods are called with parentheses and attributes aren't**. The ```upper()``` method of ```mystring.upper()``` is a method, so it requires a set of open and closed parentheses -- not unlike a function. Methods are actually close cousins of functions (they can also accept arguments). A string attribute, such as
+2. As a general rule in Python, **methods are called with parentheses and attributes aren't**. The ```upper()``` method of ```my_string.upper()``` is a method, so it requires a set of open and closed parentheses -- not unlike a function. Methods are actually close cousins of functions (they can also accept arguments). A string attribute, such as
 
 Also, one final Pro Tip. Python has a built-in function, known as ```dir()```, which will reveal to you a menu of all the attributes and methods a given object has. Try doing this and you'll see what I mean ```dir(my_string)```.

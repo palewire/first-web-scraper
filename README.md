@@ -35,7 +35,7 @@ This course will be taught primarily by Chase Davis, of The New York Times; Jack
 
 - Chase: chase.davis@gmail.com
 - Jackie: jackiekazil@gmail.com
-- Sisi:
+- Sisi: me@sisiwei.com
 
 ## Previous courses
 
