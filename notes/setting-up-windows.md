@@ -27,14 +27,12 @@ Now, when we start learning about the command line, type in the following to get
 
 Now you should be about to recognize your username for your computer. Then type:
 
-```cd WHATEVERYOURUSERNAMEIS```
-
-```ls```
+* ```cd WHATEVERYOURUSERNAMEIS```
+* ```ls```
 
 Now you should be able to see a long list of folders, including "Desktop"
 
-```cd Desktop```
-
-```ls```
+* ```cd Desktop```
+* ```ls```
 
 You should now be able to see the names of the folders and files on your Desktop!
