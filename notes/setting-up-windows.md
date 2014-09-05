@@ -22,9 +22,8 @@ When Cygwin is finished, type the commands below into Cygwin, one line at a time
 
 Now, when we start learning about the command line, type in the following to get to your Desktop via Cygwin. 
 
-```cd /cygdrive/c/Users```
-
-```ls```
+* ```cd /cygdrive/c/Users```
+* ```ls```
 
 Now you should be about to recognize your username for your computer. Then type:
 
