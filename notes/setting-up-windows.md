@@ -1,5 +1,5 @@
 
-# Windows Install
+# Windows Install and Navigation
 
 Make sure that you have already installed [Chrome](https://www.google.com/chrome/browser/) and [Sublime Text](http://www.sublimetext.com/).
 
@@ -19,6 +19,8 @@ When Cygwin is finished, type the commands below into Cygwin, one line at a time
 * ```pip install beautifulsoup```
 * ```pip install requests```
 * ```pip install mechanize```
+
+## Getting to your desktop
 
 Now, when we start learning about the command line, type in the following to get to your Desktop via Cygwin. 
 
