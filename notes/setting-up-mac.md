@@ -1,5 +1,3 @@
-# Setting up on my
-
 # Instructions for setting up on a Mac
 
 Type the word 'Terminal' in the Mac Search.
