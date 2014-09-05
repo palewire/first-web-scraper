@@ -13,7 +13,7 @@ Next, we'll be installing Cygwin, but make sure to read these instructions befor
 6. Click the box under column "S" so that both boxes should now be checked.
 7. Click next until you finish the install.
 
-When Cygwin is finished, type these commands into Cygwin, one line at a time, and then hit enter. When each command is finished running, type the next one.
+When Cygwin is finished, type the commands below into Cygwin, one line at a time, and then hit enter. When each command is finished running, type the next one.
 
 * easy_install pip
 * pip install beautifulsoup
