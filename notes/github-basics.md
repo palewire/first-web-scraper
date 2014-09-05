@@ -31,7 +31,7 @@ However, if you want to hide your projects, you can do one of the following:
 - Free private repositories for eduction: [Github Education](https://education.github.com/)
 - Pay monthly fee for github: [Github](https://www.github.com/)
 
-Let's get try it out...
+Let's get started...
 
 ## Setting up
 
