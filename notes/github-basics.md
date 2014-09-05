@@ -4,11 +4,16 @@
 
 [Git](http://git-scm.com/) is an open source tool that allows you to store code, track the changes that you made, and collaborate with others.
 
-[Github](https://github.com/) (or the like, i.e. [Gitlab](https://www.gitlab.com/)) act as an external place that you can use get in a place that is accessible to others. As you may have noticed, this project is hosted on Github. 
+[Github](https://github.com/) (or the like, i.e. [Gitlab](https://www.gitlab.com/)) act as an external place that you can use get in a place that is accessible to others. As you may have noticed, this project is hosted on Github.
+
+These tools are great tools that you should have in your tool belt. These notes, walk through the very basic usage of Git and communities like Github.
+
+** Why are these tool important? **
+
+Git is easiest to understand through online communities such as Github. Github is an awesome
 
 
 
-## Getting started with Git
 
 ### Install git on your machine
 
@@ -20,9 +25,6 @@
 - Windows: Download and install the following: http://msysgit.github.io
 
 More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
-
-
-
 
 ### Sign up for Github
 
