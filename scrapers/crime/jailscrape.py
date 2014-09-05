@@ -11,12 +11,12 @@ soup = BeautifulSoup(html)
 
 # The scrape actually starts here.
 # Let's get the table that contains the results.
-only_table = soup.find('table', attrs={'class': 'resultsTable'})
+results_table = soup.find('table', attrs={'class': 'resultsTable'})
 
 output_trs = []  # The list that's going to store all of our output rows
 
 # First we need to loop through all the rows in the table
-for tr in only_table.findAll('tr'):
+for tr in results_table.findAll('tr'):
 
     # And next, we want to get all the cells within each of the rows
     tds = tr.findAll('td')
