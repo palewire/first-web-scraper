@@ -29,6 +29,8 @@ In addition to Python, we'll also be making use of the Chrome web browser. Altho
 
 No worries if you don't have this software already installed. We'll help you set up everything on Thursday evening.
 
+Got a Windows machine? [Here's what you need to install](https://github.com/ireapps/scraping-class/blob/master/notes/setting-up-windows.md).
+
 ## Contact
 
 This course will be taught primarily by Chase Davis, of The New York Times; Jackie Kazil, formerly of The Washington Post; and Sisi Wei, of ProPublica. If you have any questions, you can reach us here:
