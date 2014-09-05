@@ -1,4 +1,14 @@
+# Intro to Github
 
+[Git](http://git-scm.com/) and [Github](https://github.com/) (or the like, i.e. [Gitlab](https://www.gitlab.com/)) are tools to help you manage your code and collaborate.
+
+[Git](http://git-scm.com/) is an open source tool that allows you to store code, track the changes that you made, and collaborate with others.
+
+[Github](https://github.com/) (or the like, i.e. [Gitlab](https://www.gitlab.com/)) act as an external place that you can use get in a place that is accessible to others. As you may have noticed, this project is hosted on Github. 
+
+
+
+## Getting started with Git
 
 ### Install git on your machine
 - Mac: brew install git
