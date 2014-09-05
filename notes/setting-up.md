@@ -46,6 +46,8 @@ import mechanize
 import beautifulsoup
 ```
 
+If nothing happens after each of those, then you are successfully setup. If you get an 'ImportError', then something isn't working correctly for you. Please ask an instructor or a friend for help.
+
 
 
 
