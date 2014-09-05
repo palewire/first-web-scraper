@@ -8,10 +8,19 @@
 
 These tools are great tools that you should have in your tool belt. These notes, walk through the very basic usage of Git and communities like Github.
 
-** Why are these tool important? **
+**Why are these tool important?**
 
-Git is easiest to understand through online communities such as Github. Github is an awesome
+Git is easiest to understand through online communities such as Github. On Github, you can find the code for a lots of projects that you can use! Here are some interesting ones:
 
+- [MIZZOU/IRE Scraping Class](https://github.com/ireapps/scraping-class)
+  Here, you will find the code that we worked on during the class.
+- [Requests library](https://github.com/kennethreitz/requests)
+  Requests is the python library that we used in the class.
+- [CSVkit](https://github.com/onyxfish/csvkit)
+  CSVkit is another tool that you can use to interact with csvs.
+- [United States](https://github.com/unitedstates/)
+  This is a repo of data that is across the whole country.
+- etc.
 
 
 
