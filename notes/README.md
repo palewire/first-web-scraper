@@ -1,8 +1,7 @@
 # Class Notes
 
-This folder contains notes for the scraping class.
+This folder contains notes for the scraping class in order class progression.
 
-**Folder contents**
 - Setup
  - [Mac](https://github.com/ireapps/scraping-class/blob/master/notes/setting-up-mac.md) -- uses your default Python installation for simplicity
  - [Windows](https://github.com/ireapps/scraping-class/blob/master/notes/setting-up-windows.md)-- uses [Cygwin](https://www.cygwin.com/) to match up the commandline w/ what we are doing on Mac.
