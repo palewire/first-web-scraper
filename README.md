@@ -29,7 +29,10 @@ In addition to Python, we'll also be making use of the Chrome web browser. Altho
 
 No worries if you don't have this software already installed. We'll help you set up everything on Thursday evening.
 
-Got a Windows machine? [Here's what you need to install](https://github.com/ireapps/scraping-class/blob/master/notes/setting-up-windows.md).
+Got a Windows computer? [Here's what you need to install](https://github.com/ireapps/scraping-class/blob/master/notes/setting-up-windows.md).
+
+Got a Mac? [Here's what you need to install](https://github.com/ireapps/scraping-class/blob/master/notes/setting-up-mac.md).
+
 
 ## Contact
 
