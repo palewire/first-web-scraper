@@ -8,7 +8,7 @@
 
 These tools are great tools that you should have in your tool belt. These notes, walk through the very basic usage of Git and communities like Github.
 
-**Why are these tool important?**
+## Why are these tool important?
 
 Git is easiest to understand through online communities such as Github. On Github, you can find the code for a lots of projects that you can use! Here are some interesting ones:
 
@@ -30,6 +30,14 @@ However, if you want to hide your projects, you can do one of the following:
 - Free private repositories: Join [Gitlab](https://www.gitlab.com/)
 - Free private repositories for eduction: [Github Education](https://education.github.com/)
 - Pay monthly fee for github: [Github](https://www.github.com/)
+
+Let's get try it out...
+
+## Setting up
+
+To start using, there are two major things for our set up that we need to do.
+1. Install git on your machine
+2. Sign up for Github (Gitlab is much the same, but a different layout)
 
 ### Install git on your machine
 
