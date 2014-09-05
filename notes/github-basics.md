@@ -22,7 +22,14 @@ Git is easiest to understand through online communities such as Github. On Githu
   This is a repo of data that is across the whole country.
 - etc.
 
+Essentially, this repositories of code are available for you to use and contribute to OR you can create your own and share it with others.
 
+Lastly, you can use Github to store your own code for your own sanity and tracking. A lot of people use this space as a scratch pad, so don't worry about sharing you project while it is in development.
+
+However, if you want to hide your projects, you can do one of the following:
+- Free private repositories: Join [Gitlab](https://www.gitlab.com/)
+- Free private repositories for eduction: [Github Education](https://education.github.com/)
+- Pay monthly fee for github: [Github](https://www.github.com/)
 
 ### Install git on your machine
 
