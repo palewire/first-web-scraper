@@ -8,7 +8,7 @@
 
 These tools are great tools that you should have in your tool belt. These notes, walk through the very basic usage of Git and communities like Github.
 
-## Why are these tool important?
+### Why are these tool important?
 
 Git is easiest to understand through online communities such as Github. On Github, you can find the code for a lots of projects that you can use! Here are some interesting ones:
 
