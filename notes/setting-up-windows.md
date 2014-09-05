@@ -23,16 +23,19 @@ When Cygwin is finished, type the commands below into Cygwin, one line at a time
 Now, when we start learning about the command line, type in the following to get to your Desktop via Cygwin. 
 
 ```cd /cygdrive/c/Users```
+
 ```ls```
 
 Now you should be about to recognize your username for your computer. Then type:
 
 ```cd WHATEVERYOURUSERNAMEIS```
+
 ```ls```
 
 Now you should be able to see a long list of folders, including "Desktop"
 
 ```cd Desktop```
+
 ```ls```
 
 You should now be able to see the names of the folders and files on your Desktop!
