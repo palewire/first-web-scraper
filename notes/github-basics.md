@@ -11,10 +11,18 @@
 ## Getting started with Git
 
 ### Install git on your machine
-- Mac: ```brew install git```
-- Windows: http://msysgit.github.io
+
+- Mac: Run this on your commandline: ```brew install git```
+ - If you do not have homebrew, you will need to install homebrew, then rerun the command above.
+
+   ```ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"```
+
+- Windows: Download and install the following: http://msysgit.github.io
 
 More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
+
+
+
 
 ### Sign up for Github
 
