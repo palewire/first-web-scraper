@@ -17,6 +17,7 @@ When asking your question, be specific. This means your post should include:
 * What you've tried already, and what happened
 
 <b>Let's look at an example:</b>
+
 I'm trying to scrape the Boone County inmate roster using Python, and the requests and BeautifulSoup packages. So far, I'm only trying to get requests and BeautifulSoup working.
 
 Here's my code:
@@ -40,7 +41,15 @@ SyntaxError: invalid syntax"</pre>
 
 I've tried Googling for "SyntaxError: invalid syntax" and I know that I'm writing something wrong, but I can't figure out which part of the code is causing the problem. Please help!
 
-### 3. Other guides
+### 3. Repeat
+When people start responding with solutions, if you try them and it doesn't work, do not respond simply with "That didn't work."
+
+* Show what your updated code looks like
+* Show the new error message
+
+If it did work, them simply respond and thank the person for his/her help!
+
+### 4. Other guides
 
 * http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/
 * https://codereview.stackexchange.com/help/how-to-ask
