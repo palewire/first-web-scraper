@@ -32,7 +32,11 @@ However, if you want to hide your projects, you can do one of the following:
 - Free private repositories: Join [Gitlab](https://www.gitlab.com/)
 
 
-Let's get started...
+So, how do I get started?
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/166734/4176539/537eac8e-3609-11e4-8652-35e410cb68f8.gif" alt="Tell me more"/>
+</p>
+Tell me more!!
 
 ## Setting up
 
