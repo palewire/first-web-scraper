@@ -74,6 +74,9 @@ Then you will get a blank form to fill.
 
 ![screen shot 2014-09-06 at 3 09 38 pm](https://cloud.githubusercontent.com/assets/166734/4176393/c912f4c6-3601-11e4-8097-9362776f8214.png)
 
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/166734/4176393/c912f4c6-3601-11e4-8097-9362776f8214.png" alt="Github create repository"/>
+</p>
 
 
 
