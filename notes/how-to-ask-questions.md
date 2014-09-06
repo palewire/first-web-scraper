@@ -64,7 +64,7 @@ If a proposed solution does work, them simply respond and thank the person for h
 
 When you have an issue that you worked through, document and share your problem, the things that you tried, and the final solution. By doing so, you are paying it forward. Others that have the issue will be able to resolve it more easily.
 
-### 4. Other guides
+### 5. Other guides
 If you want to read more on this topic:
 
 * [How to ask for programming help](http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/)
