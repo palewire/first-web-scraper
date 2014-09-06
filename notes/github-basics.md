@@ -61,11 +61,8 @@ More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 #### Select the free plan
 ![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4175590/32999e8e-35dc-11e4-960b-7880744d148c.png)
 
-![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4175594/7787a450-35dc-11e4-9af4-83b765ffadf0.png)
-
-
-
 #### Your profile page (or in this case, [Ellie's](https://twitter.com/ellie_the_brave) profile page)
-> ![screen shot 2014-09-05 at 10 47 07 am](https://cloud.githubusercontent.com/assets/166734/4167661/1ff767ec-3515-11e4-9549-25e4da6e6921.png)
+![screen shot 2014-09-05 at 10 47 00 am](https://cloud.githubusercontent.com/assets/166734/4175599/b38ed07c-35dc-11e4-98a3-3140d33ae426.png)
+
 
 
