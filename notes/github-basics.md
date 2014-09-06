@@ -31,14 +31,13 @@ However, if you want to hide your projects, you can do one of the following:
 - Pay monthly fee for github: [Github](https://www.github.com/)
 - Free private repositories: Join [Gitlab](https://www.gitlab.com/)
 
+## Setting up
 
 So, how do I get started?
-<p align="center">
+Tell me more!!
+<p align="left">
   <img src="https://cloud.githubusercontent.com/assets/166734/4176539/537eac8e-3609-11e4-8652-35e410cb68f8.gif" alt="Tell me more"/>
 </p>
-Tell me more!!
-
-## Setting up
 
 To start using, there are two major things for our set up that we need to do.
 1. Install git on your machine
