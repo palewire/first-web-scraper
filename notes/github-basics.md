@@ -40,8 +40,8 @@ Tell me more!!
 </p>
 
 To start using, there are two major things for our set up that we need to do.
-1. Install git on your machine
-2. Sign up for Github
+- Install git on your machine
+- Sign up for Github
 
 Note: Gitlab is much the same, but a different layout. For this tutorial, we are using Github.
 
