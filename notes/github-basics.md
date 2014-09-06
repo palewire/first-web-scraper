@@ -27,9 +27,10 @@ Essentially, this repositories of code are available for you to use and contribu
 Lastly, you can use Github to store your own code for your own sanity and tracking. A lot of people use this space as a scratch pad, so don't worry about sharing you project while it is in development.
 
 However, if you want to hide your projects, you can do one of the following:
-- Free private repositories: Join [Gitlab](https://www.gitlab.com/)
 - Free private repositories for eduction: [Github Education](https://education.github.com/)
 - Pay monthly fee for github: [Github](https://www.github.com/)
+- Free private repositories: Join [Gitlab](https://www.gitlab.com/)
+
 
 Let's get started...
 
@@ -37,7 +38,9 @@ Let's get started...
 
 To start using, there are two major things for our set up that we need to do.
 1. Install git on your machine
-2. Sign up for Github (Gitlab is much the same, but a different layout)
+2. Sign up for Github
+
+Note: Gitlab is much the same, but a different layout. For this tutorial, we are using Github.
 
 ### Install git on your machine
 
