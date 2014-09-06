@@ -56,7 +56,7 @@ More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 ### Sign up for Github
 
 #### Visit Github.com and create your user name and password
-> ![screen shot 2014-09-05 at 10 44 44 am](https://cloud.githubusercontent.com/assets/166734/4167674/35c2edd0-3515-11e4-8bc2-bce2c2729b6d.png)
+![screen shot 2014-09-06 at 3 00 13 pm](https://cloud.githubusercontent.com/assets/166734/4176375/85273d86-3600-11e4-936d-101b272cc62e.png)
 
 #### Select the free plan
 ![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4175590/32999e8e-35dc-11e4-960b-7880744d148c.png)
