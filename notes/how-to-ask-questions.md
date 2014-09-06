@@ -50,7 +50,8 @@ When people start responding with solutions, if you try them and it doesn't work
 If it did work, them simply respond and thank the person for his/her help!
 
 ### 4. Other guides
+If you want to read more on this topic:
 
-* http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/
-* https://codereview.stackexchange.com/help/how-to-ask
-* http://mattgemmell.com/what-have-you-tried/
+* [How to ask for programming help](http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/)
+* [Stack Exchange's 'How to ask'](https://codereview.stackexchange.com/help/how-to-ask)
+* [Matt Gemmell's 'What have you tried?'](http://mattgemmell.com/what-have-you-tried/)
