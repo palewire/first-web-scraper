@@ -19,11 +19,10 @@ When asking your question, be specific. This means your post should include:
 Here's an example:
 I'm trying to scrape the Boone County inmate roster using Python, and the requests and BeautifulSoup packages. The error I'm getting says:
 
-> "File "test.py", line 5
+<pre>"File "test.py", line 5
     url = http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp
               ^
-              
-    SyntaxError: invalid syntax"
+SyntaxError: invalid syntax"</pre>
 
 
 
