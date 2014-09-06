@@ -27,9 +27,10 @@ Essentially, this repositories of code are available for you to use and contribu
 Lastly, you can use Github to store your own code for your own sanity and tracking. A lot of people use this space as a scratch pad, so don't worry about sharing you project while it is in development.
 
 However, if you want to hide your projects, you can do one of the following:
-- Free private repositories: Join [Gitlab](https://www.gitlab.com/)
 - Free private repositories for eduction: [Github Education](https://education.github.com/)
 - Pay monthly fee for github: [Github](https://www.github.com/)
+- Free private repositories: Join [Gitlab](https://www.gitlab.com/)
+
 
 Let's get started...
 
@@ -37,7 +38,9 @@ Let's get started...
 
 To start using, there are two major things for our set up that we need to do.
 1. Install git on your machine
-2. Sign up for Github (Gitlab is much the same, but a different layout)
+2. Sign up for Github
+
+Note: Gitlab is much the same, but a different layout. For this tutorial, we are using Github.
 
 ### Install git on your machine
 
@@ -56,7 +59,11 @@ More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 > ![screen shot 2014-09-05 at 10 44 44 am](https://cloud.githubusercontent.com/assets/166734/4167674/35c2edd0-3515-11e4-8bc2-bce2c2729b6d.png)
 
 #### Select the free plan
-> ![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4167678/412faee2-3515-11e4-9cf1-8d40ad5fe391.png)
+![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4175590/32999e8e-35dc-11e4-960b-7880744d148c.png)
+
+![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4175594/7787a450-35dc-11e4-9af4-83b765ffadf0.png)
+
+
 
 #### Your profile page (or in this case, [Ellie's](https://twitter.com/ellie_the_brave) profile page)
 > ![screen shot 2014-09-05 at 10 47 07 am](https://cloud.githubusercontent.com/assets/166734/4167661/1ff767ec-3515-11e4-9549-25e4da6e6921.png)
