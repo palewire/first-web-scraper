@@ -45,7 +45,11 @@ To start using, there are two major things for our set up that we need to do.
 
 Note: Gitlab is much the same, but a different layout. For this tutorial, we are using Github.
 
-### Install git on your machine
+### Set up on your machine
+
+You will only have to do the following once on your current machine.
+
+#### Install Git
 
 - Mac: Run this on your commandline: ```brew install git```
  - If you do not have homebrew, you will need to install homebrew, then rerun the command above.
@@ -55,6 +59,13 @@ Note: Gitlab is much the same, but a different layout. For this tutorial, we are
 - Windows: Download and install the following: http://msysgit.github.io
 
 More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
+
+#### Set your username and email up
+
+```
+git config --global user.name "elliethebrave"
+git config --global user.email "elliesemail@somedomain.com"
+```
 
 ### Sign up for Github
 
