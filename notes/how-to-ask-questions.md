@@ -16,7 +16,7 @@ When asking your question, be specific. This means your post should include:
 * Any error messages you got
 * What you've tried already, and what happened
 
-<b>Let's look at an example:</b>
+<b>Let's look at an example email or post, looking for programming help:</b>
 
 I'm trying to scrape the Boone County inmate roster using Python, and the requests and BeautifulSoup packages. So far, I'm only trying to get requests and BeautifulSoup working.
 
