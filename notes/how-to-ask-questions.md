@@ -41,11 +41,9 @@ ImportError: cannot import name BeautifulSoup</pre>
 
 I first checked the spelling and it is correctly imported. So, I then tried Googling for "ImportError: cannot import name BeautifulSoup". All the help out there says that I need to install it, but I thought I did. I tried again to make sure and the following happened:
 
-<pre>
-pip install BeautifulSoup
+<pre>pip install BeautifulSoup
 Requirement already satisfied (use --upgrade to upgrade): BeautifulSoup in /Users/jacquelinekazil/Projects/envs/scraping-class/lib/python2.7/site-packages
-Cleaning up..
-</pre>
+Cleaning up..</pre>
 
 I can't figure out why this is happening. Please help!
 
