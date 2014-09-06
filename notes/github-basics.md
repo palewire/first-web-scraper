@@ -20,6 +20,8 @@ Git is easiest to understand through online communities such as Github. On Githu
   CSVkit is another tool that you can use to interact with csvs.
 - [United States](https://github.com/unitedstates/)
   This is a repo of data that is across the whole country.
+- [Derek Willis](https://github.com/dwillis)
+  A very active journalist on github.
 - etc.
 
 Essentially, this repositories of code are available for you to use and contribute to OR you can create your own and share it with others.
@@ -107,5 +109,4 @@ Things to consider on this form:
 * Licensing -- by default you own the copyright, but you should throw one on their of you choice just to be nice to others.
 
 Submit the filled out form.
-
 
