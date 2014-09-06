@@ -42,12 +42,13 @@ SyntaxError: invalid syntax"</pre>
 I've tried Googling for "SyntaxError: invalid syntax" and I know that I'm writing something wrong, but I can't figure out which part of the code is causing the problem. Please help!
 
 ### 3. Repeat
-When people start responding with solutions, if you try them and it doesn't work, do not respond simply with "That didn't work."
+When people start responding with solutions, try them. If the proposed solution doesn't work, do not respond simply with "That didn't work." Instead:
 
-* Show what your updated code looks like
-* Show the new error message
+* Post what your updated code looks like
+* Post the new error message
+* Post anything else you were inspired to try since you posted your question
 
-If it did work, them simply respond and thank the person for his/her help!
+If a proposed solution does work, them simply respond and thank the person for his/her help!
 
 ### 4. Other guides
 If you want to read more on this topic:
