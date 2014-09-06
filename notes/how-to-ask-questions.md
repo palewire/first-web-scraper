@@ -17,13 +17,28 @@ When asking your question, be specific. This means your post should include:
 * What you've tried already, and what happened
 
 Here's an example:
-I'm trying to scrape the Boone County inmate roster using Python, and the requests and BeautifulSoup packages. The error I'm getting says:
+I'm trying to scrape the Boone County inmate roster using Python, and the requests and BeautifulSoup packages. So far, I'm only trying to get requests and BeautifulSoup working.
 
+Here's my code:
+<pre>import requests
+import csv
+from BeautifulSoup import BeautifulSoup
+ 
+url = http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp
+ 
+response = requests.get(url)
+html = response.content
+soup = BeautifulSoup(html)
+ 
+print soup</pre>
+
+The error I'm getting says:
 <pre>"File "test.py", line 5
     url = http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp
               ^
 SyntaxError: invalid syntax"</pre>
 
+I've tried Googling for "SyntaxError: invalid syntax" and I know that I'm writing something wrong, but I can't figure out which part of the code is causing the problem. Please help!
 
 
 
