@@ -65,7 +65,9 @@ More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 ![screen shot 2014-09-05 at 10 46 46 am](https://cloud.githubusercontent.com/assets/166734/4175590/32999e8e-35dc-11e4-960b-7880744d148c.png)
 
 #### Your profile page (or in this case, [Ellie's](https://twitter.com/ellie_the_brave) profile page)
-![screen shot 2014-09-05 at 10 47 00 am](https://cloud.githubusercontent.com/assets/166734/4175599/b38ed07c-35dc-11e4-98a3-3140d33ae426.png)
+<p align="center">
+  <img src="https://cloud.githubusercontent.com/assets/166734/4175599/b38ed07c-35dc-11e4-98a3-3140d33ae426.png" alt="Github profile page"/>
+</p>
 
 ## Let's set up our first repository
 
@@ -75,16 +77,20 @@ In the top right of the page, select create ```New Repository``` from the  ```+ 
   <img src="https://cloud.githubusercontent.com/assets/166734/4176397/dfb79b96-3601-11e4-9267-ed543aac62b0.png" alt="Github create repository menu"/>
 </p>
 
-Then you will get a blank form to fill.
-
-![screen shot 2014-09-06 at 3 09 38 pm](https://cloud.githubusercontent.com/assets/166734/4176393/c912f4c6-3601-11e4-8097-9362776f8214.png)
+Then you will get a blank form to fill out.
 
 <p align="center">
-  <img src="https://cloud.githubusercontent.com/assets/166734/4176393/c912f4c6-3601-11e4-8097-9362776f8214.png" alt="Github create repository form"/>
+  <img src="https://cloud.githubusercontent.com/assets/166734/4176557/696e8e82-360a-11e4-995b-d87ec90d3c0e.png" alt="Github create repository form"/>
 </p>
 
+Things to consider on this form:
+* Naming the repository -- choose something that means something. We named this repository 'scraping-class', because that is what it is.
+* Description helps others who are visiting understand your code.
+* Public/Private -- Public means everyone sees it. Private means only you see it.
+* Initialize with README.md, means you start the repo with a README file -- this is important for your future self and others to understand the project.
+* Add git ignore for Python repos.
+* Licensing -- by default you own the copyright, but you should throw one on their of you choice just to be nice to others.
 
-
-![screen shot 2014-09-06 at 3 09 38 pm](https://cloud.githubusercontent.com/assets/166734/4176557/696e8e82-360a-11e4-995b-d87ec90d3c0e.png)
+Submit the filled out form.
 
 
