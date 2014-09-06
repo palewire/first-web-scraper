@@ -19,6 +19,8 @@ The format of the course is subject to change, but the rough schedule looks like
 
 *Sunday, Sept. 7*, 9 a.m. - Noon: Questions, review and wrapup.
 
+We're keeping class notes and tutorials in the [notes folder](https://github.com/ireapps/scraping-class/tree/master/notes) of this repo.
+
 ## Software requirements
 
 This course will be taught primarily using the Python programming language. In addition, we'll be using two open source Python modules that greatly simplify the web scraping process -- [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/), which makes it easy to parse and sort through HTML files; [Requests](http://docs.python-requests.org/en/latest/), which handles HTTP (web) requests; and [mechanize](http://wwwsearch.sourceforge.net/mechanize/), which allows you to emulate a web browser from within your Python programs.
