@@ -11,12 +11,12 @@ If solutions aren't working, keep track of what you've tried, as well as what ha
 When asking your question, be specific. This means your post should include:
 
 * The tools you're using
-* What you're trying to accomplish (What should be happening if everything worked?)
+* What you're trying to accomplish -- what should be happening if everything worked?
 * The code you're using (or just the relevant parts)
 * Any error messages you got
 * What you've tried already, and what happened
 
-Here's an example:
+<b>Let's look at an example:</b>
 I'm trying to scrape the Boone County inmate roster using Python, and the requests and BeautifulSoup packages. So far, I'm only trying to get requests and BeautifulSoup working.
 
 Here's my code:
@@ -40,6 +40,8 @@ SyntaxError: invalid syntax"</pre>
 
 I've tried Googling for "SyntaxError: invalid syntax" and I know that I'm writing something wrong, but I can't figure out which part of the code is causing the problem. Please help!
 
+### 3. Other guides
 
-
-For a more in-depth guide on how to ask questions, check out Matt Gemmell's ["What have you tried?"](http://mattgemmell.com/what-have-you-tried/).
+* http://codingkilledthecat.wordpress.com/2012/06/26/how-to-ask-for-programming-help/
+* https://codereview.stackexchange.com/help/how-to-ask
+* http://mattgemmell.com/what-have-you-tried/
