@@ -64,12 +64,15 @@ More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 #### Your profile page (or in this case, [Ellie's](https://twitter.com/ellie_the_brave) profile page)
 ![screen shot 2014-09-05 at 10 47 00 am](https://cloud.githubusercontent.com/assets/166734/4175599/b38ed07c-35dc-11e4-98a3-3140d33ae426.png)
 
-### Let's create out first repository
+## Let's set up our first repository
 
 In the top right of the page, select create ```New Repository``` from the  ```+ ``` menu next to your name on the top right.
 
 ![screen shot 2014-09-06 at 3 05 01 pm](https://cloud.githubusercontent.com/assets/166734/4176397/dfb79b96-3601-11e4-9267-ed543aac62b0.png)
 
+Then you will get a blank form to fill.
+
+![screen shot 2014-09-06 at 3 09 38 pm](https://cloud.githubusercontent.com/assets/166734/4176393/c912f4c6-3601-11e4-8097-9362776f8214.png)
 
 
 
