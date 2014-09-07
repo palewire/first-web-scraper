@@ -58,7 +58,7 @@ You will only have to do the following once on your current machine.
 
    ```ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"```
 
-- Windows: Download and install the following: http://msysgit.github.io
+- Windows: If you're already using Cygwin, [follow these instructions](http://www.celinio.net/techblog/?p=818) to install Git inside Cygwin. If you're not using Cygwin, download and install the following: http://msysgit.github.io
 
 More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
