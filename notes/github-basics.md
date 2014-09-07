@@ -62,12 +62,31 @@ You will only have to do the following once on your current machine.
 
 More info: http://git-scm.com/book/en/Getting-Started-Installing-Git
 
-#### Set your username and email up
+#### Copy the class repo to your computer
+
+This is to make sure that your setup works.
+
+```cd``` into the folder where you want the folder to be
+
+```git clone https://github.com/ireapps/scraping-class.git```
+
+Now, you should be able to ```cd``` into the folder and run some of the class scripts that are located in the git repository: https://github.com/ireapps/scraping-class
+
+Try the following:
 
 ```
-git config --global user.name "elliethebrave"
-git config --global user.email "elliesemail@somedomain.com"
+cd scraping-class/scrapers/crime/
+python jailscrape.py
 ```
+
+This should produce an output and create a csv in the crime folder.
+
+```
+ls
+README.md              jailscrape.py          out-using-requests.csv
+```
+
+Let's sign up for Github and create our own repos!
 
 ### Sign up for Github
 
@@ -85,6 +104,18 @@ git config --global user.email "elliesemail@somedomain.com"
 <p align="center">
   <img src="https://cloud.githubusercontent.com/assets/166734/4175599/b38ed07c-35dc-11e4-98a3-3140d33ae426.png" alt="Github profile page"/>
 </p>
+
+
+
+
+
+#### Set your username and email up
+
+```
+git config --global user.name "elliethebrave"
+git config --global user.email "elliesemail@somedomain.com"
+```
+
 
 ## Let's set up our first repository
 
