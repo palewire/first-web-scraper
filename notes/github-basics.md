@@ -106,17 +106,6 @@ Let's sign up for Github and create our own repos!
 </p>
 
 
-
-
-
-#### Set your username and email up
-
-```
-git config --global user.name "elliethebrave"
-git config --global user.email "elliesemail@somedomain.com"
-```
-
-
 ## Let's set up our first repository
 
 In the top right of the page, select create ```New Repository``` from the  ```+ ``` menu next to your name on the top right.
@@ -141,3 +130,9 @@ Things to consider on this form:
 
 Submit the filled out form.
 
+#### Set your username and email up on your machine
+
+```
+git config --global user.name "elliethebrave"
+git config --global user.email "elliesemail@somedomain.com"
+```
