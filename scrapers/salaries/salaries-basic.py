@@ -11,25 +11,25 @@ html = response.content
 ########## STEP 2: Parse HTML with BeautifulSoup ##########
 
 soup = BeautifulSoup(html)
-employees = soup.find('table', id="grdEmployees")
-rows = employees.findAll('tr')[1:]
+results_table = soup.find('table', attrs={'id': 'grdEmployees'})
 
 ########## STEP 3: Iterate through the results and write to an output list ##########
 
-output_trs = []
-for tr in rows:
+output = []
 
-    output_tds = []
-    for td in tr.findAll('td'):
-        output_tds.append(td.text)
+for row in results_table.findAll('tr'):
 
-    output_trs.append(output_tds)
+    output_row = []
+
+    for cell in row.findAll('td'):
+        output_row.append(cell.text)
+
+    output.append(output_row)
 
 ########## STEP 4: Write results to file ##########
 
-print output_trs
+print output
 
 handle = open('out-basic.csv', 'a')
 outfile = csv.writer(handle)
-
-outfile.writerows(output_trs)
+outfile.writerows(output)

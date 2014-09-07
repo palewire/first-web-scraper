@@ -2,6 +2,9 @@ import csv
 from mechanize import Browser
 from BeautifulSoup import BeautifulSoup
 
+# How many pages do you want to retrieve?
+NUMBER_OF_PAGES = 4
+
 ########## STEP 1: Open and read the URL ##########
 
 url = 'http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx'
@@ -25,11 +28,9 @@ br.submit()
 
 ########## STEP 3: Loop through each page in the result set ##########
 
-# How many pages do you want to retrieve?
-number_of_pages = 4
+output = []
 
-output_trs = []
-for i in range(number_of_pages):
+for i in range(NUMBER_OF_PAGES):
 
     ########## GO TO THE PROPER PAGE ##########
 
@@ -40,33 +41,32 @@ for i in range(number_of_pages):
     br.select_form("ctl01")
 
     # Now we just need to nagivate to the page corresponding to i and repeat the process
-    br.form['MozillaPager1$ddlPageNumber'] = [str(i)]
-    br.submit()
+    br.form['MozillaPager1$ddlPageNumber'] = [str(i)] # Typecast i to string
+    br.submit('MozillaPager1$btnPageNumber') # Use the bottom submit button!
 
     ########## GRAB AND PARSE THE HTML #########
 
     # We'll grab and parse the HTML to get the appropriate table rows, just like we did before.
     soup = BeautifulSoup(br.response())
-    employees = soup.find('table', id="grdEmployees")
-    rows = employees.findAll('tr')[1:]
+    results_table = soup.find('table', attrs={'id': 'grdEmployees'})
 
     ########## LOOP OVER ROWS AND CELLS ##########
 
     # This is the same as the equivalent chunk in salaries-mechanize, only we're doing
     # it for multiple pages, rather than just one.
-    for tr in rows:
+    for row in results_table.findAll('tr'):
         
-        output_tds = []
-        for td in tr.findAll('td'):
-            output_tds.append(td.text)
+        output_row = []
+
+        for cell in row.findAll('td'):
+            output_row.append(cell.text)
         
-        output_trs.append(output_tds)
+        output.append(output_row)
 
 ########## STEP 4: Write results to file ##########
 
-print output_trs
+print output
 
 handle = open('out-mechanize.csv', 'a')
 outfile = csv.writer(handle)
-
-outfile.writerows(output_trs)
+outfile.writerows(output)
