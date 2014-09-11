@@ -15,3 +15,5 @@ Additionally, we have more detailed tutorials for things we covered briefly:
 
 Finally, here's some extra info:
 - [Helpful links](https://github.com/ireapps/scraping-class/blob/master/notes/helpful-links.md)
+
+*Note: Let us know if we can improve these notes.*
