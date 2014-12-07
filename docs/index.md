@@ -10,9 +10,7 @@ This guide was initially developed by [Chase Davis](chase.davis@gmail.com), [Jac
 * Documentation: [scraping-class.rtfd.org/](http://scraping-class.rtfd.org/)
 * Issues: [github.com/ireapps/scraping-class/issues/](https://github.com/ireapps/scraping-class/issues)
 
-[TOC]
-
-## Prerequisites
+## Prelude: Prerequisites
 
 Before you can begin, your computer needs the following tools installed and working
 to participate.
@@ -75,28 +73,21 @@ Verify pip is installed with the following.
 $ pip -V
 ```
 
-## Navigating the command line
+## Act 1: The command line
 
-Working with Python (and pretty much any other programming language) means becoming comfortable with your computer's command line environment. If you haven't seen it before,
-it looks something like this:
+Working with Python (and pretty much any other programming language) means becoming comfortable with your computer's command line environment. If you haven't seen it before, it looks something like this:
 
 ![OSX terminal window](https://f.cloud.github.com/assets/947791/119759/801b7d6a-6cb3-11e2-8eab-d3c9f2dcac15.png)
 
-In basic terms, the command line allows you to communicate with your computer at a lower level that is more explicit than the user-friendly graphical environments that you typically
-use. This has both advantages and disadvantages. The good thing about learning a little about the command line is that is enables you to configure your computer in new ways, and to
-run software that simply doesn't work in a graphical environment. The downside is that it takes a little time to learn. Here we'll walk you through most of the basics you'll need to know to succeed in this class.
-
-### Opening the command line
-
 Both Windows and OSX have built-in tools for accessing the command line.
 
-On OSX, click on the **Spotlight** icon at the upper-right hand corner of your screen and type **Terminal**. You should see a program with the same name appear. Click on it to open your command prompt. However, to take that one step further, we recommend using a piece of software called iTerm2, which can be downloaded and installed [here](http://www.iterm2.com/#/section/home).
+On OSX, click on the **Spotlight** icon at the upper-right hand corner of your screen and type **Terminal**. You should see a program with the same name appear. Click on it to open your command prompt.
 
 On Windows, navigate to the **Start Menu** and find the box called **Run**. Click on it. In the box that appears, type the letters **cmd**. This should open up your command prompt.
 
-### Basic commands (OSX)
+### Basic commands
 
-Most of what you'll be doing from the command line at this point will be navigating through directories and running Python files. These actions require only a few basic commands, which I'll cover here. Windows and OSX have slightly different syntaxes for their terminal commands, so we'll go over OSX first.
+Most of what you'll be doing from the command line at this point will be navigating through directories and running Python files. These actions require only a few basic commands.
 
 #### Listing and changing directories
 
@@ -186,17 +177,7 @@ touch       | None (sorry!)
 mv          | move
 rm          | del
 
-### Tips and tricks
-
-Working from the command line can be difficult and tedious at first. Here are a few tips for making your command line lives a little easier:
-
-**Tab completion**: It's very easy to typo commands, which can lead to errors and unintended consequences. One way of helping to avoid that problem is using tab completion, which allows the computer to finish typing a command that you have begun. Say you're in your home directory and want to go to the Desktop -- you'd type ```cd Desktop```, right? You could also type ```cd Des <tab>``` and the computer would fill out the remaining text to spell "Desktop". This is a huge time-saver, especially when you're typing long directory paths (think something like ```cd Desktop/projects/apps/django/test-app/test/apps/models.py```). [Here's a demo](http://www.youtube.com/watch?v=N8TaSgKJ-LM) of tab completion in action.
-
-**Go straight home**: Your home directory is sort of like True North in command line world. It's a great way to orient yourself if you end up lost in the file system. In OSX, no matter where you are in the directory structure, you can immediately get back home by either typing ```cd``` or ```cd ~/```.
-
-**Guides and cheat sheets**: [Here's](http://wiseheartdesign.com/articles/2010/11/12/the-designers-guide-to-the-osx-command-prompt/) a useful guide for simple command line syntax on OSX and Linux. And [here's](http://www.bleepingcomputer.com/tutorials/windows-command-prompt-introduction/) another one for Windows.
-
-## Getting started with Python
+## Act 2: Python
 
 Python is a rich and fully featured language that can be used for almost any application you can imagine, from building websites to running robots. A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics -- basic programming principles and syntax quirks that you're likely to encounter as you start learning how to program. This isn't intended to be a comprehensive Python tutorial. It's only meant to give you the basic skills you'll need to succeed in this course. That said, I would highly encourage you to explore the language further and will provide materials to do so at the end of this guide.
 
@@ -447,7 +428,7 @@ from urllib2 import urlopen
 
 In practice, you'll use both of these methods. It's worth noting that most of the time, any import statements you execute will be **at the top** of your program.
 
-## Inspecting a Web Page
+## Act 3: Web scraping
 
 A webpage is made of three major components:
 

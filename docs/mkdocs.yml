@@ -1,3 +1,6 @@
 site_name: Scraping class
 theme: readthedocs
-markdown_extensions: [admonition,tables,toc]
+repo_url: https://github.com/ireapps/scraping-class/
+markdown_extensions: [admonition,tables,toc,headerid]
+pages:
+- ["index.md", "Table of contents", "Home"]
