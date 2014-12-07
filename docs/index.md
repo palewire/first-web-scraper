@@ -4,6 +4,10 @@ An Investigative Reporters and Editors course on building your first web scraper
 
 Although the goal of this course is to introduce the concepts of web scraping, we will also spend time covering programming fundamentals that can be applied to other problems, from data analysis to web development.
 
+* Code repository: [github.com/ireapps/scraping-class/](https://github.com/ireapps/scraping-class/)
+* Documentation: [scraping-class.rtfd.org/](http://scraping-class.rtfd.org/)
+* Issues: [github.com/ireapps/scraping-class/issues/](https://github.com/ireapps/scraping-class/issues)
+
 - Setup
  - [Mac](/setting-up-mac/) -- uses your default Python installation for simplicity
  - [Windows](/setting-up-windows/)-- uses [Cygwin](https://www.cygwin.com/) to match up the commandline w/ what we are doing on Mac.
