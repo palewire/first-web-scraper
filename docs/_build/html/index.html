@@ -1,0 +1,1008 @@
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
+  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+  <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    
+    <title>Scraping class &mdash; Scraping class 0.1 documentation</title>
+    
+    <link rel="stylesheet" href="_static/default.css" type="text/css" />
+    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
+    
+    <script type="text/javascript">
+      var DOCUMENTATION_OPTIONS = {
+        URL_ROOT:    './',
+        VERSION:     '0.1',
+        COLLAPSE_INDEX: false,
+        FILE_SUFFIX: '.html',
+        HAS_SOURCE:  true
+      };
+    </script>
+    <script type="text/javascript" src="_static/jquery.js"></script>
+    <script type="text/javascript" src="_static/underscore.js"></script>
+    <script type="text/javascript" src="_static/doctools.js"></script>
+    <link rel="top" title="Scraping class 0.1 documentation" href="#" /> 
+  </head>
+  <body>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             accesskey="I">index</a></li>
+        <li><a href="#">Scraping class 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>  
+
+    <div class="document">
+      <div class="documentwrapper">
+        <div class="bodywrapper">
+          <div class="body">
+            
+  <div class="section" id="scraping-class">
+<h1>Scraping class<a class="headerlink" href="#scraping-class" title="Permalink to this headline">¶</a></h1>
+<p>An step-by-step guide to building your first web scraper.</p>
+<p>Although the goal of this course is to introduce the concepts of web
+scraping, we will also spend time covering programming fundamentals that
+can be applied to other problems, from data analysis to web development.</p>
+<p>This guide was initially developed by <a class="reference external" href="mailto:chase&#46;davis&#37;&#52;&#48;gmail&#46;com">Chase
+Davis</a>, <a class="reference external" href="mailto:jackiekazil&#37;&#52;&#48;gmail&#46;com">Jackie
+Kazil</a>, <a class="reference external" href="mailto:me&#37;&#52;&#48;sisiwei&#46;com">Sisi Wei</a> and Matt
+Wynn for bootcamps held by Investigative Reporters and Editors at the
+University of Missouri in Columbia, Missouri in 2013 and 2014.</p>
+<ul class="simple">
+<li>Code repository:
+<a class="reference external" href="https://github.com/ireapps/scraping-class/">github.com/ireapps/scraping-class/</a></li>
+<li>Documentation:
+<a class="reference external" href="http://scraping-class.rtfd.org/">scraping-class.rtfd.org/</a></li>
+<li>Issues:
+<a class="reference external" href="https://github.com/ireapps/scraping-class/issues">github.com/ireapps/scraping-class/issues/</a></li>
+</ul>
+<div class="section" id="prelude-prerequisites">
+<h2>Prelude: Prerequisites<a class="headerlink" href="#prelude-prerequisites" title="Permalink to this headline">¶</a></h2>
+<p>Before you can begin, your computer needs the following tools installed
+and working to participate.</p>
+<ol class="arabic simple">
+<li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">command-line
+interface</a>
+to interact with your computer</li>
+<li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Text_editor">text editor</a> to work
+with plain text files</li>
+<li>Version 2.7 of the
+<a class="reference external" href="http://python.org/download/releases/2.7.6/">Python</a> programming
+language</li>
+<li>The <a class="reference external" href="http://www.pip-installer.org/en/latest/installing.html">pip</a>
+package manager for Python</li>
+</ol>
+<p>!!! note Depending on your experience and operating system, you might
+already be ready to go with everything above. If so, move on to the next
+chapter. If not, don&#8217;t worry. And don&#8217;t give up! It will be a bit of a
+slog but the instructions below will point you in the right direction.</p>
+<div class="section" id="command-line-interface">
+<h3>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h3>
+<p>Unless something is wrong with your computer, there should be a way to
+open a window that lets you type in commands. Different operating
+systems give this tool slightly different names, but they all have some
+form of it, and there are alternative programs you can install as well.</p>
+<p>On Windows you can find the command-line interface by opening the
+&#8220;command prompt.&#8221; Here are instructions for <a class="reference external" href="http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8">Windows
+8</a>
+and <a class="reference external" href="http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">earlier
+versions</a>
+On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">&#8220;Terminal&#8221;
+application</a>.
+Ubuntu Linux comes with a program of the <a class="reference external" href="http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">same
+name</a>.</p>
+</div>
+<div class="section" id="text-editor">
+<h3>Text editor<a class="headerlink" href="#text-editor" title="Permalink to this headline">¶</a></h3>
+<p>A program like Microsoft Word, which can do all sorts of text formatting
+like change the size and color of words, is not what you need. Do not
+try to use it below.</p>
+<p>You need a program that works with simple <a class="reference external" href="https://en.wikipedia.org/wiki/Text_file">&#8220;plain text&#8221;
+files</a>, and is therefore
+capable of editing documents containing Python code, HTML markup and
+other languages without dressing them up by adding anything extra. Such
+programs are easy to find and some of the best ones are free, including
+those below.</p>
+<p>For Windows, I recommend installing
+<a class="reference external" href="http://notepad-plus-plus.org/">Notepad++</a>. For Apple computers, try
+<a class="reference external" href="http://www.barebones.com/products/textwrangler/download.html">TextWrangler</a>.
+In Ubuntu Linux you can stick with the pre-installed
+<a class="reference external" href="https://help.ubuntu.com/community/gedit">gedit</a> text editor.</p>
+</div>
+<div class="section" id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+<p>If you are using Mac OSX or a common flavor of Linux, Python is probably
+already installed and you can test to see what version, if any, is there
+waiting for you by typing the following into your terminal.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python -V
+</pre></div>
+</div>
+<p>If you don&#8217;t have Python installed (a more likely fate for Windows
+users) try downloading and installing it from
+<a class="reference external" href="http://www.python.org/download/releases/2.7.6/">here</a>.</p>
+<p>In Windows, it&#8217;s also crucial to make sure that the Python program is
+available on your system&#8217;s <tt class="docutils literal"><span class="pre">PATH</span></tt> so it can be called from anywhere on
+the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;fromSeriesID=96">This
+screencast</a>
+can guide you through that process.</p>
+<p>Python 2.7 is preferred but you can probably find a way to make most of
+this tutorial work with other versions if you futz a little.</p>
+</div>
+<div class="section" id="pip-and-virtualenv">
+<h3>pip and virtualenv<a class="headerlink" href="#pip-and-virtualenv" title="Permalink to this headline">¶</a></h3>
+<p>The <a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">pip package
+manager</a> makes it
+easy to install open-source libraries that expand what you&#8217;re able to do
+with Python. Later, we will use it to install everything needed to
+create a working web application.</p>
+<p>If you don&#8217;t have it already, you can get pip by following <a class="reference external" href="http://www.pip-installer.org/en/latest/installing.html">these
+instructions</a>.
+In Windows, it&#8217;s necessary to make sure that the Python <tt class="docutils literal"><span class="pre">Scripts</span></tt>
+directory is available on your system&#8217;s <tt class="docutils literal"><span class="pre">PATH</span></tt> so it can be called
+from anywhere on the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;fromSeriesID=96">This
+screencast</a>
+can help.</p>
+<p>Verify pip is installed with the following.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ pip -V
+</pre></div>
+</div>
+</div>
+</div>
+<div class="section" id="act-1-the-command-line">
+<h2>Act 1: The command line<a class="headerlink" href="#act-1-the-command-line" title="Permalink to this headline">¶</a></h2>
+<p>Working with Python (and pretty much any other programming language)
+means becoming comfortable with your computer&#8217;s command line
+environment. If you haven&#8217;t seen it before, it looks something like
+this:</p>
+<div class="figure">
+<img alt="OSX terminal window" src="https://f.cloud.github.com/assets/947791/119759/801b7d6a-6cb3-11e2-8eab-d3c9f2dcac15.png" />
+<p class="caption">OSX terminal window</p>
+</div>
+<p>Both Windows and OSX have built-in tools for accessing the command line.</p>
+<p>On OSX, click on the <strong>Spotlight</strong> icon at the upper-right hand corner
+of your screen and type <strong>Terminal</strong>. You should see a program with the
+same name appear. Click on it to open your command prompt.</p>
+<p>On Windows, navigate to the <strong>Start Menu</strong> and find the box called
+<strong>Run</strong>. Click on it. In the box that appears, type the letters <strong>cmd</strong>.
+This should open up your command prompt.</p>
+<div class="section" id="basic-commands">
+<h3>Basic commands<a class="headerlink" href="#basic-commands" title="Permalink to this headline">¶</a></h3>
+<p>Most of what you&#8217;ll be doing from the command line at this point will be
+navigating through directories and running Python files. These actions
+require only a few basic commands.</p>
+<div class="section" id="listing-and-changing-directories">
+<h4>Listing and changing directories<a class="headerlink" href="#listing-and-changing-directories" title="Permalink to this headline">¶</a></h4>
+<p>Once your terminal window is open, type <tt class="docutils literal"><span class="pre">pwd</span></tt> and you should see a
+directory path returned. Something like
+<tt class="docutils literal"><span class="pre">/Users/whatever_your_username_is</span></tt>. PWD stands for &#8220;present working
+directory.&#8221; It&#8217;s basically your current location relative to the root of
+your filesystem. It&#8217;s easy to lose track of which folder you&#8217;re in when
+you&#8217;re working from the command line, so it can be a helpful tool for
+finding your way. In this case, you&#8217;re in the default directory for your
+username on the computer, also known as your <strong>home directory</strong>.</p>
+<p>In order to see all the files and folders in your home directory, type
+the <tt class="docutils literal"><span class="pre">ls</span></tt> command. Once you do that, you should see a list of files and
+folders appear, such as Downloads, Documents, Desktop, etc. These should
+look a little familiar. The command line is just another way of
+navigating the directory structure you&#8217;re probably used to seeing when
+you&#8217;re clicking around your Mac.</p>
+<p>To take that point one step further, let&#8217;s go into the Desktop folder.
+In order to change directories from the command line, use the <tt class="docutils literal"><span class="pre">cd</span></tt>
+command, along with the directory you want to change to. In this case
+<tt class="docutils literal"><span class="pre">cd</span> <span class="pre">Desktop</span></tt> will take you into the desktop. Type <tt class="docutils literal"><span class="pre">ls</span></tt> again to list
+the contents of the folder, and you should find that they mirror what
+you see when you look at your desktop.</p>
+<p>Now let&#8217;s move back to our home folder. Again we&#8217;ll use the <tt class="docutils literal"><span class="pre">cd</span></tt>
+command, but with a little twist. If you type <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></tt> and hit enter,
+you&#8217;ll notice that you move back to the home directory that you were
+just in. When you&#8217;re working from the command line, it helps to think of
+your directory structure as a tree. Navigating through the directories
+is like going higher and lower on various branches. The convention for
+moving backwards is the <tt class="docutils literal"><span class="pre">..</span></tt> notation.</p>
+</div>
+<div class="section" id="creating-and-deleting-files">
+<h4>Creating and deleting files<a class="headerlink" href="#creating-and-deleting-files" title="Permalink to this headline">¶</a></h4>
+<p>You might also find it useful sometimes to create files and directories
+from the command line. Let&#8217;s create a folder called &#8220;apps&#8221; under our
+home directory that we can use to store code from this class. The
+command for doing that is simply <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">apps</span></tt> with mkdir being short
+for &#8220;make directory.&#8221; If you type <tt class="docutils literal"><span class="pre">ls</span></tt> again, you should see your new
+apps directory listed along with the files and folders from before.</p>
+<p>The next step is to navigate into our apps directory and make a file. As
+before, use the <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">apps</span></tt> command to enter your apps directory. If you
+type <tt class="docutils literal"><span class="pre">ls</span></tt> you&#8217;ll notice that nothing is there. That&#8217;s because all
+we&#8217;ve done so far is create a directory, but we haven&#8217;t put any files in
+it yet. You won&#8217;t have to do this very often, but the command for
+creating a blank file in OSX is called <tt class="docutils literal"><span class="pre">touch</span></tt>. Let&#8217;s create a test
+python file that we can use later: <tt class="docutils literal"><span class="pre">touch</span> <span class="pre">test.py</span></tt>. Notice the .py
+file extension. It&#8217;s extremely important when working from the command
+line to be mindful of file extensions. The .py notation tells our
+computer that this is a Python file, meaning it needs to be run by the
+Python interpreter. You&#8217;ll see more about what that means later. For
+now, if you type <tt class="docutils literal"><span class="pre">ls</span></tt> again, you should see the file in your apps
+directory.</p>
+<p>The final task you might want to perform from the command line in this
+class is deleting files. Note that <strong>this must be done with caution</strong>.
+Files you delete from the command line DO NOT go into the recycle bin.
+They are gone. <strong>Forever</strong>. So don&#8217;t delete anything this way unless
+you&#8217;re absolutely sure you know what you&#8217;re doing. That said, the
+command is very simple. First, let&#8217;s create a new file to delete with
+<tt class="docutils literal"><span class="pre">touch</span> <span class="pre">deleteme.py</span></tt>. Now to delete it, simply type <tt class="docutils literal"><span class="pre">rm</span> <span class="pre">deleteme.py</span></tt></p>
+</div>
+<div class="section" id="quick-review">
+<h4>Quick review<a class="headerlink" href="#quick-review" title="Permalink to this headline">¶</a></h4>
+<p>Really, that&#8217;s most of what you should need to navigate the command line
+for this class. As a quick review:</p>
+<table>
+    <tr>
+        <th><p>Command</p>
+</th>
+        <th><p>Example</p>
+</th>
+        <th><p>What it does</p>
+</th>
+        <th><p>Notes</p>
+</th>
+    </tr>
+    <tr>
+        <td><p>pwd</p>
+</td>
+        <td><p>pwd</p>
+</td>
+        <td><p>Shows your present working directory</p>
+</td>
+        <td><p>Useful for keeping track of where you are</p>
+</td>
+    </tr>
+    <tr>
+        <td><p>ls</p>
+</td>
+        <td><p>ls</p>
+</td>
+        <td><p>Shows the contents of the current directory</p>
+</td>
+        <td><p>Can also use ls -a or ls -l to show more information about files</p>
+</td>
+    </tr>
+    <tr>
+        <td><p>cd</p>
+</td>
+        <td><p>cd Desktop</p>
+</td>
+        <td><p>Changes directories</p>
+</td>
+        <td><p>Use cd ..``` to move backwards</p>
+</td>
+    </tr>
+    <tr>
+        <td><p>mkdir</p>
+</td>
+        <td><p>mkdir new-directory</p>
+</td>
+        <td><p>Creates a new directory</p>
+</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><p>touch</p>
+</td>
+        <td><p>touch test.py</p>
+</td>
+        <td><p>Creates a new file</p>
+</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><p>mv</p>
+</td>
+        <td><p>mv test.py ./Desktop</p>
+</td>
+        <td><p>This isn&#8217;t covered above, but mv moves or renames a file.</p>
+</td>
+        <td></td>
+    </tr>
+    <tr>
+        <td><p>rm</p>
+</td>
+        <td><p>rm test.py</p>
+</td>
+        <td><p>Deletes a file</p>
+</td>
+        <td><p>Use with extreme caution. Once a file is deleted this way, you can&#8217;t get
+it back.</p>
+</td>
+    </tr>
+</table></div>
+</div>
+<div class="section" id="basic-commands-windows">
+<h3>Basic commands (Windows)<a class="headerlink" href="#basic-commands-windows" title="Permalink to this headline">¶</a></h3>
+<p>The principles of working from the command line are the same in Windows
+as they are on Macs. The only thing that&#8217;s different is the syntax.
+Here&#8217;s a rundown of the equivalent commands:</p>
+<table border="1" class="docutils">
+<colgroup>
+<col width="37%" />
+<col width="63%" />
+</colgroup>
+<thead valign="bottom">
+<tr class="row-odd"><th class="head">OSX command</th>
+<th class="head">Windows equivalent</th>
+</tr>
+</thead>
+<tbody valign="top">
+<tr class="row-even"><td>pwd</td>
+<td>cd (with no arguments)</td>
+</tr>
+<tr class="row-odd"><td>ls</td>
+<td>dir</td>
+</tr>
+<tr class="row-even"><td>cd</td>
+<td>cd</td>
+</tr>
+<tr class="row-odd"><td>mkdir</td>
+<td>md</td>
+</tr>
+<tr class="row-even"><td>touch</td>
+<td>None (sorry!)</td>
+</tr>
+<tr class="row-odd"><td>mv</td>
+<td>move</td>
+</tr>
+<tr class="row-even"><td>rm</td>
+<td>del</td>
+</tr>
+</tbody>
+</table>
+</div>
+</div>
+<div class="section" id="act-2-python">
+<h2>Act 2: Python<a class="headerlink" href="#act-2-python" title="Permalink to this headline">¶</a></h2>
+<p>Python is a rich and fully featured language that can be used for almost
+any application you can imagine, from building websites to running
+robots. A thorough overview of the language would take months, so our
+class is going to concentrate on the absolute basics &#8211; basic
+programming principles and syntax quirks that you&#8217;re likely to encounter
+as you start learning how to program. This isn&#8217;t intended to be a
+comprehensive Python tutorial. It&#8217;s only meant to give you the basic
+skills you&#8217;ll need to succeed in this course. That said, I would highly
+encourage you to explore the language further and will provide materials
+to do so at the end of this guide.</p>
+<div class="section" id="how-to-run-a-python-program">
+<h3>How to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Permalink to this headline">¶</a></h3>
+<p>Most Python code is run directly from the command line, which explains
+why it is so important that you master some command line basics. Recall
+from the <a class="reference external" href="https://github.com/ireapps/scraping-class/blob/master/notes/command-line-basics.md">command line
+tutorial</a>
+that Python files have the file extension &#8221;.py&#8221;. Any time you see a
+&#8221;.py&#8221; file, you can run it from the command line simply by typing
+<tt class="docutils literal"><span class="pre">python</span> <span class="pre">filename.py</span></tt>, where filename is the name of whatever the file
+is. That&#8217;s it. And it works for both OSX and Windows.</p>
+<p>Python also comes with a very neat feature called an <strong>interactive
+interpreter</strong>, which allows you to execute Python code one line at a
+time, sort of like working from the command line. We&#8217;ll be using this a
+lot in the beginning to demonstrate concepts, but in the real world it&#8217;s
+often useful for testing and debugging. To open the interpreter, simply
+type <tt class="docutils literal"><span class="pre">python</span></tt> from your command line, and you should see a screen that
+looks like this:</p>
+<div class="figure">
+<img alt="Python interactive interpreter" src="https://f.cloud.github.com/assets/947791/120133/9dc93b9e-6cc8-11e2-8232-4549e69c291b.png" />
+<p class="caption">Python interactive interpreter</p>
+</div>
+<p>We&#8217;ll get into more detail about that later.</p>
+</div>
+<div class="section" id="variables-and-data-types">
+<h3>Variables and data types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this headline">¶</a></h3>
+<p>No matter whether you&#8217;re working in Python or another language, there
+are a handful of basic concepts you need to understand if you&#8217;re going
+to be writing code. We&#8217;ll walk through those here.</p>
+<div class="section" id="variables">
+<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
+<p>Variables are like containers that hold different types of data so you
+can go back and refer to them later. They&#8217;re fundamental to programming
+in any language, and you&#8217;ll use them all the time. Here&#8217;s an example</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
+<span class="k">print</span> <span class="n">greeting</span>
+</pre></div>
+</div>
+<p>In this case, we&#8217;ve created a <strong>variable</strong> called <tt class="docutils literal"><span class="pre">greeting</span></tt> and
+assigned it the <strong>string value</strong> &#8220;Hello, world!&#8221;. If we use the
+<tt class="docutils literal"><span class="pre">print</span></tt> command on the variable, Python will output &#8220;Hello, world!&#8221; to
+the terminal because that value is stored in the variable.</p>
+<p>In Python, variable assignment is done with the = sign. On the left is
+the name of the variable you want to create (it can be anything) and on
+the right is the value that you want to assign to that variable.
+Variables can also contain many different kinds of data types, which
+we&#8217;ll go over next:</p>
+</div>
+<div class="section" id="data-types">
+<h4>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h4>
+<p>You may remember from earlier data journalism classes that data comes in
+different types and flavors. There are integers, strings, floating point
+numbers (decimals), and other types of data that languages like SQL like
+to deal with in different ways. Python is no different. In particular,
+there are six different data types you will be dealing with on a regular
+basis: strings, integers, floats, lists, tuples and dictionaries. Here&#8217;s
+a little detail on each.</p>
+<p><strong>Strings</strong>: Strings contain text values like the &#8220;Hello, world!&#8221;
+example above. There&#8217;s not much to say about them other than that <strong>they
+are declared within single or double quotes</strong> like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
+<span class="n">goodbye</span> <span class="o">=</span> <span class="s">&quot;Seeya later, dude.&quot;</span>
+<span class="n">favorite_animal</span> <span class="o">=</span> <span class="s">&#39;Donkey&#39;</span>
+</pre></div>
+</div>
+<p>Note that either single or double quotes are allowed.</p>
+<p><strong>Integers</strong>: Integers are whole numbers like 1, 2, 1000 and 1000000.
+They do not have decimal points. Unlike many other variable types,
+<strong>integers are not declared with any special type of syntax</strong>. You can
+simply assign them to a variable straight away, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span>
+</pre></div>
+</div>
+<p><strong>Floats</strong>: Floats are a fancy name for numbers with decimal points in
+them. <strong>They are declared the same way as integers</strong> but have some
+idiosyncracies we&#8217;ll discover later:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
+</pre></div>
+</div>
+<p><strong>Lists</strong>: Lists are collections of values or variables. <strong>They are
+declared with brackets like these [], and items inside are separated by
+commas</strong>. They can hold collections of any type of data, including other
+lists. Here are several examples:</p>
+<div class="highlight-python"><div class="highlight"><pre>list_of_numbers = [1, 2, 3, 4, 5]
+list_of_strings = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
+list_of_both = [1, &#39;a&#39;, 2, &#39;b&#39;]
+list of lists = [[1, 2, 3], [4, 5, 6], [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
+</pre></div>
+</div>
+<p>Lists also have another neat feature: The ability to retrieve individual
+items. In order to get a specific item out of a list, you first need to
+know its position in that list. All lists in Python are
+<strong>zero-indexed</strong>, which means the first item in them sits at position 0.
+For example, in the list <tt class="docutils literal"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d']</span></tt>, the letter &#8220;a&#8221; is at
+position 0, &#8220;b&#8221; is at position 1, etc.</p>
+<p>The syntax for extracting a single item from the list using those
+indexes also uses brackets and looks like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">the_letter_a</span> <span class="o">=</span> <span class="n">list_of_strings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="n">the_letter_c</span> <span class="o">=</span> <span class="n">list_of_strings</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>You can also extract a range of values by specifiying the first and last
+positions you want to retrieve with a colon in between them, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">the_letters_a_b_c</span> <span class="o">=</span> <span class="n">list_of_strings</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+</pre></div>
+</div>
+<p><strong>Tuples</strong>: Tuples are a special type of list that cannot be changed
+once they are created. That&#8217;s not especially important right now. All
+you need to know is that <strong>they are declared with parentheses ()</strong>. For
+now, just think of them as lists.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p><strong>Dictionaries</strong>: Dictionaries are probably the most difficult data type
+to explain, but also among the most useful. In technical terms, they are
+storehouses of key/value pairs. You can think of them like a phonebook.
+An example will make this a little more clear, but know for now that
+<strong>they are declared with curly braces</strong>.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Chase Davis&#39;</span><span class="p">:</span> <span class="s">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s">&#39;Mark Horvit&#39;</span><span class="p">:</span> <span class="s">&#39;573-555-5555&#39;</span><span class="p">}</span>
+</pre></div>
+</div>
+<p>In this example, the keys are the names &#8220;Chase Davis&#8221; and &#8220;Mark Horvit&#8221;,
+which are declared as strings (Python dictionary keys usually are). The
+values are the phone numbers, which are also strings, although
+dictionary values in practice can be any data type. If I wanted to get
+Chase Davis&#8217; phone number from the dictionary, here&#8217;s how I&#8217;d do it:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">my_phonebook</span><span class="p">[</span><span class="s">&#39;Chase Davis&#39;</span><span class="p">]</span>
+</pre></div>
+</div>
+<p>Which would return the string &#8216;713-555-5555&#8217;. There&#8217;s a lot more to
+dictionaries, but that&#8217;s all you need to know for now.</p>
+</div>
+</div>
+<div class="section" id="control-structures">
+<h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h3>
+<p>If you, think of a Python script as a series of commands that execute
+one after another you might imagine it would be helpful to be able to
+control the order and conditions under which those commands will run.
+That&#8217;s where control structures come in &#8211; simple logical operators that
+allow you to execute parts of your code when the right conditions call
+for it.</p>
+<p>For our purposes, there are two control structures you will use most
+often: <strong>if/else statements</strong> and <strong>loops</strong>.</p>
+<div class="section" id="if-else-statements">
+<h4>If/else statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h4>
+<p>If/else statements are pretty much exactly what they sounds like. <em>If</em> a
+certain condition is met, your program should do one thing; or <em>else</em> it
+should do something else.</p>
+<p>The syntax is pretty intuitive &#8211; except for one <strong>extremely important
+thing</strong>: In Python, whitespace matters. A lot. It&#8217;s easiest to
+demonstrate this with an example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+</pre></div>
+</div>
+<p>There&#8217;s a lot to unpack here, but first take note of the indentation. It
+helps sometimes to think of your program as taking place on different
+levels. In this case, the main level of our program (the one that isn&#8217;t
+indented) has us declaring the variable <tt class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></tt> and setting up
+our if condition (<tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt>). The second level of our program
+executes only on the condition that our if statement is true. Therefore,
+because it depends on that if statement, it is indented <strong>four spaces</strong>
+underneath that statement.</p>
+<p>If you look closely, there&#8217;s a small detail that can help you remember
+when a program moves from one level to another: namely, the presence of
+a colon. When we declare an if statement, we <strong>always end that line with
+a colon</strong>. The colon is our way of telling Python that it should start
+another level in the program, and everything on that level must be
+indented accordingly.</p>
+<p>If we wanted to continue our program, we could do something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+
+<span class="k">print</span> <span class="s">&quot;I execute no matter what your number is!&quot;</span>
+</pre></div>
+</div>
+<p>The last statement doesn&#8217;t depend on the if statement, so it&#8217;s back on
+the main level again.</p>
+<p>Notice that I said indents must be <strong>four spaces</strong>. Four spaces means
+four spaces &#8211; <strong>NOT A TAB. TABS AND SPACES ARE DIFFERENT. YOU MUST
+PRESS THE SPACE BAR FOUR TIMES WHENVER YOU INDENT PYTHON CODE.</strong> There
+are some text editors that automatically convert tabs to spaces, and
+once you feel more comfortable, you might want to use one. But for now,
+get in the habit of making all your indents <strong>FOUR SPACES</strong>.</p>
+<p>Now with that being said, let&#8217;s unpack the rest of our if statement:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+</pre></div>
+</div>
+<p>Our little program in this case starts with a variable, which we&#8217;ve
+called <tt class="docutils literal"><span class="pre">number</span></tt>, being set to 10. That&#8217;s pretty simple, and a concept
+you should be familiar with by this point. The next line,
+<tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt> declares our if statement. In this case, we want
+something to happen if the <tt class="docutils literal"><span class="pre">number</span></tt> variable is greater than 5.</p>
+<p>Most of the if statements we build are going to rely on equality
+operators like the kind we learned in elementary school: greater than
+(&gt;), less than (&lt;), greater than or equal to (&gt;=), less than or equal to
+(&lt;=) and plain old &#8220;equals&#8221;. The equals operator is a little tricky, in
+that <strong>it is declared with two equals signs (==), not one (=).</strong> Why is
+that? Because you&#8217;ll remember from above that a single equals sign is
+the notation we use to assign a value to a variable! <strong>Single equals
+signs are for assignment (``number = 5``); double equals signs are for
+equality (``if number == 5:``)</strong>. File that one away somewhere. It&#8217;s
+important.</p>
+<p>Now let&#8217;s talk about the next part of the if statement &#8211; the else
+clause. You&#8217;ll notice from the program above that the else clause isn&#8217;t
+required. You don&#8217;t <em>need</em> to have an else condition for your if
+statements, but sometimes it helps. Consider this example:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+<span class="k">else</span><span class="p">:</span>
+    <span class="k">print</span> <span class="s">&quot;Gee, that number&#39;s kind of small, don&#39;t you think?&quot;</span>
+</pre></div>
+</div>
+<p>In this case, we&#8217;re telling our program to print one thing if <tt class="docutils literal"><span class="pre">number</span></tt>
+is greater than 5, and something else if it&#8217;s not. Notice that the else
+statement also ends with a colon, and as such its contents are also
+indented four spaces.</p>
+</div>
+<div class="section" id="for-loops">
+<h4>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h4>
+<p>Remember earlier we discussed the concept of a list &#8211; the type of
+variable that can hold multiple items in it all at once. Many times
+during your programming career, you&#8217;ll find it helps to run through an
+entire list of items and do something with all of them, one at a time.
+That&#8217;s where for loops come in.</p>
+<p>Let&#8217;s start by having Python say the ABC&#8217;s:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">letter</span>
+</pre></div>
+</div>
+<p>The output of this statement, as you might guess, would be &#8220;a b c&#8221;. But
+there are still a few things to unpack here &#8211; some familiar and some
+not.</p>
+<p>First you&#8217;ll notice from looking at the print statement that our
+indentation rules still apply. Everything that happens within the for
+loop must still be indented four spaces from the main level of the
+program. You&#8217;ll also see that the line declaring the loop ends in a
+colon, just like the if/else statement. That&#8217;s an indication that
+indentation will be necessary.</p>
+<p>Second, turn your attention to the syntax of declaring the loop itself:
+<tt class="docutils literal"><span class="pre">for</span> <span class="pre">letter</span> <span class="pre">in</span> <span class="pre">list_of_letters:</span></tt></p>
+<p>All of our for loops start, unsurprisingly, with the word <tt class="docutils literal"><span class="pre">for</span></tt> and
+follow the pattern <tt class="docutils literal"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></tt>. The variable_name
+can be anything you want &#8211; it&#8217;s essentially just a new variable you&#8217;re
+creating to refer to each item within your list as the for loop iterates
+over it. You can call this whatever you want. In this case it&#8217;s
+<tt class="docutils literal"><span class="pre">letter</span></tt>, but you could just as easily call it <tt class="docutils literal"><span class="pre">donkey</span></tt>, like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+    <span class="k">print</span> <span class="n">donkey</span>
+</pre></div>
+</div>
+<p>The next thing you have to specify is the list you want to loop over, in
+this case <tt class="docutils literal"><span class="pre">list_of_letters</span></tt>. The line ends with a colon, and the next
+line starts with an indent. And that&#8217;s the basics of building a loop!</p>
+</div>
+</div>
+<div class="section" id="functions">
+<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
+<p>Often it&#8217;s helpful to encapsulate a sequence of programming instructions
+into little tools that can be used over and over again. That&#8217;s where
+functions come in.</p>
+<p>Think of functions like little black boxes. They take input (known as
+<strong>arguments</strong>), perform some operations on those arguments, and then
+return an <strong>output</strong>. In Python, a simple function might take an integer
+and divide it by two, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">input_integer</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">input_integer</span> <span class="o">/</span> <span class="mi">2</span>
+</pre></div>
+</div>
+<p>In order to call that function later in the program, I would simply have
+to invoke its name and feed it an integer &#8211; any integer at all &#8211; like
+so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>In which case it would return the number 5.</p>
+<p>The black box analogy is the key thing to understand about functions.
+Once you write one (assuming you do so correctly), you don&#8217;t need to
+know how it works. You can just feed it an input and expect an output in
+return.</p>
+<p>As for how functions are declared, you&#8217;ll notice a couple new details as
+well as some similarities to loops. First, every function must be
+declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is
+followed by the name of the function (you can call it anything you want,
+but as always, it should ideally make some kind of logical sense), and
+then a set of parentheses in which you can define the arguments a
+function should expect.</p>
+<p>In our example above, our <tt class="docutils literal"><span class="pre">divide_by_two</span></tt> function expects one
+argument, which we&#8217;ve called <tt class="docutils literal"><span class="pre">input_integer</span></tt> &#8211; basically the number
+that we want to divide by two. When we feed it the number 10, like this
+<tt class="docutils literal"><span class="pre">print</span> <span class="pre">divide_by_two(10)</span></tt>, a variable by the name of our argument is
+created so that we can process it within the function. In that way, the
+name you give the argument works almost like the variable you create in
+a for loop: it&#8217;s a reference to whatever argument you pass in that
+applies only within the body of the function.</p>
+<p>After you finish declaring arguments, you&#8217;ll see something familiar &#8211;
+namely a colon, just like the ones in our if statements and for loops.
+And that means the next line <strong>must be indented four spaces</strong> because
+any code within the function is nested one level deeper than the base
+level of the program.</p>
+<p>The final thing you&#8217;ll need to know about function notation in Python is
+that most functions return some kind of output. Arguments go in, some
+processing happens, and something comes out. As you probably guessed,
+it&#8217;s the <tt class="docutils literal"><span class="pre">return</span></tt> statement that tells the function to return it
+output.</p>
+<p>It&#8217;s worth pointing out that functions don&#8217;t necessarily need arguments,
+nor do they always need to return a value using the <tt class="docutils literal"><span class="pre">return</span></tt> command.
+You could also do something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="k">print</span> <span class="s">&quot;Hello!&quot;</span>
+</pre></div>
+</div>
+<p>But the idea of arguments and return values are still fundamental in
+understanding functions, and they will come up more often than not.</p>
+</div>
+<div class="section" id="python-as-a-toolbox">
+<h3>Python as a toolbox<a class="headerlink" href="#python-as-a-toolbox" title="Permalink to this headline">¶</a></h3>
+<p>The first thing you should know is that Python is basically a collection
+of tools. In fact, Python has tools for pretty much everything you&#8217;d
+ever want to do with a programming language: everything from navigating
+the web to scraping and analyzing data to performing mathematical
+operations to building web sites. Some of these are built into a toolbox
+that comes with the language, known as the <strong>standard library</strong>. Others
+have been built by members of the developer community and can be
+downloaded and installed from the web. There are two ways to import
+these tools into your scripts, which we&#8217;ll demonstrate here:</p>
+<p>To pull in an entire toolkit, use the <tt class="docutils literal"><span class="pre">import</span></tt> command. In this case,
+we&#8217;ll get the <tt class="docutils literal"><span class="pre">urllib2</span></tt> package, which allows us to visit websites
+with Python:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib2</span>
+</pre></div>
+</div>
+<p>You can also import specific tools from a toolkit using similar syntax:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
+</pre></div>
+</div>
+<p>In practice, you&#8217;ll use both of these methods. It&#8217;s worth noting that
+most of the time, any import statements you execute will be <strong>at the
+top</strong> of your program.</p>
+</div>
+</div>
+<div class="section" id="act-3-web-scraping">
+<h2>Act 3: Web scraping<a class="headerlink" href="#act-3-web-scraping" title="Permalink to this headline">¶</a></h2>
+<p>A webpage is made of three major components:</p>
+<ul class="simple">
+<li>HTML &#8211; Hypertext Markup Language &#8211; This is creates the structure of
+a webpage.</li>
+<li>CSS &#8211; Cascading Style Sheets &#8211; This creates the style on a webpage.</li>
+<li>Javascript &#8211; This is used to create interactive effects on a
+webpage.</li>
+</ul>
+<p>For our use cases, the most important part is the HTML.</p>
+<div class="section" id="general-html">
+<h3>General HTML<a class="headerlink" href="#general-html" title="Permalink to this headline">¶</a></h3>
+<p>In order to scrape a website, we need to understand what each of these
+pieces do. HTML is the frame work contains the content of a page.
+Without HTML, you do not have a webpage.</p>
+<p>To view the HTML code, open up Chrome, load <a class="reference external" href="http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp">your web
+page</a>,
+and right click on &#8216;View Source&#8217;.</p>
+<div class="figure">
+<img alt="screen shot 2013-10-11 at 3 39 09 pm" src="https://f.cloud.github.com/assets/166734/1318115/455e7fec-32b5-11e3-93c8-d67247faad1c.png" />
+<p class="caption">screen shot 2013-10-11 at 3 39 09 pm</p>
+</div>
+<p>HTML has markers that denote the start and end of the HTML
+<tt class="docutils literal"><span class="pre">&lt;html&gt;&lt;/html&gt;</span></tt>. Inside the html tag, there are two main sections that
+are the head and the body.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;html&gt;
+    &lt;head&gt;
+    &lt;/head&gt;
+    &lt;body&gt;
+    &lt;/body&gt;
+&lt;/html&gt;
+</pre></div>
+</div>
+<p>In the case of well formatted HTML, the page will be made of nested HTML
+elements. In all our examples, we have decently formatted html. There
+are cases in the real work where this is not the case. Then solving for
+this becomes an additional problem to solve for.</p>
+<p>The part that we are interested in is the body tag. Some where in there
+lies our content. To acces this more easily, we will use Chome&#8217;s
+inspector. Right click on the table of data that you are interested in
+and select &#8216;inspect element&#8217;.</p>
+<div class="figure">
+<img alt="Inspect the element" src="https://f.cloud.github.com/assets/166734/1320358/7f309dae-3355-11e3-88db-5249ae5678e7.png" />
+<p class="caption">Inspect the element</p>
+</div>
+<p>Your browser will open Chrome&#8217;s inspector and display the HTMLs and
+highlights the code where the table is.</p>
+<div class="figure">
+<img alt="Inspector with the highlighted element" src="https://f.cloud.github.com/assets/166734/1320348/f12d3206-3354-11e3-8ef9-b6a4540e526b.png" />
+<p class="caption">Inspector with the highlighted element</p>
+</div>
+<p>There are many ways to grab content from HTML. In our case, we extract
+content by the &#8216;id&#8217; or &#8216;class&#8217;. These are called CSS selectors. An &#8216;id&#8217;
+ids a specific item on a page. If used corrected, there should be only
+one &#8216;id&#8217; on page, but it is always not used correctly. A &#8216;class&#8217; ids a
+specific type of item on a page. So, there maybe may instances of a
+class on a page.</p>
+<p>In our crime example, there is only table. The table is identified by a
+class.
+<tt class="docutils literal"><span class="pre">&lt;table</span> <span class="pre">class=&quot;resultsTable&quot;</span> <span class="pre">style=&quot;margin:</span> <span class="pre">0</span> <span class="pre">auto;</span> <span class="pre">width:</span> <span class="pre">90%;</span> <span class="pre">font-size:</span> <span class="pre">small;&quot;&gt;</span></tt>
+While this example only has one instance of the class, it should be
+noted that it is possible that there maybe multiple instances of
+<tt class="docutils literal"><span class="pre">class=&quot;resultsTable&quot;</span></tt> on the page.</p>
+</div>
+<div class="section" id="inspecting-a-form">
+<h3>Inspecting a form<a class="headerlink" href="#inspecting-a-form" title="Permalink to this headline">¶</a></h3>
+<p>In our <a class="reference external" href="http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx">second example
+script</a>,
+we are trying to scrape data that we get back from a form. In the simple
+script, we start with a default url, but in
+<a class="reference external" href="https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py">salaries-full.py</a>
+and
+<a class="reference external" href="https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py">salaries-mechanize.py</a>,
+we identify the form and set the search in python.</p>
+<p>Looking at our example, search and find the form tag that is wrapped
+about the fields that are you interested in. Most of the time, this is
+tightly wrapped around the fields, however in this case, the
+<tt class="docutils literal"><span class="pre">&lt;form&gt;&lt;/form&gt;</span></tt> is wrapped around the whole page. This is not the best
+designed HTML page, but it still works, so that&#8217;s all we care about.</p>
+<div class="highlight-python"><div class="highlight"><pre>&lt;form name=&quot;ctl01&quot; method=&quot;post&quot; action=&quot;searchemployees.aspx&quot; id=&quot;ctl01&quot;&gt;
+</pre></div>
+</div>
+<p>The form tag have a couple of pieces of information that we need to
+know.</p>
+<ul class="simple">
+<li>name &#8211; identifies the form. This must be unique.</li>
+<li>method &#8211; the action of the data that is being transfered. See
+requests section for more information on what &#8216;post&#8217; means.</li>
+<li>id &#8211; this is a CSS Selector, which was discussed earlier. In this
+case the id and name is the same.</li>
+</ul>
+<p>We will use the name to identify the form in our code. The reason for
+using the name over the id is that while ids are supposed to be unique
+on a page, sometimes they are not. In our code, we would be</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="n">br</span><span class="o">.</span><span class="n">select_form</span><span class="p">(</span><span class="s">&quot;ctl01&quot;</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Now, we need to identify the fields in form. On <a class="reference external" href="http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx">this
+page</a>,
+we will want to start by right clicking and &#8216;inspect element&#8217;. Do this
+on the form, until you identify the &#8216;id&#8217; of the form value. To know that
+you have the right element to match to the code you are looking at, you
+will see it highlighted in your browser.</p>
+<div class="figure">
+<img alt="Highlighted element" src="https://f.cloud.github.com/assets/166734/1320458/b5bae160-335d-11e3-9b06-f55cab13161f.png" />
+<p class="caption">Highlighted element</p>
+</div>
+<p>For the calendar element, we can see that the name of the select tag is
+&#8220;SearchEmployees1:math:<cite>CalendarYear1</cite>ddlCalendarYear&#8221;. If you look at
+<a class="reference external" href="https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-full.py">salaries-full.py</a>
+and
+<a class="reference external" href="https://github.com/ireapps/scraping-class/blob/master/scrapers/salaries/salaries-mechanize.py">salaries-mechanize.py</a>,
+you will see the form fields that we define by using this technique. In
+our script, we set those fields to specific values.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="c"># Each control can be set. Dropdown lists are handled as lists, text fields take text</span>
+<span class="n">br</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;SearchEmployees1$CalendarYear1$ddlCalendarYear&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;2013&#39;</span><span class="p">]</span>
+<span class="n">br</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;SearchEmployees1$ddlAgencies&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;931&#39;</span><span class="p">]</span>
+<span class="n">br</span><span class="o">.</span><span class="n">form</span><span class="p">[</span><span class="s">&#39;SearchEmployees1$txtLastName&#39;</span><span class="p">]</span> <span class="o">=</span> <span class="s">&#39;%&#39;</span>
+</pre></div>
+</div>
+<p><strong>SPECIAL NOTE:</strong> <em>Notice the last name field is set to a ``%``. The
+``%`` is a wildcard character. This tells the database that you want to
+grab everything. The other wildcard to try is ``*``. If a web form was
+going to accept a wildcard, it will be one of these two. Often websites,
+don&#8217;t allow wildcards.</em></p>
+<p>In our program, then we use these and submit the values in the form.
+This brings us to the idea of requests. The next section is not required
+understanding, but it will help in understanding how a form works.</p>
+</div>
+<div class="section" id="requests-methods-and-statuses">
+<h3>Requests &#8211; Methods and Statuses<a class="headerlink" href="#requests-methods-and-statuses" title="Permalink to this headline">¶</a></h3>
+<div class="section" id="request-methods">
+<h4>Request methods<a class="headerlink" href="#request-methods" title="Permalink to this headline">¶</a></h4>
+<p>Understanding a little about requests is helpful when troubleshooting
+what is happening on website. A request is how you communicate with the
+server that hosts the website that you are interacting with. For
+example, when you type &#8216;google.com&#8217; in your browser&#8217;s address bar and
+press enter, you are sending a request to <em>GET</em> that content. There are
+two types of request methods that you should understand.</p>
+<ul class="simple">
+<li>GET</li>
+<li>POST</li>
+</ul>
+<p>A GET request method is basically the retrival of the content of a web
+page. A POST request method is what happens when you submit information
+via a web form.</p>
+<p>This is available in the <em>Header</em> information of a web page, which can
+be found in the Inspector also. When you have the Inspector open, try
+clicking on the &#8216;Network&#8217; tab. (The default tab is Elements. The Network
+tab should be two over.)</p>
+<div class="figure">
+<img alt="Network Tab" src="https://f.cloud.github.com/assets/166734/1330753/2b68b952-3537-11e3-90d7-aaee3bc00036.png" />
+<p class="caption">Network Tab</p>
+</div>
+<p>Now refresh the page. You will see the Network activity populate as the
+page loads. A web page is made of many requests. We are looking for the
+main one, which is the first one in this case.</p>
+<div class="figure">
+<img alt="Jail get method" src="https://f.cloud.github.com/assets/166734/1331278/afeaa778-354e-11e3-8d3b-e5ccf2f13a3b.png" />
+<p class="caption">Jail get method</p>
+</div>
+<p>Look at the line that says:</p>
+<div class="highlight-python"><div class="highlight"><pre>JailResidents.asp
+/sheriff/JailResidents
+</pre></div>
+</div>
+<p>You will see that the method is &#8220;GET&#8221;.</p>
+<p>Now let&#8217;s try this while submitting a form for Missouri <a class="reference external" href="http://mapyourtaxes.mo.gov/MAP/Employees/Employee/searchemployees.aspx">state employee
+salaries</a>.
+Load the page. Open up the inspector. Click on the &#8220;Network&#8221; tab. Fill
+out the form on the web page and hit submit.</p>
+<p>At the top of the Network tab, you will see a request that occurred when
+you submitted the form &#8211; the method is &#8220;POST&#8221; instead of &#8220;GET&#8221;.</p>
+<div class="figure">
+<img alt="Salary posts" src="https://f.cloud.github.com/assets/166734/1331302/f6a41cb6-354f-11e3-87d6-7ddadc0fb10a.png" />
+<p class="caption">Salary posts</p>
+</div>
+</div>
+<div class="section" id="request-statuses">
+<h4>Request statuses<a class="headerlink" href="#request-statuses" title="Permalink to this headline">¶</a></h4>
+<p>The Network tab is full of useful information. Another bit to take
+notice of are the values under status. These are HTTP status codes. In
+both of our examples, we had a 200, which is okay. The 200 is a common
+return value. Other return values which you may see often are the 404,
+which means that the content was not found and another is 301 or 302,
+which means that the request was redirected. Understanding these codes
+can help you in the troubleshooting process if the site that you
+requesting doesn&#8217;t seem to be behaving in the way that you expect.
+Wikipedia&#8217;s <a class="reference external" href="http://en.wikipedia.org/wiki/List_of_HTTP_status_codes">List of HTTP
+Statuses</a> is
+a great reference to learn more about what these codes mean.</p>
+</div>
+<div class="section" id="header-information">
+<h4>Header information<a class="headerlink" href="#header-information" title="Permalink to this headline">¶</a></h4>
+<p>Lastly, you should take note of header information. This is also found
+in the Network tab. After you go through the process of loading a
+request, click on the name and path column on the left. You will load
+more detailed information for that name and path on the right. The
+default tab is the Headers tab.</p>
+<div class="figure">
+<img alt="Headers sample info" src="https://f.cloud.github.com/assets/166734/1331412/6f3501c2-3555-11e3-91ff-32f65b8afead.png" />
+<p class="caption">Headers sample info</p>
+</div>
+<p>The Headers tab includes information like the request method and the
+status, but a lot more also.</p>
+<div class="highlight-python"><div class="highlight"><pre>Request URL:http://mapyourtaxes.mo.gov/MAP/Employees/Employee/SearchEmployees.aspx
+Request Method:POST
+Status Code:200 OK
+..... more
+</pre></div>
+</div>
+<p>Notice near the bottom of the content we have our form variables that
+are being submitted as part of the request made.</p>
+<div class="highlight-python"><div class="highlight"><pre>SearchEmployees1$CalendarYear1$ddlCalendarYear:2013
+SearchEmployees1$ddlAgencies:931
+SearchEmployees1$txtLastName:
+SearchEmployees1$txtFirstName:
+SearchEmployees1$btnSearch:GO
+..... more
+</pre></div>
+</div>
+</div>
+</div>
+</div>
+</div>
+
+
+          </div>
+        </div>
+      </div>
+      <div class="sphinxsidebar">
+        <div class="sphinxsidebarwrapper">
+  <h3><a href="#">Table Of Contents</a></h3>
+  <ul>
+<li><a class="reference internal" href="#">Scraping class</a><ul>
+<li><a class="reference internal" href="#prelude-prerequisites">Prelude: Prerequisites</a></li>
+<li><a class="reference internal" href="#act-1-the-command-line">Act 1: The command line</a></li>
+<li><a class="reference internal" href="#act-2-python">Act 2: Python</a></li>
+<li><a class="reference internal" href="#act-3-web-scraping">Act 3: Web scraping</a></li>
+</ul>
+</li>
+</ul>
+
+  <h3>This Page</h3>
+  <ul class="this-page-menu">
+    <li><a href="_sources/index.txt"
+           rel="nofollow">Show Source</a></li>
+  </ul>
+<div id="searchbox" style="display: none">
+  <h3>Quick search</h3>
+    <form class="search" action="search.html" method="get">
+      <input type="text" name="q" />
+      <input type="submit" value="Go" />
+      <input type="hidden" name="check_keywords" value="yes" />
+      <input type="hidden" name="area" value="default" />
+    </form>
+    <p class="searchtip" style="font-size: 90%">
+    Enter search terms or a module, class or function name.
+    </p>
+</div>
+<script type="text/javascript">$('#searchbox').show(0);</script>
+        </div>
+      </div>
+      <div class="clearer"></div>
+    </div>
+    <div class="related">
+      <h3>Navigation</h3>
+      <ul>
+        <li class="right" style="margin-right: 10px">
+          <a href="genindex.html" title="General Index"
+             >index</a></li>
+        <li><a href="#">Scraping class 0.1 documentation</a> &raquo;</li> 
+      </ul>
+    </div>
+    <div class="footer">
+        &copy; Copyright 2014, IRE/NICAR.
+      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    </div>
+  </body>
+</html>
