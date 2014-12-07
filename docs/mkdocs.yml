@@ -1,1 +1,3 @@
 site_name: Scraping class
+theme: readthedocs
+markdown_extensions: [admonition,tables,toc]
