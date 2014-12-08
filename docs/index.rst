@@ -227,296 +227,62 @@ command again, but with a little twist.
 You'll notice that will move you back to the home directory where we began.
 When you're working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is ``..``
 
-Creating and deleting files
-^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Creating directories and files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 You might also find it useful sometimes to create files and directories
-from the command line. Let's create a folder called "apps" under our
-home directory that we can use to store code from this class. The
-command for doing that is simply ``mkdir apps`` with mkdir being short
-for "make directory." If you type ``ls`` again, you should see your new
-apps directory listed along with the files and folders from before.
+from the command line. Let's create a folder called ``Code`` under our
+home directory that we can use to store code from this class.
 
-The next step is to navigate into our apps directory and make a file. As
-before, use the ``cd apps`` command to enter your apps directory. If you
-type ``ls`` you'll notice that nothing is there. That's because all
-we've done so far is create a directory, but we haven't put any files in
-it yet. You won't have to do this very often, but the command for
-creating a blank file in OSX is called ``touch``. Let's create a test
-python file that we can use later: ``touch test.py``. Notice the .py
-file extension. It's extremely important when working from the command
-line to be mindful of file extensions. The .py notation tells our
-computer that this is a Python file, meaning it needs to be run by the
-Python interpreter. You'll see more about what that means later. For
-now, if you type ``ls`` again, you should see the file in your apps
-directory.
+Using OSX or Linux, here's how:
 
-The final task you might want to perform from the command line in this
-class is deleting files. Note that **this must be done with caution**.
-Files you delete from the command line DO NOT go into the recycle bin.
-They are gone. **Forever**. So don't delete anything this way unless
-you're absolutely sure you know what you're doing. That said, the
-command is very simple. First, let's create a new file to delete with
-``touch deleteme.py``. Now to delete it, simply type ``rm deleteme.py``
+.. code:: bash
 
-Quick review
-^^^^^^^^^^^^
+    $ mkdir Code
 
-Really, that's most of what you should need to navigate the command line
-for this class. As a quick review:
+In Windows, try this:
 
-.. raw:: html
+.. code:: bash
 
-   <table>
-       <tr>
-           <th>
+    $ md Code
 
-Command
+Next let's jump into the directory. If you remember, that goes like this:
 
-.. raw:: html
+.. code:: bash
 
-   </th>
-           <th>
+    $ cd Code
 
-Example
+If you type ``ls`` or ``dir`` you'll notice that nothing is there. That's because all we've done so far is create a directory, but we haven't put any files in it yet.
 
-.. raw:: html
+You won't have to do this very often, but the command for
+creating a blank file in OSX and Linux is called ``touch``. So here's how
+you make a new file named ``test.py``.
 
-   </th>
-           <th>
+.. code:: bash
 
-What it does
+    $ touch test.py
 
-.. raw:: html
+There's no similar command in Windows, but you can accomplish the same thing by saving
+a file from a text editor or other program into our new directory.
 
-   </th>
-           <th>
+Deleting directories and files
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Notes
+If you wanted to remove the file you just made, here's how on OSX and Linux:
 
-.. raw:: html
+.. code:: bash
 
-   </th>
-       </tr>
-       <tr>
-           <td>
+    $ rm test.py
 
-pwd
+And here's how in Windows:
 
-.. raw:: html
+.. code:: bash
 
-   </td>
-           <td>
+    $ del test.py
 
-pwd
+.. warning::
 
-.. raw:: html
-
-   </td>
-           <td>
-
-Shows your present working directory
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Useful for keeping track of where you are
-
-.. raw:: html
-
-   </td>
-       </tr>
-       <tr>
-           <td>
-
-ls
-
-.. raw:: html
-
-   </td>
-           <td>
-
-ls
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Shows the contents of the current directory
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Can also use ls -a or ls -l to show more information about files
-
-.. raw:: html
-
-   </td>
-       </tr>
-       <tr>
-           <td>
-
-cd
-
-.. raw:: html
-
-   </td>
-           <td>
-
-cd Desktop
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Changes directories
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Use cd ..\`\`\` to move backwards
-
-.. raw:: html
-
-   </td>
-       </tr>
-       <tr>
-           <td>
-
-mkdir
-
-.. raw:: html
-
-   </td>
-           <td>
-
-mkdir new-directory
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Creates a new directory
-
-.. raw:: html
-
-   </td>
-           <td></td>
-       </tr>
-       <tr>
-           <td>
-
-touch
-
-.. raw:: html
-
-   </td>
-           <td>
-
-touch test.py
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Creates a new file
-
-.. raw:: html
-
-   </td>
-           <td></td>
-       </tr>
-       <tr>
-           <td>
-
-mv
-
-.. raw:: html
-
-   </td>
-           <td>
-
-mv test.py ./Desktop
-
-.. raw:: html
-
-   </td>
-           <td>
-
-This isn't covered above, but mv moves or renames a file.
-
-.. raw:: html
-
-   </td>
-           <td></td>
-       </tr>
-       <tr>
-           <td>
-
-rm
-
-.. raw:: html
-
-   </td>
-           <td>
-
-rm test.py
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Deletes a file
-
-.. raw:: html
-
-   </td>
-           <td>
-
-Use with extreme caution. Once a file is deleted this way, you can't get
-it back.
-
-.. raw:: html
-
-   </td>
-       </tr>
-   </table>
-
-Basic commands (Windows)
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-The principles of working from the command line are the same in Windows
-as they are on Macs. The only thing that's different is the syntax.
-Here's a rundown of the equivalent commands:
-
-+---------------+--------------------------+
-| OSX command   | Windows equivalent       |
-+===============+==========================+
-| pwd           | cd (with no arguments)   |
-+---------------+--------------------------+
-| ls            | dir                      |
-+---------------+--------------------------+
-| cd            | cd                       |
-+---------------+--------------------------+
-| mkdir         | md                       |
-+---------------+--------------------------+
-| touch         | None (sorry!)            |
-+---------------+--------------------------+
-| mv            | move                     |
-+---------------+--------------------------+
-| rm            | del                      |
-+---------------+--------------------------+
+    **This must be done with caution**. Files you delete from the command line DO NOT go into the recycle bin. They are gone. **Forever**.
 
 Act 2: Python
 -------------

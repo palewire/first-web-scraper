@@ -225,159 +225,48 @@ command again, but with a little twist.</p>
 </div>
 <p>You&#8217;ll notice that will move you back to the home directory where we began.
 When you&#8217;re working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is <tt class="docutils literal"><span class="pre">..</span></tt></p>
-<div class="section" id="creating-and-deleting-files">
-<h4>Creating and deleting files<a class="headerlink" href="#creating-and-deleting-files" title="Permalink to this headline">¶</a></h4>
+</div>
+<div class="section" id="creating-directories-and-files">
+<h3>Creating directories and files<a class="headerlink" href="#creating-directories-and-files" title="Permalink to this headline">¶</a></h3>
 <p>You might also find it useful sometimes to create files and directories
-from the command line. Let&#8217;s create a folder called &#8220;apps&#8221; under our
-home directory that we can use to store code from this class. The
-command for doing that is simply <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">apps</span></tt> with mkdir being short
-for &#8220;make directory.&#8221; If you type <tt class="docutils literal"><span class="pre">ls</span></tt> again, you should see your new
-apps directory listed along with the files and folders from before.</p>
-<p>The next step is to navigate into our apps directory and make a file. As
-before, use the <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">apps</span></tt> command to enter your apps directory. If you
-type <tt class="docutils literal"><span class="pre">ls</span></tt> you&#8217;ll notice that nothing is there. That&#8217;s because all
-we&#8217;ve done so far is create a directory, but we haven&#8217;t put any files in
-it yet. You won&#8217;t have to do this very often, but the command for
-creating a blank file in OSX is called <tt class="docutils literal"><span class="pre">touch</span></tt>. Let&#8217;s create a test
-python file that we can use later: <tt class="docutils literal"><span class="pre">touch</span> <span class="pre">test.py</span></tt>. Notice the .py
-file extension. It&#8217;s extremely important when working from the command
-line to be mindful of file extensions. The .py notation tells our
-computer that this is a Python file, meaning it needs to be run by the
-Python interpreter. You&#8217;ll see more about what that means later. For
-now, if you type <tt class="docutils literal"><span class="pre">ls</span></tt> again, you should see the file in your apps
-directory.</p>
-<p>The final task you might want to perform from the command line in this
-class is deleting files. Note that <strong>this must be done with caution</strong>.
-Files you delete from the command line DO NOT go into the recycle bin.
-They are gone. <strong>Forever</strong>. So don&#8217;t delete anything this way unless
-you&#8217;re absolutely sure you know what you&#8217;re doing. That said, the
-command is very simple. First, let&#8217;s create a new file to delete with
-<tt class="docutils literal"><span class="pre">touch</span> <span class="pre">deleteme.py</span></tt>. Now to delete it, simply type <tt class="docutils literal"><span class="pre">rm</span> <span class="pre">deleteme.py</span></tt></p>
+from the command line. Let&#8217;s create a folder called <tt class="docutils literal"><span class="pre">Code</span></tt> under our
+home directory that we can use to store code from this class.</p>
+<p>Using OSX or Linux, here&#8217;s how:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ mkdir Code
+</pre></div>
 </div>
-<div class="section" id="quick-review">
-<h4>Quick review<a class="headerlink" href="#quick-review" title="Permalink to this headline">¶</a></h4>
-<p>Really, that&#8217;s most of what you should need to navigate the command line
-for this class. As a quick review:</p>
-<table>
-    <tr>
-        <th><p>Command</p>
-</th>
-        <th><p>Example</p>
-</th>
-        <th><p>What it does</p>
-</th>
-        <th><p>Notes</p>
-</th>
-    </tr>
-    <tr>
-        <td><p>pwd</p>
-</td>
-        <td><p>pwd</p>
-</td>
-        <td><p>Shows your present working directory</p>
-</td>
-        <td><p>Useful for keeping track of where you are</p>
-</td>
-    </tr>
-    <tr>
-        <td><p>ls</p>
-</td>
-        <td><p>ls</p>
-</td>
-        <td><p>Shows the contents of the current directory</p>
-</td>
-        <td><p>Can also use ls -a or ls -l to show more information about files</p>
-</td>
-    </tr>
-    <tr>
-        <td><p>cd</p>
-</td>
-        <td><p>cd Desktop</p>
-</td>
-        <td><p>Changes directories</p>
-</td>
-        <td><p>Use cd ..``` to move backwards</p>
-</td>
-    </tr>
-    <tr>
-        <td><p>mkdir</p>
-</td>
-        <td><p>mkdir new-directory</p>
-</td>
-        <td><p>Creates a new directory</p>
-</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><p>touch</p>
-</td>
-        <td><p>touch test.py</p>
-</td>
-        <td><p>Creates a new file</p>
-</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><p>mv</p>
-</td>
-        <td><p>mv test.py ./Desktop</p>
-</td>
-        <td><p>This isn&#8217;t covered above, but mv moves or renames a file.</p>
-</td>
-        <td></td>
-    </tr>
-    <tr>
-        <td><p>rm</p>
-</td>
-        <td><p>rm test.py</p>
-</td>
-        <td><p>Deletes a file</p>
-</td>
-        <td><p>Use with extreme caution. Once a file is deleted this way, you can&#8217;t get
-it back.</p>
-</td>
-    </tr>
-</table></div>
+<p>In Windows, try this:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ md Code
+</pre></div>
 </div>
-<div class="section" id="basic-commands-windows">
-<h3>Basic commands (Windows)<a class="headerlink" href="#basic-commands-windows" title="Permalink to this headline">¶</a></h3>
-<p>The principles of working from the command line are the same in Windows
-as they are on Macs. The only thing that&#8217;s different is the syntax.
-Here&#8217;s a rundown of the equivalent commands:</p>
-<table border="1" class="docutils">
-<colgroup>
-<col width="37%" />
-<col width="63%" />
-</colgroup>
-<thead valign="bottom">
-<tr class="row-odd"><th class="head">OSX command</th>
-<th class="head">Windows equivalent</th>
-</tr>
-</thead>
-<tbody valign="top">
-<tr class="row-even"><td>pwd</td>
-<td>cd (with no arguments)</td>
-</tr>
-<tr class="row-odd"><td>ls</td>
-<td>dir</td>
-</tr>
-<tr class="row-even"><td>cd</td>
-<td>cd</td>
-</tr>
-<tr class="row-odd"><td>mkdir</td>
-<td>md</td>
-</tr>
-<tr class="row-even"><td>touch</td>
-<td>None (sorry!)</td>
-</tr>
-<tr class="row-odd"><td>mv</td>
-<td>move</td>
-</tr>
-<tr class="row-even"><td>rm</td>
-<td>del</td>
-</tr>
-</tbody>
-</table>
+<p>Next let&#8217;s jump into the directory. If you remember, that goes like this:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ cd Code
+</pre></div>
+</div>
+<p>If you type <tt class="docutils literal"><span class="pre">ls</span></tt> or <tt class="docutils literal"><span class="pre">dir</span></tt> you&#8217;ll notice that nothing is there. That&#8217;s because all we&#8217;ve done so far is create a directory, but we haven&#8217;t put any files in it yet.</p>
+<p>You won&#8217;t have to do this very often, but the command for
+creating a blank file in OSX and Linux is called <tt class="docutils literal"><span class="pre">touch</span></tt>. So here&#8217;s how
+you make a new file named <tt class="docutils literal"><span class="pre">test.py</span></tt>.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ touch test.py
+</pre></div>
+</div>
+<p>There&#8217;s no similar command in Windows, but you can accomplish the same thing by saving
+a file from a text editor or other program into our new directory.</p>
+</div>
+<div class="section" id="deleting-directories-and-files">
+<h3>Deleting directories and files<a class="headerlink" href="#deleting-directories-and-files" title="Permalink to this headline">¶</a></h3>
+<p>If you wanted to remove the file you just made, here&#8217;s how on OSX and Linux:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ rm test.py
+</pre></div>
+</div>
+<p>And here&#8217;s how in Windows:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ del test.py
+</pre></div>
+</div>
+<div class="admonition warning">
+<p class="first admonition-title">Warning</p>
+<p class="last"><strong>This must be done with caution</strong>. Files you delete from the command line DO NOT go into the recycle bin. They are gone. <strong>Forever</strong>.</p>
+</div>
 </div>
 </div>
 <div class="section" id="act-2-python">
