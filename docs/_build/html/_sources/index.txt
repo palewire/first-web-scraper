@@ -97,6 +97,11 @@ waiting for you by typing the following into your terminal.
 
     $ python -V
 
+.. note::
+
+    You don't have to type the "$" It's just a generic symbol
+    geeks use to show they're working on the command line.
+
 If you don't have Python installed (a more likely fate for Windows
 users) try downloading and installing it from
 `here <http://www.python.org/download/releases/2.7.6/>`__.
@@ -159,6 +164,11 @@ Once your terminal window is open, before we start moving around the first thing
 .. code:: bash
 
     $ pwd
+
+.. note::
+
+    You don't have to type the "$" It's just a generic symbol
+    geeks use to show they're working on the command line.
 
 If you're on Windows try:
 
@@ -287,185 +297,190 @@ And here's how in Windows:
 Act 2: Python
 -------------
 
-Python is a rich and fully featured language that can be used for almost
-any application you can imagine, from building websites to running
-robots. A thorough overview of the language would take months, so our
-class is going to concentrate on the absolute basics -- basic
-programming principles and syntax quirks that you're likely to encounter
-as you start learning how to program. This isn't intended to be a
-comprehensive Python tutorial. It's only meant to give you the basic
-skills you'll need to succeed in this course. That said, I would highly
-encourage you to explore the language further and will provide materials
-to do so at the end of this guide.
+Python can be used for almost any application you can imagine, from building websites to running robots.
+
+A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics -- the basic programming principles and syntax quirks that you're likely to encounter as complete this course.
 
 How to run a Python program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Most Python code is run directly from the command line, which explains
-why it is so important that you master some command line basics. Recall
-from the `command line
-tutorial <https://github.com/ireapps/scraping-class/blob/master/notes/command-line-basics.md>`__
-that Python files have the file extension ".py". Any time you see a
-".py" file, you can run it from the command line simply by typing
-``python filename.py``, where filename is the name of whatever the file
-is. That's it. And it works for both OSX and Windows.
+A Python file is nothing more than a text file that has the extension ".py" at the end of its name. Any time you see a ".py" file, you can run it from the command line by typing into the command line:
+
+.. code:: bash
+
+  $ python filename.py
+
+That's it. And it works for both OSX and Windows.
 
 Python also comes with a very neat feature called an **interactive
 interpreter**, which allows you to execute Python code one line at a
-time, sort of like working from the command line. We'll be using this a
-lot in the beginning to demonstrate concepts, but in the real world it's
-often useful for testing and debugging. To open the interpreter, simply
-type ``python`` from your command line, and you should see a screen that
+time, sort of like working from the command line.
+
+We'll be using this a lot in the beginning to demonstrate concepts, but in the real world it's often useful for testing and debugging.
+
+To open the interpreter, simply type ``python`` from your command line, and you should see a screen that
 looks like this:
 
 .. figure:: https://f.cloud.github.com/assets/947791/120133/9dc93b9e-6cc8-11e2-8232-4549e69c291b.png
    :alt: Python interactive interpreter
 
-   Python interactive interpreter
-We'll get into more detail about that later.
-
-Variables and data types
-~~~~~~~~~~~~~~~~~~~~~~~~
-
-No matter whether you're working in Python or another language, there
-are a handful of basic concepts you need to understand if you're going
-to be writing code. We'll walk through those here.
+Next we'll use the interpreter to walk through a handful of basic concepts
+you need to understand if you're going to be writing code, Python or otherwise.
 
 Variables
-^^^^^^^^^
+~~~~~~~~~
 
 Variables are like containers that hold different types of data so you
 can go back and refer to them later. They're fundamental to programming
-in any language, and you'll use them all the time. Here's an example
+in any language, and you'll use them all the time.
 
-::
+To try them out, open your Python interpreter.
 
-    greeting = "Hello, world!"
-    print greeting
+.. code:: bash
+
+    $ python
+
+Now let's start writing Python!
+
+.. code:: python
+
+    >>> greeting = "Hello, world!"
 
 In this case, we've created a **variable** called ``greeting`` and
-assigned it the **string value** "Hello, world!". If we use the
-``print`` command on the variable, Python will output "Hello, world!" to
-the terminal because that value is stored in the variable.
+assigned it the **string value** "Hello, world!".
 
 In Python, variable assignment is done with the = sign. On the left is
 the name of the variable you want to create (it can be anything) and on
 the right is the value that you want to assign to that variable.
-Variables can also contain many different kinds of data types, which
-we'll go over next:
+
+If we use the ``print`` command on the variable, Python will output "Hello, world!" to
+the terminal because that value is stored in the variable.
+
+.. code:: python
+
+    >>> print greeting
 
 Data types
-^^^^^^^^^^
+~~~~~~~~~~
 
-You may remember from earlier data journalism classes that data comes in
-different types and flavors. There are integers, strings, floating point
-numbers (decimals), and other types of data that languages like SQL like
-to deal with in different ways. Python is no different. In particular,
-there are six different data types you will be dealing with on a regular
-basis: strings, integers, floats, lists, tuples and dictionaries. Here's
-a little detail on each.
+Variables can contain many different kinds of data types. There are integers, strings, floating point numbers (decimals), and other types of data that languages like SQL like
+to deal with in different ways.
 
-**Strings**: Strings contain text values like the "Hello, world!"
-example above. There's not much to say about them other than that **they
-are declared within single or double quotes** like so:
+Python is no different. In particular, there are six different data types you will be dealing with on a regular basis: strings, integers, floats, lists, tuples and dictionaries. Here's a little detail on each.
 
-::
+Strings
+^^^^^^^
 
-    greeting = "Hello, world!"
-    goodbye = "Seeya later, dude."
-    favorite_animal = 'Donkey'
+Strings contain text values like the "Hello, world!"
+example above. There's not much to say about them other than that they
+are declared within single or double quotes like so:
 
-Note that either single or double quotes are allowed.
+.. code:: python
 
-**Integers**: Integers are whole numbers like 1, 2, 1000 and 1000000.
+    >>> greeting = "Hello, world!"
+    >>> goodbye = "Seeya later, dude."
+    >>> favorite_animal = 'Donkey'
+
+
+Integers
+^^^^^^^^
+
+Integers are whole numbers like 1, 2, 1000 and 1000000.
 They do not have decimal points. Unlike many other variable types,
-**integers are not declared with any special type of syntax**. You can
+integers are not declared with any special type of syntax. You can
 simply assign them to a variable straight away, like this:
 
-::
+.. code:: python
 
-    a = 1
-    b = 2
-    c = 1000
+    >>> a = 1
+    >>> b = 2
+    >>> c = 1000
 
-**Floats**: Floats are a fancy name for numbers with decimal points in
-them. **They are declared the same way as integers** but have some
+Floats
+^^^^^^
+
+Floats are a fancy name for numbers with decimal points in
+them. They are declared the same way as integers but have some
 idiosyncracies we'll discover later:
 
-::
+.. code:: python
 
-    a = 1.1
-    b = 0.99332
-    c = 100.123
+    >>> a = 1.1
+    >>> b = 0.99332
+    >>> c = 100.123
 
-**Lists**: Lists are collections of values or variables. **They are
+Lists
+^^^^^
+
+Lists are collections of values or variables. They are
 declared with brackets like these [], and items inside are separated by
-commas**. They can hold collections of any type of data, including other
+commas. They can hold collections of any type of data, including other
 lists. Here are several examples:
 
-::
+.. code:: python
 
-    list_of_numbers = [1, 2, 3, 4, 5]
-    list_of_strings = ['a', 'b', 'c', 'd']
-    list_of_both = [1, 'a', 2, 'b']
-    list of lists = [[1, 2, 3], [4, 5, 6], ['a', 'b', 'c']]
+    >>> list_of_numbers = [1, 2, 3, 4, 5]
+    >>> list_of_strings = ['a', 'b', 'c', 'd']
+    >>> list_of_both = [1, 'a', 2, 'b']
+    >>> list of lists = [[1, 2, 3], [4, 5, 6], ['a', 'b', 'c']]
 
 Lists also have another neat feature: The ability to retrieve individual
 items. In order to get a specific item out of a list, you first need to
-know its position in that list. All lists in Python are
-**zero-indexed**, which means the first item in them sits at position 0.
-For example, in the list ``['a', 'b', 'c', 'd']``, the letter "a" is at
-position 0, "b" is at position 1, etc.
+know its position in that list.
 
-The syntax for extracting a single item from the list using those
-indexes also uses brackets and looks like this:
+All lists in Python are **zero-indexed**, which means the first item in them sits at position 0.
 
-::
+.. code:: python
 
-    list_of_strings = ['a', 'b', 'c', 'd']
-    the_letter_a = list_of_strings[0]
-    the_letter_c = list_of_strings[2]
+    >>> my_list = ['a', 'b', 'c', 'd']
+    >>> my_list[0]
+    'a'
+    >>> my_list[2]
+    'c'
 
 You can also extract a range of values by specifiying the first and last
 positions you want to retrieve with a colon in between them, like this:
 
-::
+.. code:: python
 
-    list_of_strings = ['a', 'b', 'c', 'd']
-    the_letters_a_b_c = list_of_strings[0:2]
+    >>> my_list[0:2]
+    ['a', 'b', 'c']
 
-**Tuples**: Tuples are a special type of list that cannot be changed
-once they are created. That's not especially important right now. All
-you need to know is that **they are declared with parentheses ()**. For
-now, just think of them as lists.
+Tuples
+^^^^^^
 
-::
+Tuples are a special type of list that cannot be changed once they are created. That's not especially important right now. All you need to know is that they are declared with parentheses (). For now, just think of them as lists.
 
-    tuple_of_numbers = (1, 2, 3, 4, 5)
-    tuple_of_strings = ('a', 'b', 'c', 'd')
+.. code:: python
 
-**Dictionaries**: Dictionaries are probably the most difficult data type
-to explain, but also among the most useful. In technical terms, they are
-storehouses of key/value pairs. You can think of them like a phonebook.
-An example will make this a little more clear, but know for now that
-**they are declared with curly braces**.
+    >>> tuple_of_numbers = (1, 2, 3, 4, 5)
+    >>> tuple_of_strings = ('a', 'b', 'c', 'd')
 
-::
+Dictionaries
+^^^^^^^^^^^^
 
-    my_phonebook = {'Chase Davis': '713-555-5555', 'Mark Horvit': '573-555-5555'}
+Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.
 
-In this example, the keys are the names "Chase Davis" and "Mark Horvit",
-which are declared as strings (Python dictionary keys usually are). The
-values are the phone numbers, which are also strings, although
-dictionary values in practice can be any data type. If I wanted to get
-Chase Davis' phone number from the dictionary, here's how I'd do it:
+An example will make this a little more clear, but know for now that they are declared with curly braces.
 
-::
+.. code:: python
 
-    my_phonebook['Chase Davis']
+    >>> my_phonebook = {'Mom': '713-555-5555', 'Chinese Takeout': '573-555-5555'}
 
-Which would return the string '713-555-5555'. There's a lot more to
-dictionaries, but that's all you need to know for now.
+In this example, the keys are the names "Mom" and "Chinese takeout",
+which are declared as strings (Python dictionary keys usually are).
+
+The values are the phone numbers, which are also strings, although
+dictionary values in practice can be any data type.
+
+If you wanted to get Mom's phone number from the dictionary, here's how:
+
+.. code:: python
+
+    >>> my_phonebook['Mom']
+    '713-555-5555'
+
+There's a lot more to dictionaries, but that's all you need to know for now.
 
 Control structures
 ~~~~~~~~~~~~~~~~~~

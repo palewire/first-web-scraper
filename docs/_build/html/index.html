@@ -123,6 +123,11 @@ waiting for you by typing the following into your terminal.</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python -V
 </pre></div>
 </div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You don&#8217;t have to type the &#8220;$&#8221; It&#8217;s just a generic symbol
+geeks use to show they&#8217;re working on the command line.</p>
+</div>
 <p>If you don&#8217;t have Python installed (a more likely fate for Windows
 users) try downloading and installing it from
 <a class="reference external" href="http://www.python.org/download/releases/2.7.6/">here</a>.</p>
@@ -173,6 +178,11 @@ If you need help finding it refer to the prequisite instructions for the <a clas
 <p>Once your terminal window is open, before we start moving around the first thing we want to do if find out where you are. If you&#8217;re using OSX or Linux, type this:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ pwd
 </pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You don&#8217;t have to type the &#8220;$&#8221; It&#8217;s just a generic symbol
+geeks use to show they&#8217;re working on the command line.</p>
 </div>
 <p>If you&#8217;re on Windows try:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ cd
@@ -271,153 +281,145 @@ a file from a text editor or other program into our new directory.</p>
 </div>
 <div class="section" id="act-2-python">
 <h2>Act 2: Python<a class="headerlink" href="#act-2-python" title="Permalink to this headline">¶</a></h2>
-<p>Python is a rich and fully featured language that can be used for almost
-any application you can imagine, from building websites to running
-robots. A thorough overview of the language would take months, so our
-class is going to concentrate on the absolute basics &#8211; basic
-programming principles and syntax quirks that you&#8217;re likely to encounter
-as you start learning how to program. This isn&#8217;t intended to be a
-comprehensive Python tutorial. It&#8217;s only meant to give you the basic
-skills you&#8217;ll need to succeed in this course. That said, I would highly
-encourage you to explore the language further and will provide materials
-to do so at the end of this guide.</p>
+<p>Python can be used for almost any application you can imagine, from building websites to running robots.</p>
+<p>A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics &#8211; the basic programming principles and syntax quirks that you&#8217;re likely to encounter as complete this course.</p>
 <div class="section" id="how-to-run-a-python-program">
 <h3>How to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Permalink to this headline">¶</a></h3>
-<p>Most Python code is run directly from the command line, which explains
-why it is so important that you master some command line basics. Recall
-from the <a class="reference external" href="https://github.com/ireapps/scraping-class/blob/master/notes/command-line-basics.md">command line
-tutorial</a>
-that Python files have the file extension &#8221;.py&#8221;. Any time you see a
-&#8221;.py&#8221; file, you can run it from the command line simply by typing
-<tt class="docutils literal"><span class="pre">python</span> <span class="pre">filename.py</span></tt>, where filename is the name of whatever the file
-is. That&#8217;s it. And it works for both OSX and Windows.</p>
+<p>A Python file is nothing more than a text file that has the extension &#8221;.py&#8221; at the end of its name. Any time you see a &#8221;.py&#8221; file, you can run it from the command line by typing into the command line:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python filename.py
+</pre></div>
+</div>
+<p>That&#8217;s it. And it works for both OSX and Windows.</p>
 <p>Python also comes with a very neat feature called an <strong>interactive
 interpreter</strong>, which allows you to execute Python code one line at a
-time, sort of like working from the command line. We&#8217;ll be using this a
-lot in the beginning to demonstrate concepts, but in the real world it&#8217;s
-often useful for testing and debugging. To open the interpreter, simply
-type <tt class="docutils literal"><span class="pre">python</span></tt> from your command line, and you should see a screen that
+time, sort of like working from the command line.</p>
+<p>We&#8217;ll be using this a lot in the beginning to demonstrate concepts, but in the real world it&#8217;s often useful for testing and debugging.</p>
+<p>To open the interpreter, simply type <tt class="docutils literal"><span class="pre">python</span></tt> from your command line, and you should see a screen that
 looks like this:</p>
 <div class="figure">
 <img alt="Python interactive interpreter" src="https://f.cloud.github.com/assets/947791/120133/9dc93b9e-6cc8-11e2-8232-4549e69c291b.png" />
-<p class="caption">Python interactive interpreter</p>
 </div>
-<p>We&#8217;ll get into more detail about that later.</p>
+<p>Next we&#8217;ll use the interpreter to walk through a handful of basic concepts
+you need to understand if you&#8217;re going to be writing code, Python or otherwise.</p>
 </div>
-<div class="section" id="variables-and-data-types">
-<h3>Variables and data types<a class="headerlink" href="#variables-and-data-types" title="Permalink to this headline">¶</a></h3>
-<p>No matter whether you&#8217;re working in Python or another language, there
-are a handful of basic concepts you need to understand if you&#8217;re going
-to be writing code. We&#8217;ll walk through those here.</p>
 <div class="section" id="variables">
-<h4>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h4>
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
 <p>Variables are like containers that hold different types of data so you
 can go back and refer to them later. They&#8217;re fundamental to programming
-in any language, and you&#8217;ll use them all the time. Here&#8217;s an example</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
-<span class="k">print</span> <span class="n">greeting</span>
+in any language, and you&#8217;ll use them all the time.</p>
+<p>To try them out, open your Python interpreter.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python
+</pre></div>
+</div>
+<p>Now let&#8217;s start writing Python!</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
 </pre></div>
 </div>
 <p>In this case, we&#8217;ve created a <strong>variable</strong> called <tt class="docutils literal"><span class="pre">greeting</span></tt> and
-assigned it the <strong>string value</strong> &#8220;Hello, world!&#8221;. If we use the
-<tt class="docutils literal"><span class="pre">print</span></tt> command on the variable, Python will output &#8220;Hello, world!&#8221; to
-the terminal because that value is stored in the variable.</p>
+assigned it the <strong>string value</strong> &#8220;Hello, world!&#8221;.</p>
 <p>In Python, variable assignment is done with the = sign. On the left is
 the name of the variable you want to create (it can be anything) and on
-the right is the value that you want to assign to that variable.
-Variables can also contain many different kinds of data types, which
-we&#8217;ll go over next:</p>
+the right is the value that you want to assign to that variable.</p>
+<p>If we use the <tt class="docutils literal"><span class="pre">print</span></tt> command on the variable, Python will output &#8220;Hello, world!&#8221; to
+the terminal because that value is stored in the variable.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">greeting</span>
+</pre></div>
+</div>
 </div>
 <div class="section" id="data-types">
-<h4>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h4>
-<p>You may remember from earlier data journalism classes that data comes in
-different types and flavors. There are integers, strings, floating point
-numbers (decimals), and other types of data that languages like SQL like
-to deal with in different ways. Python is no different. In particular,
-there are six different data types you will be dealing with on a regular
-basis: strings, integers, floats, lists, tuples and dictionaries. Here&#8217;s
-a little detail on each.</p>
-<p><strong>Strings</strong>: Strings contain text values like the &#8220;Hello, world!&#8221;
-example above. There&#8217;s not much to say about them other than that <strong>they
-are declared within single or double quotes</strong> like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
-<span class="n">goodbye</span> <span class="o">=</span> <span class="s">&quot;Seeya later, dude.&quot;</span>
-<span class="n">favorite_animal</span> <span class="o">=</span> <span class="s">&#39;Donkey&#39;</span>
+<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+<p>Variables can contain many different kinds of data types. There are integers, strings, floating point numbers (decimals), and other types of data that languages like SQL like
+to deal with in different ways.</p>
+<p>Python is no different. In particular, there are six different data types you will be dealing with on a regular basis: strings, integers, floats, lists, tuples and dictionaries. Here&#8217;s a little detail on each.</p>
+<div class="section" id="strings">
+<h4>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h4>
+<p>Strings contain text values like the &#8220;Hello, world!&#8221;
+example above. There&#8217;s not much to say about them other than that they
+are declared within single or double quotes like so:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">goodbye</span> <span class="o">=</span> <span class="s">&quot;Seeya later, dude.&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">favorite_animal</span> <span class="o">=</span> <span class="s">&#39;Donkey&#39;</span>
 </pre></div>
 </div>
-<p>Note that either single or double quotes are allowed.</p>
-<p><strong>Integers</strong>: Integers are whole numbers like 1, 2, 1000 and 1000000.
+</div>
+<div class="section" id="integers">
+<h4>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h4>
+<p>Integers are whole numbers like 1, 2, 1000 and 1000000.
 They do not have decimal points. Unlike many other variable types,
-<strong>integers are not declared with any special type of syntax</strong>. You can
+integers are not declared with any special type of syntax. You can
 simply assign them to a variable straight away, like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span>
 </pre></div>
 </div>
-<p><strong>Floats</strong>: Floats are a fancy name for numbers with decimal points in
-them. <strong>They are declared the same way as integers</strong> but have some
+</div>
+<div class="section" id="floats">
+<h4>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h4>
+<p>Floats are a fancy name for numbers with decimal points in
+them. They are declared the same way as integers but have some
 idiosyncracies we&#8217;ll discover later:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
-<span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
-<span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
 </pre></div>
 </div>
-<p><strong>Lists</strong>: Lists are collections of values or variables. <strong>They are
+</div>
+<div class="section" id="lists">
+<h4>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
+<p>Lists are collections of values or variables. They are
 declared with brackets like these [], and items inside are separated by
-commas</strong>. They can hold collections of any type of data, including other
+commas. They can hold collections of any type of data, including other
 lists. Here are several examples:</p>
-<div class="highlight-python"><div class="highlight"><pre>list_of_numbers = [1, 2, 3, 4, 5]
-list_of_strings = [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;, &#39;d&#39;]
-list_of_both = [1, &#39;a&#39;, 2, &#39;b&#39;]
-list of lists = [[1, 2, 3], [4, 5, 6], [&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]]
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_both</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span> <span class="n">of</span> <span class="n">lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>Lists also have another neat feature: The ability to retrieve individual
 items. In order to get a specific item out of a list, you first need to
-know its position in that list. All lists in Python are
-<strong>zero-indexed</strong>, which means the first item in them sits at position 0.
-For example, in the list <tt class="docutils literal"><span class="pre">['a',</span> <span class="pre">'b',</span> <span class="pre">'c',</span> <span class="pre">'d']</span></tt>, the letter &#8220;a&#8221; is at
-position 0, &#8220;b&#8221; is at position 1, etc.</p>
-<p>The syntax for extracting a single item from the list using those
-indexes also uses brackets and looks like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
-<span class="n">the_letter_a</span> <span class="o">=</span> <span class="n">list_of_strings</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="n">the_letter_c</span> <span class="o">=</span> <span class="n">list_of_strings</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+know its position in that list.</p>
+<p>All lists in Python are <strong>zero-indexed</strong>, which means the first item in them sits at position 0.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="go">&#39;a&#39;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">&#39;c&#39;</span>
 </pre></div>
 </div>
 <p>You can also extract a range of values by specifiying the first and last
 positions you want to retrieve with a colon in between them, like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
-<span class="n">the_letters_a_b_c</span> <span class="o">=</span> <span class="n">list_of_strings</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="go">[&#39;a&#39;, &#39;b&#39;, &#39;c&#39;]</span>
 </pre></div>
 </div>
-<p><strong>Tuples</strong>: Tuples are a special type of list that cannot be changed
-once they are created. That&#8217;s not especially important right now. All
-you need to know is that <strong>they are declared with parentheses ()</strong>. For
-now, just think of them as lists.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">)</span>
+</div>
+<div class="section" id="tuples">
+<h4>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h4>
+<p>Tuples are a special type of list that cannot be changed once they are created. That&#8217;s not especially important right now. All you need to know is that they are declared with parentheses (). For now, just think of them as lists.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p><strong>Dictionaries</strong>: Dictionaries are probably the most difficult data type
-to explain, but also among the most useful. In technical terms, they are
-storehouses of key/value pairs. You can think of them like a phonebook.
-An example will make this a little more clear, but know for now that
-<strong>they are declared with curly braces</strong>.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Chase Davis&#39;</span><span class="p">:</span> <span class="s">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s">&#39;Mark Horvit&#39;</span><span class="p">:</span> <span class="s">&#39;573-555-5555&#39;</span><span class="p">}</span>
+</div>
+<div class="section" id="dictionaries">
+<h4>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h4>
+<p>Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.</p>
+<p>An example will make this a little more clear, but know for now that they are declared with curly braces.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Mom&#39;</span><span class="p">:</span> <span class="s">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s">&#39;Chinese Takeout&#39;</span><span class="p">:</span> <span class="s">&#39;573-555-5555&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>In this example, the keys are the names &#8220;Chase Davis&#8221; and &#8220;Mark Horvit&#8221;,
-which are declared as strings (Python dictionary keys usually are). The
-values are the phone numbers, which are also strings, although
-dictionary values in practice can be any data type. If I wanted to get
-Chase Davis&#8217; phone number from the dictionary, here&#8217;s how I&#8217;d do it:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">my_phonebook</span><span class="p">[</span><span class="s">&#39;Chase Davis&#39;</span><span class="p">]</span>
+<p>In this example, the keys are the names &#8220;Mom&#8221; and &#8220;Chinese takeout&#8221;,
+which are declared as strings (Python dictionary keys usually are).</p>
+<p>The values are the phone numbers, which are also strings, although
+dictionary values in practice can be any data type.</p>
+<p>If you wanted to get Mom&#8217;s phone number from the dictionary, here&#8217;s how:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span><span class="p">[</span><span class="s">&#39;Mom&#39;</span><span class="p">]</span>
+<span class="go">&#39;713-555-5555&#39;</span>
 </pre></div>
 </div>
-<p>Which would return the string &#8216;713-555-5555&#8217;. There&#8217;s a lot more to
-dictionaries, but that&#8217;s all you need to know for now.</p>
+<p>There&#8217;s a lot more to dictionaries, but that&#8217;s all you need to know for now.</p>
 </div>
 </div>
 <div class="section" id="control-structures">
