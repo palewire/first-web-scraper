@@ -39,10 +39,12 @@ and working to participate.
 4. The `pip <http://www.pip-installer.org/en/latest/installing.html>`__
    package manager for Python
 
-!!! note Depending on your experience and operating system, you might
-already be ready to go with everything above. If so, move on to the next
-chapter. If not, don't worry. And don't give up! It will be a bit of a
-slog but the instructions below will point you in the right direction.
+.. note::
+
+  Depending on your experience and operating system, you might
+  already be ready to go with everything above. If so, move on to the next
+  chapter. If not, don't worry. And don't give up! It will be a bit of a
+  slog but the instructions below will point you in the right direction.
 
 Command-line interface
 ~~~~~~~~~~~~~~~~~~~~~~
