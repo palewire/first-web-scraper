@@ -1,4 +1,4 @@
 .PHONY: docs
 
 docs:
-	cd ./docs/ && make html
+	cd ./docs/ && make livehtml
