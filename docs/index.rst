@@ -15,6 +15,8 @@ Kazil <jackiekazil@gmail.com>`__, `Sisi Wei <me@sisiwei.com>`__ and Matt
 Wynn for bootcamps held by Investigative Reporters and Editors at the
 University of Missouri in Columbia, Missouri in 2013 and 2014.
 
+It was later modified by [Ben Welsh](http://palewi.re/who-is-ben-welsh/) in December 2014 for workshops at [The Centre for Cultura Contemporania de Barcelona](http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957) and [Medialab-Prado](http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos) in Madrid.
+
 -  Code repository:
    `github.com/ireapps/scraping-class/ <https://github.com/ireapps/scraping-class/>`__
 -  Documentation:
