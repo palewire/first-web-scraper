@@ -183,27 +183,49 @@ finding your way you'll end up using a lot more than you might think.
 List files in a directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to see all the files and folders in your home directory, type
-the ``ls`` command. Once you do that, you should see a list of files and
-folders appear, such as Downloads, Documents, Desktop, etc. These should
-look a little familiar. The command line is just another way of
-navigating the directory structure you're probably used to seeing when
-you're clicking around your Mac.
+In order to see all the files and folders in your home directory, there's
+another command you need to learn.  On OSX and Linux, type:
 
-To take that point one step further, let's go into the Desktop folder.
-In order to change directories from the command line, use the ``cd``
-command, along with the directory you want to change to. In this case
-``cd Desktop`` will take you into the desktop. Type ``ls`` again to list
-the contents of the folder, and you should find that they mirror what
-you see when you look at your desktop.
+.. code:: bash
 
-Now let's move back to our home folder. Again we'll use the ``cd``
-command, but with a little twist. If you type ``cd ..`` and hit enter,
-you'll notice that you move back to the home directory that you were
-just in. When you're working from the command line, it helps to think of
-your directory structure as a tree. Navigating through the directories
-is like going higher and lower on various branches. The convention for
-moving backwards is the ``..`` notation.
+    $ ls
+
+On Windows:
+
+.. code:: bash
+
+    $ dir
+
+You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you're probably used to seeing when
+you're clicking around your computer's folders in the user-interface provided
+by your operating system.
+
+Change directories
+~~~~~~~~~~~~~~~~~~
+
+Now let's move. In order to change directories from the command line, we'll
+return to the ``cd`` command we saw earlier, which works for OSX, Linux and Windows.
+
+The only thing you need to do is tell it which directory to move into. In this
+case, the following will probably drop you on your desktop.
+
+.. code:: bash
+
+    $ cd Desktop
+
+Now run ``ls`` or ``dir`` to see what files we can find there. They should
+mirror what you see on your look at your desktop in your operating system's
+user interface.
+
+To move back to our home folder, we'll use the ``cd``
+command again, but with a little twist.
+
+.. code:: bash
+
+    $ cd ..
+
+You'll notice that will move you back to the home directory where we began.
+When you're working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is ``..``
 
 Creating and deleting files
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^

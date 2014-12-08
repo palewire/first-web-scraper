@@ -193,25 +193,38 @@ folders on your file system.</p>
 </div>
 <div class="section" id="list-files-in-a-directory">
 <h3>List files in a directory<a class="headerlink" href="#list-files-in-a-directory" title="Permalink to this headline">¶</a></h3>
-<p>In order to see all the files and folders in your home directory, type
-the <tt class="docutils literal"><span class="pre">ls</span></tt> command. Once you do that, you should see a list of files and
-folders appear, such as Downloads, Documents, Desktop, etc. These should
-look a little familiar. The command line is just another way of
-navigating the directory structure you&#8217;re probably used to seeing when
-you&#8217;re clicking around your Mac.</p>
-<p>To take that point one step further, let&#8217;s go into the Desktop folder.
-In order to change directories from the command line, use the <tt class="docutils literal"><span class="pre">cd</span></tt>
-command, along with the directory you want to change to. In this case
-<tt class="docutils literal"><span class="pre">cd</span> <span class="pre">Desktop</span></tt> will take you into the desktop. Type <tt class="docutils literal"><span class="pre">ls</span></tt> again to list
-the contents of the folder, and you should find that they mirror what
-you see when you look at your desktop.</p>
-<p>Now let&#8217;s move back to our home folder. Again we&#8217;ll use the <tt class="docutils literal"><span class="pre">cd</span></tt>
-command, but with a little twist. If you type <tt class="docutils literal"><span class="pre">cd</span> <span class="pre">..</span></tt> and hit enter,
-you&#8217;ll notice that you move back to the home directory that you were
-just in. When you&#8217;re working from the command line, it helps to think of
-your directory structure as a tree. Navigating through the directories
-is like going higher and lower on various branches. The convention for
-moving backwards is the <tt class="docutils literal"><span class="pre">..</span></tt> notation.</p>
+<p>In order to see all the files and folders in your home directory, there&#8217;s
+another command you need to learn.  On OSX and Linux, type:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ ls
+</pre></div>
+</div>
+<p>On Windows:</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ dir
+</pre></div>
+</div>
+<p>You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you&#8217;re probably used to seeing when
+you&#8217;re clicking around your computer&#8217;s folders in the user-interface provided
+by your operating system.</p>
+</div>
+<div class="section" id="change-directories">
+<h3>Change directories<a class="headerlink" href="#change-directories" title="Permalink to this headline">¶</a></h3>
+<p>Now let&#8217;s move. In order to change directories from the command line, we&#8217;ll
+return to the <tt class="docutils literal"><span class="pre">cd</span></tt> command we saw earlier, which works for OSX, Linux and Windows.</p>
+<p>The only thing you need to do is tell it which directory to move into. In this
+case, the following will probably drop you on your desktop.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ cd Desktop
+</pre></div>
+</div>
+<p>Now run <tt class="docutils literal"><span class="pre">ls</span></tt> or <tt class="docutils literal"><span class="pre">dir</span></tt> to see what files we can find there. They should
+mirror what you see on your look at your desktop in your operating system&#8217;s
+user interface.</p>
+<p>To move back to our home folder, we&#8217;ll use the <tt class="docutils literal"><span class="pre">cd</span></tt>
+command again, but with a little twist.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ cd ..
+</pre></div>
+</div>
+<p>You&#8217;ll notice that will move you back to the home directory where we began.
+When you&#8217;re working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is <tt class="docutils literal"><span class="pre">..</span></tt></p>
 <div class="section" id="creating-and-deleting-files">
 <h4>Creating and deleting files<a class="headerlink" href="#creating-and-deleting-files" title="Permalink to this headline">¶</a></h4>
 <p>You might also find it useful sometimes to create files and directories
