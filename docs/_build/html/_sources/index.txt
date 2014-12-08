@@ -48,6 +48,8 @@ and working to participate.
   chapter. If not, don't worry. And don't give up! It will be a bit of a
   slog but the instructions below will point you in the right direction.
 
+.. _command-line-prereq:
+
 Command-line interface
 ~~~~~~~~~~~~~~~~~~~~~~
 
@@ -144,8 +146,10 @@ this:
 
 Most of what you'll be doing from the command line at this point will be
 navigating through directories and running Python files. These actions
-require only a few basic commands. Open the command-line program for your
-operating system and let's get started.
+require only a few basic commands.
+
+Open the command-line program for your operating system and let's get started.
+If you need help finding it refer to the prequisite instructions for the :ref:`command-line-prereq`.
 
 Print the current directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
