@@ -11,7 +11,6 @@ certifi==14.05.14
 docutils==0.12
 ghp-import==0.4.1
 livereload==2.3.2
-mkdocs==0.11.1
 pathtools==0.1.2
 sphinx-autobuild==0.3.0
 tornado==4.0.2
