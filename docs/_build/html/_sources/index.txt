@@ -139,36 +139,45 @@ means becoming comfortable with your computer's command line
 environment. If you haven't seen it before, it looks something like
 this:
 
-.. figure:: https://f.cloud.github.com/assets/947791/119759/801b7d6a-6cb3-11e2-8eab-d3c9f2dcac15.png
-
-Both Windows and OSX have built-in tools for accessing the command line.
-
-On OSX, click on the **Spotlight** icon at the upper-right hand corner
-of your screen and type **Terminal**. You should see a program with the
-same name appear. Click on it to open your command prompt.
-
-On Windows, navigate to the **Start Menu** and find the box called
-**Run**. Click on it. In the box that appears, type the letters **cmd**.
-This should open up your command prompt.
-
-Basic commands
-~~~~~~~~~~~~~~
+.. figure:: _static/img/terminal.png
+  :width: 600 px
 
 Most of what you'll be doing from the command line at this point will be
 navigating through directories and running Python files. These actions
-require only a few basic commands.
+require only a few basic commands. Open the command-line program for your
+operating system and let's get started.
 
-Listing and changing directories
-^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
+Print the current directory
+~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once your terminal window is open, type ``pwd`` and you should see a
-directory path returned. Something like
-``/Users/whatever_your_username_is``. PWD stands for "present working
-directory." It's basically your current location relative to the root of
-your filesystem. It's easy to lose track of which folder you're in when
-you're working from the command line, so it can be a helpful tool for
-finding your way. In this case, you're in the default directory for your
-username on the computer, also known as your **home directory**.
+Once your terminal window is open, before we start moving around the first thing we want to do if find out where you are. If you're using OSX or Linux, type this:
+
+.. code:: bash
+
+    $ pwd
+
+If you're on Windows try:
+
+.. code:: bash
+
+    $ cd
+
+The terminal should print out your current location relative to the root of
+your computer's filesystem. In this case, you're in the default directory for your
+user, also known as your **home** directory.
+
+It's easy to lose track of which folder you're in when
+you're working from the command line, so this is a helpful tool for
+finding your way you'll end up using a lot more than you might think.
+
+.. note::
+
+  In case you're curious ``pwd`` standards "present working directory" and ``cd``
+  stands for "change directory," a tool we'll use again soon to move between
+  folders on your file system.
+
+List files in a directory
+~~~~~~~~~~~~~~~~~~~~~~~~~
 
 In order to see all the files and folders in your home directory, type
 the ``ls`` command. Once you do that, you should see a list of files and
