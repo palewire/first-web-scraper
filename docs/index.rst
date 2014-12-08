@@ -58,10 +58,8 @@ On Windows you can find the command-line interface by opening the
 "command prompt." Here are instructions for `Windows
 8 <http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8>`__
 and `earlier
-versions <http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>`__
-On Apple computers, you open the `"Terminal"
-application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`__.
-Ubuntu Linux comes with a program of the `same
+versions <http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window>`__. On Apple computers, you open the `"Terminal"
+application <http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line>`__. Ubuntu Linux comes with a program of the `same
 name <http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it>`__.
 
 Text editor
@@ -140,9 +138,7 @@ environment. If you haven't seen it before, it looks something like
 this:
 
 .. figure:: https://f.cloud.github.com/assets/947791/119759/801b7d6a-6cb3-11e2-8eab-d3c9f2dcac15.png
-   :alt: OSX terminal window
 
-   OSX terminal window
 Both Windows and OSX have built-in tools for accessing the command line.
 
 On OSX, click on the **Spotlight** icon at the upper-right hand corner
