@@ -24,6 +24,11 @@ It was later modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in De
 -  Issues:
    `github.com/ireapps/first-web-scraper/issues/ <https://github.com/ireapps/first-web-scraper/issues>`__
 
+What you will make
+------------------
+
+This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri for `a local government website <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_ and save it as comma-delimited text ready for analysis.
+
 Prelude: Prerequisites
 ----------------------
 
@@ -758,7 +763,7 @@ Act 3: Web scraping
 
 Now that we've covered all the fundamentals, it's time to get to work and write a web scraper.
 
-The first target is a regularly updated roster of inmates at the Boone County Jail in Missouri. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
+The target is a regularly updated `roster of inmates at the Boone County Jail in Missouri <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
 
 Installing dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~
