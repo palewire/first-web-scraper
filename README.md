@@ -6,7 +6,7 @@ A step-by-step guide to writing a web scraper with Python.
 
 * Documentation: [first-web-scraper.rtfd.org](http://first-web-scraper.readthedocs.org/en/latest/)
 
-## Contributing to the documentation
+### Contributing to the documentation
 
 After installing the repository, the Sphinx documentation can be edited in the
 ``docs`` directory and published to ReadTheDocs by pushing changes to the ``master`` branch.
