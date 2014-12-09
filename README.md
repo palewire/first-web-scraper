@@ -1,4 +1,4 @@
-# Scraping class
+# First web scraper
 
 A step-by-step guide to writing a web scraper with Python.
 
