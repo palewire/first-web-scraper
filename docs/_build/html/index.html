@@ -680,9 +680,8 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </pre></div>
 </div>
 </div>
-</div>
 <div class="section" id="extracting-an-html-table">
-<h2>Extracting an HTML table<a class="headerlink" href="#extracting-an-html-table" title="Permalink to this headline">¶</a></h2>
+<h3>Extracting an HTML table<a class="headerlink" href="#extracting-an-html-table" title="Permalink to this headline">¶</a></h3>
 <p>Now that we know where to find the data we&#8217;re after, it&#8217;s time to write script to pull it down and save it to a comma-delimited file.</p>
 <p>Let&#8217;s start by creating a Python file to hold our scraper. First jump into the <tt class="docutils literal"><span class="pre">Code</span></tt> directory we made at the beginning of this lesson.</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ cd Code
@@ -754,6 +753,10 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <span class="hll">    <span class="k">print</span> <span class="n">row</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
 </span></pre></div>
 </div>
+<p>Save and run the script. You&#8217;ll not see each row printed out separately as the script loops through the table.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
 <p>Next we can loop through each of the cells in each row by select them inside the loop. Cells are created in HTML by the <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tag.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -770,7 +773,150 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span><span class="hll">        <span class="k">print</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
 </span></pre></div>
 </div>
-<p>TK TK</p>
+<p>Again, save and run the script. This might seem repetitive, but it is the constant rhythm of many Python programmers).</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>When that prints you will notice some annoying <tt class="docutils literal"><span class="pre">&amp;nbsp;</span></tt> on the end of many lines. That is the HTML code for a <strong>non-breaking space</strong>, which forces the browser to render an empty space on the page. It is junk and we can delete it easily with this handy Python trick.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;resultsTable&#39;</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
+<span class="hll">        <span class="k">print</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Save and run the script. Everything should be much better.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won&#8217;t be hard since CSVs aren&#8217;t anymore than a grid of columns and rows, much like a table.</p>
+<p>Let&#8217;s start by adding each cell in a row to a new Python list.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;resultsTable&#39;</span><span class="p">})</span>
+
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+<span class="hll">    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
+</span>    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
+<span class="hll">        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span><span class="hll">        <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+</span><span class="hll">    <span class="k">print</span> <span class="n">list_of_cells</span>
+</span></pre></div>
+</div>
+<p>Save and rerun the script. Now you should see Python lists streaming by one row at a time.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>Those lists can not be lumped together into one big list of lists, which, when you think about it, isn&#8217;t all tha different from how a spreadsheet or CSV is structured.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;resultsTable&#39;</span><span class="p">})</span>
+
+<span class="hll"><span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
+</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+<span class="hll">    <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
+</span><span class="hll">
+</span><span class="hll"><span class="k">print</span> <span class="n">list_of_rows</span>
+</span></pre></div>
+</div>
+<p>Save and rerun the script. You should see a big bunch of data dumped out into the terminal. Look closely and you&#8217;ll see the list of lists.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>To write that list out to a comma-delimited file, we need to import Python built-in <tt class="docutils literal"><span class="pre">csv</span></tt> module at the top of the file. Then, at the botton, we will create a new file, hand it off to the <tt class="docutils literal"><span class="pre">csv</span></tt> module, and then lead on a handy tool it has called <tt class="docutils literal"><span class="pre">writerows</span></tt> to dump out our list of lists.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="kn">import</span> <span class="nn">csv</span>
+</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;resultsTable&#39;</span><span class="p">})</span>
+
+<span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
+
+<span class="hll"><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+</span><span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
+</span></pre></div>
+</div>
+<p>Save and run the script. Nothing should happen &#8211; at least to appear to happen.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>Since there are no longer any print statements in the file, the script is no longer dumping data out to your terminal. However, if you open up your code directory you should now see a new file named <tt class="docutils literal"><span class="pre">inmates.csv</span></tt> waiting for you. Open it in a text editor or Excel and you should see structured data all scraped out.</p>
+<p>There is still one obvious problem though. There are no headers!</p>
+<div class="figure">
+<img alt="_images/xls-1.png" src="_images/xls-1.png" />
+</div>
+<p>Here&#8217;s why. If you go back and look closely, our script is only looping through lists of <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slight different <tt class="docutils literal"><span class="pre">&lt;th&gt;</span></tt> tag. Look back at the source of the Boone County page and you&#8217;ll see that&#8217;s what exactly they do.</p>
+<p>But rather than bend over backwords to dig them out of the page, let&#8217;s try something a little different. Let&#8217;s just skip the first row when we loop though, and then write the headers out ourselves at the end.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;resultsTable&#39;</span><span class="p">})</span>
+
+<span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="hll"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>
+</span>    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
+
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+<span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s">&quot;Last&quot;</span><span class="p">,</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="s">&quot;Middle&quot;</span><span class="p">,</span> <span class="s">&quot;Gender&quot;</span><span class="p">,</span> <span class="s">&quot;Race&quot;</span><span class="p">,</span> <span class="s">&quot;Age&quot;</span><span class="p">,</span> <span class="s">&quot;City&quot;</span><span class="p">,</span> <span class="s">&quot;State&quot;</span><span class="p">])</span>
+</span><span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
+</pre></div>
+</div>
+<p>Save and run the script one last time.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>Our headers are now there, and you&#8217;ve finished the class. Congratulations! You&#8217;re not a web scraper.</p>
+<div class="figure">
+<img alt="_images/xls-2.png" src="_images/xls-2.png" />
+</div>
+</div>
 </div>
 </div>
 
@@ -788,7 +934,6 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <li><a class="reference internal" href="#act-1-the-command-line">Act 1: The command line</a></li>
 <li><a class="reference internal" href="#act-2-python">Act 2: Python</a></li>
 <li><a class="reference internal" href="#act-3-web-scraping">Act 3: Web scraping</a></li>
-<li><a class="reference internal" href="#extracting-an-html-table">Extracting an HTML table</a></li>
 </ul>
 </li>
 </ul>

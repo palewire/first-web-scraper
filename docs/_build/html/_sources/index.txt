@@ -839,7 +839,7 @@ On Boone County's page, there is only table in the HTML's ``body`` tag. The tabl
     <table class="resultsTable" style="margin: 0 auto; width: 90%; font-size: small;">
 
 Extracting an HTML table
-------------------------
+~~~~~~~~~~~~~~~~~~~~~~~~
 
 Now that we know where to find the data we're after, it's time to write script to pull it down and save it to a comma-delimited file.
 
@@ -933,6 +933,12 @@ BeautifulSoup gets us going by allowing us to dig down into our table and return
     for row in table.findAll('tr'):
         print row.prettify()
 
+Save and run the script. You'll not see each row printed out separately as the script loops through the table.
+
+.. code:: bash
+
+  $ python scrape.py
+
 Next we can loop through each of the cells in each row by select them inside the loop. Cells are created in HTML by the ``<td>`` tag.
 
 .. code-block:: python
@@ -952,6 +958,180 @@ Next we can loop through each of the cells in each row by select them inside the
         for cell in row.findAll('td'):
             print cell.text
 
-TK TK
+Again, save and run the script. This might seem repetitive, but it is the constant rhythm of many Python programmers).
+
+.. code:: bash
+
+  $ python scrape.py
+
+When that prints you will notice some annoying ``&nbsp;`` on the end of many lines. That is the HTML code for a **non-breaking space**, which forces the browser to render an empty space on the page. It is junk and we can delete it easily with this handy Python trick.
+
+.. code-block:: python
+    :emphasize-lines: 13
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    for row in table.findAll('tr'):
+        for cell in row.findAll('td'):
+            print cell.text.replace('&nbsp;', '')
+
+Save and run the script. Everything should be much better.
+
+.. code:: bash
+
+  $ python scrape.py
+
+Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won't be hard since CSVs aren't anymore than a grid of columns and rows, much like a table.
+
+Let's start by adding each cell in a row to a new Python list.
+
+.. code-block:: python
+    :emphasize-lines: 12,14-16
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    for row in table.findAll('tr'):
+        list_of_cells = []
+        for cell in row.findAll('td'):
+            text = cell.text.replace('&nbsp;', '')
+            list_of_cells.append(text)
+        print list_of_cells
+
+Save and rerun the script. Now you should see Python lists streaming by one row at a time.
+
+.. code:: bash
+
+  $ python scrape.py
+
+Those lists can not be lumped together into one big list of lists, which, when you think about it, isn't all tha different from how a spreadsheet or CSV is structured.
+
+.. code-block:: python
+    :emphasize-lines: 11,17-19
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    list_of_rows = []
+    for row in table.findAll('tr'):
+        list_of_cells = []
+        for cell in row.findAll('td'):
+            text = cell.text.replace('&nbsp;', '')
+            list_of_cells.append(text)
+        list_of_rows.append(list_of_cells)
+
+    print list_of_rows
+
+Save and rerun the script. You should see a big bunch of data dumped out into the terminal. Look closely and you'll see the list of lists.
+
+.. code:: bash
+
+  $ python scrape.py
+
+To write that list out to a comma-delimited file, we need to import Python built-in ``csv`` module at the top of the file. Then, at the botton, we will create a new file, hand it off to the ``csv`` module, and then lead on a handy tool it has called ``writerows`` to dump out our list of lists.
+
+.. code-block:: python
+    :emphasize-lines: 1,20-22
+
+    import csv
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    list_of_rows = []
+    for row in table.findAll('tr'):
+        list_of_cells = []
+        for cell in row.findAll('td'):
+            text = cell.text.replace('&nbsp;', '')
+            list_of_cells.append(text)
+        list_of_rows.append(list_of_cells)
+
+    outfile = open("./inmates.csv", "wb")
+    writer = csv.writer(outfile)
+    writer.writerows(list_of_rows)
+
+Save and run the script. Nothing should happen -- at least to appear to happen.
+
+.. code:: bash
+
+  $ python scrape.py
+
+Since there are no longer any print statements in the file, the script is no longer dumping data out to your terminal. However, if you open up your code directory you should now see a new file named ``inmates.csv`` waiting for you. Open it in a text editor or Excel and you should see structured data all scraped out.
+
+There is still one obvious problem though. There are no headers!
+
+.. figure:: _static/img/xls-1.png
+
+Here's why. If you go back and look closely, our script is only looping through lists of ``<td>`` tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slight different ``<th>`` tag. Look back at the source of the Boone County page and you'll see that's what exactly they do.
+
+But rather than bend over backwords to dig them out of the page, let's try something a little different. Let's just skip the first row when we loop though, and then write the headers out ourselves at the end.
+
+.. code-block:: python
+    :emphasize-lines: 13,22
+
+    import csv
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    list_of_rows = []
+    for row in table.findAll('tr')[1:]:
+        list_of_cells = []
+        for cell in row.findAll('td'):
+            text = cell.text.replace('&nbsp;', '')
+            list_of_cells.append(text)
+        list_of_rows.append(list_of_cells)
+
+    outfile = open("./inmates.csv", "wb")
+    writer = csv.writer(outfile)
+    writer.writerow(["Last", "First", "Middle", "Gender", "Race", "Age", "City", "State"])
+    writer.writerows(list_of_rows)
+
+Save and run the script one last time.
+
+.. code:: bash
+
+  $ python scrape.py
+
+Our headers are now there, and you've finished the class. Congratulations! You're not a web scraper.
+
+.. figure:: _static/img/xls-2.png
+
+
+
 
 
