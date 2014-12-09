@@ -5,9 +5,7 @@ First web scraper
 
 A step-by-step guide to writing a web scraper with Python
 
-Although the goal of this course is to introduce the concepts of web
-scraping, we will also spend time covering programming fundamentals that
-can be applied to other problems, from data analysis to web development.
+The course assumes the reader has little experience with Python and the command line, covering a number of fundamental skills that can be applied to other problems.
 
 This guide was initially developed by `Chase
 Davis <chase.davis@gmail.com>`__, `Jackie
