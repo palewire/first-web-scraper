@@ -1088,7 +1088,7 @@ There is still one obvious problem though. There are no headers!
 
 .. figure:: _static/img/xls-1.png
 
-Here's why. If you go back and look closely, our script is only looping through lists of ``<td>`` tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slight different ``<th>`` tag. Look back at the source of the Boone County page and you'll see that's what exactly they do.
+Here's why. If you go back and look closely, our script is only looping through lists of ``<td>`` tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different ``<th>`` tag. Look back at the source of the Boone County page and you'll see that's what exactly they do.
 
 But rather than bend over backwords to dig them out of the page, let's try something a little different. Let's just skip the first row when we loop though, and then write the headers out ourselves at the end.
 

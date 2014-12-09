@@ -879,7 +879,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <div class="figure">
 <img alt="_images/xls-1.png" src="_images/xls-1.png" />
 </div>
-<p>Here&#8217;s why. If you go back and look closely, our script is only looping through lists of <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slight different <tt class="docutils literal"><span class="pre">&lt;th&gt;</span></tt> tag. Look back at the source of the Boone County page and you&#8217;ll see that&#8217;s what exactly they do.</p>
+<p>Here&#8217;s why. If you go back and look closely, our script is only looping through lists of <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different <tt class="docutils literal"><span class="pre">&lt;th&gt;</span></tt> tag. Look back at the source of the Boone County page and you&#8217;ll see that&#8217;s what exactly they do.</p>
 <p>But rather than bend over backwords to dig them out of the page, let&#8217;s try something a little different. Let&#8217;s just skip the first row when we loop though, and then write the headers out ourselves at the end.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">requests</span>
