@@ -767,9 +767,19 @@ The scraper will use Python's `BeautifulSoup <http://www.crummy.com/software/Bea
 
 We'll also use the `Requests library <http://docs.python-requests.org/en/latest/>_ to open the URL, download the HTML and pass it to BeautifulSoup.
 
+In OSX or Linux try this:
+
 .. code:: bash
 
-    $ sudo pip install EVERYTHING
+    $ sudo pip install BeautifulSoup
+    $ sudo pip install Requests
+
+On Windows give it a shot with the ``sudo``.
+
+.. code:: bash
+
+    $ pip install BeautifulSoup
+    $ pip install Requests
 
 Analyzing the HTML
 ~~~~~~~~~~~~~~~~~~
