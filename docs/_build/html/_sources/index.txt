@@ -765,7 +765,7 @@ Installing dependencies
 
 The scraper will use Python's `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ toolkit to parse the site's HTML and extract the data.
 
-We'll also use the `Requests library <http://docs.python-requests.org/en/latest/>_ to open the URL, download the HTML and pass it to BeautifulSoup.
+We'll also use the `Requests library <http://docs.python-requests.org/en/latest/>`_ to open the URL, download the HTML and pass it to BeautifulSoup.
 
 In OSX or Linux try this:
 
