@@ -1127,7 +1127,7 @@ Save and run the script one last time.
 
   $ python scrape.py
 
-Our headers are now there, and you've finished the class. Congratulations! You're not a web scraper.
+Our headers are now there, and you've finished the class. Congratulations! You're now a web scraper.
 
 .. figure:: _static/img/xls-2.png
 
