@@ -1,3 +1,4 @@
+BeautifulSoup==3.2.1
 Jinja2==2.7.3
 MarkupSafe==0.23
 PyYAML==3.11
@@ -10,6 +11,7 @@ certifi==14.05.14
 docutils==0.12
 livereload==2.2.0
 pathtools==0.1.2
+requests==2.5.0
 sphinx-autobuild==0.3.0
 tornado==4.0.2
 watchdog==0.8.2
