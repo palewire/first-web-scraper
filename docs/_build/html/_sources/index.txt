@@ -897,3 +897,46 @@ Save the file and run ``scrape.py`` again and this time you can see that only pr
 .. code:: bash
 
   $ python scrape.py
+
+In the end, all we need to do now is figure out is a way to convert the rows in the table into a list, which we then loop through and grab all the data from.
+
+BeautifulSoup gets us going by allowing us to dig down into our table and return a list of rows, which are created in HTML using ``<tr>`` tags inside the table.
+
+.. code-block:: python
+    :emphasize-lines: 12,13
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    for row in table.findAll('tr'):
+        print row.prettify()
+
+Next we can loop through each of the cells in each row by select them inside the loop. Cells are created in HTML by the ``<td>`` tag.
+
+.. code-block:: python
+    :emphasize-lines: 12,13
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+
+    for row in table.findAll('tr'):
+        for cell in row.findAll('td'):
+            print cell.text
+
+TK TK
+
+
