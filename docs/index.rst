@@ -758,7 +758,18 @@ Act 3: Web scraping
 
 Now that we've covered all the fundamentals, it's time to get to work and write a web scraper.
 
-The first target is a regularly updated list of inmates at the Boone County Jail in Missouri. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
+The first target is a regularly updated roster of inmates at the Boone County Jail in Missouri. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
+
+Installing dependencies
+~~~~~~~~~~~~~~~~~~~~~~~
+
+The scraper will use Python's `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ toolkit to parse the site's HTML and extract the data.
+
+We'll also use the `Requests library <http://docs.python-requests.org/en/latest/>_ to open the URL, download the HTML and pass it to BeautifulSoup.
+
+.. code:: bash
+
+    $ sudo pip install EVERYTHING
 
 Analyzing the HTML
 ~~~~~~~~~~~~~~~~~~

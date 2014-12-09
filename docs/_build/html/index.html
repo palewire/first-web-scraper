@@ -620,7 +620,15 @@ top of your program.</p>
 <div class="section" id="act-3-web-scraping">
 <h2>Act 3: Web scraping<a class="headerlink" href="#act-3-web-scraping" title="Permalink to this headline">¶</a></h2>
 <p>Now that we&#8217;ve covered all the fundamentals, it&#8217;s time to get to work and write a web scraper.</p>
-<p>The first target is a regularly updated list of inmates at the Boone County Jail in Missouri. Boone County is home to Columbia, where you can find the University of Missouri&#8217;s main campus and the headquarters of Investigative Reporters and Editors.</p>
+<p>The first target is a regularly updated roster of inmates at the Boone County Jail in Missouri. Boone County is home to Columbia, where you can find the University of Missouri&#8217;s main campus and the headquarters of Investigative Reporters and Editors.</p>
+<div class="section" id="installing-dependencies">
+<h3>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h3>
+<p>The scraper will use Python&#8217;s <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> toolkit to parse the site&#8217;s HTML and extract the data.</p>
+<p>We&#8217;ll also use the <a href="#id1"><span class="problematic" id="id2">`</span></a>Requests library &lt;<a class="reference external" href="http://docs.python-requests.org/en/latest/">http://docs.python-requests.org/en/latest/</a>&gt;_ to open the URL, download the HTML and pass it to BeautifulSoup.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ sudo pip install EVERYTHING
+</pre></div>
+</div>
+</div>
 <div class="section" id="analyzing-the-html">
 <h3>Analyzing the HTML<a class="headerlink" href="#analyzing-the-html" title="Permalink to this headline">¶</a></h3>
 <p>HTML is the framework that, in most cases, contains the content of a page. Other bits and pieces like CSS and JavaScript can style, reshape and add layers of interaction to a page.</p>
