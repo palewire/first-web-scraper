@@ -321,7 +321,7 @@ We'll be using this a lot in the beginning to demonstrate concepts, but in the r
 To open the interpreter, simply type ``python`` from your command line, and you should see a screen that
 looks like this:
 
-.. figure:: https://f.cloud.github.com/assets/947791/120133/9dc93b9e-6cc8-11e2-8232-4549e69c291b.png
+.. figure:: _static/img/python.png
    :alt: Python interactive interpreter
 
 Next we'll use the interpreter to walk through a handful of basic concepts
@@ -782,8 +782,7 @@ In order to scrape a website, we need to understand what each of these pieces do
 To view the HTML code, open up a Web browser and visit `the Boone County web
 page we'll be scraping <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Then and right click with your mouse and select 'View Source'.
 
-.. figure:: https://f.cloud.github.com/assets/166734/1318115/455e7fec-32b5-11e3-93c8-d67247faad1c.png
-   :alt: screen shot 2013-10-11 at 3 39 09 pm
+.. figure:: _static/img/source.png
 
 HTML has markers that denote the start and end of the webpage, ``<html></html>``. Inside that tag, there are two main sections, the head and the body.
 
@@ -802,13 +801,14 @@ and select 'inspect element.'
 
     The inspector tool might have a slightly different name depending on which browser you're using. To make this easy on yourself, consider using Google Chrome.
 
-.. figure:: https://f.cloud.github.com/assets/166734/1320358/7f309dae-3355-11e3-88db-5249ae5678e7.png
+.. figure:: _static/img/inspect.png
    :alt: Inspect the element
 
 Your browser will open a special panel and highlight the portion of the page's HTML code that you've just clicked on.
 
-.. figure:: https://f.cloud.github.com/assets/166734/1320348/f12d3206-3354-11e3-8ef9-b6a4540e526b.png
+.. figure:: _static/img/table.png
    :alt: Inspector with the highlighted element
+   :width: 600px
 
 There are many ways to grab content from HTML, and every page you scrape data from will require a slightly different trick.
 
