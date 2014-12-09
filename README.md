@@ -2,6 +2,8 @@
 
 A step-by-step guide to writing a web scraper with Python.
 
+[![Documentation Status](https://readthedocs.org/projects/first-web-scraper/badge/?version=latest)](https://readthedocs.org/projects/first-web-scraper/?badge=latest)
+
 * Documentation: [first-web-scraper.rtfd.org](http://first-web-scraper.readthedocs.org/en/latest/)
 
 ## Contributing to the documentation
