@@ -1,9 +1,9 @@
 :tocdepth: 2
 
-Scraping class
-==============
+First web scraper
+=================
 
-An step-by-step guide to building your first web scraper.
+A step-by-step guide to writing a web scraper with Python
 
 Although the goal of this course is to introduce the concepts of web
 scraping, we will also spend time covering programming fundamentals that
@@ -18,11 +18,11 @@ University of Missouri in Columbia, Missouri in 2013 and 2014.
 It was later modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in December 2014 for workshops at `The Centre for Cultura Contemporania de Barcelona <http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957>`_ and `Medialab-Prado <http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos>`_ in Madrid.
 
 -  Code repository:
-   `github.com/ireapps/scraping-class/ <https://github.com/ireapps/scraping-class/>`__
+   `github.com/ireapps/first-web-scraper/ <https://github.com/ireapps/first-web-scraper/>`__
 -  Documentation:
-   `scraping-class.rtfd.org/ <http://scraping-class.rtfd.org/>`__
+   `first-web-scraper.rtfd.org/ <http://first-web-scraper.rtfd.org/>`__
 -  Issues:
-   `github.com/ireapps/scraping-class/issues/ <https://github.com/ireapps/scraping-class/issues>`__
+   `github.com/ireapps/first-web-scraper/issues/ <https://github.com/ireapps/first-web-scraper/issues>`__
 
 Prelude: Prerequisites
 ----------------------
