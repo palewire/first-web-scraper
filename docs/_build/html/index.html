@@ -416,7 +416,7 @@ which are declared as strings (Python dictionary keys usually are).</p>
 dictionary values in practice can be any data type.</p>
 <p>If you wanted to get Mom&#8217;s phone number from the dictionary, here&#8217;s how:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span><span class="p">[</span><span class="s">&#39;Mom&#39;</span><span class="p">]</span>
-<span class="go">&#39;713-555-5555&#39;</span>
+<span class="go">713-555-5555</span>
 </pre></div>
 </div>
 <p>There&#8217;s a lot more to dictionaries, but that&#8217;s all you need to know for now.</p>
@@ -424,217 +424,197 @@ dictionary values in practice can be any data type.</p>
 </div>
 <div class="section" id="control-structures">
 <h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h3>
-<p>If you, think of a Python script as a series of commands that execute
-one after another you might imagine it would be helpful to be able to
-control the order and conditions under which those commands will run.
-That&#8217;s where control structures come in &#8211; simple logical operators that
+<p>As a beginner your first Python scripts won&#8217;t be much more complicated that a series of commands that execute one after another, working together to accomplish a task.</p>
+<p>In those situations, it is helpful to be able to control the order and conditions under which those commands will run.</p>
+<p>That&#8217;s where control structures come in &#8211; simple logical operators that
 allow you to execute parts of your code when the right conditions call
 for it.</p>
-<p>For our purposes, there are two control structures you will use most
-often: <strong>if/else statements</strong> and <strong>loops</strong>.</p>
-<div class="section" id="if-else-statements">
-<h4>If/else statements<a class="headerlink" href="#if-else-statements" title="Permalink to this headline">¶</a></h4>
-<p>If/else statements are pretty much exactly what they sounds like. <em>If</em> a
-certain condition is met, your program should do one thing; or <em>else</em> it
-should do something else.</p>
-<p>The syntax is pretty intuitive &#8211; except for one <strong>extremely important
-thing</strong>: In Python, whitespace matters. A lot. It&#8217;s easiest to
-demonstrate this with an example:</p>
+<p>Here are two you will end up using a lot.</p>
+<div class="section" id="the-if-clause">
+<h4>The if clause<a class="headerlink" href="#the-if-clause" title="Permalink to this headline">¶</a></h4>
+<p>If statements are pretty much exactly what they sound like. <strong>If</strong> a
+certain condition is met, your program should do something.</p>
+<p>Let&#8217;s start with a simple example.</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="go">Wow, that&#39;s a big number!</span>
+</pre></div>
+</div>
+<p>Our little program in this case starts with a variable, which we&#8217;ve called <tt class="docutils literal"><span class="pre">number</span></tt>, being set to 10. That&#8217;s pretty simple, and a concept you should be familiar with by this point.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+</pre></div>
+</div>
+<p>The next line, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt> declares our if statement. In this case, we want something to happen if the <tt class="docutils literal"><span class="pre">number</span></tt> variable is greater than 5.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+</pre></div>
+</div>
+<p>Most of the if statements we build are going to rely on equality operators like the kind we learned in elementary school: greater than (&gt;), less than (&lt;), greater than or equal to (&gt;=), less than or equal to (&lt;=) and plain old &#8220;equals&#8221;. The equals operator is a little tricky, in that it is declared with two equals signs (==), not one (=). Why is that? Because you&#8217;ll remember from above that a single equals sign is the notation we use to assign a value to a variable!</p>
+<p>Next, take note of the indentation. In Python, whitespace matters. A lot.  Notice that I said indents must be four spaces. Four spaces means four spaces &#8211; not a tab.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+</span></pre></div>
+</div>
+<p>Tabs and spaces are different. To avoid problems, you should press the space bar four times whenever you indent Python code.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There are some text editors that will automatically convert tabs to spaces, and once you feel more comfortable you might want to use one. But for now, get in the habit of making all indents four spaces.</p>
+</div>
+<p>If you look closely, there&#8217;s another small detail you need to remember: The colon! When we declare an <tt class="docutils literal"><span class="pre">if</span></tt> statement, we always end that line with a colon.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&quot;I execute no matter what your number is!&quot;</span>
+</pre></div>
+</div>
+<p>It helps sometimes to think of your program as taking place on different levels.</p>
+<p>In this case, the first level of our program (the one that isn&#8217;t indented) has us declaring the variable <tt class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></tt> and setting up our if condition, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt>.</p>
+<p>The second level of our program executes only on the condition that our if statement is true. Therefore, because it depends on that if statement, it is indented four spaces.</p>
+<p>If we wanted to continue our program back on the first level, we could do something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&quot;I execute no matter what your number is!&quot;</span>
+</span><span class="go">&gt;&gt;&gt;</span>
+<span class="go">Wow, that&#39;s a big number!</span>
+<span class="go">I execute no matter what your number is!</span>
+</pre></div>
+</div>
+<p>The last statement doesn&#8217;t depend on the <tt class="docutils literal"><span class="pre">if</span></tt> statement, so it will always run.</p>
+</div>
+<div class="section" id="the-else-clause">
+<h4>The else clause<a class="headerlink" href="#the-else-clause" title="Permalink to this headline">¶</a></h4>
+<p>Now let&#8217;s talk about a common companion for <tt class="docutils literal"><span class="pre">if</span></tt> statement &#8211; the <tt class="docutils literal"><span class="pre">else</span></tt> clause. It can be combined with an <tt class="docutils literal"><span class="pre">if</span></tt> statement to have the script execute a block of code when it turns out not to be true.</p>
+<p>You don&#8217;t need to have an <tt class="docutils literal"><span class="pre">else</span></tt> condition for your <tt class="docutils literal"><span class="pre">if</span></tt> statements, but sometimes it helps. Consider this example:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
     <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-</pre></div>
+<span class="hll"><span class="k">else</span><span class="p">:</span>
+</span><span class="hll">    <span class="k">print</span> <span class="s">&quot;Gee, that number&#39;s kind of small, don&#39;t you think?&quot;</span>
+</span></pre></div>
 </div>
-<p>There&#8217;s a lot to unpack here, but first take note of the indentation. It
-helps sometimes to think of your program as taking place on different
-levels. In this case, the main level of our program (the one that isn&#8217;t
-indented) has us declaring the variable <tt class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></tt> and setting up
-our if condition (<tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt>). The second level of our program
-executes only on the condition that our if statement is true. Therefore,
-because it depends on that if statement, it is indented <strong>four spaces</strong>
-underneath that statement.</p>
-<p>If you look closely, there&#8217;s a small detail that can help you remember
-when a program moves from one level to another: namely, the presence of
-a colon. When we declare an if statement, we <strong>always end that line with
-a colon</strong>. The colon is our way of telling Python that it should start
-another level in the program, and everything on that level must be
-indented accordingly.</p>
-<p>If we wanted to continue our program, we could do something like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-
-<span class="k">print</span> <span class="s">&quot;I execute no matter what your number is!&quot;</span>
-</pre></div>
-</div>
-<p>The last statement doesn&#8217;t depend on the if statement, so it&#8217;s back on
-the main level again.</p>
-<p>Notice that I said indents must be <strong>four spaces</strong>. Four spaces means
-four spaces &#8211; <strong>NOT A TAB. TABS AND SPACES ARE DIFFERENT. YOU MUST
-PRESS THE SPACE BAR FOUR TIMES WHENVER YOU INDENT PYTHON CODE.</strong> There
-are some text editors that automatically convert tabs to spaces, and
-once you feel more comfortable, you might want to use one. But for now,
-get in the habit of making all your indents <strong>FOUR SPACES</strong>.</p>
-<p>Now with that being said, let&#8217;s unpack the rest of our if statement:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-</pre></div>
-</div>
-<p>Our little program in this case starts with a variable, which we&#8217;ve
-called <tt class="docutils literal"><span class="pre">number</span></tt>, being set to 10. That&#8217;s pretty simple, and a concept
-you should be familiar with by this point. The next line,
-<tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt> declares our if statement. In this case, we want
-something to happen if the <tt class="docutils literal"><span class="pre">number</span></tt> variable is greater than 5.</p>
-<p>Most of the if statements we build are going to rely on equality
-operators like the kind we learned in elementary school: greater than
-(&gt;), less than (&lt;), greater than or equal to (&gt;=), less than or equal to
-(&lt;=) and plain old &#8220;equals&#8221;. The equals operator is a little tricky, in
-that <strong>it is declared with two equals signs (==), not one (=).</strong> Why is
-that? Because you&#8217;ll remember from above that a single equals sign is
-the notation we use to assign a value to a variable! <strong>Single equals
-signs are for assignment (``number = 5``); double equals signs are for
-equality (``if number == 5:``)</strong>. File that one away somewhere. It&#8217;s
-important.</p>
-<p>Now let&#8217;s talk about the next part of the if statement &#8211; the else
-clause. You&#8217;ll notice from the program above that the else clause isn&#8217;t
-required. You don&#8217;t <em>need</em> to have an else condition for your if
-statements, but sometimes it helps. Consider this example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-<span class="k">else</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;Gee, that number&#39;s kind of small, don&#39;t you think?&quot;</span>
-</pre></div>
-</div>
-<p>In this case, we&#8217;re telling our program to print one thing if <tt class="docutils literal"><span class="pre">number</span></tt>
-is greater than 5, and something else if it&#8217;s not. Notice that the else
-statement also ends with a colon, and as such its contents are also
-indented four spaces.</p>
+<p>In this case, we&#8217;re telling our program to print one thing if <tt class="docutils literal"><span class="pre">number</span></tt> is greater than five, and something else if it&#8217;s not. Notice that the <tt class="docutils literal"><span class="pre">else</span></tt> statement also ends with a colon, and as such its contents are also indented four spaces.</p>
 </div>
 <div class="section" id="for-loops">
 <h4>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h4>
 <p>Remember earlier we discussed the concept of a list &#8211; the type of
-variable that can hold multiple items in it all at once. Many times
-during your programming career, you&#8217;ll find it helps to run through an
-entire list of items and do something with all of them, one at a time.
-That&#8217;s where for loops come in.</p>
-<p>Let&#8217;s start by having Python say the ABC&#8217;s:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">letter</span>
+variable that can hold multiple items in it all at once?</p>
+<p>Many times during your programming career, you&#8217;ll find it helps to run through an entire list of items and do something with all of them, one at a time.</p>
+<p>That&#8217;s where for loops come in. Let&#8217;s start by having Python say the ABC&#8217;s:</p>
+<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">letter</span>
+<span class="go">&gt;&gt;&gt;</span>
+<span class="go">a</span>
+<span class="go">b</span>
+<span class="go">c</span>
 </pre></div>
 </div>
-<p>The output of this statement, as you might guess, would be &#8220;a b c&#8221;. But
-there are still a few things to unpack here &#8211; some familiar and some
-not.</p>
-<p>First you&#8217;ll notice from looking at the print statement that our
+<p>The output of this statement is what you might guess. But there are still a few things to unpack here &#8211; some familiar and some not.</p>
+<p>First, you&#8217;ll notice from looking at the print statement that our
 indentation rules still apply. Everything that happens within the for
 loop must still be indented four spaces from the main level of the
 program. You&#8217;ll also see that the line declaring the loop ends in a
-colon, just like the if/else statement. That&#8217;s an indication that
-indentation will be necessary.</p>
-<p>Second, turn your attention to the syntax of declaring the loop itself:
-<tt class="docutils literal"><span class="pre">for</span> <span class="pre">letter</span> <span class="pre">in</span> <span class="pre">list_of_letters:</span></tt></p>
+colon, just like the if and else statements.</p>
+<p>Second, turn your attention to the syntax of declaring the loop itself.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+</span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">letter</span>
+</pre></div>
+</div>
 <p>All of our for loops start, unsurprisingly, with the word <tt class="docutils literal"><span class="pre">for</span></tt> and
-follow the pattern <tt class="docutils literal"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></tt>. The variable_name
+follow the pattern <tt class="docutils literal"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></tt>. The <tt class="docutils literal"><span class="pre">variable\_name</span></tt>
 can be anything you want &#8211; it&#8217;s essentially just a new variable you&#8217;re
-creating to refer to each item within your list as the for loop iterates
-over it. You can call this whatever you want. In this case it&#8217;s
-<tt class="docutils literal"><span class="pre">letter</span></tt>, but you could just as easily call it <tt class="docutils literal"><span class="pre">donkey</span></tt>, like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
-<span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-    <span class="k">print</span> <span class="n">donkey</span>
+creating to refer to each item within your list as the <tt class="docutils literal"><span class="pre">for</span></tt> loop iterates
+over it.</p>
+<p>In this case we chose``letter``, but you could just as easily call it <tt class="docutils literal"><span class="pre">donkey</span></tt>, like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+</span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">donkey</span>
 </pre></div>
 </div>
 <p>The next thing you have to specify is the list you want to loop over, in
 this case <tt class="docutils literal"><span class="pre">list_of_letters</span></tt>. The line ends with a colon, and the next
 line starts with an indent. And that&#8217;s the basics of building a loop!</p>
 </div>
-</div>
 <div class="section" id="functions">
-<h3>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h3>
-<p>Often it&#8217;s helpful to encapsulate a sequence of programming instructions
-into little tools that can be used over and over again. That&#8217;s where
-functions come in.</p>
-<p>Think of functions like little black boxes. They take input (known as
-<strong>arguments</strong>), perform some operations on those arguments, and then
-return an <strong>output</strong>. In Python, a simple function might take an integer
-and divide it by two, like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">input_integer</span><span class="p">):</span>
-    <span class="k">return</span> <span class="n">input_integer</span> <span class="o">/</span> <span class="mi">2</span>
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
+<p>Often it&#8217;s helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That&#8217;s where functions come in.</p>
+<p>Think of functions like little boxes. They take input (known as <strong>arguments</strong>), perform some operations on those arguments, and then return an <strong>output</strong>.</p>
+<p>In Python, a simple function might take an integer and divide it by two, like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="nb">input</span> <span class="o">/</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
 <p>In order to call that function later in the program, I would simply have
 to invoke its name and feed it an integer &#8211; any integer at all &#8211; like
 so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">print</span> <span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="nb">input</span> <span class="o">/</span> <span class="mf">2.0</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span class="hll"><span class="go">5</span>
+</span></pre></div>
+</div>
+<p>Once you write a function (assuming it works) you don&#8217;t need to know what&#8217;s inside. You can just feed it an input and expect an output in return.</p>
+<p>Every function must be declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is followed by the name of the function (like a loop you can call it anything you want, but you should aim for it to make some sense), and then a set of parentheses in which you can define the arguments the function should expect.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
+</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="nb">input</span> <span class="o">/</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-<p>In which case it would return the number 5.</p>
-<p>The black box analogy is the key thing to understand about functions.
-Once you write one (assuming you do so correctly), you don&#8217;t need to
-know how it works. You can just feed it an input and expect an output in
-return.</p>
-<p>As for how functions are declared, you&#8217;ll notice a couple new details as
-well as some similarities to loops. First, every function must be
-declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is
-followed by the name of the function (you can call it anything you want,
-but as always, it should ideally make some kind of logical sense), and
-then a set of parentheses in which you can define the arguments a
-function should expect.</p>
 <p>In our example above, our <tt class="docutils literal"><span class="pre">divide_by_two</span></tt> function expects one
-argument, which we&#8217;ve called <tt class="docutils literal"><span class="pre">input_integer</span></tt> &#8211; basically the number
-that we want to divide by two. When we feed it the number 10, like this
-<tt class="docutils literal"><span class="pre">print</span> <span class="pre">divide_by_two(10)</span></tt>, a variable by the name of our argument is
-created so that we can process it within the function. In that way, the
-name you give the argument works almost like the variable you create in
-a for loop: it&#8217;s a reference to whatever argument you pass in that
-applies only within the body of the function.</p>
-<p>After you finish declaring arguments, you&#8217;ll see something familiar &#8211;
-namely a colon, just like the ones in our if statements and for loops.
-And that means the next line <strong>must be indented four spaces</strong> because
-any code within the function is nested one level deeper than the base
-level of the program.</p>
-<p>The final thing you&#8217;ll need to know about function notation in Python is
-that most functions return some kind of output. Arguments go in, some
-processing happens, and something comes out. As you probably guessed,
-it&#8217;s the <tt class="docutils literal"><span class="pre">return</span></tt> statement that tells the function to return it
-output.</p>
-<p>It&#8217;s worth pointing out that functions don&#8217;t necessarily need arguments,
-nor do they always need to return a value using the <tt class="docutils literal"><span class="pre">return</span></tt> command.
-You could also do something like this:</p>
+argument, which we&#8217;ve called <tt class="docutils literal"><span class="pre">input</span></tt> &#8211; basically the number
+that we want to divide by two.</p>
+<p>When we feed it the number, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span><span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mf">2.0</span>
+</span></pre></div>
+</div>
+<p>After you finish declaring arguments, you&#8217;ll see something familiar &#8211;the colon. Just like the <tt class="docutils literal"><span class="pre">if</span></tt> statements and <tt class="docutils literal"><span class="pre">for</span></tt> loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.</p>
+<p>The final thing you&#8217;ll need to know about function notation in Python is that most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That&#8217;s what the <tt class="docutils literal"><span class="pre">return</span></tt> statement is for.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mf">2.0</span>
+</span></pre></div>
+</div>
+<p>Functions don&#8217;t necessarily need arguments, nor do they always need to return a value using the <tt class="docutils literal"><span class="pre">return</span></tt> command. You could also do something like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
     <span class="k">print</span> <span class="s">&quot;Hello!&quot;</span>
 </pre></div>
 </div>
-<p>But the idea of arguments and return values are still fundamental in
+<p>But the idea of arguments and <tt class="docutils literal"><span class="pre">return</span></tt> values are still fundamental in
 understanding functions, and they will come up more often than not.</p>
 </div>
 <div class="section" id="python-as-a-toolbox">
-<h3>Python as a toolbox<a class="headerlink" href="#python-as-a-toolbox" title="Permalink to this headline">¶</a></h3>
-<p>The first thing you should know is that Python is basically a collection
-of tools. In fact, Python has tools for pretty much everything you&#8217;d
+<h4>Python as a toolbox<a class="headerlink" href="#python-as-a-toolbox" title="Permalink to this headline">¶</a></h4>
+<p>Lucky for us, Python already has tools to do pretty much anything you&#8217;d
 ever want to do with a programming language: everything from navigating
 the web to scraping and analyzing data to performing mathematical
-operations to building web sites. Some of these are built into a toolbox
-that comes with the language, known as the <strong>standard library</strong>. Others
-have been built by members of the developer community and can be
-downloaded and installed from the web. There are two ways to import
-these tools into your scripts, which we&#8217;ll demonstrate here:</p>
+operations to building websites.</p>
+<p>Some of these are built into a toolbox that comes with the language, known as the <strong>standard library</strong>. Others have been built by members of the developer community and can be downloaded and installed from the web.</p>
+<p>There are two ways to import these tools into your scripts, which we&#8217;ll demonstrate here:</p>
 <p>To pull in an entire toolkit, use the <tt class="docutils literal"><span class="pre">import</span></tt> command. In this case,
 we&#8217;ll get the <tt class="docutils literal"><span class="pre">urllib2</span></tt> package, which allows us to visit websites
 with Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">urllib2</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.python.org/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can also import specific tools from a toolkit using similar syntax:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<p>You can also import specific tools from inside a toolkit using something like this:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.python.org/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>In practice, you&#8217;ll use both of these methods. It&#8217;s worth noting that
-most of the time, any import statements you execute will be <strong>at the
-top</strong> of your program.</p>
+most of the time, any import statements you execute should be at the
+top of your program.</p>
+</div>
 </div>
 </div>
 <div class="section" id="act-3-web-scraping">

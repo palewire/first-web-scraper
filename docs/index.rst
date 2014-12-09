@@ -478,107 +478,116 @@ If you wanted to get Mom's phone number from the dictionary, here's how:
 .. code:: python
 
     >>> my_phonebook['Mom']
-    '713-555-5555'
+    713-555-5555
 
 There's a lot more to dictionaries, but that's all you need to know for now.
 
 Control structures
 ~~~~~~~~~~~~~~~~~~
 
-If you, think of a Python script as a series of commands that execute
-one after another you might imagine it would be helpful to be able to
-control the order and conditions under which those commands will run.
+As a beginner your first Python scripts won't be much more complicated that a series of commands that execute one after another, working together to accomplish a task.
+
+In those situations, it is helpful to be able to control the order and conditions under which those commands will run.
+
 That's where control structures come in -- simple logical operators that
 allow you to execute parts of your code when the right conditions call
 for it.
 
-For our purposes, there are two control structures you will use most
-often: **if/else statements** and **loops**.
+Here are two you will end up using a lot.
 
-If/else statements
-^^^^^^^^^^^^^^^^^^
+The if clause
+^^^^^^^^^^^^^
 
-If/else statements are pretty much exactly what they sounds like. *If* a
-certain condition is met, your program should do one thing; or *else* it
-should do something else.
+If statements are pretty much exactly what they sound like. **If** a
+certain condition is met, your program should do something.
 
-The syntax is pretty intuitive -- except for one **extremely important
-thing**: In Python, whitespace matters. A lot. It's easiest to
-demonstrate this with an example:
+Let's start with a simple example.
 
-::
+.. code:: python
 
-    number = 10
-    if number > 5:
-        print "Wow, that's a big number!"
+    >>> number = 10
+    >>> if number > 5:
+    >>>    print "Wow, that's a big number!"
+    >>>
+    Wow, that's a big number!
 
-There's a lot to unpack here, but first take note of the indentation. It
-helps sometimes to think of your program as taking place on different
-levels. In this case, the main level of our program (the one that isn't
-indented) has us declaring the variable ``number = 10`` and setting up
-our if condition (``if number > 5:``). The second level of our program
-executes only on the condition that our if statement is true. Therefore,
-because it depends on that if statement, it is indented **four spaces**
-underneath that statement.
+Our little program in this case starts with a variable, which we've called ``number``, being set to 10. That's pretty simple, and a concept you should be familiar with by this point.
 
-If you look closely, there's a small detail that can help you remember
-when a program moves from one level to another: namely, the presence of
-a colon. When we declare an if statement, we **always end that line with
-a colon**. The colon is our way of telling Python that it should start
-another level in the program, and everything on that level must be
-indented accordingly.
+.. code-block:: python
+    :emphasize-lines: 1
 
-If we wanted to continue our program, we could do something like this:
+    >>> number = 10
+    >>> if number > 5:
+    >>>    print "Wow, that's a big number!"
 
-::
+The next line, ``if number > 5:`` declares our if statement. In this case, we want something to happen if the ``number`` variable is greater than 5.
 
-    number = 10
-    if number > 5:
-        print "Wow, that's a big number!"
+.. code-block:: python
+    :emphasize-lines: 2
 
-    print "I execute no matter what your number is!"
+    >>> number = 10
+    >>> if number > 5:
+    >>>    print "Wow, that's a big number!"
 
-The last statement doesn't depend on the if statement, so it's back on
-the main level again.
+Most of the if statements we build are going to rely on equality operators like the kind we learned in elementary school: greater than (>), less than (<), greater than or equal to (>=), less than or equal to (<=) and plain old "equals". The equals operator is a little tricky, in that it is declared with two equals signs (==), not one (=). Why is that? Because you'll remember from above that a single equals sign is the notation we use to assign a value to a variable!
 
-Notice that I said indents must be **four spaces**. Four spaces means
-four spaces -- **NOT A TAB. TABS AND SPACES ARE DIFFERENT. YOU MUST
-PRESS THE SPACE BAR FOUR TIMES WHENVER YOU INDENT PYTHON CODE.** There
-are some text editors that automatically convert tabs to spaces, and
-once you feel more comfortable, you might want to use one. But for now,
-get in the habit of making all your indents **FOUR SPACES**.
+Next, take note of the indentation. In Python, whitespace matters. A lot.  Notice that I said indents must be four spaces. Four spaces means four spaces -- not a tab.
 
-Now with that being said, let's unpack the rest of our if statement:
+.. code-block:: python
+    :emphasize-lines: 3
 
-::
+    >>> number = 10
+    >>> if number > 5:
+    >>>    print "Wow, that's a big number!"
 
-    number = 10
-    if number > 5:
-        print "Wow, that's a big number!"
+Tabs and spaces are different. To avoid problems, you should press the space bar four times whenever you indent Python code.
 
-Our little program in this case starts with a variable, which we've
-called ``number``, being set to 10. That's pretty simple, and a concept
-you should be familiar with by this point. The next line,
-``if number > 5:`` declares our if statement. In this case, we want
-something to happen if the ``number`` variable is greater than 5.
+.. note::
 
-Most of the if statements we build are going to rely on equality
-operators like the kind we learned in elementary school: greater than
-(>), less than (<), greater than or equal to (>=), less than or equal to
-(<=) and plain old "equals". The equals operator is a little tricky, in
-that **it is declared with two equals signs (==), not one (=).** Why is
-that? Because you'll remember from above that a single equals sign is
-the notation we use to assign a value to a variable! **Single equals
-signs are for assignment (``number = 5``); double equals signs are for
-equality (``if number == 5:``)**. File that one away somewhere. It's
-important.
+  There are some text editors that will automatically convert tabs to spaces, and once you feel more comfortable you might want to use one. But for now, get in the habit of making all indents four spaces.
 
-Now let's talk about the next part of the if statement -- the else
-clause. You'll notice from the program above that the else clause isn't
-required. You don't *need* to have an else condition for your if
-statements, but sometimes it helps. Consider this example:
+If you look closely, there's another small detail you need to remember: The colon! When we declare an ``if`` statement, we always end that line with a colon.
 
-::
+.. code-block:: python
+    :emphasize-lines: 2
+
+    >>> number = 10
+    >>> if number > 5:
+    >>>     print "Wow, that's a big number!"
+    >>>
+    >>> print "I execute no matter what your number is!"
+
+It helps sometimes to think of your program as taking place on different levels.
+
+In this case, the first level of our program (the one that isn't indented) has us declaring the variable ``number = 10`` and setting up our if condition, ``if number > 5:``.
+
+The second level of our program executes only on the condition that our if statement is true. Therefore, because it depends on that if statement, it is indented four spaces.
+
+If we wanted to continue our program back on the first level, we could do something like this:
+
+.. code-block:: python
+    :emphasize-lines: 5
+
+    >>> number = 10
+    >>> if number > 5:
+    >>>     print "Wow, that's a big number!"
+    >>>
+    >>> print "I execute no matter what your number is!"
+    >>>
+    Wow, that's a big number!
+    I execute no matter what your number is!
+
+The last statement doesn't depend on the ``if`` statement, so it will always run.
+
+The else clause
+^^^^^^^^^^^^^^^
+
+Now let's talk about a common companion for ``if`` statement -- the ``else`` clause. It can be combined with an ``if`` statement to have the script execute a block of code when it turns out not to be true.
+
+You don't need to have an ``else`` condition for your ``if`` statements, but sometimes it helps. Consider this example:
+
+.. code-block:: python
+    :emphasize-lines: 4,5
 
     number = 10
     if number > 5:
@@ -586,162 +595,163 @@ statements, but sometimes it helps. Consider this example:
     else:
         print "Gee, that number's kind of small, don't you think?"
 
-In this case, we're telling our program to print one thing if ``number``
-is greater than 5, and something else if it's not. Notice that the else
-statement also ends with a colon, and as such its contents are also
-indented four spaces.
+In this case, we're telling our program to print one thing if ``number`` is greater than five, and something else if it's not. Notice that the ``else`` statement also ends with a colon, and as such its contents are also indented four spaces.
 
 For loops
 ^^^^^^^^^
 
 Remember earlier we discussed the concept of a list -- the type of
-variable that can hold multiple items in it all at once. Many times
-during your programming career, you'll find it helps to run through an
-entire list of items and do something with all of them, one at a time.
-That's where for loops come in.
+variable that can hold multiple items in it all at once?
 
-Let's start by having Python say the ABC's:
+Many times during your programming career, you'll find it helps to run through an entire list of items and do something with all of them, one at a time.
 
-::
+That's where for loops come in. Let's start by having Python say the ABC's:
 
-    list_of_letters = ['a', 'b', 'c']
-    for letter in list_of_letters:
-        print letter
+.. code:: python
 
-The output of this statement, as you might guess, would be "a b c". But
-there are still a few things to unpack here -- some familiar and some
-not.
+    >>> list_of_letters = ['a', 'b', 'c']
+    >>> for letter in list_of_letters:
+    >>>     print letter
+    >>>
+    a
+    b
+    c
 
-First you'll notice from looking at the print statement that our
+The output of this statement is what you might guess. But there are still a few things to unpack here -- some familiar and some not.
+
+First, you'll notice from looking at the print statement that our
 indentation rules still apply. Everything that happens within the for
 loop must still be indented four spaces from the main level of the
 program. You'll also see that the line declaring the loop ends in a
-colon, just like the if/else statement. That's an indication that
-indentation will be necessary.
+colon, just like the if and else statements.
 
-Second, turn your attention to the syntax of declaring the loop itself:
-``for letter in list_of_letters:``
+Second, turn your attention to the syntax of declaring the loop itself.
+
+.. code-block:: python
+    :emphasize-lines: 2
+
+    >>> list_of_letters = ['a', 'b', 'c']
+    >>> for letter in list_of_letters:
+    >>>     print letter
 
 All of our for loops start, unsurprisingly, with the word ``for`` and
-follow the pattern ``for variable_name in list:``. The variable\_name
+follow the pattern ``for variable_name in list:``. The ``variable\_name``
 can be anything you want -- it's essentially just a new variable you're
-creating to refer to each item within your list as the for loop iterates
-over it. You can call this whatever you want. In this case it's
-``letter``, but you could just as easily call it ``donkey``, like so:
+creating to refer to each item within your list as the ``for`` loop iterates
+over it.
 
-::
+In this case we chose``letter``, but you could just as easily call it ``donkey``, like so:
 
-    list_of_letters = ['a', 'b', 'c']
-    for donkey in list_of_letters:
-        print donkey
+.. code-block:: python
+    :emphasize-lines: 2
+
+    >>> list_of_letters = ['a', 'b', 'c']
+    >>> for donkey in list_of_letters:
+    >>>     print donkey
 
 The next thing you have to specify is the list you want to loop over, in
 this case ``list_of_letters``. The line ends with a colon, and the next
 line starts with an indent. And that's the basics of building a loop!
 
 Functions
-~~~~~~~~~
+^^^^^^^^^
 
-Often it's helpful to encapsulate a sequence of programming instructions
-into little tools that can be used over and over again. That's where
-functions come in.
+Often it's helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That's where functions come in.
 
-Think of functions like little black boxes. They take input (known as
-**arguments**), perform some operations on those arguments, and then
-return an **output**. In Python, a simple function might take an integer
-and divide it by two, like this:
+Think of functions like little boxes. They take input (known as **arguments**), perform some operations on those arguments, and then return an **output**.
 
-::
+In Python, a simple function might take an integer and divide it by two, like this:
 
-    def divide_by_two(input_integer):
-        return input_integer / 2
+.. code-block:: python
+
+    >>> def divide_by_two(input):
+    >>>    return input / 2.0
 
 In order to call that function later in the program, I would simply have
 to invoke its name and feed it an integer -- any integer at all -- like
 so:
 
-::
+.. code-block:: python
+    :emphasize-lines: 3,4
 
-    print divide_by_two(10)
+    >>> def divide_by_two(input):
+    >>>    return input / 2.0
+    >>> divide_by_two(10)
+    5
 
-In which case it would return the number 5.
+Once you write a function (assuming it works) you don't need to know what's inside. You can just feed it an input and expect an output in return.
 
-The black box analogy is the key thing to understand about functions.
-Once you write one (assuming you do so correctly), you don't need to
-know how it works. You can just feed it an input and expect an output in
-return.
+Every function must be declared by the word ``def``, which stands for "define". That is followed by the name of the function (like a loop you can call it anything you want, but you should aim for it to make some sense), and then a set of parentheses in which you can define the arguments the function should expect.
 
-As for how functions are declared, you'll notice a couple new details as
-well as some similarities to loops. First, every function must be
-declared by the word ``def``, which stands for "define". That is
-followed by the name of the function (you can call it anything you want,
-but as always, it should ideally make some kind of logical sense), and
-then a set of parentheses in which you can define the arguments a
-function should expect.
+.. code-block:: python
+    :emphasize-lines: 1
+
+    >>> def get_half(input):
+    >>>    return input / 2.0
 
 In our example above, our ``divide_by_two`` function expects one
-argument, which we've called ``input_integer`` -- basically the number
-that we want to divide by two. When we feed it the number 10, like this
-``print divide_by_two(10)``, a variable by the name of our argument is
-created so that we can process it within the function. In that way, the
-name you give the argument works almost like the variable you create in
-a for loop: it's a reference to whatever argument you pass in that
-applies only within the body of the function.
+argument, which we've called ``input`` -- basically the number
+that we want to divide by two.
 
-After you finish declaring arguments, you'll see something familiar --
-namely a colon, just like the ones in our if statements and for loops.
-And that means the next line **must be indented four spaces** because
-any code within the function is nested one level deeper than the base
-level of the program.
+When we feed it the number, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.
 
-The final thing you'll need to know about function notation in Python is
-that most functions return some kind of output. Arguments go in, some
-processing happens, and something comes out. As you probably guessed,
-it's the ``return`` statement that tells the function to return it
-output.
+.. code-block:: python
+    :emphasize-lines: 1,2
 
-It's worth pointing out that functions don't necessarily need arguments,
-nor do they always need to return a value using the ``return`` command.
-You could also do something like this:
+    >>> def get_half(num):
+    >>>    return num / 2.0
 
-::
+After you finish declaring arguments, you'll see something familiar --the colon. Just like the ``if`` statements and ``for`` loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.
+
+The final thing you'll need to know about function notation in Python is that most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That's what the ``return`` statement is for.
+
+.. code-block:: python
+    :emphasize-lines: 2
+
+    >>> def get_half(num):
+    >>>    return num / 2.0
+
+Functions don't necessarily need arguments, nor do they always need to return a value using the ``return`` command. You could also do something like this:
+
+.. code-block:: python
 
     def say_hello():
         print "Hello!"
 
-But the idea of arguments and return values are still fundamental in
+But the idea of arguments and ``return`` values are still fundamental in
 understanding functions, and they will come up more often than not.
 
 Python as a toolbox
-~~~~~~~~~~~~~~~~~~~
+^^^^^^^^^^^^^^^^^^^
 
-The first thing you should know is that Python is basically a collection
-of tools. In fact, Python has tools for pretty much everything you'd
+Lucky for us, Python already has tools to do pretty much anything you'd
 ever want to do with a programming language: everything from navigating
 the web to scraping and analyzing data to performing mathematical
-operations to building web sites. Some of these are built into a toolbox
-that comes with the language, known as the **standard library**. Others
-have been built by members of the developer community and can be
-downloaded and installed from the web. There are two ways to import
-these tools into your scripts, which we'll demonstrate here:
+operations to building websites.
+
+Some of these are built into a toolbox that comes with the language, known as the **standard library**. Others have been built by members of the developer community and can be downloaded and installed from the web.
+
+There are two ways to import these tools into your scripts, which we'll demonstrate here:
 
 To pull in an entire toolkit, use the ``import`` command. In this case,
 we'll get the ``urllib2`` package, which allows us to visit websites
 with Python:
 
-::
+.. code-block:: python
 
-    import urllib2
+    >>> import urllib2
+    >>> urllib2.urlopen("http://www.python.org/")
 
-You can also import specific tools from a toolkit using similar syntax:
+You can also import specific tools from inside a toolkit using something like this:
 
-::
+.. code-block :: python
 
-    from urllib2 import urlopen
+    >>> from urllib2 import urlopen
+    >>> urlopen("http://www.python.org/")
 
 In practice, you'll use both of these methods. It's worth noting that
-most of the time, any import statements you execute will be **at the
-top** of your program.
+most of the time, any import statements you execute should be at the
+top of your program.
 
 Act 3: Web scraping
 -------------------
