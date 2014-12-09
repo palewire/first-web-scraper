@@ -115,8 +115,8 @@ can guide you through that process.
 Python 2.7 is preferred but you can probably find a way to make most of
 this tutorial work with other versions if you futz a little.
 
-pip and virtualenv
-~~~~~~~~~~~~~~~~~~
+pip
+~~~
 
 The `pip package
 manager <http://www.pip-installer.org/en/latest/index.html>`__ makes it
