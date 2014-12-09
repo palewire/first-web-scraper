@@ -673,6 +673,60 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <div class="section" id="extracting-an-html-table">
 <h2>Extracting an HTML table<a class="headerlink" href="#extracting-an-html-table" title="Permalink to this headline">¶</a></h2>
 <p>Now that we know where to find the data we&#8217;re after, it&#8217;s time to write script to pull it down and save it to a comma-delimited file.</p>
+<p>Let&#8217;s start by creating a Python file to hold our scraper. First jump into the <tt class="docutils literal"><span class="pre">Code</span></tt> directory we made at the beginning of this lesson.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ cd Code
+</pre></div>
+</div>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">You&#8217;ll need to <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">Code</span></tt> (or <tt class="docutils literal"><span class="pre">md</span> <span class="pre">Code</span></tt> in Windows) if you haven&#8217;t made this directory yet.</p>
+</div>
+<p>Then open your text editor and save an empty file into the directory name <tt class="docutils literal"><span class="pre">scrape.py</span></tt> and we&#8217;re ready to begin. The first step is to import the requests library and download the Boone County webpage.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+<span class="k">print</span> <span class="n">html</span>
+</pre></div>
+</div>
+<p>Save the file and run this script from your command line and you should see the entire HTML of the page spilled out.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>Next import the <tt class="docutils literal"><span class="pre">BeautifulSoup</span></tt> HTML parsing library and feed it the page.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="hll"><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+</span><span class="hll"><span class="k">print</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>Save the file and run the script again and you should see the page&#8217;s HTML again, but in a prettier format this time. That&#8217;s a hint at that magic&#8217;s that&#8217;s happening inside BeautifulSoup once it gets its hands on the page.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
+<p>Next we take all the detective work we did with the page&#8217;s HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we&#8217;re after from the page.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">)</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="hll"><span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;table&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;resultsTable&#39;</span><span class="p">})</span>
+</span><span class="hll"><span class="k">print</span> <span class="n">table</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+</span></pre></div>
+</div>
+<p>Save the file and run <tt class="docutils literal"><span class="pre">scrape.py</span></tt> again and this time you can see that only prints out the table we&#8217;re after, which we selected by instructing BeautifulSoup to return only those <tt class="docutils literal"><span class="pre">&lt;table&gt;</span></tt> tags with <tt class="docutils literal"><span class="pre">resultsTable</span></tt> as their class attribute.</p>
+<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+</pre></div>
+</div>
 </div>
 </div>
 

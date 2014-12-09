@@ -828,3 +828,72 @@ Extracting an HTML table
 
 Now that we know where to find the data we're after, it's time to write script to pull it down and save it to a comma-delimited file.
 
+Let's start by creating a Python file to hold our scraper. First jump into the ``Code`` directory we made at the beginning of this lesson.
+
+.. code:: bash
+
+    $ cd Code
+
+.. note::
+
+    You'll need to ``mkdir Code`` (or ``md Code`` in Windows) if you haven't made this directory yet.
+
+Then open your text editor and save an empty file into the directory name ``scrape.py`` and we're ready to begin. The first step is to import the requests library and download the Boone County webpage.
+
+.. code-block:: python
+
+    import requests
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+    print html
+
+Save the file and run this script from your command line and you should see the entire HTML of the page spilled out.
+
+.. code:: bash
+
+  $ python scrape.py
+
+Next import the ``BeautifulSoup`` HTML parsing library and feed it the page.
+
+.. code-block:: python
+    :emphasize-lines: 2,8-9
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    print soup.prettify()
+
+Save the file and run the script again and you should see the page's HTML again, but in a prettier format this time. That's a hint at that magic's that's happening inside BeautifulSoup once it gets its hands on the page.
+
+.. code:: bash
+
+  $ python scrape.py
+
+Next we take all the detective work we did with the page's HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we're after from the page.
+
+.. code-block:: python
+    :emphasize-lines: 9-10
+
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('table', attrs={'class': 'resultsTable'})
+    print table.prettify()
+
+Save the file and run ``scrape.py`` again and this time you can see that only prints out the table we're after, which we selected by instructing BeautifulSoup to return only those ``<table>`` tags with ``resultsTable`` as their class attribute.
+
+.. code:: bash
+
+  $ python scrape.py
