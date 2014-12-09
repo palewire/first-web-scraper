@@ -3,7 +3,7 @@
 First web scraper
 =================
 
-A step-by-step guide to writing a web scraper with Python
+A step-by-step guide to writing a web scraper with Python.
 
 The course assumes the reader has little experience with Python and the command line, covering a number of fundamental skills that can be applied to other problems.
 
