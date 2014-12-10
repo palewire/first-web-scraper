@@ -142,7 +142,7 @@ can guide you through that process.</p>
 this tutorial work with other versions if you futz a little.</p>
 </div>
 <div class="section" id="pip">
-<h3>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
+<span id="command-line-pip"></span><h3>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
 <p>The <a class="reference external" href="http://www.pip-installer.org/en/latest/index.html">pip package
 manager</a> makes it
 easy to install open-source libraries that expand what you&#8217;re able to do
@@ -170,42 +170,38 @@ this:</p>
 <div class="figure">
 <a class="reference internal image-reference" href="_images/terminal.png"><img alt="_images/terminal.png" src="_images/terminal.png" style="width: 600px;" /></a>
 </div>
-<p>Most of what you&#8217;ll be doing from the command line at this point will be
-navigating through directories and running Python files. These actions
-require only a few basic commands.</p>
+<p>In this lesson we&#8217;ll be using it to give the computer direct commands to manage files, navigate through directories and execute Python scripts. Don&#8217;t worry, it&#8217;ll only require only a few basic commands we&#8217;ll cover now.</p>
 <p>Open the command-line program for your operating system and let&#8217;s get started.
 If you need help finding it refer to the prequisite instructions for the <a class="reference internal" href="#command-line-prereq"><em>Command-line interface</em></a>.</p>
 <div class="section" id="print-the-current-directory">
 <h3>Print the current directory<a class="headerlink" href="#print-the-current-directory" title="Permalink to this headline">¶</a></h3>
-<p>Once your terminal window is open, before we start moving around the first thing we want to do if find out where you are. If you&#8217;re using OSX or Linux, type this:</p>
+<p>Once your terminal window is open the first thing we want to do if find out where you are. If you&#8217;re using OSX or Linux, type this:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ pwd
 </pre></div>
 </div>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">You don&#8217;t have to type the &#8220;$&#8221; It&#8217;s just a generic symbol
+<p class="last">You don&#8217;t have to type the &#8220;$&#8221;. It&#8217;s a generic symbol
 geeks use to show they&#8217;re working on the command line.</p>
 </div>
 <p>If you&#8217;re on Windows try:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ cd
 </pre></div>
 </div>
-<p>The terminal should print out your current location relative to the root of
-your computer&#8217;s filesystem. In this case, you&#8217;re in the default directory for your
-user, also known as your <strong>home</strong> directory.</p>
+<p>The terminal should print out your current location relative to the root of your computer&#8217;s filesystem. In this case, you&#8217;re probably in the default directory for your user, also known as your <strong>home</strong> directory.</p>
 <p>It&#8217;s easy to lose track of which folder you&#8217;re in when
 you&#8217;re working from the command line, so this is a helpful tool for
-finding your way you&#8217;ll end up using a lot more than you might think.</p>
+finding your way. You&#8217;ll end up using it a lot more than you might think.</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
-<p class="last">In case you&#8217;re curious <tt class="docutils literal"><span class="pre">pwd</span></tt> standards &#8220;present working directory&#8221; and <tt class="docutils literal"><span class="pre">cd</span></tt>
+<p class="last">In case you&#8217;re curious, <tt class="docutils literal"><span class="pre">pwd</span></tt> standards &#8220;present working directory&#8221; and <tt class="docutils literal"><span class="pre">cd</span></tt>
 stands for &#8220;change directory,&#8221; a tool we&#8217;ll use again soon to move between
 folders on your file system.</p>
 </div>
 </div>
 <div class="section" id="list-files-in-a-directory">
 <h3>List files in a directory<a class="headerlink" href="#list-files-in-a-directory" title="Permalink to this headline">¶</a></h3>
-<p>In order to see all the files and folders in your home directory, there&#8217;s
+<p>In order to see all the files and folders in a directory, there&#8217;s
 another command you need to learn.  On OSX and Linux, type:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ ls
 </pre></div>
@@ -215,7 +211,7 @@ another command you need to learn.  On OSX and Linux, type:</p>
 </pre></div>
 </div>
 <p>You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you&#8217;re probably used to seeing when
-you&#8217;re clicking around your computer&#8217;s folders in the user-interface provided
+clicking around your computer&#8217;s folders in the user-interface provided
 by your operating system.</p>
 </div>
 <div class="section" id="change-directories">
@@ -228,7 +224,7 @@ case, the following will probably drop you on your desktop.</p>
 </pre></div>
 </div>
 <p>Now run <tt class="docutils literal"><span class="pre">ls</span></tt> or <tt class="docutils literal"><span class="pre">dir</span></tt> to see what files we can find there. They should
-mirror what you see on your look at your desktop in your operating system&#8217;s
+mirror what you see as you look at your desktop in your operating system&#8217;s
 user interface.</p>
 <p>To move back to our home folder, we&#8217;ll use the <tt class="docutils literal"><span class="pre">cd</span></tt>
 command again, but with a little twist.</p>
@@ -277,14 +273,15 @@ a file from a text editor or other program into our new directory.</p>
 </div>
 <div class="admonition warning">
 <p class="first admonition-title">Warning</p>
-<p class="last"><strong>This must be done with caution</strong>. Files you delete from the command line DO NOT go into the recycle bin. They are gone. <strong>Forever</strong>.</p>
+<p class="last"><strong>This must be done with caution</strong>. Files you delete from the command line do not go into the recycle bin. They are gone. <strong>Forever</strong>.</p>
 </div>
+<p>And that&#8217;s it! You&#8217;ve learned all the basic command-line tricks necessary to move on.</p>
 </div>
 </div>
 <div class="section" id="act-2-python">
 <h2>Act 2: Python<a class="headerlink" href="#act-2-python" title="Permalink to this headline">¶</a></h2>
 <p>Python can be used for almost any application you can imagine, from building websites to running robots.</p>
-<p>A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics &#8211; the basic programming principles and syntax quirks that you&#8217;re likely to encounter as complete this course.</p>
+<p>A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics &#8211; basic principles that you need to understand as you complete this course.</p>
 <div class="section" id="how-to-run-a-python-program">
 <h3>How to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Permalink to this headline">¶</a></h3>
 <p>A Python file is nothing more than a text file that has the extension &#8221;.py&#8221; at the end of its name. Any time you see a &#8221;.py&#8221; file, you can run it from the command line by typing into the command line:</p>
@@ -296,8 +293,11 @@ a file from a text editor or other program into our new directory.</p>
 interpreter</strong>, which allows you to execute Python code one line at a
 time, sort of like working from the command line.</p>
 <p>We&#8217;ll be using this a lot in the beginning to demonstrate concepts, but in the real world it&#8217;s often useful for testing and debugging.</p>
-<p>To open the interpreter, simply type <tt class="docutils literal"><span class="pre">python</span></tt> from your command line, and you should see a screen that
-looks like this:</p>
+<p>To open the interpreter, simply type <tt class="docutils literal"><span class="pre">python</span></tt> from your command line, like this.</p>
+<div class="code python highlight-python"><div class="highlight"><pre>$ python
+</pre></div>
+</div>
+<p>And here&#8217;s what you should get.</p>
 <div class="figure">
 <img alt="Python interactive interpreter" src="_images/python.png" />
 </div>
@@ -325,6 +325,7 @@ the right is the value that you want to assign to that variable.</p>
 <p>If we use the <tt class="docutils literal"><span class="pre">print</span></tt> command on the variable, Python will output &#8220;Hello, world!&#8221; to
 the terminal because that value is stored in the variable.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">greeting</span>
+<span class="go">Hello world!</span>
 </pre></div>
 </div>
 </div>
@@ -360,7 +361,7 @@ simply assign them to a variable straight away, like this:</p>
 <h4>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h4>
 <p>Floats are a fancy name for numbers with decimal points in
 them. They are declared the same way as integers but have some
-idiosyncracies we&#8217;ll discover later:</p>
+idiosyncracies you don&#8217;t need to worry about for now.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
@@ -370,7 +371,7 @@ idiosyncracies we&#8217;ll discover later:</p>
 <div class="section" id="lists">
 <h4>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
 <p>Lists are collections of values or variables. They are
-declared with brackets like these [], and items inside are separated by
+declared with brackets like these <tt class="docutils literal"><span class="pre">[]</span></tt>, and items inside are separated by
 commas. They can hold collections of any type of data, including other
 lists. Here are several examples:</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
@@ -380,8 +381,7 @@ lists. Here are several examples:</p>
 </pre></div>
 </div>
 <p>Lists also have another neat feature: The ability to retrieve individual
-items. In order to get a specific item out of a list, you first need to
-know its position in that list.</p>
+items. In order to get a specific item out of a list, you just pass in its position.</p>
 <p>All lists in Python are <strong>zero-indexed</strong>, which means the first item in them sits at position 0.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
@@ -399,7 +399,7 @@ positions you want to retrieve with a colon in between them, like this:</p>
 </div>
 <div class="section" id="tuples">
 <h4>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h4>
-<p>Tuples are a special type of list that cannot be changed once they are created. That&#8217;s not especially important right now. All you need to know is that they are declared with parentheses (). For now, just think of them as lists.</p>
+<p>Tuples are a special type of list that cannot be changed once they are created. That&#8217;s not especially important right now. All you need to know is that they are declared with parentheses <tt class="docutils literal"><span class="pre">()</span></tt>. For now, just think of them as lists.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">)</span>
 </pre></div>
@@ -408,7 +408,7 @@ positions you want to retrieve with a colon in between them, like this:</p>
 <div class="section" id="dictionaries">
 <h4>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h4>
 <p>Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.</p>
-<p>An example will make this a little more clear, but know for now that they are declared with curly braces.</p>
+<p>An example will make this a little more clear.</p>
 <div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Mom&#39;</span><span class="p">:</span> <span class="s">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s">&#39;Chinese Takeout&#39;</span><span class="p">:</span> <span class="s">&#39;573-555-5555&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
@@ -450,7 +450,7 @@ certain condition is met, your program should do something.</p>
 <span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
 </pre></div>
 </div>
-<p>The next line, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt> declares our if statement. In this case, we want something to happen if the <tt class="docutils literal"><span class="pre">number</span></tt> variable is greater than 5.</p>
+<p>The next line, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt> declares our <tt class="docutils literal"><span class="pre">if</span></tt> statement. In this case, we want something to happen if the <tt class="docutils literal"><span class="pre">number</span></tt> variable is greater than 5.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
 </span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
@@ -477,8 +477,8 @@ certain condition is met, your program should do something.</p>
 </pre></div>
 </div>
 <p>It helps sometimes to think of your program as taking place on different levels.</p>
-<p>In this case, the first level of our program (the one that isn&#8217;t indented) has us declaring the variable <tt class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></tt> and setting up our if condition, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt>.</p>
-<p>The second level of our program executes only on the condition that our if statement is true. Therefore, because it depends on that if statement, it is indented four spaces.</p>
+<p>In this case, the first level of our program (the one that isn&#8217;t indented) has us declaring the variable <tt class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></tt> and setting up our <tt class="docutils literal"><span class="pre">if</span></tt> condition, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt>.</p>
+<p>The second level of our program executes only on the condition that our <tt class="docutils literal"><span class="pre">if</span></tt> statement is true. Therefore, because it depends on that <tt class="docutils literal"><span class="pre">if</span></tt> statement, it is indented four spaces.</p>
 <p>If we wanted to continue our program back on the first level, we could do something like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
@@ -522,7 +522,7 @@ variable that can hold multiple items in it all at once?</p>
 </div>
 <p>The output of this statement is what you might guess. But there are still a few things to unpack here &#8211; some familiar and some not.</p>
 <p>First, you&#8217;ll notice from looking at the print statement that our
-indentation rules still apply. Everything that happens within the for
+indentation rules still apply. Everything that happens within the <tt class="docutils literal"><span class="pre">for</span></tt>
 loop must still be indented four spaces from the main level of the
 program. You&#8217;ll also see that the line declaring the loop ends in a
 colon, just like the if and else statements.</p>
@@ -533,11 +533,11 @@ colon, just like the if and else statements.</p>
 </pre></div>
 </div>
 <p>All of our for loops start, unsurprisingly, with the word <tt class="docutils literal"><span class="pre">for</span></tt> and
-follow the pattern <tt class="docutils literal"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></tt>. The <tt class="docutils literal"><span class="pre">variable\_name</span></tt>
+follow the pattern <tt class="docutils literal"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></tt>. The <tt class="docutils literal"><span class="pre">variable_name</span></tt>
 can be anything you want &#8211; it&#8217;s essentially just a new variable you&#8217;re
 creating to refer to each item within your list as the <tt class="docutils literal"><span class="pre">for</span></tt> loop iterates
 over it.</p>
-<p>In this case we chose``letter``, but you could just as easily call it <tt class="docutils literal"><span class="pre">donkey</span></tt>, like so:</p>
+<p>In this case we chose <tt class="docutils literal"><span class="pre">letter</span></tt>, but you could just as easily call it <tt class="docutils literal"><span class="pre">donkey</span></tt>, like so:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
 </span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">donkey</span>
@@ -552,35 +552,33 @@ line starts with an indent. And that&#8217;s the basics of building a loop!</p>
 <p>Often it&#8217;s helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That&#8217;s where functions come in.</p>
 <p>Think of functions like little boxes. They take input (known as <strong>arguments</strong>), perform some operations on those arguments, and then return an <strong>output</strong>.</p>
 <p>In Python, a simple function might take an integer and divide it by two, like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="nb">input</span> <span class="o">/</span> <span class="mf">2.0</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
 <p>In order to call that function later in the program, I would simply have
 to invoke its name and feed it an integer &#8211; any integer at all &#8211; like
 so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="nb">input</span> <span class="o">/</span> <span class="mf">2.0</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </span><span class="hll"><span class="go">5</span>
 </span></pre></div>
 </div>
 <p>Once you write a function (assuming it works) you don&#8217;t need to know what&#8217;s inside. You can just feed it an input and expect an output in return.</p>
-<p>Every function must be declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is followed by the name of the function (like a loop you can call it anything you want, but you should aim for it to make some sense), and then a set of parentheses in which you can define the arguments the function should expect.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="nb">input</span><span class="p">):</span>
-</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="nb">input</span> <span class="o">/</span> <span class="mf">2.0</span>
+<p>Every function must be declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is followed by the name of the function. Like the variable in a <a href="#id1"><span class="problematic" id="id2">``</span></a>loop` you can call it anything you want.</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
 </pre></div>
 </div>
-<p>In our example above, our <tt class="docutils literal"><span class="pre">divide_by_two</span></tt> function expects one
-argument, which we&#8217;ve called <tt class="docutils literal"><span class="pre">input</span></tt> &#8211; basically the number
-that we want to divide by two.</p>
-<p>When we feed it the number, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.</p>
+<p>The name is then followed by a set of parentheses in which you can define the arguments the function should expect. In our example above, we&#8217;ve called the only argument``x``.</p>
+<p>When we feed a value in, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 </span><span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mf">2.0</span>
 </span></pre></div>
 </div>
 <p>After you finish declaring arguments, you&#8217;ll see something familiar &#8211;the colon. Just like the <tt class="docutils literal"><span class="pre">if</span></tt> statements and <tt class="docutils literal"><span class="pre">for</span></tt> loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.</p>
-<p>The final thing you&#8217;ll need to know about function notation in Python is that most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That&#8217;s what the <tt class="docutils literal"><span class="pre">return</span></tt> statement is for.</p>
+<p>Most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That&#8217;s what the <tt class="docutils literal"><span class="pre">return</span></tt> statement is for.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mf">2.0</span>
 </span></pre></div>
@@ -596,12 +594,9 @@ understanding functions, and they will come up more often than not.</p>
 </div>
 <div class="section" id="python-as-a-toolbox">
 <h3>Python as a toolbox<a class="headerlink" href="#python-as-a-toolbox" title="Permalink to this headline">¶</a></h3>
-<p>Lucky for us, Python already has tools to do pretty much anything you&#8217;d
-ever want to do with a programming language: everything from navigating
-the web to scraping and analyzing data to performing mathematical
-operations to building websites.</p>
+<p>Lucky for us, Python already has tools filled with funcations to do pretty much anything you&#8217;d ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.</p>
 <p>Some of these are built into a toolbox that comes with the language, known as the <strong>standard library</strong>. Others have been built by members of the developer community and can be downloaded and installed from the web.</p>
-<p>There are two ways to import these tools into your scripts, which we&#8217;ll demonstrate here:</p>
+<p>There are two ways to import these tools into your scripts.</p>
 <p>To pull in an entire toolkit, use the <tt class="docutils literal"><span class="pre">import</span></tt> command. In this case,
 we&#8217;ll get the <tt class="docutils literal"><span class="pre">urllib2</span></tt> package, which allows us to visit websites
 with Python:</p>
@@ -609,14 +604,16 @@ with Python:</p>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.python.org/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>You can also import specific tools from inside a toolkit using something like this:</p>
+<p>You can also import specific tools from inside a toolkit by working in the <tt class="docutils literal"><span class="pre">from</span></tt> command with something like this:</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.python.org/&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>In practice, you&#8217;ll use both of these methods. It&#8217;s worth noting that
-most of the time, any import statements you execute should be at the
-top of your program.</p>
+<p>In practice, you&#8217;ll use both of these methods.</p>
+<div class="admonition note">
+<p class="first admonition-title">Note</p>
+<p class="last">There&#8217;s no rule but most Python programmers try to keep things manageable by lining up all <tt class="docutils literal"><span class="pre">import</span></tt> statements at the top of each script.</p>
+</div>
 </div>
 </div>
 <div class="section" id="act-3-web-scraping">
@@ -627,6 +624,7 @@ top of your program.</p>
 <h3>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h3>
 <p>The scraper will use Python&#8217;s <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> toolkit to parse the site&#8217;s HTML and extract the data.</p>
 <p>We&#8217;ll also use the <a class="reference external" href="http://docs.python-requests.org/en/latest/">Requests library</a> to open the URL, download the HTML and pass it to BeautifulSoup.</p>
+<p>Since they are not included in Python&#8217;s standard library, we&#8217;ll first need to install them using <tt class="docutils literal"><span class="pre">pip</span></tt>, a command-line tool that can grab open-source libraries off the web. If you don&#8217;t have it installed, you&#8217;ll need to follow the prequisite instructions for <a class="reference internal" href="#command-line-pip"><em>pip</em></a>.</p>
 <p>In OSX or Linux try this:</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ sudo pip install BeautifulSoup
 $ sudo pip install Requests
@@ -641,29 +639,26 @@ $ pip install Requests
 <div class="section" id="analyzing-the-html">
 <h3>Analyzing the HTML<a class="headerlink" href="#analyzing-the-html" title="Permalink to this headline">¶</a></h3>
 <p>HTML is the framework that, in most cases, contains the content of a page. Other bits and pieces like CSS and JavaScript can style, reshape and add layers of interaction to a page.</p>
-<p>But unless you&#8217;ve got something fancy on your hands, the data you&#8217;re seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data.</p>
-<p>In order to scrape a website, we need to understand what each of these pieces do.
-To view the HTML code, open up a Web browser and visit <a class="reference external" href="http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp">the Boone County web
-page we&#8217;ll be scraping</a>. Then and right click with your mouse and select &#8216;View Source&#8217;.</p>
+<p>But unless you&#8217;ve got something fancy on your hands, the data you&#8217;re seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data. In this case, we&#8217;ll be looking to extract data from the big table that makes up the heart of the page.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/target.png"><img alt="_images/target.png" src="_images/target.png" style="width: 600px;" /></a>
+</div>
+<p>By the time we&#8217;re finished, we want to have extracted that data, now encrusted in layers of HTML, into a clean spreadsheet.</p>
+<div class="figure">
+<a class="reference internal image-reference" href="_images/xls-2.png"><img alt="_images/xls-2.png" src="_images/xls-2.png" style="width: 600px;" /></a>
+</div>
+<p>In order to scrape a website, we need to understand how a typical webpage is put together.</p>
+<p>To view the HTML code that makesup this page () open up a browser and visit <a class="reference external" href="http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp">out target</a>. Then right click with your mouse and select &#8220;View Source.&#8221; You can do this for any page on the web.</p>
 <div class="figure">
 <img alt="_images/source.png" src="_images/source.png" />
 </div>
-<p>HTML has markers that denote the start and end of the webpage, <tt class="docutils literal"><span class="pre">&lt;html&gt;&lt;/html&gt;</span></tt>. Inside that tag, there are two main sections, the head and the body.</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;html&gt;</span>
-    <span class="nt">&lt;head&gt;</span><span class="c">&lt;!-- Lots of goofy scripts and stuff goes in here --&gt;</span><span class="nt">&lt;/head&gt;</span>
-    <span class="nt">&lt;body&gt;</span><span class="c">&lt;!-- The actual content of the page you can see goes here --&gt;</span><span class="nt">&lt;/body&gt;</span>
-<span class="nt">&lt;/html&gt;</span>
-</pre></div>
+<p>We could fish through all the code to find our data, but to dig this more easily, we can use your web browser&#8217;s inspector tool. Right click on the table of data that you are interested in and select &#8216;inspect element.&#8217;</p>
+<div class="figure">
+<img alt="Inspect the element" src="_images/inspect.png" />
 </div>
-<p>The part that we are interested in is the body tag. Somewhere in there
-lies our content. To access this more easily, we will use your web browser&#8217;s inspector tool. Right click on the table of data that you are interested in
-and select &#8216;inspect element.&#8217;</p>
 <div class="admonition note">
 <p class="first admonition-title">Note</p>
 <p class="last">The inspector tool might have a slightly different name depending on which browser you&#8217;re using. To make this easy on yourself, consider using Google Chrome.</p>
-</div>
-<div class="figure">
-<img alt="Inspect the element" src="_images/inspect.png" />
 </div>
 <p>Your browser will open a special panel and highlight the portion of the page&#8217;s HTML code that you&#8217;ve just clicked on.</p>
 <div class="figure">
@@ -714,11 +709,11 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span><span class="hll"><span class="k">print</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
 </span></pre></div>
 </div>
-<p>Save the file and run the script again and you should see the page&#8217;s HTML again, but in a prettier format this time. That&#8217;s a hint at that magic&#8217;s that&#8217;s happening inside BeautifulSoup once it gets its hands on the page.</p>
+<p>Save the file and run the script again and you should see the page&#8217;s HTML again, but in a prettier format this time. That&#8217;s a hint at the magic happening inside BeautifulSoup once it gets its hands on the page.</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
 </pre></div>
 </div>
-<p>Next we take all the detective work we did with the page&#8217;s HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we&#8217;re after from the page.</p>
+<p>Next we take all the detective work we did with the page&#8217;s HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we&#8217;re after.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
@@ -731,11 +726,11 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span><span class="hll"><span class="k">print</span> <span class="n">table</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
 </span></pre></div>
 </div>
-<p>Save the file and run <tt class="docutils literal"><span class="pre">scrape.py</span></tt> again and this time you can see that only prints out the table we&#8217;re after, which we selected by instructing BeautifulSoup to return only those <tt class="docutils literal"><span class="pre">&lt;table&gt;</span></tt> tags with <tt class="docutils literal"><span class="pre">resultsTable</span></tt> as their class attribute.</p>
+<p>Save the file and run <tt class="docutils literal"><span class="pre">scrape.py</span></tt> again. This time it only prints out the table we&#8217;re after, which was selected by instructing BeautifulSoup to return only those <tt class="docutils literal"><span class="pre">&lt;table&gt;</span></tt> tags with <tt class="docutils literal"><span class="pre">resultsTable</span></tt> as their class attribute.</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
 </pre></div>
 </div>
-<p>In the end, all we need to do now is figure out is a way to convert the rows in the table into a list, which we then loop through and grab all the data from.</p>
+<p>Now that we have our hands on the table, we need to convert the rows in the table into a list, which we can then loop through and grab all the data out of.</p>
 <p>BeautifulSoup gets us going by allowing us to dig down into our table and return a list of rows, which are created in HTML using <tt class="docutils literal"><span class="pre">&lt;tr&gt;</span></tt> tags inside the table.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -771,7 +766,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span><span class="hll">        <span class="k">print</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
 </span></pre></div>
 </div>
-<p>Again, save and run the script. This might seem repetitive, but it is the constant rhythm of many Python programmers).</p>
+<p>Again, save and run the script. (This might seem repetitive, but it is the constant rhythm of many Python programmers.)</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
 </pre></div>
 </div>
@@ -795,7 +790,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
 </pre></div>
 </div>
-<p>Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won&#8217;t be hard since CSVs aren&#8217;t anymore than a grid of columns and rows, much like a table.</p>
+<p>Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won&#8217;t be hard since CSVs aren&#8217;t any more than a grid of columns and rows, much like a table.</p>
 <p>Let&#8217;s start by adding each cell in a row to a new Python list.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -819,7 +814,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
 </pre></div>
 </div>
-<p>Those lists can not be lumped together into one big list of lists, which, when you think about it, isn&#8217;t all tha different from how a spreadsheet or CSV is structured.</p>
+<p>Those lists can now be lumped together into one big list of lists, which, when you think about it, isn&#8217;t all that different from how a spreadsheet is structured.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
@@ -845,7 +840,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
 </pre></div>
 </div>
-<p>To write that list out to a comma-delimited file, we need to import Python built-in <tt class="docutils literal"><span class="pre">csv</span></tt> module at the top of the file. Then, at the botton, we will create a new file, hand it off to the <tt class="docutils literal"><span class="pre">csv</span></tt> module, and then lead on a handy tool it has called <tt class="docutils literal"><span class="pre">writerows</span></tt> to dump out our list of lists.</p>
+<p>To write that list out to a comma-delimited file, we need to import Python&#8217;s built-in <tt class="docutils literal"><span class="pre">csv</span></tt> module at the top of the file. Then, at the botton, we will create a new file, hand it off to the <tt class="docutils literal"><span class="pre">csv</span></tt> module, and then lead on a handy tool it has called <tt class="docutils literal"><span class="pre">writerows</span></tt> to dump out our list of lists.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="kn">import</span> <span class="nn">csv</span>
 </span><span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
@@ -877,7 +872,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <p>Since there are no longer any print statements in the file, the script is no longer dumping data out to your terminal. However, if you open up your code directory you should now see a new file named <tt class="docutils literal"><span class="pre">inmates.csv</span></tt> waiting for you. Open it in a text editor or Excel and you should see structured data all scraped out.</p>
 <p>There is still one obvious problem though. There are no headers!</p>
 <div class="figure">
-<img alt="_images/xls-1.png" src="_images/xls-1.png" />
+<a class="reference internal image-reference" href="_images/xls-1.png"><img alt="_images/xls-1.png" src="_images/xls-1.png" style="width: 600px;" /></a>
 </div>
 <p>Here&#8217;s why. If you go back and look closely, our script is only looping through lists of <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different <tt class="docutils literal"><span class="pre">&lt;th&gt;</span></tt> tag. Look back at the source of the Boone County page and you&#8217;ll see that&#8217;s what exactly they do.</p>
 <p>But rather than bend over backwords to dig them out of the page, let&#8217;s try something a little different. Let&#8217;s just skip the first row when we loop though, and then write the headers out ourselves at the end.</p>
@@ -912,7 +907,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </div>
 <p>Our headers are now there, and you&#8217;ve finished the class. Congratulations! You&#8217;re now a web scraper.</p>
 <div class="figure">
-<img alt="_images/xls-2.png" src="_images/xls-2.png" />
+<a class="reference internal image-reference" href="_images/xls-2.png"><img alt="_images/xls-2.png" src="_images/xls-2.png" style="width: 600px;" /></a>
 </div>
 </div>
 </div>

@@ -118,6 +118,8 @@ can guide you through that process.
 Python 2.7 is preferred but you can probably find a way to make most of
 this tutorial work with other versions if you futz a little.
 
+.. _command-line-pip:
+
 pip
 ~~~
 
@@ -152,9 +154,7 @@ this:
 .. figure:: _static/img/terminal.png
   :width: 600 px
 
-Most of what you'll be doing from the command line at this point will be
-navigating through directories and running Python files. These actions
-require only a few basic commands.
+In this lesson we'll be using it to give the computer direct commands to manage files, navigate through directories and execute Python scripts. Don't worry, it'll only require only a few basic commands we'll cover now.
 
 Open the command-line program for your operating system and let's get started.
 If you need help finding it refer to the prequisite instructions for the :ref:`command-line-prereq`.
@@ -162,7 +162,7 @@ If you need help finding it refer to the prequisite instructions for the :ref:`c
 Print the current directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
-Once your terminal window is open, before we start moving around the first thing we want to do if find out where you are. If you're using OSX or Linux, type this:
+Once your terminal window is open the first thing we want to do if find out where you are. If you're using OSX or Linux, type this:
 
 .. code:: bash
 
@@ -170,7 +170,7 @@ Once your terminal window is open, before we start moving around the first thing
 
 .. note::
 
-    You don't have to type the "$" It's just a generic symbol
+    You don't have to type the "$". It's a generic symbol
     geeks use to show they're working on the command line.
 
 If you're on Windows try:
@@ -179,24 +179,22 @@ If you're on Windows try:
 
     $ cd
 
-The terminal should print out your current location relative to the root of
-your computer's filesystem. In this case, you're in the default directory for your
-user, also known as your **home** directory.
+The terminal should print out your current location relative to the root of your computer's filesystem. In this case, you're probably in the default directory for your user, also known as your **home** directory.
 
 It's easy to lose track of which folder you're in when
 you're working from the command line, so this is a helpful tool for
-finding your way you'll end up using a lot more than you might think.
+finding your way. You'll end up using it a lot more than you might think.
 
 .. note::
 
-  In case you're curious ``pwd`` standards "present working directory" and ``cd``
+  In case you're curious, ``pwd`` standards "present working directory" and ``cd``
   stands for "change directory," a tool we'll use again soon to move between
   folders on your file system.
 
 List files in a directory
 ~~~~~~~~~~~~~~~~~~~~~~~~~
 
-In order to see all the files and folders in your home directory, there's
+In order to see all the files and folders in a directory, there's
 another command you need to learn.  On OSX and Linux, type:
 
 .. code:: bash
@@ -210,7 +208,7 @@ On Windows:
     $ dir
 
 You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you're probably used to seeing when
-you're clicking around your computer's folders in the user-interface provided
+clicking around your computer's folders in the user-interface provided
 by your operating system.
 
 Change directories
@@ -227,7 +225,7 @@ case, the following will probably drop you on your desktop.
     $ cd Desktop
 
 Now run ``ls`` or ``dir`` to see what files we can find there. They should
-mirror what you see on your look at your desktop in your operating system's
+mirror what you see as you look at your desktop in your operating system's
 user interface.
 
 To move back to our home folder, we'll use the ``cd``
@@ -295,14 +293,16 @@ And here's how in Windows:
 
 .. warning::
 
-    **This must be done with caution**. Files you delete from the command line DO NOT go into the recycle bin. They are gone. **Forever**.
+    **This must be done with caution**. Files you delete from the command line do not go into the recycle bin. They are gone. **Forever**.
+
+And that's it! You've learned all the basic command-line tricks necessary to move on.
 
 Act 2: Python
 -------------
 
 Python can be used for almost any application you can imagine, from building websites to running robots.
 
-A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics -- the basic programming principles and syntax quirks that you're likely to encounter as complete this course.
+A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics -- basic principles that you need to understand as you complete this course.
 
 How to run a Python program
 ~~~~~~~~~~~~~~~~~~~~~~~~~~~
@@ -321,8 +321,13 @@ time, sort of like working from the command line.
 
 We'll be using this a lot in the beginning to demonstrate concepts, but in the real world it's often useful for testing and debugging.
 
-To open the interpreter, simply type ``python`` from your command line, and you should see a screen that
-looks like this:
+To open the interpreter, simply type ``python`` from your command line, like this.
+
+.. code:: python
+
+    $ python
+
+And here's what you should get.
 
 .. figure:: _static/img/python.png
    :alt: Python interactive interpreter
@@ -362,6 +367,7 @@ the terminal because that value is stored in the variable.
 .. code:: python
 
     >>> print greeting
+    Hello world!
 
 Data types
 ~~~~~~~~~~
@@ -404,7 +410,7 @@ Floats
 
 Floats are a fancy name for numbers with decimal points in
 them. They are declared the same way as integers but have some
-idiosyncracies we'll discover later:
+idiosyncracies you don't need to worry about for now.
 
 .. code:: python
 
@@ -416,7 +422,7 @@ Lists
 ^^^^^
 
 Lists are collections of values or variables. They are
-declared with brackets like these [], and items inside are separated by
+declared with brackets like these ``[]``, and items inside are separated by
 commas. They can hold collections of any type of data, including other
 lists. Here are several examples:
 
@@ -428,8 +434,7 @@ lists. Here are several examples:
     >>> list of lists = [[1, 2, 3], [4, 5, 6], ['a', 'b', 'c']]
 
 Lists also have another neat feature: The ability to retrieve individual
-items. In order to get a specific item out of a list, you first need to
-know its position in that list.
+items. In order to get a specific item out of a list, you just pass in its position.
 
 All lists in Python are **zero-indexed**, which means the first item in them sits at position 0.
 
@@ -452,7 +457,7 @@ positions you want to retrieve with a colon in between them, like this:
 Tuples
 ^^^^^^
 
-Tuples are a special type of list that cannot be changed once they are created. That's not especially important right now. All you need to know is that they are declared with parentheses (). For now, just think of them as lists.
+Tuples are a special type of list that cannot be changed once they are created. That's not especially important right now. All you need to know is that they are declared with parentheses ``()``. For now, just think of them as lists.
 
 .. code:: python
 
@@ -464,7 +469,7 @@ Dictionaries
 
 Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.
 
-An example will make this a little more clear, but know for now that they are declared with curly braces.
+An example will make this a little more clear.
 
 .. code:: python
 
@@ -523,7 +528,7 @@ Our little program in this case starts with a variable, which we've called ``num
     >>> if number > 5:
     >>>    print "Wow, that's a big number!"
 
-The next line, ``if number > 5:`` declares our if statement. In this case, we want something to happen if the ``number`` variable is greater than 5.
+The next line, ``if number > 5:`` declares our ``if`` statement. In this case, we want something to happen if the ``number`` variable is greater than 5.
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -562,9 +567,9 @@ If you look closely, there's another small detail you need to remember: The colo
 
 It helps sometimes to think of your program as taking place on different levels.
 
-In this case, the first level of our program (the one that isn't indented) has us declaring the variable ``number = 10`` and setting up our if condition, ``if number > 5:``.
+In this case, the first level of our program (the one that isn't indented) has us declaring the variable ``number = 10`` and setting up our ``if`` condition, ``if number > 5:``.
 
-The second level of our program executes only on the condition that our if statement is true. Therefore, because it depends on that if statement, it is indented four spaces.
+The second level of our program executes only on the condition that our ``if`` statement is true. Therefore, because it depends on that ``if`` statement, it is indented four spaces.
 
 If we wanted to continue our program back on the first level, we could do something like this:
 
@@ -623,7 +628,7 @@ That's where for loops come in. Let's start by having Python say the ABC's:
 The output of this statement is what you might guess. But there are still a few things to unpack here -- some familiar and some not.
 
 First, you'll notice from looking at the print statement that our
-indentation rules still apply. Everything that happens within the for
+indentation rules still apply. Everything that happens within the ``for``
 loop must still be indented four spaces from the main level of the
 program. You'll also see that the line declaring the loop ends in a
 colon, just like the if and else statements.
@@ -638,12 +643,12 @@ Second, turn your attention to the syntax of declaring the loop itself.
     >>>     print letter
 
 All of our for loops start, unsurprisingly, with the word ``for`` and
-follow the pattern ``for variable_name in list:``. The ``variable\_name``
+follow the pattern ``for variable_name in list:``. The ``variable_name``
 can be anything you want -- it's essentially just a new variable you're
 creating to refer to each item within your list as the ``for`` loop iterates
 over it.
 
-In this case we chose``letter``, but you could just as easily call it ``donkey``, like so:
+In this case we chose ``letter``, but you could just as easily call it ``donkey``, like so:
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -667,8 +672,8 @@ In Python, a simple function might take an integer and divide it by two, like th
 
 .. code-block:: python
 
-    >>> def divide_by_two(input):
-    >>>    return input / 2.0
+    >>> def divide_by_two(x):
+    >>>    return x / 2.0
 
 In order to call that function later in the program, I would simply have
 to invoke its name and feed it an integer -- any integer at all -- like
@@ -677,26 +682,24 @@ so:
 .. code-block:: python
     :emphasize-lines: 3,4
 
-    >>> def divide_by_two(input):
-    >>>    return input / 2.0
+    >>> def divide_by_two(x):
+    >>>    return x / 2.0
     >>> divide_by_two(10)
     5
 
 Once you write a function (assuming it works) you don't need to know what's inside. You can just feed it an input and expect an output in return.
 
-Every function must be declared by the word ``def``, which stands for "define". That is followed by the name of the function (like a loop you can call it anything you want, but you should aim for it to make some sense), and then a set of parentheses in which you can define the arguments the function should expect.
+Every function must be declared by the word ``def``, which stands for "define". That is followed by the name of the function. Like the variable in a ``loop` you can call it anything you want.
 
 .. code-block:: python
     :emphasize-lines: 1
 
-    >>> def get_half(input):
-    >>>    return input / 2.0
+    >>> def get_half(x):
+    >>>    return x / 2.0
 
-In our example above, our ``divide_by_two`` function expects one
-argument, which we've called ``input`` -- basically the number
-that we want to divide by two.
+The name is then followed by a set of parentheses in which you can define the arguments the function should expect. In our example above, we've called the only argument``x``.
 
-When we feed it the number, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.
+When we feed a value in, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.
 
 .. code-block:: python
     :emphasize-lines: 1,2
@@ -706,7 +709,7 @@ When we feed it the number, like the number 10, a variable by the name of our ar
 
 After you finish declaring arguments, you'll see something familiar --the colon. Just like the ``if`` statements and ``for`` loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.
 
-The final thing you'll need to know about function notation in Python is that most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That's what the ``return`` statement is for.
+Most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That's what the ``return`` statement is for.
 
 .. code-block:: python
     :emphasize-lines: 2
@@ -727,14 +730,11 @@ understanding functions, and they will come up more often than not.
 Python as a toolbox
 ~~~~~~~~~~~~~~~~~~~
 
-Lucky for us, Python already has tools to do pretty much anything you'd
-ever want to do with a programming language: everything from navigating
-the web to scraping and analyzing data to performing mathematical
-operations to building websites.
+Lucky for us, Python already has tools filled with funcations to do pretty much anything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.
 
 Some of these are built into a toolbox that comes with the language, known as the **standard library**. Others have been built by members of the developer community and can be downloaded and installed from the web.
 
-There are two ways to import these tools into your scripts, which we'll demonstrate here:
+There are two ways to import these tools into your scripts.
 
 To pull in an entire toolkit, use the ``import`` command. In this case,
 we'll get the ``urllib2`` package, which allows us to visit websites
@@ -745,16 +745,18 @@ with Python:
     >>> import urllib2
     >>> urllib2.urlopen("http://www.python.org/")
 
-You can also import specific tools from inside a toolkit using something like this:
+You can also import specific tools from inside a toolkit by working in the ``from`` command with something like this:
 
 .. code-block :: python
 
     >>> from urllib2 import urlopen
     >>> urlopen("http://www.python.org/")
 
-In practice, you'll use both of these methods. It's worth noting that
-most of the time, any import statements you execute should be at the
-top of your program.
+In practice, you'll use both of these methods.
+
+.. note::
+
+  There's no rule but most Python programmers try to keep things manageable by lining up all ``import`` statements at the top of each script.
 
 Act 3: Web scraping
 -------------------
@@ -769,6 +771,8 @@ Installing dependencies
 The scraper will use Python's `BeautifulSoup <http://www.crummy.com/software/BeautifulSoup/>`_ toolkit to parse the site's HTML and extract the data.
 
 We'll also use the `Requests library <http://docs.python-requests.org/en/latest/>`_ to open the URL, download the HTML and pass it to BeautifulSoup.
+
+Since they are not included in Python's standard library, we'll first need to install them using ``pip``, a command-line tool that can grab open-source libraries off the web. If you don't have it installed, you'll need to follow the prequisite instructions for :ref:`command-line-pip`.
 
 In OSX or Linux try this:
 
@@ -789,33 +793,30 @@ Analyzing the HTML
 
 HTML is the framework that, in most cases, contains the content of a page. Other bits and pieces like CSS and JavaScript can style, reshape and add layers of interaction to a page.
 
-But unless you've got something fancy on your hands, the data you're seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data.
+But unless you've got something fancy on your hands, the data you're seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data. In this case, we'll be looking to extract data from the big table that makes up the heart of the page.
 
-In order to scrape a website, we need to understand what each of these pieces do.
-To view the HTML code, open up a Web browser and visit `the Boone County web
-page we'll be scraping <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Then and right click with your mouse and select 'View Source'.
+.. figure:: _static/img/target.png
+    :width: 600px
+
+By the time we're finished, we want to have extracted that data, now encrusted in layers of HTML, into a clean spreadsheet.
+
+.. figure:: _static/img/xls-2.png
+    :width: 600px
+
+In order to scrape a website, we need to understand how a typical webpage is put together.
+
+To view the HTML code that makesup this page () open up a browser and visit `out target <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Then right click with your mouse and select "View Source." You can do this for any page on the web.
 
 .. figure:: _static/img/source.png
 
-HTML has markers that denote the start and end of the webpage, ``<html></html>``. Inside that tag, there are two main sections, the head and the body.
+We could fish through all the code to find our data, but to dig this more easily, we can use your web browser's inspector tool. Right click on the table of data that you are interested in and select 'inspect element.'
 
-.. code-block:: html
-
-    <html>
-        <head><!-- Lots of goofy scripts and stuff goes in here --></head>
-        <body><!-- The actual content of the page you can see goes here --></body>
-    </html>
-
-The part that we are interested in is the body tag. Somewhere in there
-lies our content. To access this more easily, we will use your web browser's inspector tool. Right click on the table of data that you are interested in
-and select 'inspect element.'
+.. figure:: _static/img/inspect.png
+   :alt: Inspect the element
 
 .. note::
 
     The inspector tool might have a slightly different name depending on which browser you're using. To make this easy on yourself, consider using Google Chrome.
-
-.. figure:: _static/img/inspect.png
-   :alt: Inspect the element
 
 Your browser will open a special panel and highlight the portion of the page's HTML code that you've just clicked on.
 
@@ -883,13 +884,13 @@ Next import the ``BeautifulSoup`` HTML parsing library and feed it the page.
     soup = BeautifulSoup(html)
     print soup.prettify()
 
-Save the file and run the script again and you should see the page's HTML again, but in a prettier format this time. That's a hint at that magic's that's happening inside BeautifulSoup once it gets its hands on the page.
+Save the file and run the script again and you should see the page's HTML again, but in a prettier format this time. That's a hint at the magic happening inside BeautifulSoup once it gets its hands on the page.
 
 .. code:: bash
 
   $ python scrape.py
 
-Next we take all the detective work we did with the page's HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we're after from the page.
+Next we take all the detective work we did with the page's HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we're after.
 
 .. code-block:: python
     :emphasize-lines: 9-10
@@ -905,13 +906,13 @@ Next we take all the detective work we did with the page's HTML above and conver
     table = soup.find('table', attrs={'class': 'resultsTable'})
     print table.prettify()
 
-Save the file and run ``scrape.py`` again and this time you can see that only prints out the table we're after, which we selected by instructing BeautifulSoup to return only those ``<table>`` tags with ``resultsTable`` as their class attribute.
+Save the file and run ``scrape.py`` again. This time it only prints out the table we're after, which was selected by instructing BeautifulSoup to return only those ``<table>`` tags with ``resultsTable`` as their class attribute.
 
 .. code:: bash
 
   $ python scrape.py
 
-In the end, all we need to do now is figure out is a way to convert the rows in the table into a list, which we then loop through and grab all the data from.
+Now that we have our hands on the table, we need to convert the rows in the table into a list, which we can then loop through and grab all the data out of.
 
 BeautifulSoup gets us going by allowing us to dig down into our table and return a list of rows, which are created in HTML using ``<tr>`` tags inside the table.
 
@@ -956,7 +957,7 @@ Next we can loop through each of the cells in each row by select them inside the
         for cell in row.findAll('td'):
             print cell.text
 
-Again, save and run the script. This might seem repetitive, but it is the constant rhythm of many Python programmers).
+Again, save and run the script. (This might seem repetitive, but it is the constant rhythm of many Python programmers.)
 
 .. code:: bash
 
@@ -987,7 +988,7 @@ Save and run the script. Everything should be much better.
 
   $ python scrape.py
 
-Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won't be hard since CSVs aren't anymore than a grid of columns and rows, much like a table.
+Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won't be hard since CSVs aren't any more than a grid of columns and rows, much like a table.
 
 Let's start by adding each cell in a row to a new Python list.
 
@@ -1017,7 +1018,7 @@ Save and rerun the script. Now you should see Python lists streaming by one row 
 
   $ python scrape.py
 
-Those lists can not be lumped together into one big list of lists, which, when you think about it, isn't all tha different from how a spreadsheet or CSV is structured.
+Those lists can now be lumped together into one big list of lists, which, when you think about it, isn't all that different from how a spreadsheet is structured.
 
 .. code-block:: python
     :emphasize-lines: 11,17-19
@@ -1048,7 +1049,7 @@ Save and rerun the script. You should see a big bunch of data dumped out into th
 
   $ python scrape.py
 
-To write that list out to a comma-delimited file, we need to import Python built-in ``csv`` module at the top of the file. Then, at the botton, we will create a new file, hand it off to the ``csv`` module, and then lead on a handy tool it has called ``writerows`` to dump out our list of lists.
+To write that list out to a comma-delimited file, we need to import Python's built-in ``csv`` module at the top of the file. Then, at the botton, we will create a new file, hand it off to the ``csv`` module, and then lead on a handy tool it has called ``writerows`` to dump out our list of lists.
 
 .. code-block:: python
     :emphasize-lines: 1,20-22
@@ -1087,6 +1088,7 @@ Since there are no longer any print statements in the file, the script is no lon
 There is still one obvious problem though. There are no headers!
 
 .. figure:: _static/img/xls-1.png
+    :width: 600px
 
 Here's why. If you go back and look closely, our script is only looping through lists of ``<td>`` tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different ``<th>`` tag. Look back at the source of the Boone County page and you'll see that's what exactly they do.
 
@@ -1128,7 +1130,7 @@ Save and run the script one last time.
 Our headers are now there, and you've finished the class. Congratulations! You're now a web scraper.
 
 .. figure:: _static/img/xls-2.png
-
+    :width: 600px
 
 
 
