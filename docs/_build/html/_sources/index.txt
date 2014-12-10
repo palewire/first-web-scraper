@@ -25,7 +25,7 @@ It was later modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in De
 What you will make
 ------------------
 
-This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri for `a local government website <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_ and save it as comma-delimited text ready for analysis.
+This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri from `a local government website <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_ and save it as comma-delimited text ready for analysis.
 
 Prelude: Prerequisites
 ----------------------
