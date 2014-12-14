@@ -41,7 +41,7 @@ and working to participate.
 3. Version 2.7 of the
    `Python <http://python.org/download/releases/2.7.6/>`__ programming
    language
-4. The `pip <http://www.pip-installer.org/en/latest/installing.html>`__
+4. The `pip <https://pip.pypa.io/en/latest/installing.html>`__
    package manager for Python
 
 .. note::
@@ -124,13 +124,13 @@ pip
 ~~~
 
 The `pip package
-manager <http://www.pip-installer.org/en/latest/index.html>`__ makes it
+manager <https://pip.pypa.io/en/latest/>`__ makes it
 easy to install open-source libraries that expand what you're able to do
 with Python. Later, we will use it to install everything needed to
 create a working web application.
 
 If you don't have it already, you can get pip by following `these
-instructions <http://www.pip-installer.org/en/latest/installing.html>`__.
+instructions <https://pip.pypa.io/en/latest/installing.html>`__.
 In Windows, it's necessary to make sure that the Python ``Scripts``
 directory is available on your system's ``PATH`` so it can be called
 from anywhere on the command line. `This
