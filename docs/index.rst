@@ -452,7 +452,7 @@ positions you want to retrieve with a colon in between them, like this:
 .. code:: python
 
     >>> my_list[0:2]
-    ['a', 'b', 'c']
+    ['a', 'b']
 
 Tuples
 ^^^^^^
