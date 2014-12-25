@@ -13,7 +13,7 @@ Kazil <jackiekazil@gmail.com>`__, `Sisi Wei <me@sisiwei.com>`__ and Matt
 Wynn for bootcamps held by Investigative Reporters and Editors at the
 University of Missouri in Columbia, Missouri in 2013 and 2014.
 
-It was later modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in December 2014 for workshops at `The Centre for Cultura Contemporania de Barcelona <http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957>`_ and `Medialab-Prado <http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos>`_ in Madrid.
+It was modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in December 2014 for workshops at `The Centre for Cultura Contemporania de Barcelona <http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957>`_, `Medialab-Prado <http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos>`_ and the `Escuela de Periodismo y Comunicación <http://www.escuelaunidadeditorial.es/master-periodismo-de-investigacion.html>`_ at Universidad Rey Juan Carlos.
 
 -  Code repository:
    `github.com/ireapps/first-web-scraper/ <https://github.com/ireapps/first-web-scraper/>`__
