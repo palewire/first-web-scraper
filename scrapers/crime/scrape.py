@@ -2,7 +2,7 @@ import csv
 import requests
 from BeautifulSoup import BeautifulSoup
 
-url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
+url = 'https://rawgit.com/ireapps/first-web-scraper/master/demo/index.html'
 response = requests.get(url)
 html = response.content
 
