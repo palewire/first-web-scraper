@@ -1,4 +1,3 @@
-BeautifulSoup==3.2.1
 Jinja2==2.7.3
 MarkupSafe==0.23
 PyYAML==3.11
@@ -7,6 +6,7 @@ Sphinx==1.2.3
 argh==0.26.1
 argparse==1.2.1
 backports.ssl-match-hostname==3.4.0.2
+beautifulsoup4==4.3.2
 certifi==14.05.14
 docutils==0.12
 livereload==2.2.0
