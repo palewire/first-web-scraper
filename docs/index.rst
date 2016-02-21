@@ -903,7 +903,7 @@ Next we take all the detective work we did with the page's HTML above and conver
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
     print table.prettify()
 
 Save the file and run ``scrape.py`` again. This time it only prints out the table we're after, which was selected by instructing BeautifulSoup to return only those ``<table>`` tags with ``resultsTable`` as their class attribute.
@@ -927,7 +927,7 @@ BeautifulSoup gets us going by allowing us to dig down into our table and return
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         print row.prettify()
@@ -951,7 +951,7 @@ Next we can loop through each of the cells in each row by select them inside the
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         for cell in row.findAll('td'):
@@ -976,7 +976,7 @@ When that prints you will notice some annoying ``&nbsp;`` on the end of many lin
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         for cell in row.findAll('td'):
@@ -1003,7 +1003,7 @@ Let's start by adding each cell in a row to a new Python list.
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         list_of_cells = []
@@ -1031,7 +1031,7 @@ Those lists can now be lumped together into one big list of lists, which, when y
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
     for row in table.findAll('tr'):
@@ -1063,7 +1063,7 @@ To write that list out to a comma-delimited file, we need to import Python's bui
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
     for row in table.findAll('tr'):
@@ -1106,7 +1106,7 @@ But rather than bend over backwords to dig them out of the page, let's try somet
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
     for row in table.findAll('tr')[1:]:
