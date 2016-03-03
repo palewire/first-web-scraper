@@ -730,7 +730,7 @@ understanding functions, and they will come up more often than not.
 Python as a toolbox
 ~~~~~~~~~~~~~~~~~~~
 
-Lucky for us, Python already has tools filled with funcations to do pretty much anything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.
+Lucky for us, Python already has tools filled with functions to do pretty much anything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.
 
 Some of these are built into a toolbox that comes with the language, known as the **standard library**. Others have been built by members of the developer community and can be downloaded and installed from the web.
 
