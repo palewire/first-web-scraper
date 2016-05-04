@@ -781,7 +781,7 @@ In OSX or Linux try this:
     $ sudo pip install BeautifulSoup
     $ sudo pip install Requests
 
-On Windows give it a shot with the ``sudo``.
+On Windows give it a shot without the ``sudo``.
 
 .. code:: bash
 
@@ -1109,7 +1109,7 @@ But rather than bend over backwords to dig them out of the page, let's try somet
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
-    for row in table.findAll('tr')[1:]:
+    for row in table.findAll('tr'):
         list_of_cells = []
         for cell in row.findAll('td'):
             text = cell.text.replace('&nbsp;', '')
@@ -1131,6 +1131,63 @@ Our headers are now there, and you've finished the class. Congratulations! You'r
 
 .. figure:: _static/img/xls-2.png
     :width: 600px
+
+For extra credit: Since this scraper was first written, the sheriff's office changed its pages. You'll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is, in technical terms, a problem; your scraper will only fetch 50 rows.
+
+But the sheriff's office offers a handy way to change how many rows are shown, with a default of 50.
+
+Look at the HTML:
+
+.. code-block:: html
+
+    <span>
+    Page Size &nbsp;</span>
+    <input class="mrcinput" name="max_rows" size="3" title="max_rowsp" type="text" value="222" /> &nbsp; 
+
+
+Here's where it shows you the words "Page Size" as well as an input section with a variable named max_rows and a value of 50.
+
+A handy technique: If you're looking at a web page that already has stuff after a question mark, add to it with &amp;. Otherwise, try your own question mark and try with the variable. Sometimes it works.
+
+In this case, instead of scraping the main URL:
+
+.. code:: text
+
+    https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s
+
+Try scraping it with
+
+.. code:: text
+
+    https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500
+
+To implement, just change your URL.
+
+.. code-block:: python
+    :emphasize-lines: 1,20-22
+
+    import csv
+    import requests
+    from BeautifulSoup import BeautifulSoup
+
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500'
+    response = requests.get(url)
+    html = response.content
+
+    soup = BeautifulSoup(html)
+    table = soup.find('tbody', attrs={'class': 'stripe'})
+
+    list_of_rows = []
+    for row in table.findAll('tr'):
+        list_of_cells = []
+        for cell in row.findAll('td'):
+            text = cell.text.replace('&nbsp;', '')
+            list_of_cells.append(text)
+        list_of_rows.append(list_of_cells)
+
+    outfile = open("./inmates.csv", "wb")
+    writer = csv.writer(outfile)
+    writer.writerows(list_of_rows)
 
 
 
