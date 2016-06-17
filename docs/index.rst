@@ -778,14 +778,14 @@ In OSX or Linux try this:
 
 .. code:: bash
 
-    $ sudo pip install BeautifulSoup
+    $ sudo pip install BeautifulSoup4
     $ sudo pip install Requests
 
-On Windows give it a shot with the ``sudo``.
+On Windows give it a shot without the ``sudo``.
 
 .. code:: bash
 
-    $ pip install BeautifulSoup
+    $ pip install BeautifulSoup4
     $ pip install Requests
 
 Analyzing the HTML
@@ -875,7 +875,7 @@ Next import the ``BeautifulSoup`` HTML parsing library and feed it the page.
     :emphasize-lines: 2,8-9
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -896,7 +896,7 @@ Next we take all the detective work we did with the page's HTML above and conver
     :emphasize-lines: 9-10
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -920,7 +920,7 @@ BeautifulSoup gets us going by allowing us to dig down into our table and return
     :emphasize-lines: 12,13
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -929,10 +929,10 @@ BeautifulSoup gets us going by allowing us to dig down into our table and return
     soup = BeautifulSoup(html)
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
-    for row in table.findAll('tr'):
+    for row in table.find_all('tr'):
         print row.prettify()
 
-Save and run the script. You'll not see each row printed out separately as the script loops through the table.
+Save and run the script. You'll now see each row printed out separately as the script loops through the table.
 
 .. code:: bash
 
@@ -944,7 +944,7 @@ Next we can loop through each of the cells in each row by select them inside the
     :emphasize-lines: 12,13
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -953,9 +953,9 @@ Next we can loop through each of the cells in each row by select them inside the
     soup = BeautifulSoup(html)
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
-    for row in table.findAll('tr'):
-        for cell in row.findAll('td'):
-            print cell.text
+    for row in table.find_all('tr'):
+        for cell in row.find_all('td'):
+            cell.text
 
 Again, save and run the script. (This might seem repetitive, but it is the constant rhythm of many Python programmers.)
 
@@ -963,13 +963,13 @@ Again, save and run the script. (This might seem repetitive, but it is the const
 
   $ python scrape.py
 
-When that prints you will notice some annoying ``&nbsp;`` on the end of many lines. That is the HTML code for a **non-breaking space**, which forces the browser to render an empty space on the page. It is junk and we can delete it easily with this handy Python trick.
+When that prints you will notice some annoying ``\xa0`` on the end of many lines. That is unicode for a **non-breaking space**, which forces the browser to render an empty space on the page. It is junk and we can delete it easily with this handy Python trick.
 
 .. code-block:: python
     :emphasize-lines: 13
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -978,9 +978,9 @@ When that prints you will notice some annoying ``&nbsp;`` on the end of many lin
     soup = BeautifulSoup(html)
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
-    for row in table.findAll('tr'):
-        for cell in row.findAll('td'):
-            print cell.text.replace('&nbsp;', '')
+    for row in table.find_all('tr'):
+        for cell in row.find_all('td'):
+            print cell.text.strip()
 
 Save and run the script. Everything should be much better.
 
@@ -996,7 +996,7 @@ Let's start by adding each cell in a row to a new Python list.
     :emphasize-lines: 12,14-16
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -1005,10 +1005,10 @@ Let's start by adding each cell in a row to a new Python list.
     soup = BeautifulSoup(html)
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
-    for row in table.findAll('tr'):
+    for row in table.find_all('tr'):
         list_of_cells = []
-        for cell in row.findAll('td'):
-            text = cell.text.replace('&nbsp;', '')
+        for cell in row.find_all('td'):
+            text = cell.text.strip()
             list_of_cells.append(text)
         print list_of_cells
 
@@ -1024,7 +1024,7 @@ Those lists can now be lumped together into one big list of lists, which, when y
     :emphasize-lines: 11,17-19
 
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -1034,10 +1034,10 @@ Those lists can now be lumped together into one big list of lists, which, when y
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
-    for row in table.findAll('tr'):
+    for row in table.find_all('tr'):
         list_of_cells = []
-        for cell in row.findAll('td'):
-            text = cell.text.replace('&nbsp;', '')
+        for cell in row.find_all('td'):
+            text = cell.text.strip()
             list_of_cells.append(text)
         list_of_rows.append(list_of_cells)
 
@@ -1056,7 +1056,7 @@ To write that list out to a comma-delimited file, we need to import Python's bui
 
     import csv
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -1066,10 +1066,10 @@ To write that list out to a comma-delimited file, we need to import Python's bui
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
-    for row in table.findAll('tr'):
+    for row in table.find_all('tr'):
         list_of_cells = []
-        for cell in row.findAll('td'):
-            text = cell.text.replace('&nbsp;', '')
+        for cell in row.find_all('td'):
+            text = cell.text.strip()
             list_of_cells.append(text)
         list_of_rows.append(list_of_cells)
 
@@ -1099,7 +1099,7 @@ But rather than bend over backwords to dig them out of the page, let's try somet
 
     import csv
     import requests
-    from BeautifulSoup import BeautifulSoup
+    from bs4 import BeautifulSoup
 
     url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
     response = requests.get(url)
@@ -1109,10 +1109,10 @@ But rather than bend over backwords to dig them out of the page, let's try somet
     table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
-    for row in table.findAll('tr')[1:]:
+    for row in table.find_all('tr')[1:]:
         list_of_cells = []
-        for cell in row.findAll('td'):
-            text = cell.text.replace('&nbsp;', '')
+        for cell in row.find_all('td'):
+            text = cell.text.strip()
             list_of_cells.append(text)
         list_of_rows.append(list_of_cells)
 
