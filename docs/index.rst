@@ -467,9 +467,7 @@ Tuples are a special type of list that cannot be changed once they are created. 
 Dictionaries
 ^^^^^^^^^^^^
 
-Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.
-
-An example will make this a little more clear.
+When you want to find specific element in a list you use the element's index. Dictionary provides you opportunity to access an element not only by number. Usually by string. In a dictionary element is named value. And "index" of element - key. Third types of bracets - {} - used for creation dictionaries:
 
 .. code:: python
 
