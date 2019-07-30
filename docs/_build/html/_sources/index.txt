@@ -13,7 +13,7 @@ Kazil <jackiekazil@gmail.com>`__, `Sisi Wei <me@sisiwei.com>`__ and Matt
 Wynn for bootcamps held by Investigative Reporters and Editors at the
 University of Missouri in Columbia, Missouri in 2013 and 2014.
 
-It was later modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in December 2014 for workshops at `The Centre for Cultura Contemporania de Barcelona <http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957>`_ and `Medialab-Prado <http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos>`_ in Madrid.
+It was modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in December 2014 for workshops at `The Centre for Cultura Contemporania de Barcelona <http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957>`_, `Medialab-Prado <http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos>`_ and the `Escuela de Periodismo y Comunicación <http://www.escuelaunidadeditorial.es/master-periodismo-de-investigacion.html>`_ at Universidad Rey Juan Carlos.
 
 -  Code repository:
    `github.com/ireapps/first-web-scraper/ <https://github.com/ireapps/first-web-scraper/>`__
@@ -25,7 +25,7 @@ It was later modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in De
 What you will make
 ------------------
 
-This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri from `a local government website <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_ and save it as comma-delimited text ready for analysis.
+This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri from `a local government website <https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s>`_ and save it as comma-delimited text ready for analysis.
 
 Prelude: Prerequisites
 ----------------------
@@ -41,7 +41,7 @@ and working to participate.
 3. Version 2.7 of the
    `Python <http://python.org/download/releases/2.7.6/>`__ programming
    language
-4. The `pip <http://www.pip-installer.org/en/latest/installing.html>`__
+4. The `pip <https://pip.pypa.io/en/latest/installing.html>`__
    package manager for Python
 
 .. note::
@@ -124,13 +124,13 @@ pip
 ~~~
 
 The `pip package
-manager <http://www.pip-installer.org/en/latest/index.html>`__ makes it
+manager <https://pip.pypa.io/en/latest/>`__ makes it
 easy to install open-source libraries that expand what you're able to do
 with Python. Later, we will use it to install everything needed to
 create a working web application.
 
 If you don't have it already, you can get pip by following `these
-instructions <http://www.pip-installer.org/en/latest/installing.html>`__.
+instructions <https://pip.pypa.io/en/latest/installing.html>`__.
 In Windows, it's necessary to make sure that the Python ``Scripts``
 directory is available on your system's ``PATH`` so it can be called
 from anywhere on the command line. `This
@@ -452,7 +452,7 @@ positions you want to retrieve with a colon in between them, like this:
 .. code:: python
 
     >>> my_list[0:2]
-    ['a', 'b', 'c']
+    ['a', 'b']
 
 Tuples
 ^^^^^^
@@ -730,7 +730,7 @@ understanding functions, and they will come up more often than not.
 Python as a toolbox
 ~~~~~~~~~~~~~~~~~~~
 
-Lucky for us, Python already has tools filled with funcations to do pretty much anything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.
+Lucky for us, Python already has tools filled with functions to do pretty much anything you'd ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.
 
 Some of these are built into a toolbox that comes with the language, known as the **standard library**. Others have been built by members of the developer community and can be downloaded and installed from the web.
 
@@ -763,7 +763,7 @@ Act 3: Web scraping
 
 Now that we've covered all the fundamentals, it's time to get to work and write a web scraper.
 
-The target is a regularly updated `roster of inmates at the Boone County Jail in Missouri <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
+The target is a regularly updated `roster of inmates at the Boone County Jail in Missouri <https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s>`_. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
 
 Installing dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -805,7 +805,7 @@ By the time we're finished, we want to have extracted that data, now encrusted i
 
 In order to scrape a website, we need to understand how a typical webpage is put together.
 
-To view the HTML code that makesup this page () open up a browser and visit `out target <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Then right click with your mouse and select "View Source." You can do this for any page on the web.
+To view the HTML code that makesup this page () open up a browser and visit `out target <https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s>`_. Then right click with your mouse and select "View Source." You can do this for any page on the web.
 
 .. figure:: _static/img/source.png
 
@@ -858,8 +858,8 @@ Then open your text editor and save an empty file into the directory name ``scra
 
     import requests
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
     print html
 
@@ -877,8 +877,8 @@ Next import the ``BeautifulSoup`` HTML parsing library and feed it the page.
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -898,12 +898,12 @@ Next we take all the detective work we did with the page's HTML above and conver
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
     print table.prettify()
 
 Save the file and run ``scrape.py`` again. This time it only prints out the table we're after, which was selected by instructing BeautifulSoup to return only those ``<table>`` tags with ``resultsTable`` as their class attribute.
@@ -922,12 +922,12 @@ BeautifulSoup gets us going by allowing us to dig down into our table and return
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         print row.prettify()
@@ -946,12 +946,12 @@ Next we can loop through each of the cells in each row by select them inside the
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         for cell in row.findAll('td'):
@@ -971,12 +971,12 @@ When that prints you will notice some annoying ``&nbsp;`` on the end of many lin
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         for cell in row.findAll('td'):
@@ -998,12 +998,12 @@ Let's start by adding each cell in a row to a new Python list.
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     for row in table.findAll('tr'):
         list_of_cells = []
@@ -1026,12 +1026,12 @@ Those lists can now be lumped together into one big list of lists, which, when y
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
     for row in table.findAll('tr'):
@@ -1058,12 +1058,12 @@ To write that list out to a comma-delimited file, we need to import Python's bui
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
     for row in table.findAll('tr'):
@@ -1101,12 +1101,12 @@ But rather than bend over backwords to dig them out of the page, let's try somet
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
-    table = soup.find('table', attrs={'class': 'resultsTable'})
+    table = soup.find('tbody', attrs={'class': 'stripe'})
 
     list_of_rows = []
     for row in table.findAll('tr')[1:]:
@@ -1131,7 +1131,4 @@ Our headers are now there, and you've finished the class. Congratulations! You'r
 
 .. figure:: _static/img/xls-2.png
     :width: 600px
-
-
-
 
