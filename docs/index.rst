@@ -25,7 +25,7 @@ It was modified by `Ben Welsh <http://palewi.re/who-is-ben-welsh/>`_ in December
 What you will make
 ------------------
 
-This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri from `a local government website <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_ and save it as comma-delimited text ready for analysis.
+This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri from `a local government website <https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s>`_ and save it as comma-delimited text ready for analysis.
 
 Prelude: Prerequisites
 ----------------------
@@ -763,7 +763,7 @@ Act 3: Web scraping
 
 Now that we've covered all the fundamentals, it's time to get to work and write a web scraper.
 
-The target is a regularly updated `roster of inmates at the Boone County Jail in Missouri <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
+The target is a regularly updated `roster of inmates at the Boone County Jail in Missouri <https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s>`_. Boone County is home to Columbia, where you can find the University of Missouri's main campus and the headquarters of Investigative Reporters and Editors.
 
 Installing dependencies
 ~~~~~~~~~~~~~~~~~~~~~~~
@@ -805,7 +805,7 @@ By the time we're finished, we want to have extracted that data, now encrusted i
 
 In order to scrape a website, we need to understand how a typical webpage is put together.
 
-To view the HTML code that makesup this page () open up a browser and visit `out target <http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp>`_. Then right click with your mouse and select "View Source." You can do this for any page on the web.
+To view the HTML code that makesup this page () open up a browser and visit `out target <https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s>`_. Then right click with your mouse and select "View Source." You can do this for any page on the web.
 
 .. figure:: _static/img/source.png
 
@@ -858,8 +858,8 @@ Then open your text editor and save an empty file into the directory name ``scra
 
     import requests
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
     print html
 
@@ -877,8 +877,8 @@ Next import the ``BeautifulSoup`` HTML parsing library and feed it the page.
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -898,8 +898,8 @@ Next we take all the detective work we did with the page's HTML above and conver
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -922,8 +922,8 @@ BeautifulSoup gets us going by allowing us to dig down into our table and return
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -946,8 +946,8 @@ Next we can loop through each of the cells in each row by select them inside the
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -971,8 +971,8 @@ When that prints you will notice some annoying ``&nbsp;`` on the end of many lin
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -998,8 +998,8 @@ Let's start by adding each cell in a row to a new Python list.
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -1026,8 +1026,8 @@ Those lists can now be lumped together into one big list of lists, which, when y
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -1058,8 +1058,8 @@ To write that list out to a comma-delimited file, we need to import Python's bui
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -1101,8 +1101,8 @@ But rather than bend over backwords to dig them out of the page, let's try somet
     import requests
     from BeautifulSoup import BeautifulSoup
 
-    url = 'http://www.showmeboone.com/sheriff/JailResidents/JailResidents.asp'
-    response = requests.get(url)
+    url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -1131,7 +1131,4 @@ Our headers are now there, and you've finished the class. Congratulations! You'r
 
 .. figure:: _static/img/xls-2.png
     :width: 600px
-
-
-
 
