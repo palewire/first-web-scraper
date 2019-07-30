@@ -566,7 +566,7 @@ so:</p>
 </span></pre></div>
 </div>
 <p>Once you write a function (assuming it works) you don&#8217;t need to know what&#8217;s inside. You can just feed it an input and expect an output in return.</p>
-<p>Every function must be declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is followed by the name of the function. Like the variable in a <a href="#id1"><span class="problematic" id="id2">``</span></a>loop` you can call it anything you want.</p>
+<p>Every function must be declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is followed by the name of the function. Like the variable in a <tt class="docutils literal"><span class="pre">loop</span></tt> you can call it anything you want.</p>
 <div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
 </span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
 </pre></div>
@@ -630,7 +630,7 @@ with Python:</p>
 $ sudo pip install Requests
 </pre></div>
 </div>
-<p>On Windows give it a shot with the <tt class="docutils literal"><span class="pre">sudo</span></tt>.</p>
+<p>On Windows give it a shot without the <tt class="docutils literal"><span class="pre">sudo</span></tt>.</p>
 <div class="code bash highlight-python"><div class="highlight"><pre>$ pip install BeautifulSoup
 $ pip install Requests
 </pre></div>
@@ -888,7 +888,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
 
 <span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="hll"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">)[</span><span class="mi">1</span><span class="p">:]:</span>
+<span class="hll"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
 </span>    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
     <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
         <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
@@ -908,6 +908,52 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <p>Our headers are now there, and you&#8217;ve finished the class. Congratulations! You&#8217;re now a web scraper.</p>
 <div class="figure">
 <a class="reference internal image-reference" href="_images/xls-2.png"><img alt="_images/xls-2.png" src="_images/xls-2.png" style="width: 600px;" /></a>
+</div>
+</div>
+<div class="section" id="but-that-s-not-all-getting-the-missing-data">
+<h3>But that&#8217;s not all: Getting the missing data<a class="headerlink" href="#but-that-s-not-all-getting-the-missing-data" title="Permalink to this headline">¶</a></h3>
+<p>Since this scraper was first written, the sheriff&#8217;s office changed how it displays inmates. You&#8217;ll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is a problem &#8211; you want all of the information, not just 50 rows!</p>
+<p>But the sheriff&#8217;s office offers a handy way to change how many rows are shown, with a default of 50.</p>
+<p>Look at the HTML:</p>
+<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;span&gt;</span>
+Page Size <span class="ni">&amp;nbsp;</span><span class="nt">&lt;/span&gt;</span>
+<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;mrcinput&quot;</span> <span class="na">name=</span><span class="s">&quot;max_rows&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span> <span class="na">title=</span><span class="s">&quot;max_rowsp&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;222&quot;</span> <span class="nt">/&gt;</span> <span class="ni">&amp;nbsp;</span>
+</pre></div>
+</div>
+<p>Here&#8217;s where it shows you the words &#8220;Page Size&#8221; as well as an input section with a variable named <tt class="docutils literal"><span class="pre">max_rows</span></tt> and a value of 50.</p>
+<p>A handy technique: Sometimes web pages will accept input in the URL itself by passing a variable after a <tt class="docutils literal"><span class="pre">?</span></tt>. Sometimes it works to play around with the URL and see how the site changes.</p>
+<p>In this case, instead of scraping the main URL:</p>
+<div class="code text highlight-python"><div class="highlight"><pre>https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s
+</pre></div>
+</div>
+<p>Try scraping it by passing a new value for <tt class="docutils literal"><span class="pre">max_rows</span></tt>:</p>
+<div class="code text highlight-python"><div class="highlight"><pre>https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500
+</pre></div>
+</div>
+<p>To implement, just change your <tt class="docutils literal"><span class="pre">url</span></tt> variable like so:</p>
+<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="kn">import</span> <span class="nn">csv</span>
+</span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+
+<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">}))</span>
+<span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
+
+<span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+
+<span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+        <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
+    <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
+
+<span class="hll"><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+</span><span class="hll"><span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+</span><span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
+</span></pre></div>
 </div>
 </div>
 </div>

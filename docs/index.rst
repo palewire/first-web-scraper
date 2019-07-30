@@ -1132,7 +1132,9 @@ Our headers are now there, and you've finished the class. Congratulations! You'r
 .. figure:: _static/img/xls-2.png
     :width: 600px
 
-=======
+But that's not all: Getting the missing data
+~~~~~~~~~~~~~~~~~~~~~~~~
+
 Since this scraper was first written, the sheriff's office changed how it displays inmates. You'll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is a problem -- you want all of the information, not just 50 rows!
 
 But the sheriff's office offers a handy way to change how many rows are shown, with a default of 50.
@@ -1146,7 +1148,7 @@ Look at the HTML:
     <input class="mrcinput" name="max_rows" size="3" title="max_rowsp" type="text" value="222" /> &nbsp; 
 
 
-Here's where it shows you the words "Page Size" as well as an input section with a variable named max_rows and a value of 50.
+Here's where it shows you the words "Page Size" as well as an input section with a variable named ``max_rows`` and a value of 50.
 
 A handy technique: Sometimes web pages will accept input in the URL itself by passing a variable after a ``?``. Sometimes it works to play around with the URL and see how the site changes. 
 
