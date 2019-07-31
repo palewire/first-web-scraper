@@ -1167,14 +1167,14 @@ Try scraping it by passing a new value for ``max_rows``:
 To implement, just change your ``url`` variable like so:
 
 .. code-block:: python
-    :emphasize-lines: 1,20-22
+    :emphasize-lines: 5
 
     import csv
     import requests
     from BeautifulSoup import BeautifulSoup
 
     url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500'
-    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'}))
+    response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
     html = response.content
 
     soup = BeautifulSoup(html)
@@ -1190,6 +1190,7 @@ To implement, just change your ``url`` variable like so:
 
     outfile = open("./inmates.csv", "wb")
     writer = csv.writer(outfile)
+    writer.writerow(["Last", "First", "Middle", "Gender", "Race", "Age", "City", "State"])
     writer.writerows(list_of_rows)
 
 
