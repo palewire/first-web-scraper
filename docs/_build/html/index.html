@@ -931,12 +931,12 @@ Page Size <span class="ni">&amp;nbsp;</span><span class="nt">&lt;/span&gt;</span
 </pre></div>
 </div>
 <p>To implement, just change your <tt class="docutils literal"><span class="pre">url</span></tt> variable like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="kn">import</span> <span class="nn">csv</span>
-</span><span class="kn">import</span> <span class="nn">requests</span>
+<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
+<span class="kn">import</span> <span class="nn">requests</span>
 <span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">}))</span>
+<span class="hll"><span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500&#39;</span>
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
@@ -950,10 +950,11 @@ Page Size <span class="ni">&amp;nbsp;</span><span class="nt">&lt;/span&gt;</span
         <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
 
-<span class="hll"><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
-</span><span class="hll"><span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
-</span><span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
-</span></pre></div>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+<span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s">&quot;Last&quot;</span><span class="p">,</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="s">&quot;Middle&quot;</span><span class="p">,</span> <span class="s">&quot;Gender&quot;</span><span class="p">,</span> <span class="s">&quot;Race&quot;</span><span class="p">,</span> <span class="s">&quot;Age&quot;</span><span class="p">,</span> <span class="s">&quot;City&quot;</span><span class="p">,</span> <span class="s">&quot;State&quot;</span><span class="p">])</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
+</pre></div>
 </div>
 </div>
 </div>

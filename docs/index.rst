@@ -1133,7 +1133,7 @@ Our headers are now there, and you've finished the class. Congratulations! You'r
     :width: 600px
 
 But that's not all: Getting the missing data
-~~~~~~~~~~~~~~~~~~~~~~~~
+~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~~
 
 Since this scraper was first written, the sheriff's office changed how it displays inmates. You'll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is a problem -- you want all of the information, not just 50 rows!
 
