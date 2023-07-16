@@ -1,48 +1,39 @@
-<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN"
-  "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<!DOCTYPE html>
 
-
-<html xmlns="http://www.w3.org/1999/xhtml">
+<html lang="en">
   <head>
-    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <title>First web scraper &#8212; First web scraper 0.1 documentation</title>
+    <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
+    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
     
-    <title>First web scraper &mdash; First web scraper 0.1 documentation</title>
+    <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
+    <script src="_static/doctools.js"></script>
+    <script src="_static/sphinx_highlight.js"></script>
     
-    <link rel="stylesheet" href="_static/default.css" type="text/css" />
-    <link rel="stylesheet" href="_static/pygments.css" type="text/css" />
-    
-    <script type="text/javascript">
-      var DOCUMENTATION_OPTIONS = {
-        URL_ROOT:    './',
-        VERSION:     '0.1',
-        COLLAPSE_INDEX: false,
-        FILE_SUFFIX: '.html',
-        HAS_SOURCE:  true
-      };
-    </script>
-    <script type="text/javascript" src="_static/jquery.js"></script>
-    <script type="text/javascript" src="_static/underscore.js"></script>
-    <script type="text/javascript" src="_static/doctools.js"></script>
-    <link rel="top" title="First web scraper 0.1 documentation" href="#" /> 
-  </head>
-  <body>
-    <div class="related">
+    <link rel="index" title="Index" href="genindex.html" />
+    <link rel="search" title="Search" href="search.html" /> 
+  </head><body>
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              accesskey="I">index</a></li>
-        <li><a href="#">First web scraper 0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">First web scraper 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">First web scraper</a></li> 
       </ul>
     </div>  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
-          <div class="body">
+          <div class="body" role="main">
             
-  <div class="section" id="first-web-scraper">
-<h1>First web scraper<a class="headerlink" href="#first-web-scraper" title="Permalink to this headline">¶</a></h1>
+  <section id="first-web-scraper">
+<h1>First web scraper<a class="headerlink" href="#first-web-scraper" title="Permalink to this heading">¶</a></h1>
 <p>A step-by-step guide to writing a web scraper with Python.</p>
 <p>The course assumes the reader has little experience with Python and the command line, covering a number of fundamental skills that can be applied to other problems.</p>
 <p>This guide was initially developed by <a class="reference external" href="mailto:chase&#46;davis&#37;&#52;&#48;gmail&#46;com">Chase
@@ -51,61 +42,60 @@ Kazil</a>, <a class="reference external" href="mailto:me&#37;&#52;&#48;sisiwei&#
 Wynn for bootcamps held by Investigative Reporters and Editors at the
 University of Missouri in Columbia, Missouri in 2013 and 2014.</p>
 <p>It was modified by <a class="reference external" href="http://palewi.re/who-is-ben-welsh/">Ben Welsh</a> in December 2014 for workshops at <a class="reference external" href="http://www.cccb.org/en/curs_o_conferencia-data_journalism_work_session_viii-46957">The Centre for Cultura Contemporania de Barcelona</a>, <a class="reference external" href="http://medialab-prado.es/article/iitallerdeperiodismodedatosconvocatoriadeproyectos">Medialab-Prado</a> and the <a class="reference external" href="http://www.escuelaunidadeditorial.es/master-periodismo-de-investigacion.html">Escuela de Periodismo y Comunicación</a> at Universidad Rey Juan Carlos.</p>
+<p>It was further updated by <a class="reference external" href="https://schwanksta.com">Ken Schwencke</a> in 2019 and 2023 for teaching at the <a class="reference external" href="https://cjddatainstitute.org/">Data Institute</a>.</p>
 <ul class="simple">
-<li>Code repository:
-<a class="reference external" href="https://github.com/ireapps/first-web-scraper/">github.com/ireapps/first-web-scraper/</a></li>
-<li>Documentation:
-<a class="reference external" href="http://first-web-scraper.rtfd.org/">first-web-scraper.rtfd.org/</a></li>
-<li>Issues:
-<a class="reference external" href="https://github.com/ireapps/first-web-scraper/issues">github.com/ireapps/first-web-scraper/issues/</a></li>
+<li><p>Code repository:
+<a class="reference external" href="https://github.com/ireapps/first-web-scraper/">github.com/ireapps/first-web-scraper/</a></p></li>
+<li><p>Documentation:
+<a class="reference external" href="http://first-web-scraper.rtfd.org/">first-web-scraper.rtfd.org/</a></p></li>
+<li><p>Issues:
+<a class="reference external" href="https://github.com/ireapps/first-web-scraper/issues">github.com/ireapps/first-web-scraper/issues/</a></p></li>
 </ul>
-<div class="section" id="what-you-will-make">
-<h2>What you will make<a class="headerlink" href="#what-you-will-make" title="Permalink to this headline">¶</a></h2>
+<section id="what-you-will-make">
+<h2>What you will make<a class="headerlink" href="#what-you-will-make" title="Permalink to this heading">¶</a></h2>
 <p>This tutorial will guide you through the process of writing a Python script that can extract the roster of inmates at the Boone County Jail in Missouri from <a class="reference external" href="https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s">a local government website</a> and save it as comma-delimited text ready for analysis.</p>
+</section>
+<section id="prelude-prerequisites">
+<h2>Prelude: Prerequisites<a class="headerlink" href="#prelude-prerequisites" title="Permalink to this heading">¶</a></h2>
+<div class="admonition note">
+<p class="admonition-title">Note</p>
+<p>I recommend you use <a class="reference external" href="https://github.com/features/codespaces">GitHub codespaces</a> instead of setting up your own computer. It’s free and will let you use the command line and run Python without having to download a thing.</p>
 </div>
-<div class="section" id="prelude-prerequisites">
-<h2>Prelude: Prerequisites<a class="headerlink" href="#prelude-prerequisites" title="Permalink to this headline">¶</a></h2>
 <p>Before you can begin, your computer needs the following tools installed
 and working to participate.</p>
 <ol class="arabic simple">
-<li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">command-line
+<li><p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Command-line_interface">command-line
 interface</a>
-to interact with your computer</li>
-<li>A <a class="reference external" href="https://en.wikipedia.org/wiki/Text_editor">text editor</a> to work
-with plain text files</li>
-<li>Version 2.7 of the
-<a class="reference external" href="http://python.org/download/releases/2.7.6/">Python</a> programming
-language</li>
-<li>The <a class="reference external" href="https://pip.pypa.io/en/latest/installing.html">pip</a>
-package manager for Python</li>
+to interact with your computer</p></li>
+<li><p>A <a class="reference external" href="https://en.wikipedia.org/wiki/Text_editor">text editor</a> to work
+with plain text files</p></li>
+<li><p>Version 3.10 of the
+<a class="reference external" href="https://www.python.org/downloads/release/python-3108/">Python</a> programming
+language. The current version as of July 2023 is Python 3.10.8.</p></li>
+<li><p>The <a class="reference external" href="https://pip.pypa.io/en/latest/installing.html">pip</a>
+package manager for Python</p></li>
 </ol>
-<div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">Depending on your experience and operating system, you might
-already be ready to go with everything above. If so, move on to the next
-chapter. If not, don&#8217;t worry. And don&#8217;t give up! It will be a bit of a
-slog but the instructions below will point you in the right direction.</p>
-</div>
-<div class="section" id="command-line-interface">
-<span id="command-line-prereq"></span><h3>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this headline">¶</a></h3>
+<p>Depending on your experience and operating system, you might already be ready to go with everything above. If so, move on to the next chapter. If not, don’t worry. And don’t give up! It will be a bit of a slog but the instructions below will point you in the right direction.</p>
+<section id="command-line-interface">
+<span id="command-line-prereq"></span><h3>Command-line interface<a class="headerlink" href="#command-line-interface" title="Permalink to this heading">¶</a></h3>
 <p>Unless something is wrong with your computer, there should be a way to
 open a window that lets you type in commands. Different operating
 systems give this tool slightly different names, but they all have some
 form of it, and there are alternative programs you can install as well.</p>
 <p>On Windows you can find the command-line interface by opening the
-&#8220;command prompt.&#8221; Here are instructions for <a class="reference external" href="http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8">Windows
+“command prompt.” Here are instructions for <a class="reference external" href="http://windows.microsoft.com/en-us/windows/command-prompt-faq#1TC=windows-8">Windows
 8</a>
 and <a class="reference external" href="http://windows.microsoft.com/en-us/windows-vista/open-a-command-prompt-window">earlier
-versions</a>. On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">&#8220;Terminal&#8221;
+versions</a>. On Apple computers, you open the <a class="reference external" href="http://blog.teamtreehouse.com/introduction-to-the-mac-os-x-command-line">“Terminal”
 application</a>. Ubuntu Linux comes with a program of the <a class="reference external" href="http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-and-use-it">same
 name</a>.</p>
-</div>
-<div class="section" id="text-editor">
-<h3>Text editor<a class="headerlink" href="#text-editor" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="text-editor">
+<h3>Text editor<a class="headerlink" href="#text-editor" title="Permalink to this heading">¶</a></h3>
 <p>A program like Microsoft Word, which can do all sorts of text formatting
 like change the size and color of words, is not what you need. Do not
 try to use it below.</p>
-<p>You need a program that works with simple <a class="reference external" href="https://en.wikipedia.org/wiki/Text_file">&#8220;plain text&#8221;
+<p>You need a program that works with simple <a class="reference external" href="https://en.wikipedia.org/wiki/Text_file">“plain text”
 files</a>, and is therefore
 capable of editing documents containing Python code, HTML markup and
 other languages without dressing them up by adding anything extra. Such
@@ -116,274 +106,274 @@ those below.</p>
 <a class="reference external" href="http://www.barebones.com/products/textwrangler/download.html">TextWrangler</a>.
 In Ubuntu Linux you can stick with the pre-installed
 <a class="reference external" href="https://help.ubuntu.com/community/gedit">gedit</a> text editor.</p>
-</div>
-<div class="section" id="python">
-<h3>Python<a class="headerlink" href="#python" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="python">
+<h3>Python<a class="headerlink" href="#python" title="Permalink to this heading">¶</a></h3>
 <p>If you are using Mac OSX or a common flavor of Linux, Python is probably
 already installed and you can test to see what version, if any, is there
 waiting for you by typing the following into your terminal.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-V
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You don&#8217;t have to type the &#8220;$&#8221; It&#8217;s just a generic symbol
-geeks use to show they&#8217;re working on the command line.</p>
+<p class="admonition-title">Note</p>
+<p>You don’t have to type the “$” It’s just a generic symbol
+geeks use to show they’re working on the command line.</p>
 </div>
-<p>If you don&#8217;t have Python installed (a more likely fate for Windows
+<p>If you don’t have Python installed (a more likely fate for Windows
 users) try downloading and installing it from
-<a class="reference external" href="http://www.python.org/download/releases/2.7.6/">here</a>.</p>
-<p>In Windows, it&#8217;s also crucial to make sure that the Python program is
-available on your system&#8217;s <tt class="docutils literal"><span class="pre">PATH</span></tt> so it can be called from anywhere on
+<a class="reference external" href="https://www.python.org/downloads/release/python-3108/">here</a>.</p>
+<p>In Windows, it’s also crucial to make sure that the Python program is
+available on your system’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> so it can be called from anywhere on
 the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;fromSeriesID=96">This
 screencast</a>
 can guide you through that process.</p>
-<p>Python 2.7 is preferred but you can probably find a way to make most of
+<p>Python 3.10 is preferred but you can probably find a way to make most of
 this tutorial work with other versions if you futz a little.</p>
-</div>
-<div class="section" id="pip">
-<span id="command-line-pip"></span><h3>pip<a class="headerlink" href="#pip" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="pip">
+<span id="command-line-pip"></span><h3>pip<a class="headerlink" href="#pip" title="Permalink to this heading">¶</a></h3>
 <p>The <a class="reference external" href="https://pip.pypa.io/en/latest/">pip package
 manager</a> makes it
-easy to install open-source libraries that expand what you&#8217;re able to do
+easy to install open-source libraries that expand what you’re able to do
 with Python. Later, we will use it to install everything needed to
 create a working web application.</p>
-<p>If you don&#8217;t have it already, you can get pip by following <a class="reference external" href="https://pip.pypa.io/en/latest/installing.html">these
+<p>If you don’t have it already, you can get pip by following <a class="reference external" href="https://pip.pypa.io/en/latest/installing.html">these
 instructions</a>.
-In Windows, it&#8217;s necessary to make sure that the Python <tt class="docutils literal"><span class="pre">Scripts</span></tt>
-directory is available on your system&#8217;s <tt class="docutils literal"><span class="pre">PATH</span></tt> so it can be called
+In Windows, it’s necessary to make sure that the Python <code class="docutils literal notranslate"><span class="pre">Scripts</span></code>
+directory is available on your system’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> so it can be called
 from anywhere on the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;fromSeriesID=96">This
 screencast</a>
 can help.</p>
 <p>Verify pip is installed with the following.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ pip -V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>-V
 </pre></div>
 </div>
-</div>
-</div>
-<div class="section" id="act-1-the-command-line">
-<h2>Act 1: The command line<a class="headerlink" href="#act-1-the-command-line" title="Permalink to this headline">¶</a></h2>
+</section>
+</section>
+<section id="act-1-the-command-line">
+<h2>Act 1: The command line<a class="headerlink" href="#act-1-the-command-line" title="Permalink to this heading">¶</a></h2>
 <p>Working with Python (and pretty much any other programming language)
-means becoming comfortable with your computer&#8217;s command line
-environment. If you haven&#8217;t seen it before, it looks something like
+means becoming comfortable with your computer’s command line
+environment. If you haven’t seen it before, it looks something like
 this:</p>
-<div class="figure">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/terminal.png"><img alt="_images/terminal.png" src="_images/terminal.png" style="width: 600px;" /></a>
-</div>
-<p>In this lesson we&#8217;ll be using it to give the computer direct commands to manage files, navigate through directories and execute Python scripts. Don&#8217;t worry, it&#8217;ll only require only a few basic commands we&#8217;ll cover now.</p>
-<p>Open the command-line program for your operating system and let&#8217;s get started.
-If you need help finding it refer to the prequisite instructions for the <a class="reference internal" href="#command-line-prereq"><em>Command-line interface</em></a>.</p>
-<div class="section" id="print-the-current-directory">
-<h3>Print the current directory<a class="headerlink" href="#print-the-current-directory" title="Permalink to this headline">¶</a></h3>
-<p>Once your terminal window is open the first thing we want to do if find out where you are. If you&#8217;re using OSX or Linux, type this:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ pwd
+</figure>
+<p>In this lesson we’ll be using it to give the computer direct commands to manage files, navigate through directories and execute Python scripts. Don’t worry, it’ll only require only a few basic commands we’ll cover now.</p>
+<p>Open the command-line program for your operating system and let’s get started.
+If you need help finding it refer to the prequisite instructions for the <a class="reference internal" href="#command-line-prereq"><span class="std std-ref">Command-line interface</span></a>.</p>
+<section id="print-the-current-directory">
+<h3>Print the current directory<a class="headerlink" href="#print-the-current-directory" title="Permalink to this heading">¶</a></h3>
+<p>Once your terminal window is open the first thing we want to do if find out where you are. If you’re using OSX or Linux, type this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You don&#8217;t have to type the &#8220;$&#8221;. It&#8217;s a generic symbol
-geeks use to show they&#8217;re working on the command line.</p>
+<p class="admonition-title">Note</p>
+<p>You don’t have to type the “$”. It’s a generic symbol
+geeks use to show they’re working on the command line.</p>
 </div>
-<p>If you&#8217;re on Windows try:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ cd
+<p>If you’re on Windows try:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span>
 </pre></div>
 </div>
-<p>The terminal should print out your current location relative to the root of your computer&#8217;s filesystem. In this case, you&#8217;re probably in the default directory for your user, also known as your <strong>home</strong> directory.</p>
-<p>It&#8217;s easy to lose track of which folder you&#8217;re in when
-you&#8217;re working from the command line, so this is a helpful tool for
-finding your way. You&#8217;ll end up using it a lot more than you might think.</p>
+<p>The terminal should print out your current location relative to the root of your computer’s filesystem. In this case, you’re probably in the default directory for your user, also known as your <strong>home</strong> directory.</p>
+<p>It’s easy to lose track of which folder you’re in when
+you’re working from the command line, so this is a helpful tool for
+finding your way. You’ll end up using it a lot more than you might think.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">In case you&#8217;re curious, <tt class="docutils literal"><span class="pre">pwd</span></tt> standards &#8220;present working directory&#8221; and <tt class="docutils literal"><span class="pre">cd</span></tt>
-stands for &#8220;change directory,&#8221; a tool we&#8217;ll use again soon to move between
+<p class="admonition-title">Note</p>
+<p>In case you’re curious, <code class="docutils literal notranslate"><span class="pre">pwd</span></code> standards “present working directory” and <code class="docutils literal notranslate"><span class="pre">cd</span></code>
+stands for “change directory,” a tool we’ll use again soon to move between
 folders on your file system.</p>
 </div>
-</div>
-<div class="section" id="list-files-in-a-directory">
-<h3>List files in a directory<a class="headerlink" href="#list-files-in-a-directory" title="Permalink to this headline">¶</a></h3>
-<p>In order to see all the files and folders in a directory, there&#8217;s
+</section>
+<section id="list-files-in-a-directory">
+<h3>List files in a directory<a class="headerlink" href="#list-files-in-a-directory" title="Permalink to this heading">¶</a></h3>
+<p>In order to see all the files and folders in a directory, there’s
 another command you need to learn.  On OSX and Linux, type:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ ls
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
 </pre></div>
 </div>
 <p>On Windows:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ dir
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>dir
 </pre></div>
 </div>
-<p>You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you&#8217;re probably used to seeing when
-clicking around your computer&#8217;s folders in the user-interface provided
+<p>You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you’re probably used to seeing when
+clicking around your computer’s folders in the user-interface provided
 by your operating system.</p>
-</div>
-<div class="section" id="change-directories">
-<h3>Change directories<a class="headerlink" href="#change-directories" title="Permalink to this headline">¶</a></h3>
-<p>Now let&#8217;s move. In order to change directories from the command line, we&#8217;ll
-return to the <tt class="docutils literal"><span class="pre">cd</span></tt> command we saw earlier, which works for OSX, Linux and Windows.</p>
+</section>
+<section id="change-directories">
+<h3>Change directories<a class="headerlink" href="#change-directories" title="Permalink to this heading">¶</a></h3>
+<p>Now let’s move. In order to change directories from the command line, we’ll
+return to the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command we saw earlier, which works for OSX, Linux and Windows.</p>
 <p>The only thing you need to do is tell it which directory to move into. In this
 case, the following will probably drop you on your desktop.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ cd Desktop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Desktop
 </pre></div>
 </div>
-<p>Now run <tt class="docutils literal"><span class="pre">ls</span></tt> or <tt class="docutils literal"><span class="pre">dir</span></tt> to see what files we can find there. They should
-mirror what you see as you look at your desktop in your operating system&#8217;s
+<p>Now run <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">dir</span></code> to see what files we can find there. They should
+mirror what you see as you look at your desktop in your operating system’s
 user interface.</p>
-<p>To move back to our home folder, we&#8217;ll use the <tt class="docutils literal"><span class="pre">cd</span></tt>
+<p>To move back to our home folder, we’ll use the <code class="docutils literal notranslate"><span class="pre">cd</span></code>
 command again, but with a little twist.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ cd ..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
-<p>You&#8217;ll notice that will move you back to the home directory where we began.
-When you&#8217;re working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is <tt class="docutils literal"><span class="pre">..</span></tt></p>
-</div>
-<div class="section" id="creating-directories-and-files">
-<h3>Creating directories and files<a class="headerlink" href="#creating-directories-and-files" title="Permalink to this headline">¶</a></h3>
+<p>You’ll notice that will move you back to the home directory where we began.
+When you’re working from the command line, it helps to think of your directory structure as a tree. Navigating through the directories is like going higher and lower on various branches. The convention for moving backwards is <code class="docutils literal notranslate"><span class="pre">..</span></code></p>
+</section>
+<section id="creating-directories-and-files">
+<h3>Creating directories and files<a class="headerlink" href="#creating-directories-and-files" title="Permalink to this heading">¶</a></h3>
 <p>You might also find it useful sometimes to create files and directories
-from the command line. Let&#8217;s create a folder called <tt class="docutils literal"><span class="pre">Code</span></tt> under our
+from the command line. Let’s create a folder called <code class="docutils literal notranslate"><span class="pre">Code</span></code> under our
 home directory that we can use to store code from this class.</p>
-<p>Using OSX or Linux, here&#8217;s how:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ mkdir Code
+<p>Using OSX or Linux, here’s how:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>Code
 </pre></div>
 </div>
 <p>In Windows, try this:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ md Code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>md<span class="w"> </span>Code
 </pre></div>
 </div>
-<p>Next let&#8217;s jump into the directory. If you remember, that goes like this:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ cd Code
+<p>Next let’s jump into the directory. If you remember, that goes like this:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Code
 </pre></div>
 </div>
-<p>If you type <tt class="docutils literal"><span class="pre">ls</span></tt> or <tt class="docutils literal"><span class="pre">dir</span></tt> you&#8217;ll notice that nothing is there. That&#8217;s because all we&#8217;ve done so far is create a directory, but we haven&#8217;t put any files in it yet.</p>
-<p>You won&#8217;t have to do this very often, but the command for
-creating a blank file in OSX and Linux is called <tt class="docutils literal"><span class="pre">touch</span></tt>. So here&#8217;s how
-you make a new file named <tt class="docutils literal"><span class="pre">test.py</span></tt>.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ touch test.py
+<p>If you type <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">dir</span></code> you’ll notice that nothing is there. That’s because all we’ve done so far is create a directory, but we haven’t put any files in it yet.</p>
+<p>You won’t have to do this very often, but the command for
+creating a blank file in OSX and Linux is called <code class="docutils literal notranslate"><span class="pre">touch</span></code>. So here’s how
+you make a new file named <code class="docutils literal notranslate"><span class="pre">test.py</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>test.py
 </pre></div>
 </div>
-<p>There&#8217;s no similar command in Windows, but you can accomplish the same thing by saving
+<p>There’s no similar command in Windows, but you can accomplish the same thing by saving
 a file from a text editor or other program into our new directory.</p>
-</div>
-<div class="section" id="deleting-directories-and-files">
-<h3>Deleting directories and files<a class="headerlink" href="#deleting-directories-and-files" title="Permalink to this headline">¶</a></h3>
-<p>If you wanted to remove the file you just made, here&#8217;s how on OSX and Linux:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ rm test.py
+</section>
+<section id="deleting-directories-and-files">
+<h3>Deleting directories and files<a class="headerlink" href="#deleting-directories-and-files" title="Permalink to this heading">¶</a></h3>
+<p>If you wanted to remove the file you just made, here’s how on OSX and Linux:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>test.py
 </pre></div>
 </div>
-<p>And here&#8217;s how in Windows:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ del test.py
+<p>And here’s how in Windows:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>del<span class="w"> </span>test.py
 </pre></div>
 </div>
 <div class="admonition warning">
-<p class="first admonition-title">Warning</p>
-<p class="last"><strong>This must be done with caution</strong>. Files you delete from the command line do not go into the recycle bin. They are gone. <strong>Forever</strong>.</p>
+<p class="admonition-title">Warning</p>
+<p><strong>This must be done with caution</strong>. Files you delete from the command line do not go into the recycle bin. They are gone. <strong>Forever</strong>.</p>
 </div>
-<p>And that&#8217;s it! You&#8217;ve learned all the basic command-line tricks necessary to move on.</p>
-</div>
-</div>
-<div class="section" id="act-2-python">
-<h2>Act 2: Python<a class="headerlink" href="#act-2-python" title="Permalink to this headline">¶</a></h2>
+<p>And that’s it! You’ve learned all the basic command-line tricks necessary to move on.</p>
+</section>
+</section>
+<section id="act-2-python">
+<h2>Act 2: Python<a class="headerlink" href="#act-2-python" title="Permalink to this heading">¶</a></h2>
 <p>Python can be used for almost any application you can imagine, from building websites to running robots.</p>
-<p>A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics &#8211; basic principles that you need to understand as you complete this course.</p>
-<div class="section" id="how-to-run-a-python-program">
-<h3>How to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Permalink to this headline">¶</a></h3>
-<p>A Python file is nothing more than a text file that has the extension &#8221;.py&#8221; at the end of its name. Any time you see a &#8221;.py&#8221; file, you can run it from the command line by typing into the command line:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python filename.py
+<p>A thorough overview of the language would take months, so our class is going to concentrate on the absolute basics – basic principles that you need to understand as you complete this course.</p>
+<section id="how-to-run-a-python-program">
+<h3>How to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Permalink to this heading">¶</a></h3>
+<p>A Python file is nothing more than a text file that has the extension “.py” at the end of its name. Any time you see a “.py” file, you can run it from the command line by typing into the command line:</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>filename.py
 </pre></div>
 </div>
-<p>That&#8217;s it. And it works for both OSX and Windows.</p>
+<p>That’s it. And it works for both OSX and Windows.</p>
 <p>Python also comes with a very neat feature called an <strong>interactive
 interpreter</strong>, which allows you to execute Python code one line at a
 time, sort of like working from the command line.</p>
-<p>We&#8217;ll be using this a lot in the beginning to demonstrate concepts, but in the real world it&#8217;s often useful for testing and debugging.</p>
-<p>To open the interpreter, simply type <tt class="docutils literal"><span class="pre">python</span></tt> from your command line, like this.</p>
-<div class="code python highlight-python"><div class="highlight"><pre>$ python
+<p>We’ll be using this a lot in the beginning to demonstrate concepts, but in the real world it’s often useful for testing and debugging.</p>
+<p>To open the interpreter, simply type <code class="docutils literal notranslate"><span class="pre">python</span></code> from your command line, like this.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>$ python
 </pre></div>
 </div>
-<p>And here&#8217;s what you should get.</p>
-<div class="figure">
+<p>And here’s what you should get.</p>
+<figure class="align-default">
 <img alt="Python interactive interpreter" src="_images/python.png" />
-</div>
-<p>Next we&#8217;ll use the interpreter to walk through a handful of basic concepts
-you need to understand if you&#8217;re going to be writing code, Python or otherwise.</p>
-</div>
-<div class="section" id="variables">
-<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this headline">¶</a></h3>
+</figure>
+<p>Next we’ll use the interpreter to walk through a handful of basic concepts
+you need to understand if you’re going to be writing code, Python or otherwise.</p>
+</section>
+<section id="variables">
+<h3>Variables<a class="headerlink" href="#variables" title="Permalink to this heading">¶</a></h3>
 <p>Variables are like containers that hold different types of data so you
-can go back and refer to them later. They&#8217;re fundamental to programming
-in any language, and you&#8217;ll use them all the time.</p>
+can go back and refer to them later. They’re fundamental to programming
+in any language, and you’ll use them all the time.</p>
 <p>To try them out, open your Python interpreter.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python
 </pre></div>
 </div>
-<p>Now let&#8217;s start writing Python!</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
+<p>Now let’s start writing Python!</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
 </pre></div>
 </div>
-<p>In this case, we&#8217;ve created a <strong>variable</strong> called <tt class="docutils literal"><span class="pre">greeting</span></tt> and
-assigned it the <strong>string value</strong> &#8220;Hello, world!&#8221;.</p>
+<p>In this case, we’ve created a <strong>variable</strong> called <code class="docutils literal notranslate"><span class="pre">greeting</span></code> and
+assigned it the <strong>string value</strong> “Hello, world!”.</p>
 <p>In Python, variable assignment is done with the = sign. On the left is
 the name of the variable you want to create (it can be anything) and on
 the right is the value that you want to assign to that variable.</p>
-<p>If we use the <tt class="docutils literal"><span class="pre">print</span></tt> command on the variable, Python will output &#8220;Hello, world!&#8221; to
+<p>If we use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command on the variable, Python will output “Hello, world!” to
 the terminal because that value is stored in the variable.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="n">greeting</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
 <span class="go">Hello world!</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="data-types">
-<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="data-types">
+<h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h3>
 <p>Variables can contain many different kinds of data types. There are integers, strings, floating point numbers (decimals), and other types of data that languages like SQL like
 to deal with in different ways.</p>
-<p>Python is no different. In particular, there are six different data types you will be dealing with on a regular basis: strings, integers, floats, lists, tuples and dictionaries. Here&#8217;s a little detail on each.</p>
-<div class="section" id="strings">
-<h4>Strings<a class="headerlink" href="#strings" title="Permalink to this headline">¶</a></h4>
-<p>Strings contain text values like the &#8220;Hello, world!&#8221;
-example above. There&#8217;s not much to say about them other than that they
+<p>Python is no different. In particular, there are six different data types you will be dealing with on a regular basis: strings, integers, floats, lists, tuples and dictionaries. Here’s a little detail on each.</p>
+<section id="strings">
+<h4>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">¶</a></h4>
+<p>Strings contain text values like the “Hello, world!”
+example above. There’s not much to say about them other than that they
 are declared within single or double quotes like so:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s">&quot;Hello, world!&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">goodbye</span> <span class="o">=</span> <span class="s">&quot;Seeya later, dude.&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">favorite_animal</span> <span class="o">=</span> <span class="s">&#39;Donkey&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">goodbye</span> <span class="o">=</span> <span class="s2">&quot;Seeya later, dude.&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">favorite_animal</span> <span class="o">=</span> <span class="s1">&#39;Donkey&#39;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="integers">
-<h4>Integers<a class="headerlink" href="#integers" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="integers">
+<h4>Integers<a class="headerlink" href="#integers" title="Permalink to this heading">¶</a></h4>
 <p>Integers are whole numbers like 1, 2, 1000 and 1000000.
 They do not have decimal points. Unlike many other variable types,
 integers are not declared with any special type of syntax. You can
 simply assign them to a variable straight away, like this:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="floats">
-<h4>Floats<a class="headerlink" href="#floats" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="floats">
+<h4>Floats<a class="headerlink" href="#floats" title="Permalink to this heading">¶</a></h4>
 <p>Floats are a fancy name for numbers with decimal points in
 them. They are declared the same way as integers but have some
-idiosyncracies you don&#8217;t need to worry about for now.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
+idiosyncracies you don’t need to worry about for now.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="lists">
-<h4>Lists<a class="headerlink" href="#lists" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="lists">
+<h4>Lists<a class="headerlink" href="#lists" title="Permalink to this heading">¶</a></h4>
 <p>Lists are collections of values or variables. They are
-declared with brackets like these <tt class="docutils literal"><span class="pre">[]</span></tt>, and items inside are separated by
+declared with brackets like these <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and items inside are separated by
 commas. They can hold collections of any type of data, including other
 lists. Here are several examples:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_both</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span> <span class="n">of</span> <span class="n">lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_both</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span> <span class="n">of</span> <span class="n">lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>Lists also have another neat feature: The ability to retrieve individual
 items. In order to get a specific item out of a list, you just pass in its position.</p>
 <p>All lists in Python are <strong>zero-indexed</strong>, which means the first item in them sits at position 0.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
 <span class="go">&#39;a&#39;</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
@@ -392,582 +382,595 @@ items. In order to get a specific item out of a list, you just pass in its posit
 </div>
 <p>You can also extract a range of values by specifiying the first and last
 positions you want to retrieve with a colon in between them, like this:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
 <span class="go">[&#39;a&#39;, &#39;b&#39;]</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="tuples">
-<h4>Tuples<a class="headerlink" href="#tuples" title="Permalink to this headline">¶</a></h4>
-<p>Tuples are a special type of list that cannot be changed once they are created. That&#8217;s not especially important right now. All you need to know is that they are declared with parentheses <tt class="docutils literal"><span class="pre">()</span></tt>. For now, just think of them as lists.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">,</span> <span class="s">&#39;d&#39;</span><span class="p">)</span>
+<p>To specify the last value in a list, you use <cite>-1</cite></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;d&#39;</span>
 </pre></div>
 </div>
+<p>So if you want ever item in a list besides the last, you would do:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="go">&#39;d&#39;</span>
+</pre></div>
 </div>
-<div class="section" id="dictionaries">
-<h4>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this headline">¶</a></h4>
+</section>
+<section id="tuples">
+<h4>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">¶</a></h4>
+<p>Tuples are a special type of list that cannot be changed once they are created. That’s not especially important right now. All you need to know is that they are declared with parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. For now, just think of them as lists.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+</pre></div>
+</div>
+</section>
+<section id="dictionaries">
+<h4>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">¶</a></h4>
 <p>Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.</p>
 <p>An example will make this a little more clear.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s">&#39;Mom&#39;</span><span class="p">:</span> <span class="s">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s">&#39;Chinese Takeout&#39;</span><span class="p">:</span> <span class="s">&#39;573-555-5555&#39;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Mom&#39;</span><span class="p">:</span> <span class="s1">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s1">&#39;Chinese Takeout&#39;</span><span class="p">:</span> <span class="s1">&#39;573-555-5555&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
-<p>In this example, the keys are the names &#8220;Mom&#8221; and &#8220;Chinese takeout&#8221;,
+<p>In this example, the keys are the names “Mom” and “Chinese takeout”,
 which are declared as strings (Python dictionary keys usually are).</p>
 <p>The values are the phone numbers, which are also strings, although
 dictionary values in practice can be any data type.</p>
-<p>If you wanted to get Mom&#8217;s phone number from the dictionary, here&#8217;s how:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span><span class="p">[</span><span class="s">&#39;Mom&#39;</span><span class="p">]</span>
+<p>If you wanted to get Mom’s phone number from the dictionary, here’s how:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span><span class="p">[</span><span class="s1">&#39;Mom&#39;</span><span class="p">]</span>
 <span class="go">713-555-5555</span>
 </pre></div>
 </div>
-<p>There&#8217;s a lot more to dictionaries, but that&#8217;s all you need to know for now.</p>
-</div>
-</div>
-<div class="section" id="control-structures">
-<h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this headline">¶</a></h3>
-<p>As a beginner your first Python scripts won&#8217;t be much more complicated that a series of commands that execute one after another, working together to accomplish a task.</p>
+<p>There’s a lot more to dictionaries, but that’s all you need to know for now.</p>
+</section>
+</section>
+<section id="control-structures">
+<h3>Control structures<a class="headerlink" href="#control-structures" title="Permalink to this heading">¶</a></h3>
+<p>As a beginner your first Python scripts won’t be much more complicated that a series of commands that execute one after another, working together to accomplish a task.</p>
 <p>In those situations, it is helpful to be able to control the order and conditions under which those commands will run.</p>
-<p>That&#8217;s where control structures come in &#8211; simple logical operators that
+<p>That’s where control structures come in – simple logical operators that
 allow you to execute parts of your code when the right conditions call
 for it.</p>
 <p>Here are two you will end up using a lot.</p>
-<div class="section" id="the-if-clause">
-<h4>The if clause<a class="headerlink" href="#the-if-clause" title="Permalink to this headline">¶</a></h4>
+<section id="the-if-clause">
+<h4>The if clause<a class="headerlink" href="#the-if-clause" title="Permalink to this heading">¶</a></h4>
 <p>If statements are pretty much exactly what they sound like. <strong>If</strong> a
 certain condition is met, your program should do something.</p>
-<p>Let&#8217;s start with a simple example.</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<p>Let’s start with a simple example.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="go">Wow, that&#39;s a big number!</span>
 </pre></div>
 </div>
-<p>Our little program in this case starts with a variable, which we&#8217;ve called <tt class="docutils literal"><span class="pre">number</span></tt>, being set to 10. That&#8217;s pretty simple, and a concept you should be familiar with by this point.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<p>Our little program in this case starts with a variable, which we’ve called <code class="docutils literal notranslate"><span class="pre">number</span></code>, being set to 10. That’s pretty simple, and a concept you should be familiar with by this point.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 </span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>The next line, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt> declares our <tt class="docutils literal"><span class="pre">if</span></tt> statement. In this case, we want something to happen if the <tt class="docutils literal"><span class="pre">number</span></tt> variable is greater than 5.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<p>The next line, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></code> declares our <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. In this case, we want something to happen if the <code class="docutils literal notranslate"><span class="pre">number</span></code> variable is greater than 5.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+</span><span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>Most of the if statements we build are going to rely on equality operators like the kind we learned in elementary school: greater than (&gt;), less than (&lt;), greater than or equal to (&gt;=), less than or equal to (&lt;=) and plain old &#8220;equals&#8221;. The equals operator is a little tricky, in that it is declared with two equals signs (==), not one (=). Why is that? Because you&#8217;ll remember from above that a single equals sign is the notation we use to assign a value to a variable!</p>
-<p>Next, take note of the indentation. In Python, whitespace matters. A lot.  Notice that I said indents must be four spaces. Four spaces means four spaces &#8211; not a tab.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<p>Most of the if statements we build are going to rely on equality operators like the kind we learned in elementary school: greater than (&gt;), less than (&lt;), greater than or equal to (&gt;=), less than or equal to (&lt;=) and plain old “equals”. The equals operator is a little tricky, in that it is declared with two equals signs (==), not one (=). Why is that? Because you’ll remember from above that a single equals sign is the notation we use to assign a value to a variable!</p>
+<p>Next, take note of the indentation. In Python, whitespace matters. A lot.  Notice that I said indents must be four spaces. Four spaces means four spaces – not a tab.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>Tabs and spaces are different. To avoid problems, you should press the space bar four times whenever you indent Python code.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There are some text editors that will automatically convert tabs to spaces, and once you feel more comfortable you might want to use one. But for now, get in the habit of making all indents four spaces.</p>
+<p class="admonition-title">Note</p>
+<p>There are some text editors that will automatically convert tabs to spaces, and once you feel more comfortable you might want to use one. But for now, get in the habit of making all indents four spaces.</p>
 </div>
-<p>If you look closely, there&#8217;s another small detail you need to remember: The colon! When we declare an <tt class="docutils literal"><span class="pre">if</span></tt> statement, we always end that line with a colon.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<p>If you look closely, there’s another small detail you need to remember: The colon! When we declare an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, we always end that line with a colon.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-<span class="go">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&quot;I execute no matter what your number is!&quot;</span>
+</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I execute no matter what your number is!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It helps sometimes to think of your program as taking place on different levels.</p>
-<p>In this case, the first level of our program (the one that isn&#8217;t indented) has us declaring the variable <tt class="docutils literal"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></tt> and setting up our <tt class="docutils literal"><span class="pre">if</span></tt> condition, <tt class="docutils literal"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></tt>.</p>
-<p>The second level of our program executes only on the condition that our <tt class="docutils literal"><span class="pre">if</span></tt> statement is true. Therefore, because it depends on that <tt class="docutils literal"><span class="pre">if</span></tt> statement, it is indented four spaces.</p>
+<p>In this case, the first level of our program (the one that isn’t indented) has us declaring the variable <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></code> and setting up our <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></code>.</p>
+<p>The second level of our program executes only on the condition that our <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is true. Therefore, because it depends on that <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, it is indented four spaces.</p>
 <p>If we wanted to continue our program back on the first level, we could do something like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
-<span class="go">&gt;&gt;&gt;</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">print</span> <span class="s">&quot;I execute no matter what your number is!&quot;</span>
-</span><span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I execute no matter what your number is!&quot;</span><span class="p">)</span>
+</span><span class="gp">&gt;&gt;&gt;</span>
 <span class="go">Wow, that&#39;s a big number!</span>
 <span class="go">I execute no matter what your number is!</span>
 </pre></div>
 </div>
-<p>The last statement doesn&#8217;t depend on the <tt class="docutils literal"><span class="pre">if</span></tt> statement, so it will always run.</p>
-</div>
-<div class="section" id="the-else-clause">
-<h4>The else clause<a class="headerlink" href="#the-else-clause" title="Permalink to this headline">¶</a></h4>
-<p>Now let&#8217;s talk about a common companion for <tt class="docutils literal"><span class="pre">if</span></tt> statement &#8211; the <tt class="docutils literal"><span class="pre">else</span></tt> clause. It can be combined with an <tt class="docutils literal"><span class="pre">if</span></tt> statement to have the script execute a block of code when it turns out not to be true.</p>
-<p>You don&#8217;t need to have an <tt class="docutils literal"><span class="pre">else</span></tt> condition for your <tt class="docutils literal"><span class="pre">if</span></tt> statements, but sometimes it helps. Consider this example:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<p>The last statement doesn’t depend on the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, so it will always run.</p>
+</section>
+<section id="the-else-clause">
+<h4>The else clause<a class="headerlink" href="#the-else-clause" title="Permalink to this heading">¶</a></h4>
+<p>Now let’s talk about a common companion for <code class="docutils literal notranslate"><span class="pre">if</span></code> statement – the <code class="docutils literal notranslate"><span class="pre">else</span></code> clause. It can be combined with an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement to have the script execute a block of code when it turns out not to be true.</p>
+<p>You don’t need to have an <code class="docutils literal notranslate"><span class="pre">else</span></code> condition for your <code class="docutils literal notranslate"><span class="pre">if</span></code> statements, but sometimes it helps. Consider this example:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
 <span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-    <span class="k">print</span> <span class="s">&quot;Wow, that&#39;s a big number!&quot;</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 <span class="hll"><span class="k">else</span><span class="p">:</span>
-</span><span class="hll">    <span class="k">print</span> <span class="s">&quot;Gee, that number&#39;s kind of small, don&#39;t you think?&quot;</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Gee, that number&#39;s kind of small, don&#39;t you think?&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>In this case, we&#8217;re telling our program to print one thing if <tt class="docutils literal"><span class="pre">number</span></tt> is greater than five, and something else if it&#8217;s not. Notice that the <tt class="docutils literal"><span class="pre">else</span></tt> statement also ends with a colon, and as such its contents are also indented four spaces.</p>
-</div>
-<div class="section" id="for-loops">
-<h4>For loops<a class="headerlink" href="#for-loops" title="Permalink to this headline">¶</a></h4>
-<p>Remember earlier we discussed the concept of a list &#8211; the type of
+<p>In this case, we’re telling our program to print one thing if <code class="docutils literal notranslate"><span class="pre">number</span></code> is greater than five, and something else if it’s not. Notice that the <code class="docutils literal notranslate"><span class="pre">else</span></code> statement also ends with a colon, and as such its contents are also indented four spaces.</p>
+</section>
+<section id="for-loops">
+<h4>For loops<a class="headerlink" href="#for-loops" title="Permalink to this heading">¶</a></h4>
+<p>Remember earlier we discussed the concept of a list – the type of
 variable that can hold multiple items in it all at once?</p>
-<p>Many times during your programming career, you&#8217;ll find it helps to run through an entire list of items and do something with all of them, one at a time.</p>
-<p>That&#8217;s where for loops come in. Let&#8217;s start by having Python say the ABC&#8217;s:</p>
-<div class="code python highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<p>Many times during your programming career, you’ll find it helps to run through an entire list of items and do something with all of them, one at a time.</p>
+<p>That’s where for loops come in. Let’s start by having Python say the ABC’s:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">letter</span>
-<span class="go">&gt;&gt;&gt;</span>
+<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+<span class="gp">&gt;&gt;&gt;</span>
 <span class="go">a</span>
 <span class="go">b</span>
 <span class="go">c</span>
 </pre></div>
 </div>
-<p>The output of this statement is what you might guess. But there are still a few things to unpack here &#8211; some familiar and some not.</p>
-<p>First, you&#8217;ll notice from looking at the print statement that our
-indentation rules still apply. Everything that happens within the <tt class="docutils literal"><span class="pre">for</span></tt>
+<p>The output of this statement is what you might guess. But there are still a few things to unpack here – some familiar and some not.</p>
+<p>First, you’ll notice from looking at the print statement that our
+indentation rules still apply. Everything that happens within the <code class="docutils literal notranslate"><span class="pre">for</span></code>
 loop must still be indented four spaces from the main level of the
-program. You&#8217;ll also see that the line declaring the loop ends in a
+program. You’ll also see that the line declaring the loop ends in a
 colon, just like the if and else statements.</p>
 <p>Second, turn your attention to the syntax of declaring the loop itself.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">letter</span>
+</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>All of our for loops start, unsurprisingly, with the word <tt class="docutils literal"><span class="pre">for</span></tt> and
-follow the pattern <tt class="docutils literal"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></tt>. The <tt class="docutils literal"><span class="pre">variable_name</span></tt>
-can be anything you want &#8211; it&#8217;s essentially just a new variable you&#8217;re
-creating to refer to each item within your list as the <tt class="docutils literal"><span class="pre">for</span></tt> loop iterates
+<p>All of our for loops start, unsurprisingly, with the word <code class="docutils literal notranslate"><span class="pre">for</span></code> and
+follow the pattern <code class="docutils literal notranslate"><span class="pre">for</span> <span class="pre">variable_name</span> <span class="pre">in</span> <span class="pre">list:</span></code>. The <code class="docutils literal notranslate"><span class="pre">variable_name</span></code>
+can be anything you want – it’s essentially just a new variable you’re
+creating to refer to each item within your list as the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop iterates
 over it.</p>
-<p>In this case we chose <tt class="docutils literal"><span class="pre">letter</span></tt>, but you could just as easily call it <tt class="docutils literal"><span class="pre">donkey</span></tt>, like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s">&#39;a&#39;</span><span class="p">,</span> <span class="s">&#39;b&#39;</span><span class="p">,</span> <span class="s">&#39;c&#39;</span><span class="p">]</span>
+<p>In this case we chose <code class="docutils literal notranslate"><span class="pre">letter</span></code>, but you could just as easily call it <code class="docutils literal notranslate"><span class="pre">donkey</span></code>, like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>    <span class="k">print</span> <span class="n">donkey</span>
+</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">donkey</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The next thing you have to specify is the list you want to loop over, in
-this case <tt class="docutils literal"><span class="pre">list_of_letters</span></tt>. The line ends with a colon, and the next
-line starts with an indent. And that&#8217;s the basics of building a loop!</p>
-</div>
-<div class="section" id="functions">
-<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this headline">¶</a></h4>
-<p>Often it&#8217;s helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That&#8217;s where functions come in.</p>
+this case <code class="docutils literal notranslate"><span class="pre">list_of_letters</span></code>. The line ends with a colon, and the next
+line starts with an indent. And that’s the basics of building a loop!</p>
+</section>
+<section id="functions">
+<h4>Functions<a class="headerlink" href="#functions" title="Permalink to this heading">¶</a></h4>
+<p>Often it’s helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That’s where functions come in.</p>
 <p>Think of functions like little boxes. They take input (known as <strong>arguments</strong>), perform some operations on those arguments, and then return an <strong>output</strong>.</p>
 <p>In Python, a simple function might take an integer and divide it by two, like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>In order to call that function later in the program, I would simply have
-to invoke its name and feed it an integer &#8211; any integer at all &#8211; like
+to invoke its name and feed it an integer – any integer at all – like
 so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
 <span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
 </span><span class="hll"><span class="go">5</span>
 </span></pre></div>
 </div>
-<p>Once you write a function (assuming it works) you don&#8217;t need to know what&#8217;s inside. You can just feed it an input and expect an output in return.</p>
-<p>Every function must be declared by the word <tt class="docutils literal"><span class="pre">def</span></tt>, which stands for &#8220;define&#8221;. That is followed by the name of the function. Like the variable in a <tt class="docutils literal"><span class="pre">loop</span></tt> you can call it anything you want.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mf">2.0</span>
+<p>Once you write a function (assuming it works) you don’t need to know what’s inside. You can just feed it an input and expect an output in return.</p>
+<p>Every function must be declared by the word <code class="docutils literal notranslate"><span class="pre">def</span></code>, which stands for “define”. That is followed by the name of the function. Like the variable in a <code class="docutils literal notranslate"><span class="pre">loop</span></code> you can call it anything you want.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>The name is then followed by a set of parentheses in which you can define the arguments the function should expect. In our example above, we&#8217;ve called the only argument``x``.</p>
+<p>The name is then followed by a set of parentheses in which you can define the arguments the function should expect. In our example above, we’ve called the only argument``x``.</p>
 <p>When we feed a value in, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-</span><span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mf">2.0</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span><span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span>
 </span></pre></div>
 </div>
-<p>After you finish declaring arguments, you&#8217;ll see something familiar &#8211;the colon. Just like the <tt class="docutils literal"><span class="pre">if</span></tt> statements and <tt class="docutils literal"><span class="pre">for</span></tt> loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.</p>
-<p>Most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That&#8217;s what the <tt class="docutils literal"><span class="pre">return</span></tt> statement is for.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mf">2.0</span>
+<p>After you finish declaring arguments, you’ll see something familiar –the colon. Just like the <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.</p>
+<p>Most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That’s what the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is for.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span>
 </span></pre></div>
 </div>
-<p>Functions don&#8217;t necessarily need arguments, nor do they always need to return a value using the <tt class="docutils literal"><span class="pre">return</span></tt> command. You could also do something like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
-    <span class="k">print</span> <span class="s">&quot;Hello!&quot;</span>
+<p>Functions don’t necessarily need arguments, nor do they always need to return a value using the <code class="docutils literal notranslate"><span class="pre">return</span></code> command. You could also do something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">say_hello</span><span class="p">():</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Hello!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
-<p>But the idea of arguments and <tt class="docutils literal"><span class="pre">return</span></tt> values are still fundamental in
+<p>But the idea of arguments and <code class="docutils literal notranslate"><span class="pre">return</span></code> values are still fundamental in
 understanding functions, and they will come up more often than not.</p>
-</div>
-</div>
-<div class="section" id="python-as-a-toolbox">
-<h3>Python as a toolbox<a class="headerlink" href="#python-as-a-toolbox" title="Permalink to this headline">¶</a></h3>
-<p>Lucky for us, Python already has tools filled with functions to do pretty much anything you&#8217;d ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.</p>
+</section>
+</section>
+<section id="python-as-a-toolbox">
+<h3>Python as a toolbox<a class="headerlink" href="#python-as-a-toolbox" title="Permalink to this heading">¶</a></h3>
+<p>Lucky for us, Python already has tools filled with functions to do pretty much anything you’d ever want to do with a programming language: everything from navigating the web to scraping and analyzing data to performing mathematical operations to building websites.</p>
 <p>Some of these are built into a toolbox that comes with the language, known as the <strong>standard library</strong>. Others have been built by members of the developer community and can be downloaded and installed from the web.</p>
 <p>There are two ways to import these tools into your scripts.</p>
-<p>To pull in an entire toolkit, use the <tt class="docutils literal"><span class="pre">import</span></tt> command. In this case,
-we&#8217;ll get the <tt class="docutils literal"><span class="pre">urllib2</span></tt> package, which allows us to visit websites
+<p>To pull in an entire toolkit, use the <code class="docutils literal notranslate"><span class="pre">import</span></code> command. In this case,
+we’ll get the <code class="docutils literal notranslate"><span class="pre">urllib</span></code> package, which allows us to visit websites
 with Python:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib2</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.python.org/&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://www.python.org/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>You can also import specific tools from inside a toolkit by working in the <tt class="docutils literal"><span class="pre">from</span></tt> command with something like this:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib2</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">urlopen</span><span class="p">(</span><span class="s">&quot;http://www.python.org/&quot;</span><span class="p">)</span>
+<p>You can also import specific tools from inside a toolkit by working in the <code class="docutils literal notranslate"><span class="pre">from</span></code> command with something like this:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="gp">&gt;&gt;&gt; </span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://www.python.org/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
-<p>In practice, you&#8217;ll use both of these methods.</p>
+<p>In practice, you’ll use both of these methods.</p>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">There&#8217;s no rule but most Python programmers try to keep things manageable by lining up all <tt class="docutils literal"><span class="pre">import</span></tt> statements at the top of each script.</p>
+<p class="admonition-title">Note</p>
+<p>There’s no rule but most Python programmers try to keep things manageable by lining up all <code class="docutils literal notranslate"><span class="pre">import</span></code> statements at the top of each script.</p>
 </div>
-</div>
-</div>
-<div class="section" id="act-3-web-scraping">
-<h2>Act 3: Web scraping<a class="headerlink" href="#act-3-web-scraping" title="Permalink to this headline">¶</a></h2>
-<p>Now that we&#8217;ve covered all the fundamentals, it&#8217;s time to get to work and write a web scraper.</p>
-<p>The target is a regularly updated <a class="reference external" href="https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s">roster of inmates at the Boone County Jail in Missouri</a>. Boone County is home to Columbia, where you can find the University of Missouri&#8217;s main campus and the headquarters of Investigative Reporters and Editors.</p>
-<div class="section" id="installing-dependencies">
-<h3>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this headline">¶</a></h3>
-<p>The scraper will use Python&#8217;s <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> toolkit to parse the site&#8217;s HTML and extract the data.</p>
-<p>We&#8217;ll also use the <a class="reference external" href="http://docs.python-requests.org/en/latest/">Requests library</a> to open the URL, download the HTML and pass it to BeautifulSoup.</p>
-<p>Since they are not included in Python&#8217;s standard library, we&#8217;ll first need to install them using <tt class="docutils literal"><span class="pre">pip</span></tt>, a command-line tool that can grab open-source libraries off the web. If you don&#8217;t have it installed, you&#8217;ll need to follow the prequisite instructions for <a class="reference internal" href="#command-line-pip"><em>pip</em></a>.</p>
+</section>
+</section>
+<section id="act-3-web-scraping">
+<h2>Act 3: Web scraping<a class="headerlink" href="#act-3-web-scraping" title="Permalink to this heading">¶</a></h2>
+<p>Now that we’ve covered all the fundamentals, it’s time to get to work and write a web scraper.</p>
+<p>The target is a regularly updated <a class="reference external" href="https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s">roster of inmates at the Boone County Jail in Missouri</a>. Boone County is home to Columbia, where you can find the University of Missouri’s main campus and the headquarters of Investigative Reporters and Editors.</p>
+<p>You may notice that there’s an export button on this page. When this tutorial was first written, the jail did not allow you to export to a CSV – of course, if there is an export option, take it! As a simple site though, it’s still a good way to learn to scrape. Sometimes you may even find that an export doesn’t contain all of the information a site has – in that case, you may want to scrape it anyway!</p>
+<section id="installing-dependencies">
+<h3>Installing dependencies<a class="headerlink" href="#installing-dependencies" title="Permalink to this heading">¶</a></h3>
+<p>The scraper will use Python’s <a class="reference external" href="http://www.crummy.com/software/BeautifulSoup/">BeautifulSoup</a> toolkit to parse the site’s HTML and extract the data.</p>
+<p>We’ll also use the <a class="reference external" href="http://docs.python-requests.org/en/latest/">Requests library</a> to open the URL, download the HTML and pass it to BeautifulSoup.</p>
+<p>Since they are not included in Python’s standard library, we’ll first need to install them using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, a command-line tool that can grab open-source libraries off the web. If you don’t have it installed, you’ll need to follow the prequisite instructions for <a class="reference internal" href="#command-line-pip"><span class="std std-ref">pip</span></a>.</p>
 <p>In OSX or Linux try this:</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ sudo pip install BeautifulSoup
-$ sudo pip install Requests
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
+$<span class="w"> </span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
 </pre></div>
 </div>
-<p>On Windows give it a shot without the <tt class="docutils literal"><span class="pre">sudo</span></tt>.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ pip install BeautifulSoup
-$ pip install Requests
+<p>On Windows give it a shot without the <code class="docutils literal notranslate"><span class="pre">sudo</span></code>.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
+$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
 </pre></div>
 </div>
-</div>
-<div class="section" id="analyzing-the-html">
-<h3>Analyzing the HTML<a class="headerlink" href="#analyzing-the-html" title="Permalink to this headline">¶</a></h3>
+</section>
+<section id="analyzing-the-html">
+<h3>Analyzing the HTML<a class="headerlink" href="#analyzing-the-html" title="Permalink to this heading">¶</a></h3>
 <p>HTML is the framework that, in most cases, contains the content of a page. Other bits and pieces like CSS and JavaScript can style, reshape and add layers of interaction to a page.</p>
-<p>But unless you&#8217;ve got something fancy on your hands, the data you&#8217;re seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data. In this case, we&#8217;ll be looking to extract data from the big table that makes up the heart of the page.</p>
-<div class="figure">
+<p>But unless you’ve got something fancy on your hands, the data you’re seeking to scrape is usually somewhere within the HTML of the page and your job is to write a script in just the write way to walk through it and pull out the data. In this case, we’ll be looking to extract data from the big table that makes up the heart of the page.</p>
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/target.png"><img alt="_images/target.png" src="_images/target.png" style="width: 600px;" /></a>
-</div>
-<p>By the time we&#8217;re finished, we want to have extracted that data, now encrusted in layers of HTML, into a clean spreadsheet.</p>
-<div class="figure">
+</figure>
+<p>By the time we’re finished, we want to have extracted that data, now encrusted in layers of HTML, into a clean spreadsheet.</p>
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/xls-2.png"><img alt="_images/xls-2.png" src="_images/xls-2.png" style="width: 600px;" /></a>
-</div>
+</figure>
 <p>In order to scrape a website, we need to understand how a typical webpage is put together.</p>
-<p>To view the HTML code that makesup this page () open up a browser and visit <a class="reference external" href="https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s">out target</a>. Then right click with your mouse and select &#8220;View Source.&#8221; You can do this for any page on the web.</p>
-<div class="figure">
+<p>To view the HTML code that makesup this page () open up a browser and visit <a class="reference external" href="https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s">out target</a>. Then right click with your mouse and select “View Source.” You can do this for any page on the web.</p>
+<figure class="align-default">
 <img alt="_images/source.png" src="_images/source.png" />
-</div>
-<p>We could fish through all the code to find our data, but to dig this more easily, we can use your web browser&#8217;s inspector tool. Right click on the table of data that you are interested in and select &#8216;inspect element.&#8217;</p>
-<div class="figure">
+</figure>
+<p>We could fish through all the code to find our data, but to dig this more easily, we can use your web browser’s inspector tool. Right click on the table of data that you are interested in and select ‘inspect element.’</p>
+<figure class="align-default">
 <img alt="Inspect the element" src="_images/inspect.png" />
-</div>
+</figure>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">The inspector tool might have a slightly different name depending on which browser you&#8217;re using. To make this easy on yourself, consider using Google Chrome.</p>
+<p class="admonition-title">Note</p>
+<p>The inspector tool might have a slightly different name depending on which browser you’re using. To make this easy on yourself, consider using Google Chrome.</p>
 </div>
-<p>Your browser will open a special panel and highlight the portion of the page&#8217;s HTML code that you&#8217;ve just clicked on.</p>
-<div class="figure">
+<p>Your browser will open a special panel and highlight the portion of the page’s HTML code that you’ve just clicked on.</p>
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/table.png"><img alt="Inspector with the highlighted element" src="_images/table.png" style="width: 600px;" /></a>
-</div>
+</figure>
 <p>There are many ways to grab content from HTML, and every page you scrape data from will require a slightly different trick.</p>
-<p>At this stage, your job is to find a pattern or identifier in the code for the elements you&#8217;d like to extract, which we will then give as instructions to our Python code.</p>
-<p>In the best cases, you can extract content by using the <tt class="docutils literal"><span class="pre">id</span></tt> or <tt class="docutils literal"><span class="pre">class</span></tt> already assigned to the element you&#8217;d like to extract. An &#8216;id&#8217; is intended to act as the unique identifer a specific item on a page. A &#8216;class&#8217; is used to label a
+<p>At this stage, your job is to find a pattern or identifier in the code for the elements you’d like to extract, which we will then give as instructions to our Python code.</p>
+<p>In the best cases, you can extract content by using the <code class="docutils literal notranslate"><span class="pre">id</span></code> or <code class="docutils literal notranslate"><span class="pre">class</span></code> already assigned to the element you’d like to extract. An ‘id’ is intended to act as the unique identifer a specific item on a page. A ‘class’ is used to label a
 specific type of item on a page. So, there maybe may instances of a class on a page.</p>
-<p>On Boone County&#8217;s page, there is only table in the HTML&#8217;s <tt class="docutils literal"><span class="pre">body</span></tt> tag. The table is identified by a class.</p>
-<div class="code html highlight-python"><div class="highlight"><pre>&lt;table class=&quot;resultsTable&quot; style=&quot;margin: 0 auto; width: 90%; font-size: small;&quot;&gt;
+<p>On Boone County’s page, there is only table in the HTML’s <code class="docutils literal notranslate"><span class="pre">body</span></code> tag. The table is identified by a class.</p>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">table</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;resultsTable&quot;</span> <span class="na">style</span><span class="o">=</span><span class="s">&quot;margin: 0 auto; width: 90%; font-size: small;&quot;</span><span class="p">&gt;</span>
 </pre></div>
 </div>
-</div>
-<div class="section" id="extracting-an-html-table">
-<h3>Extracting an HTML table<a class="headerlink" href="#extracting-an-html-table" title="Permalink to this headline">¶</a></h3>
-<p>Now that we know where to find the data we&#8217;re after, it&#8217;s time to write script to pull it down and save it to a comma-delimited file.</p>
-<p>Let&#8217;s start by creating a Python file to hold our scraper. First jump into the <tt class="docutils literal"><span class="pre">Code</span></tt> directory we made at the beginning of this lesson.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ cd Code
+</section>
+<section id="extracting-an-html-table">
+<h3>Extracting an HTML table<a class="headerlink" href="#extracting-an-html-table" title="Permalink to this heading">¶</a></h3>
+<p>Now that we know where to find the data we’re after, it’s time to write script to pull it down and save it to a comma-delimited file.</p>
+<p>Let’s start by creating a Python file to hold our scraper. First jump into the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory we made at the beginning of this lesson.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Code
 </pre></div>
 </div>
 <div class="admonition note">
-<p class="first admonition-title">Note</p>
-<p class="last">You&#8217;ll need to <tt class="docutils literal"><span class="pre">mkdir</span> <span class="pre">Code</span></tt> (or <tt class="docutils literal"><span class="pre">md</span> <span class="pre">Code</span></tt> in Windows) if you haven&#8217;t made this directory yet.</p>
+<p class="admonition-title">Note</p>
+<p>You’ll need to <code class="docutils literal notranslate"><span class="pre">mkdir</span> <span class="pre">Code</span></code> (or <code class="docutils literal notranslate"><span class="pre">md</span> <span class="pre">Code</span></code> in Windows) if you haven’t made this directory yet.</p>
 </div>
-<p>Then open your text editor and save an empty file into the directory name <tt class="docutils literal"><span class="pre">scrape.py</span></tt> and we&#8217;re ready to begin. The first step is to import the requests library and download the Boone County webpage.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
+<p>Then open your text editor and save an empty file into the directory name <code class="docutils literal notranslate"><span class="pre">scrape.py</span></code> and we’re ready to begin. The first step is to import the requests library and download the Boone County webpage.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
-<span class="k">print</span> <span class="n">html</span>
+<span class="nb">print</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Save the file and run this script from your command line and you should see the entire HTML of the page spilled out.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Next import the <tt class="docutils literal"><span class="pre">BeautifulSoup</span></tt> HTML parsing library and feed it the page.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="hll"><span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>Next import the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> HTML parsing library and feed it the page.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="hll"><span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 </span>
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="hll"><span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-</span><span class="hll"><span class="k">print</span> <span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+</span><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">soup</span><span class="o">.</span><span class="n">prettify</span><span class="p">())</span>
 </span></pre></div>
 </div>
-<p>Save the file and run the script again and you should see the page&#8217;s HTML again, but in a prettier format this time. That&#8217;s a hint at the magic happening inside BeautifulSoup once it gets its hands on the page.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<p>Save the file and run the script again and you should see the page’s HTML again, but in a prettier format this time. That’s a hint at the magic happening inside BeautifulSoup once it gets its hands on the page.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Next we take all the detective work we did with the page&#8217;s HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we&#8217;re after.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>Next we take all the detective work we did with the page’s HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we’re after.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="hll"><span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
-</span><span class="hll"><span class="k">print</span> <span class="n">table</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+<span class="hll"><span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
+</span><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">table</span><span class="o">.</span><span class="n">prettify</span><span class="p">())</span>
 </span></pre></div>
 </div>
-<p>Save the file and run <tt class="docutils literal"><span class="pre">scrape.py</span></tt> again. This time it only prints out the table we&#8217;re after, which was selected by instructing BeautifulSoup to return only those <tt class="docutils literal"><span class="pre">&lt;table&gt;</span></tt> tags with <tt class="docutils literal"><span class="pre">resultsTable</span></tt> as their class attribute.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<p>Save the file and run <code class="docutils literal notranslate"><span class="pre">scrape.py</span></code> again. This time it only prints out the table we’re after, which was selected by instructing BeautifulSoup to return only those <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> tags with <code class="docutils literal notranslate"><span class="pre">resultsTable</span></code> as their class attribute.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Now that we have our hands on the table, we need to convert the rows in the table into a list, which we can then loop through and grab all the data out of.</p>
-<p>BeautifulSoup gets us going by allowing us to dig down into our table and return a list of rows, which are created in HTML using <tt class="docutils literal"><span class="pre">&lt;tr&gt;</span></tt> tags inside the table.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>BeautifulSoup gets us going by allowing us to dig down into our table and return a list of rows, which are created in HTML using <code class="docutils literal notranslate"><span class="pre">&lt;tr&gt;</span></code> tags inside the table.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
-<span class="hll">    <span class="k">print</span> <span class="n">row</span><span class="o">.</span><span class="n">prettify</span><span class="p">()</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">row</span><span class="o">.</span><span class="n">prettify</span><span class="p">())</span>
 </span></pre></div>
 </div>
-<p>Save and run the script. You&#8217;ll not see each row printed out separately as the script loops through the table.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<p>Save and run the script. You’ll not see each row printed out separately as the script loops through the table.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Next we can loop through each of the cells in each row by select them inside the loop. Cells are created in HTML by the <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tag.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>Next we can loop through each of the cells in each row by select them inside the loop. Cells are created in HTML by the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tag.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
-<span class="hll">    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-</span><span class="hll">        <span class="k">print</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
+<span class="hll">    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">):</span>
+</span><span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>Again, save and run the script. (This might seem repetitive, but it is the constant rhythm of many Python programmers.)</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>When that prints you will notice some annoying <tt class="docutils literal"><span class="pre">&amp;nbsp;</span></tt> on the end of many lines. That is the HTML code for a <strong>non-breaking space</strong>, which forces the browser to render an empty space on the page. It is junk and we can delete it easily with this handy Python trick.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>When that prints you will notice the word “Details” appears over and over. That’s because of the link to more details at the end of each table row. To remove that, we can use the list slicing we learned earlier to return everything but the last column in each row.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-<span class="hll">        <span class="k">print</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<span class="hll">        <span class="nb">print</span><span class="p">(</span><span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>Save and run the script. Everything should be much better.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won&#8217;t be hard since CSVs aren&#8217;t any more than a grid of columns and rows, much like a table.</p>
-<p>Let&#8217;s start by adding each cell in a row to a new Python list.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>Now that we have found the data we want to extract, we need to structure it in a way that can be written out to a comma-delimited text file. That won’t be hard since CSVs aren’t any more than a grid of columns and rows, much like a table.</p>
+<p>Let’s start by adding each cell in a row to a new Python list.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
 <span class="hll">    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
-</span>    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-<span class="hll">        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+</span>    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+<span class="hll">        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
 </span><span class="hll">        <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
-</span><span class="hll">    <span class="k">print</span> <span class="n">list_of_cells</span>
+</span><span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>Save and rerun the script. Now you should see Python lists streaming by one row at a time.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Those lists can now be lumped together into one big list of lists, which, when you think about it, isn&#8217;t all that different from how a spreadsheet is structured.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<p>Those lists can now be lumped together into one big list of lists, which, when you think about it, isn’t all that different from how a spreadsheet is structured.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">requests</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
 <span class="hll"><span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
-</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+</span><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
     <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
         <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
 <span class="hll">    <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
 </span><span class="hll">
-</span><span class="hll"><span class="k">print</span> <span class="n">list_of_rows</span>
+</span><span class="hll"><span class="nb">print</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>Save and rerun the script. You should see a big bunch of data dumped out into the terminal. Look closely and you&#8217;ll see the list of lists.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<p>Save and rerun the script. You should see a big bunch of data dumped out into the terminal. Look closely and you’ll see the list of lists.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>To write that list out to a comma-delimited file, we need to import Python&#8217;s built-in <tt class="docutils literal"><span class="pre">csv</span></tt> module at the top of the file. Then, at the botton, we will create a new file, hand it off to the <tt class="docutils literal"><span class="pre">csv</span></tt> module, and then lead on a handy tool it has called <tt class="docutils literal"><span class="pre">writerows</span></tt> to dump out our list of lists.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="hll"><span class="kn">import</span> <span class="nn">csv</span>
+<p>To write that list out to a comma-delimited file, we need to import Python’s built-in <code class="docutils literal notranslate"><span class="pre">csv</span></code> module at the top of the file. Then, at the botton, we will create a new file, hand it off to the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module, and then lead on a handy tool it has called <code class="docutils literal notranslate"><span class="pre">writerows</span></code> to dump out our list of lists.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="kn">import</span> <span class="nn">csv</span>
 </span><span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
 <span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
     <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
         <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
 
-<span class="hll"><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+<span class="hll"><span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 </span><span class="hll"><span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
 </span><span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
 </span></pre></div>
 </div>
-<p>Save and run the script. Nothing should happen &#8211; at least to appear to happen.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<p>Save and run the script. Nothing should happen – at least to appear to happen.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Since there are no longer any print statements in the file, the script is no longer dumping data out to your terminal. However, if you open up your code directory you should now see a new file named <tt class="docutils literal"><span class="pre">inmates.csv</span></tt> waiting for you. Open it in a text editor or Excel and you should see structured data all scraped out.</p>
+<p>Since there are no longer any print statements in the file, the script is no longer dumping data out to your terminal. However, if you open up your code directory you should now see a new file named <code class="docutils literal notranslate"><span class="pre">inmates.csv</span></code> waiting for you. Open it in a text editor or Excel and you should see structured data all scraped out.</p>
 <p>There is still one obvious problem though. There are no headers!</p>
-<div class="figure">
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/xls-1.png"><img alt="_images/xls-1.png" src="_images/xls-1.png" style="width: 600px;" /></a>
-</div>
-<p>Here&#8217;s why. If you go back and look closely, our script is only looping through lists of <tt class="docutils literal"><span class="pre">&lt;td&gt;</span></tt> tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different <tt class="docutils literal"><span class="pre">&lt;th&gt;</span></tt> tag. Look back at the source of the Boone County page and you&#8217;ll see that&#8217;s what exactly they do.</p>
-<p>But rather than bend over backwords to dig them out of the page, let&#8217;s try something a little different. Let&#8217;s just skip the first row when we loop though, and then write the headers out ourselves at the end.</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
+</figure>
+<p>Here’s why. If you go back and look closely, our script is only looping through lists of <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different <code class="docutils literal notranslate"><span class="pre">&lt;th&gt;</span></code> tag. Look back at the source of the Boone County page and you’ll see that’s what exactly they do.</p>
+<p>But rather than bend over backwords to dig them out of the page, let’s try something a little different. Let’s just skip the first row when we loop though, and then write the headers out ourselves at the end.</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
-<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s&#39;</span>
+<span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
 <span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="hll"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+<span class="hll"><span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
 </span>    <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">)[:</span><span class="o">-</span><span class="mi">1</span><span class="p">]:</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span>
         <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
 
-<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
-<span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s">&quot;Last&quot;</span><span class="p">,</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="s">&quot;Middle&quot;</span><span class="p">,</span> <span class="s">&quot;Gender&quot;</span><span class="p">,</span> <span class="s">&quot;Race&quot;</span><span class="p">,</span> <span class="s">&quot;Age&quot;</span><span class="p">,</span> <span class="s">&quot;City&quot;</span><span class="p">,</span> <span class="s">&quot;State&quot;</span><span class="p">])</span>
+<span class="hll"><span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;Last&quot;</span><span class="p">,</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Middle&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Race&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">])</span>
 </span><span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Save and run the script one last time.</p>
-<div class="code bash highlight-python"><div class="highlight"><pre>$ python scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
-<p>Our headers are now there, and you&#8217;ve finished the class. Congratulations! You&#8217;re now a web scraper.</p>
-<div class="figure">
+<p>Our headers are now there, and you’ve finished the class. Congratulations! You’re now a web scraper.</p>
+<figure class="align-default">
 <a class="reference internal image-reference" href="_images/xls-2.png"><img alt="_images/xls-2.png" src="_images/xls-2.png" style="width: 600px;" /></a>
-</div>
-</div>
-<div class="section" id="but-that-s-not-all-getting-the-missing-data">
-<h3>But that&#8217;s not all: Getting the missing data<a class="headerlink" href="#but-that-s-not-all-getting-the-missing-data" title="Permalink to this headline">¶</a></h3>
-<p>Since this scraper was first written, the sheriff&#8217;s office changed how it displays inmates. You&#8217;ll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is a problem &#8211; you want all of the information, not just 50 rows!</p>
-<p>But the sheriff&#8217;s office offers a handy way to change how many rows are shown, with a default of 50.</p>
+</figure>
+</section>
+<section id="but-that-s-not-all-getting-the-missing-data">
+<h3>But that’s not all: Getting the missing data<a class="headerlink" href="#but-that-s-not-all-getting-the-missing-data" title="Permalink to this heading">¶</a></h3>
+<p>Since this scraper was first written, the sheriff’s office changed how it displays inmates. You’ll note it now only shows 50 rows at a time, and your scraper only downloads 50 rows at a time. This is a problem – you want all of the information, not just 50 rows!</p>
+<p>But the sheriff’s office offers a handy way to change how many rows are shown, with a default of 50.</p>
 <p>Look at the HTML:</p>
-<div class="highlight-html"><div class="highlight"><pre><span class="nt">&lt;span&gt;</span>
-Page Size <span class="ni">&amp;nbsp;</span><span class="nt">&lt;/span&gt;</span>
-<span class="nt">&lt;input</span> <span class="na">class=</span><span class="s">&quot;mrcinput&quot;</span> <span class="na">name=</span><span class="s">&quot;max_rows&quot;</span> <span class="na">size=</span><span class="s">&quot;3&quot;</span> <span class="na">title=</span><span class="s">&quot;max_rowsp&quot;</span> <span class="na">type=</span><span class="s">&quot;text&quot;</span> <span class="na">value=</span><span class="s">&quot;222&quot;</span> <span class="nt">/&gt;</span> <span class="ni">&amp;nbsp;</span>
+<div class="highlight-html notranslate"><div class="highlight"><pre><span></span><span class="p">&lt;</span><span class="nt">span</span><span class="p">&gt;</span>
+Page Size <span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span class="nt">span</span><span class="p">&gt;</span>
+<span class="p">&lt;</span><span class="nt">input</span> <span class="na">class</span><span class="o">=</span><span class="s">&quot;mrcinput&quot;</span> <span class="na">name</span><span class="o">=</span><span class="s">&quot;max_rows&quot;</span> <span class="na">size</span><span class="o">=</span><span class="s">&quot;3&quot;</span> <span class="na">title</span><span class="o">=</span><span class="s">&quot;max_rowsp&quot;</span> <span class="na">type</span><span class="o">=</span><span class="s">&quot;text&quot;</span> <span class="na">value</span><span class="o">=</span><span class="s">&quot;222&quot;</span> <span class="p">/&gt;</span> <span class="ni">&amp;nbsp;</span>
 </pre></div>
 </div>
-<p>Here&#8217;s where it shows you the words &#8220;Page Size&#8221; as well as an input section with a variable named <tt class="docutils literal"><span class="pre">max_rows</span></tt> and a value of 50.</p>
-<p>A handy technique: Sometimes web pages will accept input in the URL itself by passing a variable after a <tt class="docutils literal"><span class="pre">?</span></tt>. Sometimes it works to play around with the URL and see how the site changes.</p>
+<p>Here’s where it shows you the words “Page Size” as well as an input section with a variable named <code class="docutils literal notranslate"><span class="pre">max_rows</span></code> and a value of 50.</p>
+<p>A handy technique: Sometimes web pages will accept input in the URL itself by passing a variable after a <code class="docutils literal notranslate"><span class="pre">?</span></code>. Sometimes it works to play around with the URL and see how the site changes.</p>
 <p>In this case, instead of scraping the main URL:</p>
-<div class="code text highlight-python"><div class="highlight"><pre>https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s
 </pre></div>
 </div>
-<p>Try scraping it by passing a new value for <tt class="docutils literal"><span class="pre">max_rows</span></tt>:</p>
-<div class="code text highlight-python"><div class="highlight"><pre>https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500
+<p>Try scraping it by passing a new value for <code class="docutils literal notranslate"><span class="pre">max_rows</span></code>:</p>
+<div class="highlight-text notranslate"><div class="highlight"><pre><span></span>https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500
 </pre></div>
 </div>
-<p>To implement, just change your <tt class="docutils literal"><span class="pre">url</span></tt> variable like so:</p>
-<div class="highlight-python"><div class="highlight"><pre><span class="kn">import</span> <span class="nn">csv</span>
+<p>To implement, just change your <code class="docutils literal notranslate"><span class="pre">url</span></code> variable like so:</p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">csv</span>
 <span class="kn">import</span> <span class="nn">requests</span>
-<span class="kn">from</span> <span class="nn">BeautifulSoup</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
+<span class="kn">from</span> <span class="nn">bs4</span> <span class="kn">import</span> <span class="n">BeautifulSoup</span>
 
-<span class="hll"><span class="n">url</span> <span class="o">=</span> <span class="s">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500&#39;</span>
-</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
+<span class="hll"><span class="n">url</span> <span class="o">=</span> <span class="s1">&#39;https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s?max_rows=500&#39;</span>
+</span><span class="n">response</span> <span class="o">=</span> <span class="n">requests</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">url</span><span class="p">,</span> <span class="n">headers</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;User-Agent&#39;</span><span class="p">:</span> <span class="s1">&#39;Mozilla/5.0&#39;</span><span class="p">})</span>
 <span class="n">html</span> <span class="o">=</span> <span class="n">response</span><span class="o">.</span><span class="n">content</span>
 
 <span class="n">soup</span> <span class="o">=</span> <span class="n">BeautifulSoup</span><span class="p">(</span><span class="n">html</span><span class="p">)</span>
-<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s">&#39;class&#39;</span><span class="p">:</span> <span class="s">&#39;stripe&#39;</span><span class="p">})</span>
+<span class="n">table</span> <span class="o">=</span> <span class="n">soup</span><span class="o">.</span><span class="n">find</span><span class="p">(</span><span class="s1">&#39;tbody&#39;</span><span class="p">,</span> <span class="n">attrs</span><span class="o">=</span><span class="p">{</span><span class="s1">&#39;class&#39;</span><span class="p">:</span> <span class="s1">&#39;stripe&#39;</span><span class="p">})</span>
 
 <span class="n">list_of_rows</span> <span class="o">=</span> <span class="p">[]</span>
-<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;tr&#39;</span><span class="p">):</span>
+<span class="k">for</span> <span class="n">row</span> <span class="ow">in</span> <span class="n">table</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;tr&#39;</span><span class="p">):</span>
     <span class="n">list_of_cells</span> <span class="o">=</span> <span class="p">[]</span>
-    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s">&#39;td&#39;</span><span class="p">):</span>
-        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s">&#39;&#39;</span><span class="p">)</span>
+    <span class="k">for</span> <span class="n">cell</span> <span class="ow">in</span> <span class="n">row</span><span class="o">.</span><span class="n">findAll</span><span class="p">(</span><span class="s1">&#39;td&#39;</span><span class="p">):</span>
+        <span class="n">text</span> <span class="o">=</span> <span class="n">cell</span><span class="o">.</span><span class="n">text</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&amp;nbsp;&#39;</span><span class="p">,</span> <span class="s1">&#39;&#39;</span><span class="p">)</span>
         <span class="n">list_of_cells</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">text</span><span class="p">)</span>
     <span class="n">list_of_rows</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">list_of_cells</span><span class="p">)</span>
 
-<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s">&quot;wb&quot;</span><span class="p">)</span>
+<span class="n">outfile</span> <span class="o">=</span> <span class="nb">open</span><span class="p">(</span><span class="s2">&quot;./inmates.csv&quot;</span><span class="p">,</span> <span class="s2">&quot;wb&quot;</span><span class="p">)</span>
 <span class="n">writer</span> <span class="o">=</span> <span class="n">csv</span><span class="o">.</span><span class="n">writer</span><span class="p">(</span><span class="n">outfile</span><span class="p">)</span>
-<span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s">&quot;Last&quot;</span><span class="p">,</span> <span class="s">&quot;First&quot;</span><span class="p">,</span> <span class="s">&quot;Middle&quot;</span><span class="p">,</span> <span class="s">&quot;Gender&quot;</span><span class="p">,</span> <span class="s">&quot;Race&quot;</span><span class="p">,</span> <span class="s">&quot;Age&quot;</span><span class="p">,</span> <span class="s">&quot;City&quot;</span><span class="p">,</span> <span class="s">&quot;State&quot;</span><span class="p">])</span>
+<span class="n">writer</span><span class="o">.</span><span class="n">writerow</span><span class="p">([</span><span class="s2">&quot;Last&quot;</span><span class="p">,</span> <span class="s2">&quot;First&quot;</span><span class="p">,</span> <span class="s2">&quot;Middle&quot;</span><span class="p">,</span> <span class="s2">&quot;Gender&quot;</span><span class="p">,</span> <span class="s2">&quot;Race&quot;</span><span class="p">,</span> <span class="s2">&quot;Age&quot;</span><span class="p">,</span> <span class="s2">&quot;City&quot;</span><span class="p">,</span> <span class="s2">&quot;State&quot;</span><span class="p">])</span>
 <span class="n">writer</span><span class="o">.</span><span class="n">writerows</span><span class="p">(</span><span class="n">list_of_rows</span><span class="p">)</span>
 </pre></div>
 </div>
-</div>
-</div>
-</div>
+</section>
+</section>
+</section>
 
 
+            <div class="clearer"></div>
           </div>
         </div>
       </div>
-      <div class="sphinxsidebar">
+      <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <h3><a href="#">Table Of Contents</a></h3>
-  <ul>
+  <div>
+    <h3><a href="#">Table of Contents</a></h3>
+    <ul>
 <li><a class="reference internal" href="#">First web scraper</a><ul>
 <li><a class="reference internal" href="#what-you-will-make">What you will make</a></li>
 <li><a class="reference internal" href="#prelude-prerequisites">Prelude: Prerequisites</a></li>
@@ -978,40 +981,41 @@ Page Size <span class="ni">&amp;nbsp;</span><span class="nt">&lt;/span&gt;</span
 </li>
 </ul>
 
-  <h3>This Page</h3>
-  <ul class="this-page-menu">
-    <li><a href="_sources/index.txt"
-           rel="nofollow">Show Source</a></li>
-  </ul>
-<div id="searchbox" style="display: none">
-  <h3>Quick search</h3>
+  </div>
+  <div role="note" aria-label="source link">
+    <h3>This Page</h3>
+    <ul class="this-page-menu">
+      <li><a href="_sources/index.rst.txt"
+            rel="nofollow">Show Source</a></li>
+    </ul>
+   </div>
+<div id="searchbox" style="display: none" role="search">
+  <h3 id="searchlabel">Quick search</h3>
+    <div class="searchformwrapper">
     <form class="search" action="search.html" method="get">
-      <input type="text" name="q" />
+      <input type="text" name="q" aria-labelledby="searchlabel" autocomplete="off" autocorrect="off" autocapitalize="off" spellcheck="false"/>
       <input type="submit" value="Go" />
-      <input type="hidden" name="check_keywords" value="yes" />
-      <input type="hidden" name="area" value="default" />
     </form>
-    <p class="searchtip" style="font-size: 90%">
-    Enter search terms or a module, class or function name.
-    </p>
+    </div>
 </div>
-<script type="text/javascript">$('#searchbox').show(0);</script>
+<script>document.getElementById('searchbox').style.display = "block"</script>
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related">
+    <div class="related" role="navigation" aria-label="related navigation">
       <h3>Navigation</h3>
       <ul>
         <li class="right" style="margin-right: 10px">
           <a href="genindex.html" title="General Index"
              >index</a></li>
-        <li><a href="#">First web scraper 0.1 documentation</a> &raquo;</li> 
+        <li class="nav-item nav-item-0"><a href="#">First web scraper 0.1 documentation</a> &#187;</li>
+        <li class="nav-item nav-item-this"><a href="">First web scraper</a></li> 
       </ul>
     </div>
-    <div class="footer">
-        &copy; Copyright 2019.
-      Created using <a href="http://sphinx-doc.org/">Sphinx</a> 1.2.3.
+    <div class="footer" role="contentinfo">
+        &#169; Copyright 2023.
+      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
     </div>
   </body>
 </html>
