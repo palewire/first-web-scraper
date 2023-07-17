@@ -449,7 +449,7 @@ writer.writerow(["Last", "First", "Middle", "Suffix", "Gender", "Race", "Age", "
 writer.writerows(list_of_rows)
 ```
 
-### Homework: How would you get the rest of the details?
+### Extra Credit: How would you get the rest of the details?
 
 In the class, we simply tossed out the "Details" column of data. But we only were getting the `text` of the cells, which was the word "Details."
 
