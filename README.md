@@ -14,14 +14,14 @@ After installing the repository, the Sphinx documentation can be edited in the
 First install the requirements.
 
 ```bash
-$ pip install -r requirements-dev.txt
+pipenv install
 ```
 
 Fire up the test server, which will automatically update to show changes made
 to the restructured text files in the ``docs`` directory.
 
 ```bash
-$ make docs
+make docs
 ```
 
 Open ``http://localhost:8000`` in your browser and start making changes.

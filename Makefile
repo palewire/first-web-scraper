@@ -1,4 +1,4 @@
 .PHONY: docs
 
 docs:
-	cd ./docs/ && make livehtml
+	cd ./docs/ && pipenv run make livehtml
