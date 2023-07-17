@@ -373,7 +373,7 @@ for row in table.findAll('tr'):
 
 outfile = open("inmates.csv", "")
 writer = csv.writer(outfile)
-writer.writerow(["Last", "First", "Middle", "Gender", "Race", "Age", "City", "State"])
+writer.writerow(["Last", "First", "Middle", "Suffix", "Gender", "Race", "Age", "City", "State"])
 writer.writerows(list_of_rows)
 ```
 
