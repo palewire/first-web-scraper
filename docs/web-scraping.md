@@ -347,7 +347,7 @@ There is still one obvious problem though. There are no headers!
 
 Here's why. If you go back and look closely, our script is only looping through lists of `<td>` tags found within each row. Fun fact: Header tags in HTML tables are often wrapped in the slightly different `<th>` tag. Look back at the source of the Boone County page and you'll see that's what exactly they do.
 
-But rather than bend over backwords to dig them out of the page, let's try something a little different. Let's just skip the first row when we loop though, and then write the headers out ourselves at the end.
+But rather than bend over backwords to dig them out of the page, let's try something a little different. Since we know what the headers are, we can just write them out ourselves before we write the rest of the file.
 
 ```{code-block} python
 :emphasize-lines: 13,22
@@ -448,3 +448,21 @@ writer = csv.writer(outfile)
 writer.writerow(["Last", "First", "Middle", "Suffix", "Gender", "Race", "Age", "City", "State"])
 writer.writerows(list_of_rows)
 ```
+
+### Homework: How would you get the rest of the details?
+
+In the class, we simply tossed out the "Details" column of data. But we only were getting the `text` of the cells, which was the word "Details."
+
+In actuality, that cell contains a link that, when we go to it, gives more information like height, weight, hair color and charge information. Some of this is available in the export, but not all of it! The HTML for the button that leads you there looks something like:
+
+```html
+<td class="one td_left" data-th="">
+    <a class="_lookup btn btn-primary" height="600" href="RMS01_MP.R00040s?run=2&R001=&R002=&ID=40644&hover_redir=&width=950" linkedtype="I" mrc="returndata" target="_lookup" width="860"><i class="fa fa-large fa-fw fa-list-alt">&nbsp;</i>Details</a>
+</td>
+```
+
+```{note}
+When you inspect the code, you might see `&amp;` instead of `&` in the URL. `&amp;` is HTML ecoding for an ampersand (the `&` symbol). If you're trying to go to a URL and you see the encoded version, try replacing it with an ampersand.
+```
+
+Do you think that URL -- the text after the "href" in the HTML above -- might have some kind of clue as to how to access the further data? How would that look like within our current loop? At what point would you go back to get the extra details? The first thing I would do is 
