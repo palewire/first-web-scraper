@@ -907,7 +907,7 @@ Now that we have our hands on the table, we need to convert the rows in the tabl
 BeautifulSoup gets us going by allowing us to dig down into our table and return a list of rows, which are created in HTML using `<tr>` tags inside the table.
 
 ```{code-block} python
-:emphasize-lines: 11-12
+:emphasize-lines: 12,13
 
 import requests
 from bs4 import BeautifulSoup

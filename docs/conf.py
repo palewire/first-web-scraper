@@ -2,7 +2,6 @@ from datetime import datetime
 
 
 extensions = [
-    "sphinx_multitoc_numbering",
     "myst_parser"
 ]
 templates_path = ["_templates"]

@@ -5,34 +5,81 @@
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" /><meta name="viewport" content="width=device-width, initial-scale=1" />
 
-    <title>First web scraper &#8212; First web scraper 0.1 documentation</title>
+    <title>First web scraper &#8212; First Web Scraper  documentation</title>
     <link rel="stylesheet" type="text/css" href="_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="_static/classic.css" />
-    
+    <link rel="stylesheet" type="text/css" href="_static/alabaster.css" />
+    <link rel="stylesheet" type="text/css" href="_static/css/custom.css" />
     <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
     <script src="_static/doctools.js"></script>
     <script src="_static/sphinx_highlight.js"></script>
-    
     <link rel="index" title="Index" href="genindex.html" />
-    <link rel="search" title="Search" href="search.html" /> 
+    <link rel="search" title="Search" href="search.html" />
+   
+  <link rel="stylesheet" href="_static/custom.css" type="text/css" />
+  
+  
+    <link rel="canonical" href="https://palewi.re/docs/First Web Scraper/index.html"/>
+  
+  <meta name="viewport" content="width=device-width, initial-scale=0.9, maximum-scale=0.9" />
+
   </head><body>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             accesskey="I">index</a></li>
-        <li class="nav-item nav-item-0"><a href="#">First web scraper 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">First web scraper</a></li> 
-      </ul>
-    </div>  
+  
 
     <div class="document">
       <div class="documentwrapper">
         <div class="bodywrapper">
+          
+
           <div class="body" role="main">
             
-  <section id="first-web-scraper">
+  <nav>
+    <div class="row">
+        <div class="sevencol">
+            <div class="shingle">
+                <a href="https://palewi.re/">
+                    <div rel="rnews:copyrightedBy rnews:hasSource rnews:providedBy">
+                        <div about="http://palewi.re/" typeof="rnews:Organization">
+                            <div property="rnews:name">palewire</div>
+                        </div>
+                    </div>
+                </a>
+            </div>
+        </div>
+        <div class="fivecol last links">
+            <ul>
+                <li>
+                    <a href="http://palewi.re/posts/" title="Posts">
+                        Posts
+                    </a>
+                </li>
+                <li>
+                    <a href="http://palewi.re/work/" title="Work">
+                        Work
+                    </a>
+                </li>
+                <li>
+                    <a href="http://palewi.re/talks/" title="Talks">
+                        Talks
+                    </a>
+                </li>
+                <li>
+                    <a href="http://palewi.re/docs/" title="Docs">
+                        Docs
+                    </a>
+                </li>
+                <li>
+                    <a href="http://palewi.re/who-is-ben-welsh/" title="Who is Ben Welsh?">
+                        About
+                    </a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+<div class="row topbar">
+    <div class="twelvecol last"></div>
+</div>
+<section id="first-web-scraper">
 <h1>First web scraper<a class="headerlink" href="#first-web-scraper" title="Permalink to this heading">¶</a></h1>
 <p>A step-by-step guide to writing a web scraper with Python.</p>
 <p>The course assumes the reader has little experience with Python and the command line, covering a number of fundamental skills that can be applied to other problems.</p>
@@ -112,20 +159,15 @@ In Ubuntu Linux you can stick with the pre-installed
 <p>If you are using Mac OSX or a common flavor of Linux, Python is probably
 already installed and you can test to see what version, if any, is there
 waiting for you by typing the following into your terminal.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>-V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>-V
 </pre></div>
-</div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You don’t have to type the “$” It’s just a generic symbol
-geeks use to show they’re working on the command line.</p>
 </div>
 <p>If you don’t have Python installed (a more likely fate for Windows
 users) try downloading and installing it from
 <a class="reference external" href="https://www.python.org/downloads/release/python-3108/">here</a>.</p>
 <p>In Windows, it’s also crucial to make sure that the Python program is
 available on your system’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> so it can be called from anywhere on
-the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;fromSeriesID=96">This
+the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;amp;fromSeriesID=96">This
 screencast</a>
 can guide you through that process.</p>
 <p>Python 3.10 is preferred but you can probably find a way to make most of
@@ -142,11 +184,11 @@ create a working web application.</p>
 instructions</a>.
 In Windows, it’s necessary to make sure that the Python <code class="docutils literal notranslate"><span class="pre">Scripts</span></code>
 directory is available on your system’s <code class="docutils literal notranslate"><span class="pre">PATH</span></code> so it can be called
-from anywhere on the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;fromSeriesID=96">This
+from anywhere on the command line. <a class="reference external" href="http://showmedo.com/videotutorials/video?name=960000&amp;amp;fromSeriesID=96">This
 screencast</a>
 can help.</p>
 <p>Verify pip is installed with the following.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>-V
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>-V
 </pre></div>
 </div>
 </section>
@@ -166,16 +208,11 @@ If you need help finding it refer to the prequisite instructions for the <a clas
 <section id="print-the-current-directory">
 <h3>Print the current directory<a class="headerlink" href="#print-the-current-directory" title="Permalink to this heading">¶</a></h3>
 <p>Once your terminal window is open the first thing we want to do if find out where you are. If you’re using OSX or Linux, type this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">pwd</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">pwd</span>
 </pre></div>
 </div>
-<div class="admonition note">
-<p class="admonition-title">Note</p>
-<p>You don’t have to type the “$”. It’s a generic symbol
-geeks use to show they’re working on the command line.</p>
-</div>
 <p>If you’re on Windows try:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span>
 </pre></div>
 </div>
 <p>The terminal should print out your current location relative to the root of your computer’s filesystem. In this case, you’re probably in the default directory for your user, also known as your <strong>home</strong> directory.</p>
@@ -193,11 +230,11 @@ folders on your file system.</p>
 <h3>List files in a directory<a class="headerlink" href="#list-files-in-a-directory" title="Permalink to this heading">¶</a></h3>
 <p>In order to see all the files and folders in a directory, there’s
 another command you need to learn.  On OSX and Linux, type:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>ls
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>ls
 </pre></div>
 </div>
 <p>On Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>dir
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>dir
 </pre></div>
 </div>
 <p>You should now see a list of files and folders appear, such as Downloads, Documents, Desktop, etc. These should look a little familiar. The command line is just another way of navigating the directory structure you’re probably used to seeing when
@@ -210,7 +247,7 @@ by your operating system.</p>
 return to the <code class="docutils literal notranslate"><span class="pre">cd</span></code> command we saw earlier, which works for OSX, Linux and Windows.</p>
 <p>The only thing you need to do is tell it which directory to move into. In this
 case, the following will probably drop you on your desktop.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Desktop
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Desktop
 </pre></div>
 </div>
 <p>Now run <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">dir</span></code> to see what files we can find there. They should
@@ -218,7 +255,7 @@ mirror what you see as you look at your desktop in your operating system’s
 user interface.</p>
 <p>To move back to our home folder, we’ll use the <code class="docutils literal notranslate"><span class="pre">cd</span></code>
 command again, but with a little twist.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>..
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>..
 </pre></div>
 </div>
 <p>You’ll notice that will move you back to the home directory where we began.
@@ -230,22 +267,22 @@ When you’re working from the command line, it helps to think of your directory
 from the command line. Let’s create a folder called <code class="docutils literal notranslate"><span class="pre">Code</span></code> under our
 home directory that we can use to store code from this class.</p>
 <p>Using OSX or Linux, here’s how:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>mkdir<span class="w"> </span>Code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>mkdir<span class="w"> </span>Code
 </pre></div>
 </div>
 <p>In Windows, try this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>md<span class="w"> </span>Code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>md<span class="w"> </span>Code
 </pre></div>
 </div>
 <p>Next let’s jump into the directory. If you remember, that goes like this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Code
 </pre></div>
 </div>
 <p>If you type <code class="docutils literal notranslate"><span class="pre">ls</span></code> or <code class="docutils literal notranslate"><span class="pre">dir</span></code> you’ll notice that nothing is there. That’s because all we’ve done so far is create a directory, but we haven’t put any files in it yet.</p>
 <p>You won’t have to do this very often, but the command for
 creating a blank file in OSX and Linux is called <code class="docutils literal notranslate"><span class="pre">touch</span></code>. So here’s how
 you make a new file named <code class="docutils literal notranslate"><span class="pre">test.py</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>touch<span class="w"> </span>test.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>touch<span class="w"> </span>test.py
 </pre></div>
 </div>
 <p>There’s no similar command in Windows, but you can accomplish the same thing by saving
@@ -254,11 +291,11 @@ a file from a text editor or other program into our new directory.</p>
 <section id="deleting-directories-and-files">
 <h3>Deleting directories and files<a class="headerlink" href="#deleting-directories-and-files" title="Permalink to this heading">¶</a></h3>
 <p>If you wanted to remove the file you just made, here’s how on OSX and Linux:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>rm<span class="w"> </span>test.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>rm<span class="w"> </span>test.py
 </pre></div>
 </div>
 <p>And here’s how in Windows:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>del<span class="w"> </span>test.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>del<span class="w"> </span>test.py
 </pre></div>
 </div>
 <div class="admonition warning">
@@ -275,7 +312,7 @@ a file from a text editor or other program into our new directory.</p>
 <section id="how-to-run-a-python-program">
 <h3>How to run a Python program<a class="headerlink" href="#how-to-run-a-python-program" title="Permalink to this heading">¶</a></h3>
 <p>A Python file is nothing more than a text file that has the extension “.py” at the end of its name. Any time you see a “.py” file, you can run it from the command line by typing into the command line:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>filename.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>filename.py
 </pre></div>
 </div>
 <p>That’s it. And it works for both OSX and Windows.</p>
@@ -284,7 +321,7 @@ interpreter</strong>, which allows you to execute Python code one line at a
 time, sort of like working from the command line.</p>
 <p>We’ll be using this a lot in the beginning to demonstrate concepts, but in the real world it’s often useful for testing and debugging.</p>
 <p>To open the interpreter, simply type <code class="docutils literal notranslate"><span class="pre">python</span></code> from your command line, like this.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span>$ python
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span>
 </pre></div>
 </div>
 <p>And here’s what you should get.</p>
@@ -300,11 +337,11 @@ you need to understand if you’re going to be writing code, Python or otherwise
 can go back and refer to them later. They’re fundamental to programming
 in any language, and you’ll use them all the time.</p>
 <p>To try them out, open your Python interpreter.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python
 </pre></div>
 </div>
 <p>Now let’s start writing Python!</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
 </pre></div>
 </div>
 <p>In this case, we’ve created a <strong>variable</strong> called <code class="docutils literal notranslate"><span class="pre">greeting</span></code> and
@@ -314,24 +351,23 @@ the name of the variable you want to create (it can be anything) and on
 the right is the value that you want to assign to that variable.</p>
 <p>If we use the <code class="docutils literal notranslate"><span class="pre">print</span></code> command on the variable, Python will output “Hello, world!” to
 the terminal because that value is stored in the variable.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
-<span class="go">Hello world!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="nb">print</span><span class="p">(</span><span class="n">greeting</span><span class="p">)</span>
+<span class="s1">&#39;Hello world!&#39;</span>
 </pre></div>
 </div>
 </section>
 <section id="data-types">
 <h3>Data types<a class="headerlink" href="#data-types" title="Permalink to this heading">¶</a></h3>
-<p>Variables can contain many different kinds of data types. There are integers, strings, floating point numbers (decimals), and other types of data that languages like SQL like
-to deal with in different ways.</p>
+<p>Variables can contain many different kinds of data types. There are integers, strings, floating point numbers (decimals), and other types of data that languages like SQL like to deal with in different ways.</p>
 <p>Python is no different. In particular, there are six different data types you will be dealing with on a regular basis: strings, integers, floats, lists, tuples and dictionaries. Here’s a little detail on each.</p>
 <section id="strings">
 <h4>Strings<a class="headerlink" href="#strings" title="Permalink to this heading">¶</a></h4>
 <p>Strings contain text values like the “Hello, world!”
 example above. There’s not much to say about them other than that they
 are declared within single or double quotes like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">goodbye</span> <span class="o">=</span> <span class="s2">&quot;Seeya later, dude.&quot;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">favorite_animal</span> <span class="o">=</span> <span class="s1">&#39;Donkey&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">greeting</span> <span class="o">=</span> <span class="s2">&quot;Hello, world!&quot;</span>
+<span class="n">goodbye</span> <span class="o">=</span> <span class="s2">&quot;Seeya later, dude.&quot;</span>
+<span class="n">favorite_animal</span> <span class="o">=</span> <span class="s1">&#39;Donkey&#39;</span>
 </pre></div>
 </div>
 </section>
@@ -341,9 +377,9 @@ are declared within single or double quotes like so:</p>
 They do not have decimal points. Unlike many other variable types,
 integers are not declared with any special type of syntax. You can
 simply assign them to a variable straight away, like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mi">1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mi">2</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mi">1000</span>
 </pre></div>
 </div>
 </section>
@@ -352,9 +388,9 @@ simply assign them to a variable straight away, like this:</p>
 <p>Floats are a fancy name for numbers with decimal points in
 them. They are declared the same way as integers but have some
 idiosyncracies you don’t need to worry about for now.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">a</span> <span class="o">=</span> <span class="mf">1.1</span>
+<span class="n">b</span> <span class="o">=</span> <span class="mf">0.99332</span>
+<span class="n">c</span> <span class="o">=</span> <span class="mf">100.123</span>
 </pre></div>
 </div>
 </section>
@@ -364,44 +400,44 @@ idiosyncracies you don’t need to worry about for now.</p>
 declared with brackets like these <code class="docutils literal notranslate"><span class="pre">[]</span></code>, and items inside are separated by
 commas. They can hold collections of any type of data, including other
 lists. Here are several examples:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_both</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">list</span> <span class="n">of</span> <span class="n">lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_numbers</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">]</span>
+<span class="n">list_of_strings</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">list_of_both</span> <span class="o">=</span> <span class="p">[</span><span class="mi">1</span><span class="p">,</span> <span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
+<span class="n">list_of_lists</span> <span class="o">=</span> <span class="p">[[</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">],</span> <span class="p">[</span><span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">,</span> <span class="mi">6</span><span class="p">],</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]]</span>
 </pre></div>
 </div>
 <p>Lists also have another neat feature: The ability to retrieve individual
 items. In order to get a specific item out of a list, you just pass in its position.</p>
 <p>All lists in Python are <strong>zero-indexed</strong>, which means the first item in them sits at position 0.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-<span class="go">&#39;a&#39;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
-<span class="go">&#39;c&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">]</span>
+<span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
+<span class="s1">&#39;a&#39;</span>
+<span class="n">my_list</span><span class="p">[</span><span class="mi">2</span><span class="p">]</span>
+<span class="s1">&#39;c&#39;</span>
 </pre></div>
 </div>
 <p>You can also extract a range of values by specifiying the first and last
 positions you want to retrieve with a colon in between them, like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
-<span class="go">[&#39;a&#39;, &#39;b&#39;]</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="mi">2</span><span class="p">]</span>
+<span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">]</span>
 </pre></div>
 </div>
-<p>To specify the last value in a list, you use <cite>-1</cite></p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">&#39;d&#39;</span>
+<p>To specify the last value in a list, you use <code class="docutils literal notranslate"><span class="pre">-1</span></code></p>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;d&#39;</span>
 </pre></div>
 </div>
 <p>So if you want ever item in a list besides the last, you would do:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
-<span class="go">&#39;d&#39;</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_list</span><span class="p">[</span><span class="o">-</span><span class="mi">1</span><span class="p">]</span>
+<span class="s1">&#39;d&#39;</span>
 </pre></div>
 </div>
 </section>
 <section id="tuples">
 <h4>Tuples<a class="headerlink" href="#tuples" title="Permalink to this heading">¶</a></h4>
 <p>Tuples are a special type of list that cannot be changed once they are created. That’s not especially important right now. All you need to know is that they are declared with parentheses <code class="docutils literal notranslate"><span class="pre">()</span></code>. For now, just think of them as lists.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">tuple_of_numbers</span> <span class="o">=</span> <span class="p">(</span><span class="mi">1</span><span class="p">,</span> <span class="mi">2</span><span class="p">,</span> <span class="mi">3</span><span class="p">,</span> <span class="mi">4</span><span class="p">,</span> <span class="mi">5</span><span class="p">)</span>
+<span class="n">tuple_of_strings</span> <span class="o">=</span> <span class="p">(</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">,</span> <span class="s1">&#39;d&#39;</span><span class="p">)</span>
 </pre></div>
 </div>
 </section>
@@ -409,7 +445,7 @@ positions you want to retrieve with a colon in between them, like this:</p>
 <h4>Dictionaries<a class="headerlink" href="#dictionaries" title="Permalink to this heading">¶</a></h4>
 <p>Dictionaries are probably the most difficult data type to explain, but also among the most useful. In technical terms, they are storehouses for pairs of keys and values. You can think of them like a phonebook.</p>
 <p>An example will make this a little more clear.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Mom&#39;</span><span class="p">:</span> <span class="s1">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s1">&#39;Chinese Takeout&#39;</span><span class="p">:</span> <span class="s1">&#39;573-555-5555&#39;</span><span class="p">}</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_phonebook</span> <span class="o">=</span> <span class="p">{</span><span class="s1">&#39;Mom&#39;</span><span class="p">:</span> <span class="s1">&#39;713-555-5555&#39;</span><span class="p">,</span> <span class="s1">&#39;Chinese Takeout&#39;</span><span class="p">:</span> <span class="s1">&#39;573-555-5555&#39;</span><span class="p">}</span>
 </pre></div>
 </div>
 <p>In this example, the keys are the names “Mom” and “Chinese takeout”,
@@ -417,8 +453,8 @@ which are declared as strings (Python dictionary keys usually are).</p>
 <p>The values are the phone numbers, which are also strings, although
 dictionary values in practice can be any data type.</p>
 <p>If you wanted to get Mom’s phone number from the dictionary, here’s how:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">my_phonebook</span><span class="p">[</span><span class="s1">&#39;Mom&#39;</span><span class="p">]</span>
-<span class="go">713-555-5555</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">my_phonebook</span><span class="p">[</span><span class="s1">&#39;Mom&#39;</span><span class="p">]</span>
+<span class="mi">713</span><span class="o">-</span><span class="mi">555</span><span class="o">-</span><span class="mi">5555</span>
 </pre></div>
 </div>
 <p>There’s a lot more to dictionaries, but that’s all you need to know for now.</p>
@@ -437,30 +473,30 @@ for it.</p>
 <p>If statements are pretty much exactly what they sound like. <strong>If</strong> a
 certain condition is met, your program should do something.</p>
 <p>Let’s start with a simple example.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="go">Wow, that&#39;s a big number!</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+
+<span class="n">Wow</span><span class="p">,</span> <span class="n">that</span><span class="s1">&#39;s a big number!</span>
 </pre></div>
 </div>
 <p>Our little program in this case starts with a variable, which we’ve called <code class="docutils literal notranslate"><span class="pre">number</span></code>, being set to 10. That’s pretty simple, and a concept you should be familiar with by this point.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-</span><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+</span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The next line, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></code> declares our <code class="docutils literal notranslate"><span class="pre">if</span></code> statement. In this case, we want something to happen if the <code class="docutils literal notranslate"><span class="pre">number</span></code> variable is greater than 5.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="hll"><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>Most of the if statements we build are going to rely on equality operators like the kind we learned in elementary school: greater than (&gt;), less than (&lt;), greater than or equal to (&gt;=), less than or equal to (&lt;=) and plain old “equals”. The equals operator is a little tricky, in that it is declared with two equals signs (==), not one (=). Why is that? Because you’ll remember from above that a single equals sign is the notation we use to assign a value to a variable!</p>
 <p>Next, take note of the indentation. In Python, whitespace matters. A lot.  Notice that I said indents must be four spaces. Four spaces means four spaces – not a tab.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+<span class="hll">    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </span></pre></div>
 </div>
 <p>Tabs and spaces are different. To avoid problems, you should press the space bar four times whenever you indent Python code.</p>
@@ -469,26 +505,21 @@ certain condition is met, your program should do something.</p>
 <p>There are some text editors that will automatically convert tabs to spaces, and once you feel more comfortable you might want to use one. But for now, get in the habit of making all indents four spaces.</p>
 </div>
 <p>If you look closely, there’s another small detail you need to remember: The colon! When we declare an <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, we always end that line with a colon.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I execute no matter what your number is!&quot;</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="hll"><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>It helps sometimes to think of your program as taking place on different levels.</p>
 <p>In this case, the first level of our program (the one that isn’t indented) has us declaring the variable <code class="docutils literal notranslate"><span class="pre">number</span> <span class="pre">=</span> <span class="pre">10</span></code> and setting up our <code class="docutils literal notranslate"><span class="pre">if</span></code> condition, <code class="docutils literal notranslate"><span class="pre">if</span> <span class="pre">number</span> <span class="pre">&gt;</span> <span class="pre">5:</span></code>.</p>
 <p>The second level of our program executes only on the condition that our <code class="docutils literal notranslate"><span class="pre">if</span></code> statement is true. Therefore, because it depends on that <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, it is indented four spaces.</p>
 <p>If we wanted to continue our program back on the first level, we could do something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I execute no matter what your number is!&quot;</span><span class="p">)</span>
-</span><span class="gp">&gt;&gt;&gt;</span>
-<span class="go">Wow, that&#39;s a big number!</span>
-<span class="go">I execute no matter what your number is!</span>
-</pre></div>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">number</span> <span class="o">=</span> <span class="mi">10</span>
+<span class="k">if</span> <span class="n">number</span> <span class="o">&gt;</span> <span class="mi">5</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="s2">&quot;Wow, that&#39;s a big number!&quot;</span><span class="p">)</span>
+
+<span class="hll"><span class="nb">print</span><span class="p">(</span><span class="s2">&quot;I execute no matter what your number is!&quot;</span><span class="p">)</span>
+</span></pre></div>
 </div>
 <p>The last statement doesn’t depend on the <code class="docutils literal notranslate"><span class="pre">if</span></code> statement, so it will always run.</p>
 </section>
@@ -511,13 +542,13 @@ certain condition is met, your program should do something.</p>
 variable that can hold multiple items in it all at once?</p>
 <p>Many times during your programming career, you’ll find it helps to run through an entire list of items and do something with all of them, one at a time.</p>
 <p>That’s where for loops come in. Let’s start by having Python say the ABC’s:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-<span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
-<span class="gp">&gt;&gt;&gt;</span>
-<span class="go">a</span>
-<span class="go">b</span>
-<span class="go">c</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+
+<span class="n">a</span>
+<span class="n">b</span>
+<span class="n">c</span>
 </pre></div>
 </div>
 <p>The output of this statement is what you might guess. But there are still a few things to unpack here – some familiar and some not.</p>
@@ -527,9 +558,9 @@ loop must still be indented four spaces from the main level of the
 program. You’ll also see that the line declaring the loop ends in a
 colon, just like the if and else statements.</p>
 <p>Second, turn your attention to the syntax of declaring the loop itself.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="hll"><span class="k">for</span> <span class="n">letter</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="n">letter</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>All of our for loops start, unsurprisingly, with the word <code class="docutils literal notranslate"><span class="pre">for</span></code> and
@@ -538,9 +569,9 @@ can be anything you want – it’s essentially just a new variable you’re
 creating to refer to each item within your list as the <code class="docutils literal notranslate"><span class="pre">for</span></code> loop iterates
 over it.</p>
 <p>In this case we chose <code class="docutils literal notranslate"><span class="pre">letter</span></code>, but you could just as easily call it <code class="docutils literal notranslate"><span class="pre">donkey</span></code>, like so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
-</span><span class="gp">&gt;&gt;&gt; </span>    <span class="nb">print</span><span class="p">(</span><span class="n">donkey</span><span class="p">)</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">list_of_letters</span> <span class="o">=</span> <span class="p">[</span><span class="s1">&#39;a&#39;</span><span class="p">,</span> <span class="s1">&#39;b&#39;</span><span class="p">,</span> <span class="s1">&#39;c&#39;</span><span class="p">]</span>
+<span class="hll"><span class="k">for</span> <span class="n">donkey</span> <span class="ow">in</span> <span class="n">list_of_letters</span><span class="p">:</span>
+</span>    <span class="nb">print</span><span class="p">(</span><span class="n">donkey</span><span class="p">)</span>
 </pre></div>
 </div>
 <p>The next thing you have to specify is the list you want to loop over, in
@@ -552,35 +583,36 @@ line starts with an indent. And that’s the basics of building a loop!</p>
 <p>Often it’s helpful to encapsulate a sequence of programming instructions into little tools that can be used over and over again. That’s where functions come in.</p>
 <p>Think of functions like little boxes. They take input (known as <strong>arguments</strong>), perform some operations on those arguments, and then return an <strong>output</strong>.</p>
 <p>In Python, a simple function might take an integer and divide it by two, like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
 <p>In order to call that function later in the program, I would simply have
 to invoke its name and feed it an integer – any integer at all – like
 so:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-<span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
-</span><span class="hll"><span class="go">5</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">divide_by_two</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
+
+<span class="hll"><span class="n">divide_by_two</span><span class="p">(</span><span class="mi">10</span><span class="p">)</span>
+</span><span class="hll"><span class="mi">5</span>
 </span></pre></div>
 </div>
 <p>Once you write a function (assuming it works) you don’t need to know what’s inside. You can just feed it an input and expect an output in return.</p>
 <p>Every function must be declared by the word <code class="docutils literal notranslate"><span class="pre">def</span></code>, which stands for “define”. That is followed by the name of the function. Like the variable in a <code class="docutils literal notranslate"><span class="pre">loop</span></code> you can call it anything you want.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
-</span><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">x</span><span class="p">):</span>
+</span>    <span class="k">return</span> <span class="n">x</span> <span class="o">/</span> <span class="mi">2</span>
 </pre></div>
 </div>
-<p>The name is then followed by a set of parentheses in which you can define the arguments the function should expect. In our example above, we’ve called the only argument``x``.</p>
+<p>The name is then followed by a set of parentheses in which you can define the arguments the function should expect. In our example above, we’ve called the only argument <code class="docutils literal notranslate"><span class="pre">x</span></code>.</p>
 <p>When we feed a value in, like the number 10, a variable by the name of our argument is created within the function. You can name that what you want too.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-</span><span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="hll"><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+</span><span class="hll">    <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span>
 </span></pre></div>
 </div>
 <p>After you finish declaring arguments, you’ll see something familiar –the colon. Just like the <code class="docutils literal notranslate"><span class="pre">if</span></code> statements and <code class="docutils literal notranslate"><span class="pre">for</span></code> loops, the next line must be indented four spaces because any code within the function is nested one level deeper than the base level of the program.</p>
 <p>Most functions return some kind of output. Arguments go in, some processing happens, and something comes out. That’s what the <code class="docutils literal notranslate"><span class="pre">return</span></code> statement is for.</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
-<span class="hll"><span class="gp">&gt;&gt;&gt; </span>   <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="k">def</span> <span class="nf">get_half</span><span class="p">(</span><span class="n">num</span><span class="p">):</span>
+<span class="hll">    <span class="k">return</span> <span class="n">num</span> <span class="o">/</span> <span class="mi">2</span>
 </span></pre></div>
 </div>
 <p>Functions don’t necessarily need arguments, nor do they always need to return a value using the <code class="docutils literal notranslate"><span class="pre">return</span></code> command. You could also do something like this:</p>
@@ -600,13 +632,13 @@ understanding functions, and they will come up more often than not.</p>
 <p>To pull in an entire toolkit, use the <code class="docutils literal notranslate"><span class="pre">import</span></code> command. In this case,
 we’ll get the <code class="docutils literal notranslate"><span class="pre">urllib</span></code> package, which allows us to visit websites
 with Python:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">import</span> <span class="nn">urllib.request</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://www.python.org/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">import</span> <span class="nn">urllib.request</span>
+<span class="n">urllib</span><span class="o">.</span><span class="n">request</span><span class="o">.</span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://www.python.org/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>You can also import specific tools from inside a toolkit by working in the <code class="docutils literal notranslate"><span class="pre">from</span></code> command with something like this:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="gp">&gt;&gt;&gt; </span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
-<span class="gp">&gt;&gt;&gt; </span><span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://www.python.org/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="kn">from</span> <span class="nn">urllib.request</span> <span class="kn">import</span> <span class="n">urlopen</span>
+<span class="n">urlopen</span><span class="p">(</span><span class="s2">&quot;http://www.python.org/&quot;</span><span class="p">)</span><span class="o">.</span><span class="n">read</span><span class="p">()</span>
 </pre></div>
 </div>
 <p>In practice, you’ll use both of these methods.</p>
@@ -627,13 +659,13 @@ with Python:</p>
 <p>We’ll also use the <a class="reference external" href="http://docs.python-requests.org/en/latest/">Requests library</a> to open the URL, download the HTML and pass it to BeautifulSoup.</p>
 <p>Since they are not included in Python’s standard library, we’ll first need to install them using <code class="docutils literal notranslate"><span class="pre">pip</span></code>, a command-line tool that can grab open-source libraries off the web. If you don’t have it installed, you’ll need to follow the prequisite instructions for <a class="reference internal" href="#command-line-pip"><span class="std std-ref">pip</span></a>.</p>
 <p>In OSX or Linux try this:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
-$<span class="w"> </span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>bs4
+sudo<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
 </pre></div>
 </div>
 <p>On Windows give it a shot without the <code class="docutils literal notranslate"><span class="pre">sudo</span></code>.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>beautifulsoup4
-$<span class="w"> </span>pip<span class="w"> </span>install<span class="w"> </span>requests
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>pip<span class="w"> </span>install<span class="w"> </span>bs4
+pip<span class="w"> </span>install<span class="w"> </span>requests
 </pre></div>
 </div>
 </section>
@@ -678,7 +710,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 <h3>Extracting an HTML table<a class="headerlink" href="#extracting-an-html-table" title="Permalink to this heading">¶</a></h3>
 <p>Now that we know where to find the data we’re after, it’s time to write script to pull it down and save it to a comma-delimited file.</p>
 <p>Let’s start by creating a Python file to hold our scraper. First jump into the <code class="docutils literal notranslate"><span class="pre">Code</span></code> directory we made at the beginning of this lesson.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Code
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span><span class="nb">cd</span><span class="w"> </span>Code
 </pre></div>
 </div>
 <div class="admonition note">
@@ -695,7 +727,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </pre></div>
 </div>
 <p>Save the file and run this script from your command line and you should see the entire HTML of the page spilled out.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Next import the <code class="docutils literal notranslate"><span class="pre">BeautifulSoup</span></code> HTML parsing library and feed it the page.</p>
@@ -711,7 +743,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Save the file and run the script again and you should see the page’s HTML again, but in a prettier format this time. That’s a hint at the magic happening inside BeautifulSoup once it gets its hands on the page.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Next we take all the detective work we did with the page’s HTML above and convert it into a simple, direct command that will instruct BeautifulSoup on how to extract only the table we’re after.</p>
@@ -728,7 +760,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Save the file and run <code class="docutils literal notranslate"><span class="pre">scrape.py</span></code> again. This time it only prints out the table we’re after, which was selected by instructing BeautifulSoup to return only those <code class="docutils literal notranslate"><span class="pre">&lt;table&gt;</span></code> tags with <code class="docutils literal notranslate"><span class="pre">resultsTable</span></code> as their class attribute.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Now that we have our hands on the table, we need to convert the rows in the table into a list, which we can then loop through and grab all the data out of.</p>
@@ -748,7 +780,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Save and run the script. You’ll not see each row printed out separately as the script loops through the table.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Next we can loop through each of the cells in each row by select them inside the loop. Cells are created in HTML by the <code class="docutils literal notranslate"><span class="pre">&lt;td&gt;</span></code> tag.</p>
@@ -768,7 +800,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Again, save and run the script. (This might seem repetitive, but it is the constant rhythm of many Python programmers.)</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>When that prints you will notice the word “Details” appears over and over. That’s because of the link to more details at the end of each table row. To remove that, we can use the list slicing we learned earlier to return everything but the last column in each row.</p>
@@ -812,7 +844,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Save and rerun the script. Now you should see Python lists streaming by one row at a time.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Those lists can now be lumped together into one big list of lists, which, when you think about it, isn’t all that different from how a spreadsheet is structured.</p>
@@ -838,7 +870,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Save and rerun the script. You should see a big bunch of data dumped out into the terminal. Look closely and you’ll see the list of lists.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>To write that list out to a comma-delimited file, we need to import Python’s built-in <code class="docutils literal notranslate"><span class="pre">csv</span></code> module at the top of the file. Then, at the botton, we will create a new file, hand it off to the <code class="docutils literal notranslate"><span class="pre">csv</span></code> module, and then lead on a handy tool it has called <code class="docutils literal notranslate"><span class="pre">writerows</span></code> to dump out our list of lists.</p>
@@ -867,7 +899,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </span></pre></div>
 </div>
 <p>Save and run the script. Nothing should happen – at least to appear to happen.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Since there are no longer any print statements in the file, the script is no longer dumping data out to your terminal. However, if you open up your code directory you should now see a new file named <code class="docutils literal notranslate"><span class="pre">inmates.csv</span></code> waiting for you. Open it in a text editor or Excel and you should see structured data all scraped out.</p>
@@ -903,7 +935,7 @@ specific type of item on a page. So, there maybe may instances of a class on a p
 </pre></div>
 </div>
 <p>Save and run the script one last time.</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>$<span class="w"> </span>python<span class="w"> </span>scrape.py
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>python<span class="w"> </span>scrape.py
 </pre></div>
 </div>
 <p>Our headers are now there, and you’ve finished the class. Congratulations! You’re now a web scraper.</p>
@@ -962,33 +994,37 @@ Page Size <span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span cl
 </section>
 
 
-            <div class="clearer"></div>
           </div>
+              <div class="related bottom">
+                &nbsp;
+  <nav id="rellinks">
+    <ul>
+    </ul>
+  </nav>
+              </div>
+          
         </div>
       </div>
       <div class="sphinxsidebar" role="navigation" aria-label="main navigation">
         <div class="sphinxsidebarwrapper">
-  <div>
-    <h3><a href="#">Table of Contents</a></h3>
-    <ul>
-<li><a class="reference internal" href="#">First web scraper</a><ul>
-<li><a class="reference internal" href="#what-you-will-make">What you will make</a></li>
-<li><a class="reference internal" href="#prelude-prerequisites">Prelude: Prerequisites</a></li>
-<li><a class="reference internal" href="#act-1-the-command-line">Act 1: The command line</a></li>
-<li><a class="reference internal" href="#act-2-python">Act 2: Python</a></li>
-<li><a class="reference internal" href="#act-3-web-scraping">Act 3: Web scraping</a></li>
-</ul>
-</li>
-</ul>
+<h1 class="logo"><a href="#">First Web Scraper</a></h1>
 
-  </div>
-  <div role="note" aria-label="source link">
-    <h3>This Page</h3>
-    <ul class="this-page-menu">
-      <li><a href="_sources/index.rst.txt"
-            rel="nofollow">Show Source</a></li>
-    </ul>
-   </div>
+
+
+
+
+
+
+
+<h3>Navigation</h3>
+
+<div class="relations">
+<h3>Related Topics</h3>
+<ul>
+  <li><a href="#">Documentation overview</a><ul>
+  </ul></li>
+</ul>
+</div>
 <div id="searchbox" style="display: none" role="search">
   <h3 id="searchlabel">Quick search</h3>
     <div class="searchformwrapper">
@@ -999,23 +1035,28 @@ Page Size <span class="ni">&amp;nbsp;</span><span class="p">&lt;/</span><span cl
     </div>
 </div>
 <script>document.getElementById('searchbox').style.display = "block"</script>
+
+
+
+
+
+
+
+
         </div>
       </div>
       <div class="clearer"></div>
     </div>
-    <div class="related" role="navigation" aria-label="related navigation">
-      <h3>Navigation</h3>
-      <ul>
-        <li class="right" style="margin-right: 10px">
-          <a href="genindex.html" title="General Index"
-             >index</a></li>
-        <li class="nav-item nav-item-0"><a href="#">First web scraper 0.1 documentation</a> &#187;</li>
-        <li class="nav-item nav-item-this"><a href="">First web scraper</a></li> 
-      </ul>
+    <div class="footer">
+      &copy;2023 Chase Davis, Jackie Kazil, Ken Schwencke, Sisi Wei, Ben Welsh and Matt Wynn.
+      
+      |
+      <a href="_sources/index.md.txt"
+          rel="nofollow">Page source</a>
     </div>
-    <div class="footer" role="contentinfo">
-        &#169; Copyright 2023.
-      Created using <a href="https://www.sphinx-doc.org/">Sphinx</a> 7.0.1.
-    </div>
+
+    
+
+    
   </body>
 </html>
