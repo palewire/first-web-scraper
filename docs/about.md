@@ -14,8 +14,6 @@ It was modified by [Ben Welsh](http://palewi.re/who-is-ben-welsh/) in December 2
 It was further updated by [Ken Schwencke](https://schwanksta.com) in 2019 and 2023 for teaching at the [Data Institute](https://cjddatainstitute.org/).
 
 - Code repository:
-  [github.com/ireapps/first-web-scraper/](https://github.com/ireapps/first-web-scraper/)
-- Documentation:
-  [first-web-scraper.rtfd.org/](http://first-web-scraper.rtfd.org/)
+  [github.com/palewire/first-web-scraper/](https://github.com/palewire/first-web-scraper/)
 - Issues:
-  [github.com/ireapps/first-web-scraper/issues/](https://github.com/ireapps/first-web-scraper/issues)
+  [github.com/palewire/first-web-scraper/issues/](https://github.com/palewire/first-web-scraper/issues)
