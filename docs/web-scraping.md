@@ -326,7 +326,7 @@ for row in table.findAll('tr'):
         list_of_cells.append(text)
     list_of_rows.append(list_of_cells)
 
-outfile = open("./inmates.csv", "wb")
+outfile = open("inmates.csv", "w")
 writer = csv.writer(outfile)
 writer.writerows(list_of_rows)
 ```
@@ -371,7 +371,7 @@ for row in table.findAll('tr'):
         list_of_cells.append(text)
     list_of_rows.append(list_of_cells)
 
-outfile = open("./inmates.csv", "wb")
+outfile = open("inmates.csv", "")
 writer = csv.writer(outfile)
 writer.writerow(["Last", "First", "Middle", "Gender", "Race", "Age", "City", "State"])
 writer.writerows(list_of_rows)
@@ -438,13 +438,13 @@ table = soup.find('tbody', attrs={'class': 'stripe'})
 list_of_rows = []
 for row in table.findAll('tr'):
     list_of_cells = []
-    for cell in row.findAll('td'):
-        text = cell.text.replace('&nbsp;', '')
+    for cell in row.findAll('td')[:-1]:
+        text = cell.text
         list_of_cells.append(text)
     list_of_rows.append(list_of_cells)
 
-outfile = open("./inmates.csv", "wb")
+outfile = open("inmates.csv", "w")
 writer = csv.writer(outfile)
-writer.writerow(["Last", "First", "Middle", "Gender", "Race", "Age", "City", "State"])
+writer.writerow(["Last", "First", "Middle", "Suffix", "Gender", "Race", "Age", "City", "State"])
 writer.writerows(list_of_rows)
 ```

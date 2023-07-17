@@ -156,7 +156,7 @@ my_list[-1]
 "d"
 ```
 
-So if you want ever item in a list besides the last, you would do:
+So if you want every item in a list besides the last, you would do:
 
 ```python
 my_list[-1]
