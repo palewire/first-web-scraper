@@ -1209,6 +1209,3 @@ To implement, just change your ``url`` variable like so:
     writer = csv.writer(outfile)
     writer.writerow(["Last", "First", "Middle", "Gender", "Race", "Age", "City", "State"])
     writer.writerows(list_of_rows)
-
-
-

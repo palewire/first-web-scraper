@@ -1,0 +1,16 @@
+[[source]]
+url = "https://pypi.org/simple"
+verify_ssl = true
+name = "pypi"
+
+[packages]
+requests = "*"
+bs4 = "*"
+sphinx = "*"
+sphinx-autobuild = "*"
+myst-parser = "*"
+
+[dev-packages]
+
+[requires]
+python_version = "3.10"
