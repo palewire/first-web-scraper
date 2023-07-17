@@ -103,8 +103,8 @@ Then open your text editor and save an empty file into the directory name `scrap
 ```python
 import requests
 
-url = 'https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s'
-response = requests.get(url, headers={'User-Agent': 'Mozilla/5.0'})
+url = "https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s"
+response = requests.get(url, headers={"User-Agent": "Mozilla/5.0"})
 html = response.content
 print(html)
 ```

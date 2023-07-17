@@ -68,7 +68,7 @@ the terminal because that value is stored in the variable.
 
 ```python
 print(greeting)
-'Hello world!'
+"Hello world!"
 ```
 
 ### Data types
@@ -86,7 +86,7 @@ are declared within single or double quotes like so:
 ```python
 greeting = "Hello, world!"
 goodbye = "Seeya later, dude."
-favorite_animal = 'Donkey'
+favorite_animal = "Donkey"
 ```
 
 #### Integers
@@ -123,9 +123,9 @@ lists. Here are several examples:
 
 ```python
 list_of_numbers = [1, 2, 3, 4, 5]
-list_of_strings = ['a', 'b', 'c', 'd']
-list_of_both = [1, 'a', 2, 'b']
-list_of_lists = [[1, 2, 3], [4, 5, 6], ['a', 'b', 'c']]
+list_of_strings = ["a", "b", "c", "d"]
+list_of_both = [1, "a", 2, "b"]
+list_of_lists = [[1, 2, 3], [4, 5, 6], ["a", "b", "c"]]
 ```
 
 Lists also have another neat feature: The ability to retrieve individual
@@ -134,11 +134,11 @@ items. In order to get a specific item out of a list, you just pass in its posit
 All lists in Python are **zero-indexed**, which means the first item in them sits at position 0.
 
 ```python
-my_list = ['a', 'b', 'c', 'd']
+my_list = ["a", "b", "c", "d"]
 my_list[0]
-'a'
+"a"
 my_list[2]
-'c'
+"c"
 ```
 
 You can also extract a range of values by specifiying the first and last
@@ -146,21 +146,21 @@ positions you want to retrieve with a colon in between them, like this:
 
 ```python
 my_list[0:2]
-['a', 'b']
+["a", "b"]
 ```
 
 To specify the last value in a list, you use `-1`
 
 ```python
 my_list[-1]
-'d'
+"d"
 ```
 
 So if you want ever item in a list besides the last, you would do:
 
 ```python
 my_list[-1]
-'d'
+"d"
 ```
 
 #### Tuples
@@ -169,7 +169,7 @@ Tuples are a special type of list that cannot be changed once they are created. 
 
 ```python
 tuple_of_numbers = (1, 2, 3, 4, 5)
-tuple_of_strings = ('a', 'b', 'c', 'd')
+tuple_of_strings = ("a", "b", "c", "d")
 ```
 
 #### Dictionaries
@@ -179,7 +179,7 @@ Dictionaries are probably the most difficult data type to explain, but also amon
 An example will make this a little more clear.
 
 ```python
-my_phonebook = {'Mom': '713-555-5555', 'Chinese Takeout': '573-555-5555'}
+my_phonebook = {"Mom": "713-555-5555", "Chinese Takeout": "573-555-5555"}
 ```
 
 In this example, the keys are the names "Mom" and "Chinese takeout",
@@ -191,8 +191,8 @@ dictionary values in practice can be any data type.
 If you wanted to get Mom's phone number from the dictionary, here's how:
 
 ```python
-my_phonebook['Mom']
-713-555-5555
+my_phonebook["Mom"]
+713 - 555 - 5555
 ```
 
 There's a lot more to dictionaries, but that's all you need to know for now.
@@ -220,8 +220,6 @@ Let's start with a simple example.
 number = 10
 if number > 5:
     print("Wow, that's a big number!")
-
-Wow, that's a big number!
 ```
 
 Our little program in this case starts with a variable, which we've called `number`, being set to 10. That's pretty simple, and a concept you should be familiar with by this point.
@@ -320,7 +318,7 @@ Many times during your programming career, you'll find it helps to run through a
 That's where for loops come in. Let's start by having Python say the ABC's:
 
 ```python
-list_of_letters = ['a', 'b', 'c']
+list_of_letters = ["a", "b", "c"]
 for letter in list_of_letters:
     print(letter)
 
@@ -451,6 +449,7 @@ with Python:
 
 ```python
 import urllib.request
+
 urllib.request.urlopen("http://www.python.org/").read()
 ```
 
@@ -458,6 +457,7 @@ You can also import specific tools from inside a toolkit by working in the `from
 
 ```python
 from urllib.request import urlopen
+
 urlopen("http://www.python.org/").read()
 ```
 
