@@ -81,22 +81,20 @@ this tutorial work with other versions.
 
 ### pip
 
-The [pip package
-manager](https://pip.pypa.io/en/latest/) makes it
+The [pip package manager](https://pip.pypa.io/en/latest/) makes it
 easy to install open-source libraries that expand what you're able to do
 with Python. Later, we will use it to install everything needed to
-create a working web application.
+create a working web scraper.
+
+Verify pip is installed with the following.
+
+```bash
+pip --version
+```
 
 If you don't have it already, you can get pip by following [these
 instructions](https://pip.pypa.io/en/latest/installing.html).
 In Windows, it's necessary to make sure that the Python `Scripts`
 directory is available on your system's `PATH` so it can be called
-from anywhere on the command line. [This
-screencast](http://showmedo.com/videotutorials/video?name=960000&fromSeriesID=96)
+from anywhere on the command line. [This screencast](http://showmedo.com/videotutorials/video?name=960000&fromSeriesID=96)
 can help.
-
-Verify pip is installed with the following.
-
-```bash
-pip -V
-```
