@@ -44,33 +44,28 @@ name](http://askubuntu.com/questions/38162/what-is-a-terminal-and-how-do-i-open-
 
 A program like Microsoft Word, which can do all sorts of text formatting
 like change the size and color of words, is not what you need. Do not
-try to use it below.
+try to use it for this class.
 
 You need a program that works with simple ["plain text"
 files](https://en.wikipedia.org/wiki/Text_file), and is therefore
 capable of editing documents containing Python code, HTML markup and
 other languages without dressing them up by adding anything extra. Such
-programs are easy to find and some of the best ones are free, including
-those below.
+programs are easy to find and some of the best ones are free.
 
-For Windows, I recommend installing
-[Notepad++](http://notepad-plus-plus.org/). For Apple computers, try
-[TextWrangler](http://www.barebones.com/products/textwrangler/download.html).
-In Ubuntu Linux you can stick with the pre-installed
-[gedit](https://help.ubuntu.com/community/gedit) text editor.
+If you don't have one already, try installing Microsoft's [Visual Code Studio](https://code.visualstudio.com/), a popular, free option.
 
 ### Python
 
-If you are using Mac OSX or a common flavor of Linux, Python is probably
-already installed and you can test to see what version, if any, is there
+If you are using Mac OS or a common flavor of Linux, Python is probably
+already installed. Tou can test to see what version, if any, is there
 waiting for you by typing the following into your terminal.
 
 ```bash
-python -V
+python --version
 ```
 
-If you don't have Python installed (a more likely fate for Windows
-users) try downloading and installing it from
+If you don't have Python installed, you'll see an error. This is a more likely fate for Windows
+users, who try downloading and installing Python 3.10 from
 [here](https://www.python.org/downloads/release/python-3108/).
 
 In Windows, it's also crucial to make sure that the Python program is
@@ -79,8 +74,8 @@ the command line. [This
 screencast](http://showmedo.com/videotutorials/video?name=960000&fromSeriesID=96)
 can guide you through that process.
 
-Python 3.10 is preferred but you can probably find a way to make most of
-this tutorial work with other versions if you futz a little.
+While Python 3.10 is preferred for this class, but you can probably find a way to make most of
+this tutorial work with other versions.
 
 (command-line-pip)=
 
