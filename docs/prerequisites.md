@@ -3,10 +3,6 @@
 
 # Prerequisites
 
-```{note}
-I recommend you use [GitHub codespaces](https://github.com/features/codespaces) instead of setting up your own computer. It's free and will let you use the command line and run Python without having to download a thing.
-```
-
 Before you can begin, your computer needs the following tools installed
 and working to participate.
 
@@ -22,6 +18,10 @@ and working to participate.
    package manager for Python
 
 Depending on your experience and operating system, you might already be ready to go with everything above. If so, move on to the next chapter. If not, don't worry. And don't give up! It will be a bit of a slog but the instructions below will point you in the right direction.
+
+```{note}
+One potential shortcut is using [GitHub codespaces](https://github.com/features/codespaces) instead of setting up your own computer. It's free and will let you use the command line and run Python without having to download a thing.
+```
 
 (command-line-prereq)=
 
