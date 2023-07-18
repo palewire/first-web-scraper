@@ -9,7 +9,7 @@ A step-by-step guide to writing a [web scraper](https://en.wikipedia.org/wiki/We
 
 This tutorial will guide you through the process of writing a script that can extract the roster of inmates from [a local government website](https://report.boonecountymo.org/mrcjava/servlet/SH01_MP.I00290s) and prepare it for analysis.
 
-Along the way you'll learn the fundamentals of the [Python](https://en.wikipedia.org/wiki/Python_(programming_language)), how to open URLs with [Requests](https://en.wikipedia.org/wiki/Requests_(software)), how to parse HTML with [Beautiful Soup](https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)) and how to write data to a [comma-delimited file](https://en.wikipedia.org/wiki/Comma-separated_values).
+Along the way you'll learn the fundamentals of [Python](https://en.wikipedia.org/wiki/Python_(programming_language)), how to open URLs with [Requests](https://en.wikipedia.org/wiki/Requests_(software)), how to parse HTML with [Beautiful Soup](https://en.wikipedia.org/wiki/Beautiful_Soup_(HTML_parser)) and how to write data to a [comma-delimited file](https://en.wikipedia.org/wiki/Comma-separated_values).
 
 ## Who can take it
 
