@@ -11,9 +11,9 @@ and working to participate.
    to interact with your computer
 2. A [text editor](https://en.wikipedia.org/wiki/Text_editor) to work
    with plain text files
-3. Version 3.10 of the
+3. Version 3 of the
    [Python](https://www.python.org/downloads/release/python-3108/) programming
-   language. The current version as of July 2023 is Python 3.10.8.
+   language.
 4. The [pip](https://pip.pypa.io/en/latest/installing.html)
    package manager for Python
 
