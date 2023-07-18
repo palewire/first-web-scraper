@@ -13,7 +13,7 @@ Along the way you'll learn the fundamentals of [Python](https://en.wikipedia.org
 
 ## Who can take it
 
-This course is free. The materials assume the reader has little experience with Python and the command line. Newbies should feel welcome. If you have a good attitude and know how to take a few code crashes in stride, you are qualified.
+This course is free. The materials assume the reader has little to no experience. If you have a good attitude and can take a few code crashes in stride, you are qualified.
 
 ## Table of contents
 
