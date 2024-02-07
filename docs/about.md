@@ -1,6 +1,3 @@
-```{include} _templates/nav.html
-```
-
 # About this class
 
 This guide was initially developed by [Chase

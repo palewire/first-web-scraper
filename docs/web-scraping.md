@@ -1,6 +1,3 @@
-```{include} _templates/nav.html
-```
-
 # Act 3: Web scraping
 
 Now that we've covered all the fundamentals, it's time to get to work and write a web scraper.

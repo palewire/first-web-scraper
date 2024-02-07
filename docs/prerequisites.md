@@ -1,6 +1,3 @@
-```{include} _templates/nav.html
-```
-
 # Prerequisites
 
 Before you can begin, your computer needs the following tools installed

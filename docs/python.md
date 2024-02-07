@@ -1,6 +1,3 @@
-```{include} _templates/nav.html
-```
-
 # Act 2: Python
 
 Python can be used for almost any application you can imagine, from building websites to running robots.

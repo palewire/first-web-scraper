@@ -1,6 +1,3 @@
-```{include} _templates/nav.html
-```
-
 # Act 1: The command line
 
 Working with Python (and pretty much any other programming language)
