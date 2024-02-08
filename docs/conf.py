@@ -20,6 +20,9 @@ html_sidebars = {
 html_theme_options = {
     "canonical_url": f"https://palewi.re/docs/first-web-scraper/",
 }
+html_theme_options = {
+    "nosidebar": True,
+}
 
 html_static_path = ["_static"]
 
