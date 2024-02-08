@@ -10,7 +10,7 @@ sphinx = "*"
 sphinx-autobuild = "*"
 myst-parser = "*"
 pre-commit = "*"
-sphinx-palewire-theme = {editable = true, git = "https://github.com/palewire/sphinx-palewire-theme"}
+sphinx-palewire-theme = "==0.0.13"
 
 [dev-packages]
 
