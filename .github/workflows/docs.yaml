@@ -1,29 +1,81 @@
 name: "Build documentation"
+
 on:
   push:
-  pull_request:
+    branches:
+      - main
   workflow_dispatch:
 
+concurrency:
+  group: ${{ github.workflow }}-${{ github.ref }}
+  cancel-in-progress: true
+
 jobs:
-  docs:
-    name: "Build and deploy"
+  build:
+    name: Build
     runs-on: ubuntu-latest
     steps:
-    - uses: actions/checkout@v1
+      - id: checkout
+        name: Checkout
+        uses: actions/checkout@v4
 
-    - uses: ammaraskar/sphinx-action@master
-      with:
-        docs-folder: "docs/"
+      - id: setup-python
+        name: Setup Python
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.11'
+          cache: 'pipenv'
 
-    - uses: actions/upload-artifact@v1
-      with:
-        name: documentation-html
-        path: docs/_build/html/
+      - id: install-pipenv
+        name: Install pipenv
+        run: curl https://raw.githubusercontent.com/pypa/pipenv/master/get-pipenv.py | python
+        shell: bash
 
-    - uses: shallwefootball/s3-upload-action@master
-      with:
-        aws_key_id: ${{ secrets.PALEWIRE_DOCS_AWS_ACCESS_KEY_ID }}
-        aws_secret_access_key: ${{ secrets.PALEWIRE_DOCS_AWS_SECRET_ACCESS_KEY }}
-        aws_bucket: ${{ secrets.PALEWIRE_DOCS_AWS_BUCKET }}
-        source_dir: docs/_build/html/
-        destination_dir: first-web-scraper
+      - id: install-python-dependencies
+        name: Install Python dependencies
+        run: pipenv sync --dev
+        shell: bash
+
+      - id: build-sphinx-documentation
+        name: Build Sphinx documentation
+        run: pipenv run make html
+        shell: bash
+        working-directory: docs
+
+      - id: upload-release-candidate
+        name: Upload release candidate
+        uses: actions/upload-artifact@v4
+        with:
+          name: release-candidate
+          path: ./docs/_build/html/
+
+  deploy:
+    name: Deploy
+    runs-on: ubuntu-latest
+    needs: build
+    if: ${{ github.ref_name == 'main' }}
+    steps:
+      - name: Download release candidate
+        uses: actions/download-artifact@v4
+        with:
+          name: release-candidate
+          path: ./docs/
+
+      - id: configure-aws
+        name: Configure AWS Credentials
+        uses: aws-actions/configure-aws-credentials@v4
+        with:
+          aws-access-key-id: ${{ secrets.PALEWIRE_DOCS_AWS_ACCESS_KEY_ID }}
+          aws-secret-access-key: ${{ secrets.PALEWIRE_DOCS_AWS_SECRET_ACCESS_KEY }}
+          aws-region: us-east-1
+
+      - id: upload-to-s3
+        name: Upload documentation to Amazon S3
+        uses: datadesk/delivery-deploy-action@v1
+        with:
+          bucket: ${{ secrets.PALEWIRE_DOCS_AWS_BUCKET }}
+          base-path: first-web-scraper
+          dir: ./docs/
+          should-cache: false
+          use-accelerate-endpoint: false
+          public: true
