@@ -10,7 +10,7 @@ sphinx = "*"
 sphinx-autobuild = "*"
 myst-parser = "*"
 pre-commit = "*"
-sphinx-palewire-theme = "==0.0.13"
+sphinx-palewire-theme = "==0.0.18"
 
 [dev-packages]
 
